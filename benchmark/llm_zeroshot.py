@@ -6,10 +6,10 @@ import re
 from typing import List, Dict, Any, Set, Tuple
 from tqdm import tqdm
 
-# 尝试导入项目工具函数
+# Try to import project utility functions
 try:
     from utils.llm_utils import call_llm_api
-    # 导入你精心设计的领域知识库
+    # Import the carefully designed domain knowledge base
     from event_detector.event_detector import DATASET_GUIDANCE
 except ImportError:
     call_llm_api = None
@@ -192,7 +192,7 @@ class LLMBaseline:
             except json.JSONDecodeError:
                 pass
         
-        # 尝试寻找最外层的大括号
+        # Try to find the outermost braces
         match = re.search(r"\{.*\}", response_str, re.DOTALL)
         if match:
             try:
@@ -209,20 +209,20 @@ class LLMBaseline:
         if not logs:
             return []
 
-        # 初始化并查集
+        # Initialize union-find
         dsu = UnionFind(total_logs)
         
-        # 计算步长，确保 overlap 有效
+        # Calculate step size, ensure overlap is valid
         step = max(1, self.chunk_size - self.overlap)
         
-        # 计算总 chunk 数用于进度条
+        # Calculate total number of chunks for progress bar
         num_chunks = (total_logs + step - 1) // step
         
         for i in tqdm(range(0, total_logs, step), desc=f"LLM ({self.strategy})", total=num_chunks):
             chunk_start_index = i
             chunk_end_index = min(i + self.chunk_size, total_logs)
             
-            # 如果是最后一个残缺的 chunk 且完全包含在前一个 chunk 中（虽然 range 逻辑通常避免这种情况），跳过
+            # Skip if this is the last incomplete chunk and is fully contained in the previous chunk (although range logic usually avoids this)
             if i > 0 and chunk_end_index - chunk_start_index <= self.overlap:
                 continue
 
@@ -246,27 +246,27 @@ class LLMBaseline:
                 data = self._extract_json(response_str)
                 chunk_sessions_rel = data.get("sessions", [])
                 
-                # 将 chunk 内的相对分组转换为全局连接关系
+                # Convert relative grouping within chunk to global connection relationships
                 for session in chunk_sessions_rel:
-                    # 过滤无效索引
+                    # Filter invalid indices
                     valid_indices = [idx for idx in session if isinstance(idx, int) and 0 <= idx < len(chunk_logs)]
                     
                     if len(valid_indices) > 1:
-                        # 将同一组内的 ID 两两合并
-                        # 例如 [0, 1, 2] -> union(0+start, 1+start), union(1+start, 2+start)
-                        # 转换为绝对索引
+                        # Merge IDs pairwise within the same group
+                        # e.g., [0, 1, 2] -> union(0+start, 1+start), union(1+start, 2+start)
+                        # Convert to absolute indices
                         abs_indices = [idx + chunk_start_index for idx in valid_indices]
                         for k in range(len(abs_indices) - 1):
                             dsu.union(abs_indices[k], abs_indices[k+1])
                             
             except Exception as e:
                 logging.error(f"LLM ({self.strategy}) Error at chunk {chunk_start_index}: {e}")
-                # 出错时不合并，保持独立（默认行为）
+                # Don't merge on error, keep independent (default behavior)
 
-        # 从并查集获取最终分组
+        # Get final grouping from union-find
         final_sessions = dsu.get_groups()
         
-        # 排序，保证输出确定性
+        # Sort to ensure deterministic output
         final_sessions.sort(key=lambda x: x[0] if x else 0)
         
         return final_sessions

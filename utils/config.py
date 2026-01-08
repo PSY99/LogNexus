@@ -105,71 +105,71 @@ class Config:
 
 
         # ========================================================================
-        # --- LogBERT-Mamba 预训练配置 ---
+        # --- LogBERT-Mamba Pretraining Configuration ---
         # ========================================================================
 
-        # 新的统一编码器路径
+        # Unified encoder path
         self.encoder_save_path = os.path.join(self.model_save_dir, f'{self.dataset}_encoder.pkl')
-        # 新的Mamba预训练模型路径
+        # Mamba pretrained model path
         self.mamba_model_save_path = os.path.join(self.model_save_dir, 'log_mamba_pretrained.pt')
 
-        # 2. 数据与任务配置
-        self.max_params = 16  # 单个日志的最大参数token数 (可按需调整)
+        # 2. Data and task configuration
+        self.max_params = 16  # Maximum parameter tokens per log entry (adjustable as needed)
         
-        # 特殊Token定义
+        # Special token definitions
         self.PAD_TOKEN = "<PAD>"
         self.UNK_TOKEN = "<UNK>"
         self.CLS_TOKEN = "<CLS>"
         self.MASK_TOKEN = "<MASK>"
 
-        # 预训练任务概率
-        self.mlm_prob = 0.15      # 15%的日志模板将被掩码
-        self.rpd_prob = 0.15      # 15%的日志参数将被替换
+        # Pretraining task probabilities
+        self.mlm_prob = 0.15      # 15% of log templates will be masked
+        self.rpd_prob = 0.15      # 15% of log parameters will be replaced
         
-        # 预训练损失权重
+        # Pretraining loss weights
         self.mlm_weight = 1.0
         self.rpd_weight = 0.5
         self.eco_weight = 0.5
 
-        # 3. Mamba 模型架构配置
-        self.mamba_d_model = 256        # 主模型维度
-        self.mamba_template_embed_dim = 128 # Mamba模型中的模板嵌入维度
-        self.mamba_param_embed_dim = 128    # Mamba模型中的参数嵌入维度
+        # 3. Mamba model architecture configuration
+        self.mamba_d_model = 256        # Main model dimension
+        self.mamba_template_embed_dim = 128 # Template embedding dimension in Mamba model
+        self.mamba_param_embed_dim = 128    # Parameter embedding dimension in Mamba model
         
         # Mamba-specific
         self.mamba_d_state = 16
         self.mamba_d_conv = 4
         self.mamba_expand = 2
 
-        # --- 数据集和序列化配置 ---
-        self.window_size = 32  # 每个训练样本的序列长度
-        self.step_size = 16    # 滑动窗口的步长。建议为 window_size 的一半或更小
-        self.max_params = 10    # 每条日志允许的最大参数数量
+        # --- Dataset and serialization configuration ---
+        self.window_size = 32  # Sequence length for each training sample
+        self.step_size = 16    # Sliding window step size. Recommended to be half of window_size or smaller
+        self.max_params = 10    # Maximum number of parameters allowed per log entry
 
 
         self.refiner_top_k = 5
         self.refiner_batch_size = 32
-        self.refiner_merge_absolute_threshold = 0.8 # 例如，要求合并后至少80%的日志是连贯的
-        self.refiner_merge_degradation_allowance = 0.05 # 例如，允许相干性下降最多10%
-        self.refiner_merge_time_threshold_minutes = 10  # 10分钟
+        self.refiner_merge_absolute_threshold = 0.8 # e.g., require at least 80% of logs to be coherent after merging
+        self.refiner_merge_degradation_allowance = 0.05 # e.g., allow coherence to decrease by at most 5%
+        self.refiner_merge_time_threshold_minutes = 10  # 10 minutes
 
         self.parameter_rules_path = os.path.join(self.project_dir, 'event_refinement', 'parameter_rules.json')
 
 
-        # 【新增】相干性阈值：如果一个事件的初始相干性得分高于此值，则跳过对其的切分
+        # Coherence threshold: skip splitting if an event's initial coherence score is above this value
         self.COHERENCE_THRESHOLD_TO_SKIP_SPLIT = 0.90
 
-        # 【新增】豁免规则：PID一致性
-        # 如果为 True，则 PID 完全一致的事件将被豁免，不进行切分
+        # Exemption rule: PID consistency
+        # If True, events with consistent PIDs will be exempted from splitting
         self.EXEMPT_IF_PID_CONSISTENT = True
 
-        # 【新增】豁免规则：时间跨度
-        # 如果事件内所有日志的时间跨度小于此值（秒），则豁免切分。设为0或负数可禁用。
+        # Exemption rule: time span
+        # If the time span of all logs in an event is less than this value (seconds), exempt from splitting. Set to 0 or negative to disable.
         self.EXEMPT_IF_TIMESPAN_LESS_THAN_S = 1.0
 
-        # 【新增】合并规则：相同内容日志的时间窗口
-        # 如果多个单日志事件的 'Content' 字段完全相同，且它们之间的时间差
-        # 小于此值（秒），它们将被合并。设为0或负数可禁用此规则。
+        # Merge rule: time window for identical content logs
+        # If multiple single-log events have identical 'Content' fields and the time difference between them
+        # is less than this value (seconds), they will be merged. Set to 0 or negative to disable this rule.
         self.MERGE_IDENTICAL_CONTENT_WINDOW_S = 5.0 
 
 

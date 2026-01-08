@@ -19,9 +19,8 @@ Extensive evaluations on **OpenSSH**, **Linux**, and **Apache** datasets demonst
 ```plaintext
 LogNexus/
 ├── data/                   # Dataset storage (Raw logs & Ground truth)
-├── cache/                  # Model checkpoints & Encoder artifacts
 ├── utils/                  # Utility functions (Config, LLM wrappers)
-├── data_processing/        # Preprocessing scripts (Parsing, Encoding)
+├── data_preprocessing/     # Preprocessing scripts (Parsing, Encoding)
 ├── event_detector/         # Phase I: Rule synthesis & Coarse partitioning
 ├── event_refinement/       # Phase II: Bi-Mamba training & Event refinement
 ├── knowledge_base/         # Phase III: Dynamic clustering & KB construction
@@ -30,6 +29,8 @@ LogNexus/
 ├── ablation_experiments/   # Scripts for ablation studies
 └── results/                # Evaluation metrics & Output logs
 ```
+
+**Note:** The `cache/` directory is not included in this repository. It will be created automatically when you first run the code to store model checkpoints and encoder artifacts.
 
 ## 🛠️ Dependencies
 
@@ -89,7 +90,7 @@ To run the full LogNexus pipeline on a specific dataset (default: Linux):
 
    ```bash
    # This runs the 'full_model' mode by default
-   cd ./abalation_experiments/
+   cd ./ablation_experiments/
    python ./run_ablation.py
    ```
 
@@ -148,3 +149,75 @@ python ./benchmark/run_benchmarks.py --methods llm_knowledge deepcase traditiona
 ```
 
 *   Available methods: `traditional`, `deepcase`, `pretrained`, `llm_naive`, `llm_knowledge`, `llm_cot`.
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+#### 1. Missing cache directory
+The `cache/` directory is not included in the repository. It will be automatically created when you run the code for the first time.
+
+#### 2. LLM API Configuration
+If you encounter LLM API errors:
+- Ensure your API key is correctly set in `utils/config.py` or as an environment variable `LLM_PROXY_API_KEY`
+- Verify your API endpoint is accessible
+- Check that your chosen model name is supported by your API provider
+
+Example environment variable setup:
+```bash
+export LLM_PROXY_API_KEY="your_api_key_here"
+export DATASET_NAME="Linux"  # or "OpenSSH", "Apache"
+```
+
+#### 3. Missing Dataset Files
+If you see errors about missing log files:
+- Ensure you've downloaded and extracted the datasets from Zenodo
+- Run the `split_dataset.py` script to generate train/test splits
+- Verify the dataset files exist in `./data/[DATASET_NAME]/`
+
+#### 4. CUDA/GPU Issues
+If CUDA is not available or you encounter GPU errors:
+- The code will automatically fall back to CPU
+- You can manually set the device in `utils/config.py` by modifying the `device` parameter
+
+#### 5. Import Errors
+If you encounter module import errors:
+- Ensure you've installed all requirements: `pip install -r requirements.txt`
+- Some dependencies (like `mamba-ssm`) may require specific CUDA versions
+- For CPU-only installation, you may need to modify the torch installation
+
+## 🎯 Quick Start Checklist
+
+Before running LogNexus for the first time:
+
+- [ ] Downloaded and extracted datasets from Zenodo
+- [ ] Placed datasets in `./data/` directory
+- [ ] Run `python ./data/split_dataset.py` to generate splits
+- [ ] Installed all dependencies via `pip install -r requirements.txt`
+- [ ] Configured LLM API settings in `utils/config.py` or environment variables
+- [ ] Set `DATASET_NAME` environment variable (default: "Linux")
+
+## 📝 Citation
+
+If you use LogNexus in your research, please cite our paper:
+
+```bibtex
+@article{lognexus2024,
+  title={LogNexus: From Raw Streams to Operational Insights via Neural-Symbolic Event Reconstruction},
+  author={Your Name et al.},
+  journal={arXiv preprint},
+  year={2024}
+}
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Contact
+
+For questions or issues, please open an issue on GitHub or contact the authors.

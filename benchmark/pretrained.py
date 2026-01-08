@@ -11,7 +11,7 @@ from torch.optim import AdamW
 
 from transformers import BertTokenizer, BertForNextSentencePrediction
 
-# 设置日志
+# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -84,13 +84,13 @@ class PretrainedBaseline:
     """
     def __init__(self, 
                  base_model_path: str = './benchmark/bert-base-uncased/', 
-                 model_save_dir: str = './saved_models/bert_nsp_finetuned/', # 新增：保存路径
+                 model_save_dir: str = './saved_models/bert_nsp_finetuned/', # New: save path
                  n_clusters: int = 10, 
                  batch_size: int = 16, 
                  device: str = 'cuda', 
                  epochs: int = 5, 
                  lr: float = 5e-5,
-                 patience: int = 2): # 新增：早停耐心值
+                 patience: int = 2): # New: early stopping patience
         
         if BertForNextSentencePrediction is None:
             raise ImportError("Transformers library not installed. Please install via `pip install transformers`.")
@@ -108,7 +108,7 @@ class PretrainedBaseline:
         self.model = None
         self.kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
         self.is_fitted = False
-        self.needs_training = True # 标记是否需要训练
+        self.needs_training = True # Mark whether training is needed
 
         self._load_model()
 
@@ -119,22 +119,22 @@ class PretrainedBaseline:
         1. Load from model_save_dir (if exists) -> Skip training
         2. Load from base_model_path -> Needs training
         """
-        # 检查是否存在已训练好的模型
+        # Check if trained model exists
         if os.path.exists(self.model_save_dir) and os.listdir(self.model_save_dir):
             logger.info(f"Pretrained: Found saved model in {self.model_save_dir}. Loading...")
             try:
                 self.tokenizer = BertTokenizer.from_pretrained(self.model_save_dir)
                 self.model = BertForNextSentencePrediction.from_pretrained(self.model_save_dir)
                 self.model.to(self.device)
-                self.needs_training = False # 标记为不需要训练
+                self.needs_training = False # Mark as not needing training
                 logger.info("Pretrained: Successfully loaded fine-tuned model from disk.")
                 return
             except Exception as e:
                 logger.warning(f"Pretrained: Failed to load saved model ({e}). Falling back to base model.")
         
-        # 如果没有已保存的模型，或者加载失败，则加载基础模型
+        # If no saved model exists or loading fails, load base model
         if not os.path.exists(self.base_model_path):
-            # 如果本地路径不存在，尝试从 HuggingFace Hub 下载（如果允许联网）
+            # If local path doesn't exist, try downloading from HuggingFace Hub (if network access is allowed)
             logger.warning(f"Local base path {self.base_model_path} not found. Trying 'bert-base-uncased' from Hub.")
             base_path = 'bert-base-uncased'
         else:
@@ -145,7 +145,7 @@ class PretrainedBaseline:
             self.tokenizer = BertTokenizer.from_pretrained(base_path)
             self.model = BertForNextSentencePrediction.from_pretrained(base_path)
             self.model.to(self.device)
-            self.needs_training = True # 标记为需要训练
+            self.needs_training = True # Mark as needing training
         except Exception as e:
             logger.error(f"Pretrained: Failed to load base BERT model: {e}")
             raise e
@@ -167,10 +167,10 @@ class PretrainedBaseline:
         self.model.train()
         logger.info(f"Pretrained: Starting NSP Fine-tuning for {self.epochs} epochs on {len(dataset)} samples...")
 
-        # 早停相关变量
+        # Early stopping related variables
         best_loss = float('inf')
         patience_counter = 0
-        min_delta = 0.001 # loss 至少要下降这么多才算优化
+        min_delta = 0.001 # loss must decrease by at least this much to be considered improvement
 
         for epoch in range(self.epochs):
             total_loss = 0
@@ -201,11 +201,11 @@ class PretrainedBaseline:
             avg_loss = total_loss / len(dataloader)
             logger.info(f"Epoch {epoch+1} completed. Average Loss: {avg_loss:.4f}")
 
-            # --- 早停检查 (Early Stopping Check) ---
+            # --- Early Stopping Check ---
             if avg_loss < (best_loss - min_delta):
                 best_loss = avg_loss
                 patience_counter = 0
-                # 可选：在这里保存最佳checkpoint，目前我们只在最后保存
+                # Optional: save best checkpoint here, currently we only save at the end
             else:
                 patience_counter += 1
                 logger.info(f"Early Stopping Counter: {patience_counter}/{self.patience}")
@@ -213,7 +213,7 @@ class PretrainedBaseline:
                     logger.info("🛑 Early stopping triggered.")
                     break
         
-        # --- 训练结束，保存模型 ---
+        # --- Training complete, save model ---
         logger.info(f"Pretrained: Saving fine-tuned model to {self.model_save_dir}...")
         if not os.path.exists(self.model_save_dir):
             os.makedirs(self.model_save_dir)
