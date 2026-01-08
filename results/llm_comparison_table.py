@@ -16,7 +16,7 @@ def parse_model_name(filepath):
  return "unknown"
 
 def get_model_family(model_name):
- """fromModelNameinExtractModel家族，Used forGroupSortand分类"""
+ """fromModelNameinExtractModel，Used forGroupSortandsplit"""
  # Use regex to match common model families
  match = re.match(r"^(gpt|deepseek|gemini|qwen|claude)", model_name, re.IGNORECASE)
  if match:
@@ -25,12 +25,12 @@ def get_model_family(model_name):
  return "zzz_other" 
 
 def collect_data():
- """收set并processallCSVFilein的Data，samewhenExtractARI的均ValueandStandard deviation"""
+ """setprocessallCSVFileinData，samewhenExtractARIValueandStandard deviation"""
  file_paths = glob.glob('../generated_processors_*/Linux_mode_wise_statistics.csv')
  
  if not file_paths:
- print("error：in ../generated_processors_*/ Directory下没has找to任何 Linux_mode_wise_statistics.csv File。")
- print("请Ensure脚本的上one级Directoryin包含 'generated_processors_*' File夹。")
+ print("error：in../generated_processors_*/ Directoryunderhastotask Linux_mode_wise_statistics.csv File。")
+ print("EnsureonelevelDirectoryin 'generated_processors_*' File。")
  return None
 
  all_data = []
@@ -73,35 +73,35 @@ def collect_data():
  return final_df
 
 def generate_latex_table(df):
- """According toprocess后的DataGeneratenew强的LaTeX格式table格"""
+ """According toprocessbackwardDataGeneratenewLaTeXtable"""
  if df is None or df.empty:
- print("没hasData可供Generatetable格。")
+ print("hasDataGeneratetable。")
  return
 
- # 1. willDatafrom长格式Convertas宽格式
+ # 1. willDatafromConvertas
  pivot_df = df.pivot_table(
  index=['Model Name', 'Model Family'], 
  columns='Mode', 
  values=['ARI_mean', 'ARI_std']
  ).reset_index()
 
- # **Newnew点**: CalculatePercentage提升
+ # **Newnew**: CalculatePercentageextractupgrade
  base_ari = pivot_df[('ARI_mean', 'no_refinement')]
  full_ari = pivot_df[('ARI_mean', 'full_model')]
  
- # Calculate提升率，并process除以零的情况
+ # Calculateextractupgrade，process
  improvement = ((full_ari - base_ari) / base_ari) * 100
- # willinf(Noexhaustivelarge)替换asNaN，然后用0填充，以防base_arias0
+ # willinf(Noexhaustivelarge)changeasNaN，backwarduse0，base_arias0
  pivot_df[('Improvement', '%')] = improvement.replace([np.inf, -np.inf], np.nan).fillna(0)
 
- # 2. 定义开源Model家族
+ # 2. Model
  open_source_families = ['deepseek', 'qwen']
 
- # 3. willModel分as闭源and开源两组
+ # 3. willModelsplitasandgroup
  proprietary_df = pivot_df[~pivot_df['Model Family'].isin(open_source_families)]
  opensource_df = pivot_df[pivot_df['Model Family'].isin(open_source_families)]
 
- # **Newnew点**: 找出Each组别intable现最好的Modelindex
+ # **Newnew**: outEachgroupintableModelindex
  best_proprietary_idx = proprietary_df[('ARI_mean', 'full_model')].idxmax() if not proprietary_df.empty else None
  best_opensource_idx = opensource_df[('ARI_mean', 'full_model')].idxmax() if not opensource_df.empty else None
 
@@ -119,20 +119,20 @@ def generate_latex_table(df):
 \midrule
 """
  
- # auxiliaryfunctionNumber，Used forGeneratetable格line，并高亮最佳者
+ # auxiliaryfunctionNumber，Used forGeneratetableline，
  def generate_rows(dataframe, best_index):
  rows_str = ""
  if not dataframe.empty:
  for index, row in dataframe.iterrows():
  is_best = (index == best_index)
  
- # prepare备各columnData
+ # preparepreparecolumnData
  model_name_latex = row[('Model Name', '')].replace('_', r'\_')
  base_model_val = f"{row[('ARI_mean', 'no_refinement')]:.4f} $\pm$ {row[('ARI_std', 'no_refinement')]:.4f}"
  full_model_val = f"{row[('ARI_mean', 'full_model')]:.4f} $\pm$ {row[('ARI_std', 'full_model')]:.4f}"
- improvement_val = f"{row[('Improvement', '%')]:+.1f}\\%" # Use+号显示positive负，keepone位小Number
+ improvement_val = f"{row[('Improvement', '%')]:+.1f}\\%" # Use+positive，keeponeunitNumber
 
- # Ifis最佳line，then加粗
+ # Ifisline，then
  if is_best:
  model_name_latex = f"\\textbf{{{model_name_latex}}}"
  base_model_val = f"\\textbf{{{base_model_val}}}"
@@ -144,25 +144,25 @@ def generate_latex_table(df):
  rows_str = r"\multicolumn{4}{c}{No data found for this category.} \\" + "\n"
  return rows_str
 
- # 5. 填充闭源ModelData
+ # 5. ModelData
  latex_string += generate_rows(proprietary_df, best_proprietary_idx)
 
- # 6. Add开源Model部分的抬头
+ # 6. AddModelsplit
  latex_string += r"""\midrule
 \multicolumn{4}{c}{\textit{Open-source LLMs}} \\
 \midrule
 """
 
- # 7. 填充开源ModelData
+ # 7. ModelData
  latex_string += generate_rows(opensource_df, best_opensource_idx)
 
- # 8. Endtable格
+ # 8. Endtable
  latex_string += r"""\bottomrule
 \end{tabular}
 \end{table*}
 """
 
- # 9. Output结果
+ # 9. Output
  print("--- LaTeX Table Code (Enhanced Version) ---")
  print(latex_string)
  
@@ -170,12 +170,11 @@ def generate_latex_table(df):
  output_filename = 'model_ari_comparison_table_enhanced.tex'
  with open(output_filename, 'w', encoding='utf-8') as f:
  f.write(latex_string)
- print(f"\ntable格已SuccessSave至File: {output_filename}")
-
+ print(f"\ntableSuccessSaveFile: {output_filename}")
 
 if __name__ == '__main__':
- # 1. 收setandprocessData
+ # 1. setandprocessData
  processed_data = collect_data()
  
- # 2. Generate并OutputLaTeXtable格
+ # 2. GenerateOutputLaTeXtable
  generate_latex_table(processed_data)

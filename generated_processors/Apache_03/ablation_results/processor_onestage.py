@@ -3,152 +3,152 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Tuple, Any
 
 class EventProcessor:
-    """
-    Groups raw logs into logical security events based on temporal and contextual heuristics.
-    """
+ """
+ Groups raw logs into logical security events based on temporal and contextual heuristics.
+ """
 
-    def __init__(self, logs: List[Dict]):
-        """
-        Initializes the EventProcessor with a list of log entries.
+ def __init__(self, logs: List[Dict]):
+ """
+ Initializes the EventProcessor with a list of log entries.
 
-        Args:
-            logs: A list of dictionaries, where each dictionary represents a log entry.
-        """
-        self.logs = logs
-        # The enriched logs will be stored here after preprocessing
-        self.processed_logs: List[Dict[str, Any]] = []
+ Args:
+ logs: A list of dictionaries, where each dictionary represents a log entry.
+ """
+ self.logs = logs
+ # The enriched logs will be stored here after preprocessing
+ self.processed_logs: List[Dict[str, Any]] = []
 
-    def _preprocess_logs(self):
-        """
-        Prepares logs for clustering by parsing timestamps and adding original indices.
-        This method populates self.processed_logs.
-        """
-        for i, log in enumerate(self.logs):
-            # Make a copy to avoid modifying the original input list
-            processed_log = log.copy()
-            processed_log['original_index'] = i
-            try:
-                # Parse timestamp string into a datetime object for comparisons
-                processed_log['datetime'] = datetime.strptime(
-                    processed_log['Timestamp'], "%Y-%m-%d %H:%M:%S"
-                )
-            except (ValueError, TypeError):
-                # In a real-world scenario, we might log this error or handle it,
-                # but for this problem, we assume timestamps are valid.
-                # We skip logs with invalid timestamps.
-                continue
-            self.processed_logs.append(processed_log)
+ def _preprocess_logs(self):
+ """
+ Prepares logs for clustering by parsing timestamps and adding original indices.
+ This method populates self.processed_logs.
+ """
+ for i, log in enumerate(self.logs):
+ # Make a copy to avoid modifying the original input list
+ processed_log = log.copy()
+ processed_log['original_index'] = i
+ try:
+ # Parse timestamp string into a datetime object for comparisons
+ processed_log['datetime'] = datetime.strptime(
+ processed_log['Timestamp'], "%Y-%m-%d %H:%M:%S"
+ )
+ except (ValueError, TypeError):
+ # In a real-world scenario, we might log this error or handle it,
+ # but for this problem, we assume timestamps are valid.
+ # We skip logs with invalid timestamps.
+ continue
+ self.processed_logs.append(processed_log)
 
-        # Sort logs chronologically, which is essential for a single-pass algorithm
-        self.processed_logs.sort(key=lambda x: x['datetime'])
+ # Sort logs chronologically, which is essential for a single-pass algorithm
+ self.processed_logs.sort(key=lambda x: x['datetime'])
 
-    def cluster_events(self) -> Tuple[List[List[int]], Dict[int, int]]:
-        """
-        Clusters logs into security events using a single-pass algorithm with a
-        Union-Find data structure.
+ def cluster_events(self) -> Tuple[List[List[int]], Dict[int, int]]:
+ """
+ Clusters logs into security events using a single-pass algorithm with a
+ Union-Find data structure.
 
-        The logic distinguishes between external user-driven events (correlated by IP)
-        and internal system events (correlated by PID or tight temporal proximity).
+ The logic distinguishes between external user-driven events (correlated by IP)
+ and internal system events (correlated by PID or tight temporal proximity).
 
-        Returns:
-            A tuple containing:
-            - security_events (List[List[int]]): A list of events, where each event
-              is a list of original log indices.
-            - log_index_to_event_id (Dict[int, int]): A mapping from original log
-              index to its corresponding event ID.
-        """
-        if not self.logs:
-            return [], {}
+ Returns:
+ A tuple containing:
+ - security_events (List[List[int]]): A list of events, where each event
+ is a list of original log indices.
+ - log_index_to_event_id (Dict[int, int]): A mapping from original log
+ index to its corresponding event ID.
+ """
+ if not self.logs:
+ return [], {}
 
-        self._preprocess_logs()
-        
-        num_logs = len(self.processed_logs)
-        if num_logs == 0:
-            return [], {}
-            
-        parent = list(range(num_logs))
-        
-        # --- Union-Find Helper Functions (nested as per instruction) ---
-        def find(i: int) -> int:
-            if parent[i] == i:
-                return i
-            parent[i] = find(parent[i])
-            return parent[i]
+ self._preprocess_logs()
+ 
+ num_logs = len(self.processed_logs)
+ if num_logs == 0:
+ return [], {}
+ 
+ parent = list(range(num_logs))
+ 
+ # --- Union-Find Helper Functions (nested as per instruction) ---
+ def find(i: int) -> int:
+ if parent[i] == i:
+ return i
+ parent[i] = find(parent[i])
+ return parent[i]
 
-        def union(i: int, j: int):
-            root_i = find(i)
-            root_j = find(j)
-            if root_i != root_j:
-                parent[root_j] = root_i
-        # -------------------------------------------------------------
+ def union(i: int, j: int):
+ root_i = find(i)
+ root_j = find(j)
+ if root_i != root_j:
+ parent[root_j] = root_i
+ # -------------------------------------------------------------
 
-        # Heuristic time gaps for clustering
-        MAX_IP_GAP = timedelta(seconds=60)
-        MAX_PID_GAP = timedelta(seconds=10)
-        MAX_INTERLEAVE_GAP = timedelta(seconds=2)
+ # Heuristic time gaps for clustering
+ MAX_IP_GAP = timedelta(seconds=60)
+ MAX_PID_GAP = timedelta(seconds=10)
+ MAX_INTERLEAVE_GAP = timedelta(seconds=2)
 
-        # State trackers for the single-pass algorithm
-        # These map an identifier (IP, PID) to the index of the last log seen with it.
-        last_idx_by_ip: Dict[str, int] = {}
-        last_idx_by_pid: Dict[str, int] = {}
+ # State trackers for the single-pass algorithm
+ # These map an identifier (IP, PID) to the index of the last log seen with it.
+ last_idx_by_ip: Dict[str, int] = {}
+ last_idx_by_pid: Dict[str, int] = {}
 
-        for i in range(num_logs):
-            current_log = self.processed_logs[i]
-            current_time = current_log['datetime']
+ for i in range(num_logs):
+ current_log = self.processed_logs[i]
+ current_time = current_log['datetime']
 
-            # Heuristic 1: Group by Client IP (External Events)
-            # This is the primary key for user-driven activity like web scanning.
-            ip = current_log.get('ip')
-            if ip:
-                if ip in last_idx_by_ip:
-                    last_idx = last_idx_by_ip[ip]
-                    last_time = self.processed_logs[last_idx]['datetime']
-                    if current_time - last_time <= MAX_IP_GAP:
-                        union(i, last_idx)
-                last_idx_by_ip[ip] = i
+ # Heuristic 1: Group by Client IP (External Events)
+ # This is the primary key for user-driven activity like web scanning.
+ ip = current_log.get('ip')
+ if ip:
+ if ip in last_idx_by_ip:
+ last_idx = last_idx_by_ip[ip]
+ last_time = self.processed_logs[last_idx]['datetime']
+ if current_time - last_time <= MAX_IP_GAP:
+ union(i, last_idx)
+ last_idx_by_ip[ip] = i
 
-            # Heuristic 2: Group by Process ID (Atomic Internal Operations)
-            # This groups logs generated by the same Apache worker process.
-            pid = current_log.get('PID')
-            if pid:
-                if pid in last_idx_by_pid:
-                    last_idx = last_idx_by_pid[pid]
-                    last_time = self.processed_logs[last_idx]['datetime']
-                    if current_time - last_time <= MAX_PID_GAP:
-                        union(i, last_idx)
-                last_idx_by_pid[pid] = i
-            
-            # Heuristic 3: Group interleaved internal events
-            # This captures internal logs (no IP) that are direct consequences
-            # of a preceding event (e.g., an error caused by a request).
-            if i > 0 and not ip:
-                prev_idx = i - 1
-                prev_time = self.processed_logs[prev_idx]['datetime']
-                if current_time - prev_time <= MAX_INTERLEAVE_GAP:
-                    union(i, prev_idx)
+ # Heuristic 2: Group by Process ID (Atomic Internal Operations)
+ # This groups logs generated by the same Apache worker process.
+ pid = current_log.get('PID')
+ if pid:
+ if pid in last_idx_by_pid:
+ last_idx = last_idx_by_pid[pid]
+ last_time = self.processed_logs[last_idx]['datetime']
+ if current_time - last_time <= MAX_PID_GAP:
+ union(i, last_idx)
+ last_idx_by_pid[pid] = i
+ 
+ # Heuristic 3: Group interleaved internal events
+ # This captures internal logs (no IP) that are direct consequences
+ # of a preceding event (e.g., an error caused by a request).
+ if i > 0 and not ip:
+ prev_idx = i - 1
+ prev_time = self.processed_logs[prev_idx]['datetime']
+ if current_time - prev_time <= MAX_INTERLEAVE_GAP:
+ union(i, prev_idx)
 
-        # --- Post-processing: Build final event structures ---
-        
-        # Group original indices by their cluster's root parent
-        clusters: Dict[int, List[int]] = {}
-        for i in range(num_logs):
-            root = find(i)
-            original_index = self.processed_logs[i]['original_index']
-            if root not in clusters:
-                clusters[root] = []
-            clusters[root].append(original_index)
+ # --- Post-processing: Build final event structures ---
+ 
+ # Group original indices by their cluster's root parent
+ clusters: Dict[int, List[int]] = {}
+ for i in range(num_logs):
+ root = find(i)
+ original_index = self.processed_logs[i]['original_index']
+ if root not in clusters:
+ clusters[root] = []
+ clusters[root].append(original_index)
 
-        # The final list of security events
-        security_events: List[List[int]] = list(clusters.values())
-        
-        # Sort logs within each event by their original index for consistency
-        for event in security_events:
-            event.sort()
+ # The final list of security events
+ security_events: List[List[int]] = list(clusters.values())
+ 
+ # Sort logs within each event by their original index for consistency
+ for event in security_events:
+ event.sort()
 
-        # Create the mapping from original log index to the new event ID
-        log_index_to_event_id: Dict[int, int] = {}
-        for event_id, event_indices in enumerate(security_events):
-            for log_index in event_indices:
-                log_index_to_event_id[log_index] = event_id
+ # Create the mapping from original log index to the new event ID
+ log_index_to_event_id: Dict[int, int] = {}
+ for event_id, event_indices in enumerate(security_events):
+ for log_index in event_indices:
+ log_index_to_event_id[log_index] = event_id
 
-        return security_events, log_index_to_event_id
+ return security_events, log_index_to_event_id

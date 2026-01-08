@@ -1,4 +1,4 @@
-# ./event_refinement/event_refiner.py
+#./event_refinement/event_refiner.py
 
 import os
 import json
@@ -17,7 +17,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.config import Config
 from data_preprocessing.unified_encoder import UnifiedLogEncoder
 from event_refinement.model.bi_directional_log_mamba import BiDirectionalLogMamba
-
 
 class EventRefiner:
  def __init__(self, config: "Config", model: "BiDirectionalLogMamba", encoder: "UnifiedLogEncoder", raw_logs: List[Dict]):
@@ -93,13 +92,13 @@ class EventRefiner:
  sessions_by_day[self.raw_logs[session[0]]['_datetime'].date()].append(session)
  return {day: sessions_by_day[day] for day in sorted(sessions_by_day.keys())}
  
- def _get_param_values(self, log_idx: int, keys: List[str]) -> Tuple[Any, ...]:
+ def _get_param_values(self, log_idx: int, keys: List[str]) -> Tuple[Any,...]:
  log = self.raw_logs[log_idx]
  return tuple(log.get(key) for key in keys)
 
  def _split_based_on_parameter_rules(self, sessions: List[List[int]]) -> List[List[int]]:
  """
- According toParameterRulesplitevent,samewhen保证when序性并合理processNoneLog.
+ According toParameterRulesplitevent,samewhenwhenpropertytogetherprocessNoneLog.
  """
  if not self.param_rules:
  return sessions
@@ -114,12 +113,12 @@ class EventRefiner:
  num_sessions_before = len(sessions)
  
  for session in sessions:
- # session 已经is按when间Sort
+ # session iswhenSort
  if len(session) <= 1:
  if session: final_sessions.append(session)
  continue
 
- # 1. According to主属性Value对Log进lineGroup
+ # 1. According topropertyValueLoglineGroup
  groups: Dict[Optional[Tuple], List[int]] = defaultdict(list)
  for log_idx in session:
  primary_values = self._get_param_values(log_idx, primary_keys)
@@ -130,11 +129,11 @@ class EventRefiner:
  final_sessions.append(session)
  continue
 
- # 2. splitevent,并分离出主属性asNoneLog
+ # 2. splitevent,splitoutpropertyasNoneLog
  base_sessions = [grp for key, grp in groups.items() if key is not None]
  logs_to_redistribute = groups.get(None, [])
 
- # 3. times属性归并：尝试willNoneLogAccording totimes要属性归并to已split子eventin
+ # 3. timesproperty：willNoneLogAccording totimespropertytospliteventin
  if logs_to_redistribute and secondary_keys and base_sessions:
  secondary_value_map: Dict[Tuple, int] = {}
  for i, sub_session in enumerate(base_sessions):
@@ -153,21 +152,21 @@ class EventRefiner:
  unassigned_logs.append(log_idx)
  logs_to_redistribute = unassigned_logs
 
- # 4. 【NewLogic】process剩余No法归并NoneLog：will它们MergetoMax子eventin
+ # 4. 【NewLogic】processNoNoneLog：willMergetoMaxeventin
  if logs_to_redistribute and base_sessions:
- # 找toMax子event作as“主event”
+ # toMaxeventas“event”
  largest_session_idx = max(range(len(base_sessions)), key=lambda i: len(base_sessions[i]))
- # willNo法归并Log全部并入主event
+ # willNoLogevent
  base_sessions[largest_session_idx].extend(logs_to_redistribute)
- # 【关键】Merge后必须重NewSort以维持when序性
+ # 【keykey】MergebackwardNewSortholdwhenproperty
  base_sessions[largest_session_idx].sort()
  elif logs_to_redistribute:
- # Ifsplit后没hasbase_sessions（allLog主属性都asNone）,then它们本身就isoneevent
+ # Ifsplitbackwardhasbase_sessions（allLogpropertyasNone）,thenisoneevent
  final_sessions.append(logs_to_redistribute)
 
  final_sessions.extend(base_sessions)
 
- # 5. 【关键】对all最终GenerateeventList按Startwhen间进lineSort,Ensure后续Stepinputiswhen序positive确
+ # 5. 【keykey】allGenerateeventListStartwhenlineSort,EnsurebackwardStepinputiswhenpositive
  final_sessions.sort(key=lambda s: s[0] if s else float('inf'))
  
  num_sessions_after = len(final_sessions)
@@ -181,7 +180,7 @@ class EventRefiner:
  if session_len < 2:
  return [True] * session_len
 
- # 1. prepare备原始Data Tensor
+ # 1. prepareprepareData Tensor
  original_encoded = [self.encoder.encode(self.raw_logs[i]) for i in session_indices]
  original_template_ids = torch.tensor([enc['template_id'] for enc in original_encoded], dtype=torch.long)
  
@@ -197,9 +196,9 @@ class EventRefiner:
  end_idx = min(i + batch_size, session_len)
  current_batch_size = end_idx - start_idx
  
- # --- 分support A: Transformer Model (Use滑动Window) ---
+ # --- splitsupport A: Transformer Model (UseWindow) ---
  if self.is_transformer:
- # Build batch List,Each元素is截取后Window
+ # Build batch List,EachisgetbackwardWindow
  batch_templates_list = []
  batch_params_list = []
  batch_mask_indices = []
@@ -207,27 +206,27 @@ class EventRefiner:
  for k in range(current_batch_size):
  target_idx_in_session = start_idx + k
  
- # CalculateWindow范围：以 target asin心
+ # CalculateWindow： target asincenter
  half_window = self.max_seq_len // 2
  win_start = max(0, target_idx_in_session - half_window)
  win_end = min(session_len, win_start + self.max_seq_len)
  
- # If右边界越界,且左边还hasNull间,往左移动Window以填满 max_seq_len
+ # If,hasNull,Window max_seq_len
  if (win_end - win_start) < self.max_seq_len and win_start > 0:
  win_start = max(0, win_end - self.max_seq_len)
  
- # 切片
+ # 
  template_slice = original_template_ids[win_start:win_end]
  param_slice = padded_params[win_start:win_end]
  
- # Calculate mask in切片in相对position
+ # Calculate mask ininposition
  relative_mask_idx = target_idx_in_session - win_start
  
  batch_templates_list.append(template_slice)
  batch_params_list.append(param_slice)
  batch_mask_indices.append(relative_mask_idx)
 
- # Pad batches (因as Session 头尾Window可能不足 max_seq_len)
+ # Pad batches (as Session Windowability max_seq_len)
  batch_template_ids = torch.nn.utils.rnn.pad_sequence(
  batch_templates_list, batch_first=True, padding_value=self.encoder.template_to_id.get(self.config.PAD_TOKEN, 0)
  )
@@ -235,20 +234,20 @@ class EventRefiner:
  batch_params_list, batch_first=True, padding_value=self.encoder.param_to_id.get(self.config.PAD_TOKEN, 0)
  )
  
- mask_seq_indices = torch.tensor(batch_mask_indices) # 相对position
+ mask_seq_indices = torch.tensor(batch_mask_indices) # position
  mask_batch_indices = torch.arange(current_batch_size)
 
- # --- 分support B: Mamba / RNN Model (全量上下文) ---
+ # --- splitsupport B: Mamba / RNN Model (amountunder) ---
  else:
- # 保持原hasLogic：directly复制整 Session
+ # holdhasLogic：directlyrestore Session
  batch_template_ids = original_template_ids.repeat(current_batch_size, 1)
  batch_param_ids = padded_params.unsqueeze(0).repeat(current_batch_size, 1, 1)
  
  mask_batch_indices = torch.arange(current_batch_size)
- mask_seq_indices = torch.arange(start_idx, end_idx) # 绝对position
+ mask_seq_indices = torch.arange(start_idx, end_idx) # position
 
- # --- 公共推理Logic ---
- # 应用 Mask
+ # --- Logic ---
+ # use Mask
  batch_template_ids[mask_batch_indices, mask_seq_indices] = self.mask_template_id
  
  batch_template_ids = batch_template_ids.to(self.config.device)
@@ -258,8 +257,8 @@ class EventRefiner:
  # Model forward
  mlm_logits, _, _ = self.model(batch_template_ids, batch_param_ids)
 
- # Get Mask positionPredict结果
- target_logits = mlm_logits[mask_batch_indices, mask_seq_indices, :]
+ # Get Mask positionPredict
+ target_logits = mlm_logits[mask_batch_indices, mask_seq_indices,:]
  target_template_ids = original_template_ids[start_idx:end_idx].to(self.config.device)
  
  _, top_k_indices = torch.topk(target_logits, k=self.config.refiner_top_k, dim=-1)
@@ -269,7 +268,7 @@ class EventRefiner:
 
  final_is_in_top_k = torch.cat(all_is_in_top_k)
  
- # process未知模板 (-1)
+ # processtemplateboard (-1)
  final_is_in_top_k[original_template_ids == -1] = True
  
  return final_is_in_top_k.tolist()
@@ -380,8 +379,8 @@ class EventRefiner:
 
  def refine(self, initial_sessions: List[List[int]]) -> List[List[int]]:
  """
- 【V7.1 最终版Optimize流程】
- ExecuteeventOptimize,包含ParameterRulesplit、语义切分and多场景Merge.
+ 【V7.1 versionOptimize】
+ ExecuteeventOptimize,ParameterRulesplit、languagesplitandMerge.
  """
  logging.info(f"Starting refinement for {len(initial_sessions)} initial sessions...")
  
@@ -394,16 +393,16 @@ class EventRefiner:
  for day, daily_sessions in progress_bar:
  progress_bar.set_postfix_str(f"Day {day}, {len(daily_sessions)} sessions")
  
- # Step A: ParameterRulesplit (硬Rule优先,已fixwhen序问题)
+ # Step A: ParameterRulesplit (Rule,fixwhentitle)
  sessions_after_param_split = self._split_based_on_parameter_rules(daily_sessions)
  
- # Step B: 语义切分 (Model软Rule,现ininputiswhen序positive确)
+ # Step B: languagesplit (ModelRule,ininputiswhenpositive)
  sessions_after_semantic_split = self._split_based_on_belongingness(sessions_after_param_split)
  
- # Step C: [保障性Sort] 再timesSort,EnsureMergeLogicinput绝对positive确
+ # Step C: [propertySort] timesSort,EnsureMergeLogicinputpositive
  sessions_after_semantic_split.sort(key=lambda s: s[0] if s else float('inf'))
 
- # Step D: 多场景Merge
+ # Step D: Merge
  sessions_after_merge = self._merge_adjacent_sessions(sessions_after_semantic_split)
  
  all_refined_sessions_internal.extend(sessions_after_merge)

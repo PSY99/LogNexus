@@ -10,395 +10,394 @@ from collections import defaultdict
 #==============================================================================#
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
-    pid = log.get('PID')
-    if pid is not None:
-        return [f"PID_{pid}"]
-    return []
+ pid = log.get('PID')
+ if pid is not None:
+ return [f"PID_{pid}"]
+ return []
 
 def rule_2_logs_that_lack_a_pid_such_as_those_from_the_kernel(log: Dict) -> List[str]:
-    pid = log.get('PID', None)
-    process_name = log.get('ProcessName', '').lower()
-    
-    # Check if PID is missing and process name is one of the system-level ones
-    if pid is None and process_name in {'kernel', 'network', 'shutdown', 'init'}:
-        return ['EVENT_CORE']
-    
-    return []
+ pid = log.get('PID', None)
+ process_name = log.get('ProcessName', '').lower()
+ 
+ # Check if PID is missing and process name is one of the system-level ones
+ if pid is None and process_name in {'kernel', 'network', 'shutdown', 'init'}:
+ return ['EVENT_CORE']
+ 
+ return []
 
 def rule_3_merge_event_cores_rule_for_network_attackscan_afte(log: Dict) -> List[str]:
-    # Define failure templates to match
-    failure_templates = {
-        'authentication failure',
-        'connection unexpectedly closed',
-        'peer died',
-        'probable port-scan',
-        'Connection from <*> on illegal port',
-        'Authentication failed from <*>',
-        'Client hung up - probable port-scan',
-        'getpeername (ftpd): Transport endpoint is not connected'
-    }
+ # Define failure templates to match
+ failure_templates = {
+ 'authentication failure',
+ 'connection unexpectedly closed',
+ 'peer died',
+ 'probable port-scan',
+ 'Connection from <*> on illegal port',
+ 'Authentication failed from <*>',
+ 'Client hung up - probable port-scan',
+ 'getpeername (ftpd): Transport endpoint is not connected'
+ }
 
-    # Extract relevant fields
-    template = log.get('EventTemplate', '').lower()
-    ip = log.get('ip', '')
-    rhost_list = log.get('rhost', [])
-    parameters = log.get('Parameters', [])
+ # Extract relevant fields
+ template = log.get('EventTemplate', '').lower()
+ ip = log.get('ip', '')
+ rhost_list = log.get('rhost', [])
+ parameters = log.get('Parameters', [])
 
-    # Blacklist of common non-relevant parameter values
-    blacklist = {'root', 'admin', 'user', 'guest', 'unknown', 'localhost', '127.0.0.1'}
+ # Blacklist of common non-relevant parameter values
+ blacklist = {'root', 'admin', 'user', 'guest', 'unknown', 'localhost', '127.0.0.1'}
 
-    # Check if the template matches any failure pattern
-    if not any(pattern.lower() in template for pattern in failure_templates):
-        return []
+ # Check if the template matches any failure pattern
+ if not any(pattern.lower() in template for pattern in failure_templates):
+ return []
 
-    # Build list of keys based on IP or rhost
-    keys = []
+ # Build list of keys based on IP or rhost
+ keys = []
 
-    # Add IP-based key if available and valid
-    if ip and ip.strip() and ip != '0.0.0.0':
-        keys.append(f"IP_{ip}")
+ # Add IP-based key if available and valid
+ if ip and ip.strip() and ip != '0.0.0.0':
+ keys.append(f"IP_{ip}")
 
-    # Add rhost-based keys if available
-    for host in rhost_list:
-        if host and host.strip() and host != 'localhost' and host != '127.0.0.1':
-            # Normalize FQDN-like entries
-            normalized_host = host.strip().lower()
-            if normalized_host not in blacklist:
-                keys.append(f"RHOST_{normalized_host}")
+ # Add rhost-based keys if available
+ for host in rhost_list:
+ if host and host.strip() and host != 'localhost' and host != '127.0.0.1':
+ # Normalize FQDN-like entries
+ normalized_host = host.strip().lower()
+ if normalized_host not in blacklist:
+ keys.append(f"RHOST_{normalized_host}")
 
-    # Extract non-blacklisted parameters as potential linking keys
-    for param in parameters:
-        if param and param.strip() and param.lower() not in blacklist:
-            keys.append(f"PARAM_{param.strip()}")
+ # Extract non-blacklisted parameters as potential linking keys
+ for param in parameters:
+ if param and param.strip() and param.lower() not in blacklist:
+ keys.append(f"PARAM_{param.strip()}")
 
-    # If no valid keys, return empty list
-    if not keys:
-        return []
+ # If no valid keys, return empty list
+ if not keys:
+ return []
 
-    # Return all extracted keys with composite format using IP or rhost as source identifier
-    # Since we are stateless, we only extract keys based on current log entry
-    # Composite key format: TYPE_SOURCE_value
-    # We use IP or RHOST as the source identifier
-    result = []
-    for key in keys:
-        if key.startswith("IP_"):
-            result.append(key)
-        elif key.startswith("RHOST_"):
-            result.append(key)
+ # Return all extracted keys with composite format using IP or rhost as source identifier
+ # Since we are stateless, we only extract keys based on current log entry
+ # Composite key format: TYPE_SOURCE_value
+ # We use IP or RHOST as the source identifier
+ result = []
+ for key in keys:
+ if key.startswith("IP_"):
+ result.append(key)
+ elif key.startswith("RHOST_"):
+ result.append(key)
 
-    # Also include a composite key combining IP and Template if both exist
-    if ip and ip.strip() and ip != '0.0.0.0':
-        template_key = f"IP_TEMPLATE_{ip}_{template}"
-        result.append(template_key)
+ # Also include a composite key combining IP and Template if both exist
+ if ip and ip.strip() and ip != '0.0.0.0':
+ template_key = f"IP_TEMPLATE_{ip}_{template}"
+ result.append(template_key)
 
-    # Include rhost + template composite if rhost exists
-    for host in rhost_list:
-        if host and host.strip() and host != 'localhost' and host != '127.0.0.1':
-            normalized_host = host.strip().lower()
-            if normalized_host not in blacklist:
-                rhost_template_key = f"RHOST_TEMPLATE_{normalized_host}_{template}"
-                result.append(rhost_template_key)
+ # Include rhost + template composite if rhost exists
+ for host in rhost_list:
+ if host and host.strip() and host != 'localhost' and host != '127.0.0.1':
+ normalized_host = host.strip().lower()
+ if normalized_host not in blacklist:
+ rhost_template_key = f"RHOST_TEMPLATE_{normalized_host}_{template}"
+ result.append(rhost_template_key)
 
-    return result
+ return result
 
 def rule_4_boundary_rule_by_state_change_an_event_core_repres(log: Dict) -> List[str]:
-    # Check if the log entry represents a successful login event
-    event_template = log.get('EventTemplate', '')
-    parameters = log.get('Parameters', [])
-    
-    # Define patterns for successful login events (e.g., 'sshd(pam_unix): session opened for user')
-    success_login_patterns = [
-        'session opened for user',
-        'session opened for',
-        'session for user',
-        'session established for user'
-    ]
-    
-    # Check if the EventTemplate contains any of the success login patterns
-    is_successful_login = any(pattern in event_template.lower() for pattern in success_login_patterns)
-    
-    # If it's a successful login, extract the user from parameters if available
-    if is_successful_login:
-        # Extract user from parameters (assuming user is the first non-empty parameter that isn't a common blacklisted word)
-        blacklisted_words = {'root', 'admin', 'system', 'daemon', 'bin', 'nobody', 'guest'}
-        user = None
-        for param in parameters:
-            if param and param.lower() not in blacklisted_words:
-                user = param
-                break
-        
-        # If a valid user is found, create a linking key
-        if user:
-            return [f"USER_SESSION_{user}"]
-    
-    # If not a successful login, no keys are extracted
-    return []
+ # Check if the log entry represents a successful login event
+ event_template = log.get('EventTemplate', '')
+ parameters = log.get('Parameters', [])
+ 
+ # Define patterns for successful login events (e.g., 'sshd(pam_unix): session opened for user')
+ success_login_patterns = [
+ 'session opened for user',
+ 'session opened for',
+ 'session for user',
+ 'session established for user'
+ ]
+ 
+ # Check if the EventTemplate contains any of the success login patterns
+ is_successful_login = any(pattern in event_template.lower() for pattern in success_login_patterns)
+ 
+ # If it's a successful login, extract the user from parameters if available
+ if is_successful_login:
+ # Extract user from parameters (assuming user is the first non-empty parameter that isn't a common blacklisted word)
+ blacklisted_words = {'root', 'admin', 'system', 'daemon', 'bin', 'nobody', 'guest'}
+ user = None
+ for param in parameters:
+ if param and param.lower() not in blacklisted_words:
+ user = param
+ break
+ 
+ # If a valid user is found, create a linking key
+ if user:
+ return [f"USER_SESSION_{user}"]
+ 
+ # If not a successful login, no keys are extracted
+ return []
 
 def rule_5_merge_event_cores_rule_for_system_boot_identify_a_(log: Dict) -> List[str]:
-    event_template = log.get('EventTemplate', '')
-    process_name = log.get('ProcessName', '')
-    parameters = log.get('Parameters', [])
-    
-    # Check for trigger templates
-    if event_template.strip() in ['syslogd <*>: restart.', 'Linux version <*> (<*>) (gcc version <*> (Red Hat Linux <*>))']:
-        return ['EVENTCORE_SystemBootTrigger']
-    
-    # Check for Event Cores that should be merged with the trigger
-    core_templates = [
-        'startup succeeded',
-        'Version <*> Starting',
-        'Initializing',
-        'Registered protocol family',
-        'Bringing up loopback interface',
-        'Setting network parameters',
-        'Starting background readahead',
-        'klogd startup succeeded'
-    ]
-    
-    if process_name == 'kernel' or any(core in event_template for core in core_templates):
-        # Extract relevant parameters, filtering out common blacklisted words
-        blacklisted = {'<*>', '%', 'root', 'user', 'system'}
-        filtered_params = [p for p in parameters if p not in blacklisted and p.strip()]
-        
-        # Create composite key based on template and parameters
-        template_key = event_template.replace('<*>', 'value').replace('%', 'value')
-        param_key = '_'.join(filtered_params) if filtered_params else 'unknown'
-        
-        return [f"EVENTCORE_KERNEL_{template_key}_{param_key}"]
-    
-    return []
+ event_template = log.get('EventTemplate', '')
+ process_name = log.get('ProcessName', '')
+ parameters = log.get('Parameters', [])
+ 
+ # Check for trigger templates
+ if event_template.strip() in ['syslogd <*>: restart.', 'Linux version <*> (<*>) (gcc version <*> (Red Hat Linux <*>))']:
+ return ['EVENTCORE_SystemBootTrigger']
+ 
+ # Check for Event Cores that should be merged with the trigger
+ core_templates = [
+ 'startup succeeded',
+ 'Version <*> Starting',
+ 'Initializing',
+ 'Registered protocol family',
+ 'Bringing up loopback interface',
+ 'Setting network parameters',
+ 'Starting background readahead',
+ 'klogd startup succeeded'
+ ]
+ 
+ if process_name == 'kernel' or any(core in event_template for core in core_templates):
+ # Extract relevant parameters, filtering out common blacklisted words
+ blacklisted = {'<*>', '%', 'root', 'user', 'system'}
+ filtered_params = [p for p in parameters if p not in blacklisted and p.strip()]
+ 
+ # Create composite key based on template and parameters
+ template_key = event_template.replace('<*>', 'value').replace('%', 'value')
+ param_key = '_'.join(filtered_params) if filtered_params else 'unknown'
+ 
+ return [f"EVENTCORE_KERNEL_{template_key}_{param_key}"]
+ 
+ return []
 
 def rule_6_merge_event_cores_rule_for_system_shutdown_identif(log: Dict) -> List[str]:
-    event_template = log.get('EventTemplate', '').strip()
-    parameters = log.get('Parameters', [])
-    keys = []
+ event_template = log.get('EventTemplate', '').strip()
+ parameters = log.get('Parameters', [])
+ keys = []
 
-    # Check for trigger events
-    if event_template in ['shutting down for system reboot', 'Switching to runlevel: 6']:
-        keys.append("EVENT_TRIGGER_System_Shutdown")
+ # Check for trigger events
+ if event_template in ['shutting down for system reboot', 'Switching to runlevel: 6']:
+ keys.append("EVENT_TRIGGER_System_Shutdown")
 
-    # Check for event cores (mergeable logs)
-    core_triggers = [
-        'shutdown succeeded',
-        'terminating',
-        'exiting',
-        'received signal 15',
-        'un-registering and exiting',
-        'klogd shutdown succeeded',
-        'Kernel logging (proc) stopped',
-        'Kernel log daemon terminating'
-    ]
-    
-    if any(core in event_template for core in core_triggers):
-        keys.append("EVENT_CORE_System_Shutdown")
+ # Check for event cores (mergeable logs)
+ core_triggers = [
+ 'shutdown succeeded',
+ 'terminating',
+ 'exiting',
+ 'received signal 15',
+ 'un-registering and exiting',
+ 'klogd shutdown succeeded',
+ 'Kernel logging (proc) stopped',
+ 'Kernel log daemon terminating'
+ ]
+ 
+ if any(core in event_template for core in core_triggers):
+ keys.append("EVENT_CORE_System_Shutdown")
 
-    # Extract non-blacklisted parameters as linking keys
-    blacklisted_words = {'root', 'admin', 'system', 'user', 'unknown', 'local'}
-    for param in parameters:
-        if param and param not in blacklisted_words:
-            keys.append(f"PARAM_{param}")
+ # Extract non-blacklisted parameters as linking keys
+ blacklisted_words = {'root', 'admin', 'system', 'user', 'unknown', 'local'}
+ for param in parameters:
+ if param and param not in blacklisted_words:
+ keys.append(f"PARAM_{param}")
 
-    return keys
+ return keys
 
 def rule_7_state_transition_boundary_rule_for_sessions_an_eve(log: Dict) -> List[str]:
-    keys = []
-    pid = log.get('PID', None)
-    event_template = log.get('EventTemplate', '')
-    parameters = log.get('Parameters', [])
-    
-    # Check for session opened for user
-    if 'session opened for user' in event_template:
-        if pid is not None:
-            keys.append(f"PID_{pid}")
-    
-    # Check for session closed for user
-    if 'session closed for user' in event_template:
-        if pid is not None:
-            keys.append(f"PID_{pid}")
-    
-    # Extract non-blacklisted parameters as linking keys
-    blacklisted_words = {'root', 'admin', 'system', 'local', 'unknown', 'null'}
-    for param in parameters:
-        if param and param.lower() not in blacklisted_words:
-            keys.append(f"PARAM_{param}")
-    
-    return keys
+ keys = []
+ pid = log.get('PID', None)
+ event_template = log.get('EventTemplate', '')
+ parameters = log.get('Parameters', [])
+ 
+ # Check for session opened for user
+ if 'session opened for user' in event_template:
+ if pid is not None:
+ keys.append(f"PID_{pid}")
+ 
+ # Check for session closed for user
+ if 'session closed for user' in event_template:
+ if pid is not None:
+ keys.append(f"PID_{pid}")
+ 
+ # Extract non-blacklisted parameters as linking keys
+ blacklisted_words = {'root', 'admin', 'system', 'local', 'unknown', 'null'}
+ for param in parameters:
+ if param and param.lower() not in blacklisted_words:
+ keys.append(f"PARAM_{param}")
+ 
+ return keys
 
 def rule_8_merge_event_cores_rule_for_service_restart_identif(log: Dict) -> List[str]:
-    log_content = log.get('LogContent', '')
-    process_name = log.get('ProcessName', '')
-    parameters = log.get('Parameters', [])
-    
-    # Define shutdown patterns
-    shutdown_patterns = [
-        'exiting', 'terminating', 'Stopping', 'shutdown succeeded', 'exiting on signal'
-    ]
-    
-    # Define startup patterns
-    startup_patterns = [
-        'starting', 'startup succeeded', 'started successfully'
-    ]
-    
-    # Extract potential key components
-    keys = []
-    
-    # Check for shutdown event
-    if any(pattern in log_content.lower() for pattern in shutdown_patterns):
-        if process_name:
-            keys.append(f"PROCESS_{process_name}")
-    
-    # Check for startup event
-    if any(pattern in log_content.lower() for pattern in startup_patterns):
-        if process_name:
-            keys.append(f"PROCESS_{process_name}")
-    
-    # Return all extracted keys (will be used by orchestrator to match within 60s)
-    return keys
+ log_content = log.get('LogContent', '')
+ process_name = log.get('ProcessName', '')
+ parameters = log.get('Parameters', [])
+ 
+ # Define shutdown patterns
+ shutdown_patterns = [
+ 'exiting', 'terminating', 'Stopping', 'shutdown succeeded', 'exiting on signal'
+ ]
+ 
+ # Define startup patterns
+ startup_patterns = [
+ 'starting', 'startup succeeded', 'started successfully'
+ ]
+ 
+ # Extract potential key components
+ keys = []
+ 
+ # Check for shutdown event
+ if any(pattern in log_content.lower() for pattern in shutdown_patterns):
+ if process_name:
+ keys.append(f"PROCESS_{process_name}")
+ 
+ # Check for startup event
+ if any(pattern in log_content.lower() for pattern in startup_patterns):
+ if process_name:
+ keys.append(f"PROCESS_{process_name}")
+ 
+ # Return all extracted keys (will be used by orchestrator to match within 60s)
+ return keys
 
 def rule_9_merge_event_cores_rule_for_kernel_errors_identify_(log: Dict) -> List[str]:
-    keys = []
-    template = log.get('EventTemplate', '')
-    process_name = log.get('ProcessName', '')
-    parameters = log.get('Parameters', [])
-    
-    # Check for page allocation failure or Out of Memory killed process
-    if 'page allocation failure' in template or 'Out of Memory: Killed process' in template:
-        # Extract process name from parameters if available
-        process_name_match = None
-        for param in parameters:
-            if param and not any(bad in param.lower() for bad in ['root', 'admin', 'system', 'daemon']):
-                process_name_match = param
-                break
-        
-        # Create a key based on the event type and process name
-        if process_name_match:
-            keys.append(f"SYSTEM_UNDER_MEMORY_PRESSURE_{process_name_match}")
-        else:
-            keys.append("SYSTEM_UNDER_MEMORY_PRESSURE_UNKNOWN")
-    
-    # Check for kernel stack trace pattern [<>] <+>
-    if process_name == 'kernel' and '[<*>] <*>+<*>'.replace('<*>', '') in template:
-        # Extract the function name from the template (e.g., "do_page_fault+0x123")
-        parts = template.split('+')
-        if len(parts) > 1:
-            func_name = parts[0].strip()
-            # Avoid blacklisted common functions
-            if not any(bad in func_name.lower() for bad in ['kfree', 'kmalloc', 'panic', 'oops']):
-                keys.append(f"KERNEL_STACK_TRACE_{func_name}")
-    
-    return keys
+ keys = []
+ template = log.get('EventTemplate', '')
+ process_name = log.get('ProcessName', '')
+ parameters = log.get('Parameters', [])
+ 
+ # Check for page allocation failure or Out of Memory killed process
+ if 'page allocation failure' in template or 'Out of Memory: Killed process' in template:
+ # Extract process name from parameters if available
+ process_name_match = None
+ for param in parameters:
+ if param and not any(bad in param.lower() for bad in ['root', 'admin', 'system', 'daemon']):
+ process_name_match = param
+ break
+ 
+ # Create a key based on the event type and process name
+ if process_name_match:
+ keys.append(f"SYSTEM_UNDER_MEMORY_PRESSURE_{process_name_match}")
+ else:
+ keys.append("SYSTEM_UNDER_MEMORY_PRESSURE_UNKNOWN")
+ 
+ # Check for kernel stack trace pattern [<>] <+>
+ if process_name == 'kernel' and '[<*>] <*>+<*>'.replace('<*>', '') in template:
+ # Extract the function name from the template (e.g., "do_page_fault+0x123")
+ parts = template.split('+')
+ if len(parts) > 1:
+ func_name = parts[0].strip()
+ # Avoid blacklisted common functions
+ if not any(bad in func_name.lower() for bad in ['kfree', 'kmalloc', 'panic', 'oops']):
+ keys.append(f"KERNEL_STACK_TRACE_{func_name}")
+ 
+ return keys
 
 def rule_10_key_dimension_split_rule_when_applying_merging_rul(log: Dict) -> List[str]:
-    keys = []
-    ip = log.get('ip', None)
-    rhost_list = log.get('rhost', [])
-    
-    # Extract IP-based key if available
-    if ip:
-        keys.append(f"IP_{ip}")
-    
-    # Extract each rhost as a separate key
-    for rhost in rhost_list:
-        if rhost:
-            keys.append(f"IP_{rhost}")
-    
-    # If both IP and rhost are present, create a composite key to represent distinct external actors
-    if ip and rhost_list:
-        for rhost in rhost_list:
-            if rhost:
-                keys.append(f"IP_IP_{ip}_{rhost}")
-    
-    return keys
+ keys = []
+ ip = log.get('ip', None)
+ rhost_list = log.get('rhost', [])
+ 
+ # Extract IP-based key if available
+ if ip:
+ keys.append(f"IP_{ip}")
+ 
+ # Extract each rhost as a separate key
+ for rhost in rhost_list:
+ if rhost:
+ keys.append(f"IP_{rhost}")
+ 
+ # If both IP and rhost are present, create a composite key to represent distinct external actors
+ if ip and rhost_list:
+ for rhost in rhost_list:
+ if rhost:
+ keys.append(f"IP_IP_{ip}_{rhost}")
+ 
+ return keys
 
 def rule_11_merge_event_cores_rule_for_device_node_operations_(log: Dict) -> List[str]:
-    # Extract relevant fields with defaults
-    event_template = log.get('EventTemplate', '')
-    process_name = log.get('ProcessName', '')
-    parameters = log.get('Parameters', [])
-    ip = log.get('ip', '')
-    rhost = log.get('rhost', [])
+ # Extract relevant fields with defaults
+ event_template = log.get('EventTemplate', '')
+ process_name = log.get('ProcessName', '')
+ parameters = log.get('Parameters', [])
+ ip = log.get('ip', '')
+ rhost = log.get('rhost', [])
 
-    # Define the target templates and process
-    target_templates = [
-        'removing device node <*>',
-        'creating device node <*>',
-        'device node removed'
-    ]
-    
-    # Check if the event template matches any of the target templates
-    if not any(template in event_template for template in target_templates):
-        return []
+ # Define the target templates and process
+ target_templates = [
+ 'removing device node <*>',
+ 'creating device node <*>',
+ 'device node removed'
+ ]
+ 
+ # Check if the event template matches any of the target templates
+ if not any(template in event_template for template in target_templates):
+ return []
 
-    # Check if the process is 'udev'
-    if process_name != 'udev':
-        return []
+ # Check if the process is 'udev'
+ if process_name != 'udev':
+ return []
 
-    # Extract the device path from parameters (assuming it's the first non-empty parameter)
-    device_path = None
-    for param in parameters:
-        if param and not any(blacklisted in param.lower() for blacklisted in ['unknown', 'null', 'none', 'invalid']):
-            device_path = param.strip()
-            break
+ # Extract the device path from parameters (assuming it's the first non-empty parameter)
+ device_path = None
+ for param in parameters:
+ if param and not any(blacklisted in param.lower() for blacklisted in ['unknown', 'null', 'none', 'invalid']):
+ device_path = param.strip()
+ break
 
-    # If no valid device path found, return empty list
-    if not device_path:
-        return []
+ # If no valid device path found, return empty list
+ if not device_path:
+ return []
 
-    # Format the key as "TYPE_value" where TYPE is derived from the event template
-    # Use a consistent key type based on the action
-    if 'removing' in event_template or 'device node removed' in event_template:
-        key_type = 'DEVICE_NODE_REMOVAL'
-    elif 'creating' in event_template:
-        key_type = 'DEVICE_NODE_CREATION'
-    else:
-        key_type = 'DEVICE_NODE_MANAGEMENT'
+ # Format the key as "TYPE_value" where TYPE is derived from the event template
+ # Use a consistent key type based on the action
+ if 'removing' in event_template or 'device node removed' in event_template:
+ key_type = 'DEVICE_NODE_REMOVAL'
+ elif 'creating' in event_template:
+ key_type = 'DEVICE_NODE_CREATION'
+ else:
+ key_type = 'DEVICE_NODE_MANAGEMENT'
 
-    # Create the linking key using the format KEYTYPE_keyvalue
-    # Use the device path as the value
-    return [f"{key_type}_{device_path}"]
+ # Create the linking key using the format KEYTYPE_keyvalue
+ # Use the device path as the value
+ return [f"{key_type}_{device_path}"]
 
 def rule_12_merge_event_cores_rule_for_process_startupshutdown(log: Dict) -> List[str]:
-    # Extract relevant fields with defaults
-    process_name = log.get('ProcessName', '').strip()
-    event_template = log.get('EventTemplate', '').strip()
-    timestamp = log.get('Timestamp')
+ # Extract relevant fields with defaults
+ process_name = log.get('ProcessName', '').strip()
+ event_template = log.get('EventTemplate', '').strip()
+ timestamp = log.get('Timestamp')
 
-    # Define keywords for startup/shutdown success events
-    startup_success_keywords = ['started', 'startup succeeded', 'successfully started']
-    shutdown_success_keywords = ['stopped', 'shutdown succeeded', 'successfully stopped']
+ # Define keywords for startup/shutdown success events
+ startup_success_keywords = ['started', 'startup succeeded', 'successfully started']
+ shutdown_success_keywords = ['stopped', 'shutdown succeeded', 'successfully stopped']
 
-    # Check if this is a startup or shutdown success event
-    is_startup_success = any(kw in event_template.lower() for kw in startup_success_keywords)
-    is_shutdown_success = any(kw in event_template.lower() for kw in shutdown_success_keywords)
+ # Check if this is a startup or shutdown success event
+ is_startup_success = any(kw in event_template.lower() for kw in startup_success_keywords)
+ is_shutdown_success = any(kw in event_template.lower() for kw in shutdown_success_keywords)
 
-    # Only proceed if it's a startup or shutdown success event
-    if not (is_startup_success or is_shutdown_success):
-        return []
+ # Only proceed if it's a startup or shutdown success event
+ if not (is_startup_success or is_shutdown_success):
+ return []
 
-    # Define common blacklisted words to filter out from parameters
-    blacklisted_words = {'root', 'admin', 'user', 'system', 'daemon', 'unknown', 'local', 'localhost'}
+ # Define common blacklisted words to filter out from parameters
+ blacklisted_words = {'root', 'admin', 'user', 'system', 'daemon', 'unknown', 'local', 'localhost'}
 
-    # Extract parameters and filter out blacklisted ones
-    parameters = log.get('Parameters', [])
-    filtered_params = [p for p in parameters if p.lower() not in blacklisted_words]
+ # Extract parameters and filter out blacklisted ones
+ parameters = log.get('Parameters', [])
+ filtered_params = [p for p in parameters if p.lower() not in blacklisted_words]
 
-    # Create linking keys based on process name and template
-    keys = []
-    if process_name:
-        # Add key based on process name and event type
-        event_type = "STARTUP" if is_startup_success else "SHUTDOWN"
-        keys.append(f"PROCESS_LIFECYCLE_{process_name.upper()}_{event_type}")
+ # Create linking keys based on process name and template
+ keys = []
+ if process_name:
+ # Add key based on process name and event type
+ event_type = "STARTUP" if is_startup_success else "SHUTDOWN"
+ keys.append(f"PROCESS_LIFECYCLE_{process_name.upper()}_{event_type}")
 
-        # Add composite key with parameters if available
-        if filtered_params:
-            param_str = '_'.join(filtered_params)
-            keys.append(f"PROCESS_LIFECYCLE_{process_name.upper()}_{event_type}_{param_str}")
-        else:
-            keys.append(f"PROCESS_LIFECYCLE_{process_name.upper()}_{event_type}")
+ # Add composite key with parameters if available
+ if filtered_params:
+ param_str = '_'.join(filtered_params)
+ keys.append(f"PROCESS_LIFECYCLE_{process_name.upper()}_{event_type}_{param_str}")
+ else:
+ keys.append(f"PROCESS_LIFECYCLE_{process_name.upper()}_{event_type}")
 
-    # Return the list of extracted keys
-    return keys
-
+ # Return the list of extracted keys
+ return keys
 
 #==============================================================================#
 # --- Stage 4: Main Event Processor Framework ---
@@ -409,104 +408,103 @@ import datetime
 from collections import defaultdict
 
 class EventProcessor:
-    def __init__(self, logs: List[Dict]):
-        self.logs = logs
-        self.n = len(logs)
-        # Union-Find data structure
-        self.parent = list(range(self.n))
-        self.rank = [0] * self.n
-        # State tracking: key -> (last_index, last_timestamp)
-        self.key_state = {}
-        # Time window mapping by key prefix
-        self.time_windows = {
-            'PID': datetime.timedelta(seconds=60),
-            'IP_': datetime.timedelta(seconds=60),
-            'RHOST_': datetime.timedelta(seconds=60),
-            'PARAM_': datetime.timedelta(seconds=60),
-            'USER_SESSION_': datetime.timedelta(seconds=300),
-            'EVENT_CORE': datetime.timedelta(seconds=60),
-            'EVENTCORE_SystemBootTrigger': datetime.timedelta(seconds=120),
-            'EVENT_TRIGGER_System_Shutdown': datetime.timedelta(seconds=120),
-            'PROCESS_': datetime.timedelta(seconds=60),
-            'SYSTEM_UNDER_MEMORY_PRESSURE_': datetime.timedelta(seconds=60),
-            'KERNEL_STACK_TRACE_': datetime.timedelta(seconds=60),
-            'DEVICE_NODE_': datetime.timedelta(seconds=60),
-            'PROCESS_LIFECYCLE_': datetime.timedelta(seconds=60),
-            'IP_TEMPLATE_': datetime.timedelta(seconds=60),
-            'RHOST_TEMPLATE_': datetime.timedelta(seconds=60),
-            'LABEL_': datetime.timedelta(seconds=60),
-        }
+ def __init__(self, logs: List[Dict]):
+ self.logs = logs
+ self.n = len(logs)
+ # Union-Find data structure
+ self.parent = list(range(self.n))
+ self.rank = [0] * self.n
+ # State tracking: key -> (last_index, last_timestamp)
+ self.key_state = {}
+ # Time window mapping by key prefix
+ self.time_windows = {
+ 'PID': datetime.timedelta(seconds=60),
+ 'IP_': datetime.timedelta(seconds=60),
+ 'RHOST_': datetime.timedelta(seconds=60),
+ 'PARAM_': datetime.timedelta(seconds=60),
+ 'USER_SESSION_': datetime.timedelta(seconds=300),
+ 'EVENT_CORE': datetime.timedelta(seconds=60),
+ 'EVENTCORE_SystemBootTrigger': datetime.timedelta(seconds=120),
+ 'EVENT_TRIGGER_System_Shutdown': datetime.timedelta(seconds=120),
+ 'PROCESS_': datetime.timedelta(seconds=60),
+ 'SYSTEM_UNDER_MEMORY_PRESSURE_': datetime.timedelta(seconds=60),
+ 'KERNEL_STACK_TRACE_': datetime.timedelta(seconds=60),
+ 'DEVICE_NODE_': datetime.timedelta(seconds=60),
+ 'PROCESS_LIFECYCLE_': datetime.timedelta(seconds=60),
+ 'IP_TEMPLATE_': datetime.timedelta(seconds=60),
+ 'RHOST_TEMPLATE_': datetime.timedelta(seconds=60),
+ 'LABEL_': datetime.timedelta(seconds=60),
+ }
 
-    def find(self, x: int) -> int:
-        if self.parent[x] != x:
-            self.parent[x] = self.find(self.parent[x])
-        return self.parent[x]
+ def find(self, x: int) -> int:
+ if self.parent[x] != x:
+ self.parent[x] = self.find(self.parent[x])
+ return self.parent[x]
 
-    def union(self, x: int, y: int) -> None:
-        px, py = self.find(x), self.find(y)
-        if px == py:
-            return
-        if self.rank[px] < self.rank[py]:
-            px, py = py, px
-        self.parent[py] = px
-        if self.rank[px] == self.rank[py]:
-            self.rank[px] += 1
+ def union(self, x: int, y: int) -> None:
+ px, py = self.find(x), self.find(y)
+ if px == py:
+ return
+ if self.rank[px] < self.rank[py]:
+ px, py = py, px
+ self.parent[py] = px
+ if self.rank[px] == self.rank[py]:
+ self.rank[px] += 1
 
-    def get_time_window(self, key: str) -> datetime.timedelta:
-        for prefix in self.time_windows:
-            if key.startswith(prefix):
-                return self.time_windows[prefix]
-        return datetime.timedelta(seconds=60)
+ def get_time_window(self, key: str) -> datetime.timedelta:
+ for prefix in self.time_windows:
+ if key.startswith(prefix):
+ return self.time_windows[prefix]
+ return datetime.timedelta(seconds=60)
 
-    def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
-        # Reset state
-        self.key_state.clear()
-        # Initialize parent and rank (already done in __init__)
-        
-        # Process logs in chronological order
-        for idx, log in enumerate(self.logs):
-            timestamp = log.get('Timestamp')
-            if not isinstance(timestamp, datetime.datetime):
-                continue  # Skip invalid timestamps
-            
-            # Extract all keys from current log using provided rules
-            current_keys = []
-            for rule_func in rule_functions:
-                try:
-                    keys = rule_func(log)
-                    current_keys.extend(keys)
-                except Exception as e:
-                    continue  # Skip any rule that fails
+ def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
+ # Reset state
+ self.key_state.clear()
+ # Initialize parent and rank (already done in __init__)
+ 
+ # Process logs in chronological order
+ for idx, log in enumerate(self.logs):
+ timestamp = log.get('Timestamp')
+ if not isinstance(timestamp, datetime.datetime):
+ continue # Skip invalid timestamps
+ 
+ # Extract all keys from current log using provided rules
+ current_keys = []
+ for rule_func in rule_functions:
+ try:
+ keys = rule_func(log)
+ current_keys.extend(keys)
+ except Exception as e:
+ continue # Skip any rule that fails
 
-            # For each key, check if it was seen recently
-            for key in current_keys:
-                if key in self.key_state:
-                    prev_idx, prev_timestamp = self.key_state[key]
-                    time_diff = timestamp - prev_timestamp
-                    time_window = self.get_time_window(key)
-                    
-                    if time_diff <= time_window:
-                        # Merge current log with previous one
-                        self.union(idx, prev_idx)
-                
-                # Update the state for this key
-                self.key_state[key] = (idx, timestamp)
+ # For each key, check if it was seen recently
+ for key in current_keys:
+ if key in self.key_state:
+ prev_idx, prev_timestamp = self.key_state[key]
+ time_diff = timestamp - prev_timestamp
+ time_window = self.get_time_window(key)
+ 
+ if time_diff <= time_window:
+ # Merge current log with previous one
+ self.union(idx, prev_idx)
+ 
+ # Update the state for this key
+ self.key_state[key] = (idx, timestamp)
 
-        # Build final clusters using Union-Find
-        clusters = defaultdict(list)
-        for i in range(self.n):
-            root = self.find(i)
-            clusters[root].append(i)
+ # Build final clusters using Union-Find
+ clusters = defaultdict(list)
+ for i in range(self.n):
+ root = self.find(i)
+ clusters[root].append(i)
 
-        # Convert to required format
-        security_events = [sorted(cluster) for cluster in clusters.values()]
-        log_index_to_event_id = {}
-        for event_id, log_indices in enumerate(security_events):
-            for log_idx in log_indices:
-                log_index_to_event_id[log_idx] = event_id
+ # Convert to required format
+ security_events = [sorted(cluster) for cluster in clusters.values()]
+ log_index_to_event_id = {}
+ for event_id, log_indices in enumerate(security_events):
+ for log_idx in log_indices:
+ log_index_to_event_id[log_idx] = event_id
 
-        return security_events, log_index_to_event_id
-
+ return security_events, log_index_to_event_id
 
 # This list is used by the host system to know which functions to pass to the processor
 ALL_RULE_FUNCTIONS = [rule_1_group_all_logs_sharing_the_exact_same_process_id_p, rule_2_logs_that_lack_a_pid_such_as_those_from_the_kernel, rule_3_merge_event_cores_rule_for_network_attackscan_afte, rule_4_boundary_rule_by_state_change_an_event_core_repres, rule_5_merge_event_cores_rule_for_system_boot_identify_a_, rule_6_merge_event_cores_rule_for_system_shutdown_identif, rule_7_state_transition_boundary_rule_for_sessions_an_eve, rule_8_merge_event_cores_rule_for_service_restart_identif, rule_9_merge_event_cores_rule_for_kernel_errors_identify_, rule_10_key_dimension_split_rule_when_applying_merging_rul, rule_11_merge_event_cores_rule_for_device_node_operations_, rule_12_merge_event_cores_rule_for_process_startupshutdown]

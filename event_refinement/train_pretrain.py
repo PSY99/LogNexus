@@ -1,4 +1,4 @@
-# ./event_refinement/train_pretrain.py
+#./event_refinement/train_pretrain.py
 
 import os
 import logging
@@ -22,19 +22,19 @@ from event_refinement.model.bi_directional_log_mamba import BiDirectionalLogMamb
 # --- 【Newnew】EvaluatefunctionNumber,Used forValidateandTest ---
 def evaluate_model(model, dataloader, mlm_criterion, rpd_criterion, eco_criterion, config, device, description="Evaluate"):
  """
- ingivenDataset上EvaluateModel性能.
- 此functionNumber被重构出来,Used forValidation setandTest set,以避免code重复.
+ ingivenDatasetEvaluateModelpropertyability.
+ thisfunctionNumberstructureout,Used forValidation setandTest set,coderestore.
 
  Args:
- model (nn.Module): 要EvaluateModel.
- dataloader (DataLoader): DataLoad器 (ValidateorTest).
+ model (nn.Module): EvaluateModel.
+ dataloader (DataLoader): DataLoad (ValidateorTest).
  mlm_criterion, rpd_criterion, eco_criterion: LossfunctionNumber.
- config (Config): Config对象.
+ config (Config): Config.
  device (torch.device): 'cuda' or 'cpu'。
- description (str): tqdm 进度条描述文字.
+ description (str): tqdm .
 
  Returns:
- dict: 包含AverageLossand各项prepare确率Dictionary.
+ dict: AverageLossandprepareDictionary.
  """
  model.eval()
  
@@ -63,20 +63,20 @@ def evaluate_model(model, dataloader, mlm_criterion, rpd_criterion, eco_criterio
  
  total_loss += batch_loss.item()
 
- # Calculateprepare确率
- # MLM prepare确率
+ # Calculateprepare
+ # MLM prepare
  mlm_mask = mlm_labels != -100
  if mlm_mask.sum() > 0:
  mlm_preds = torch.argmax(mlm_logits, dim=-1)
  total_mlm_correct += (mlm_preds[mlm_mask] == mlm_labels[mlm_mask]).sum().item()
  total_mlm_count += mlm_mask.sum().item()
  
- # RPD prepare确率
+ # RPD prepare
  rpd_preds = (rpd_logits > 0).float()
  total_rpd_correct += (rpd_preds == rpd_labels).sum().item()
  total_rpd_count += rpd_labels.numel()
 
- # ECO prepare确率
+ # ECO prepare
  eco_preds = (eco_logits > 0).float()
  total_eco_correct += (eco_preds == eco_labels).sum().item()
  total_eco_count += eco_labels.numel()
@@ -95,7 +95,7 @@ def evaluate_model(model, dataloader, mlm_criterion, rpd_criterion, eco_criterio
 
 def pretrain_model(config: Config):
  """
- Execute LogMamba ModelpreTrain流程 (MLM, RPD, ECO),并in独立Test set上Evaluate最终Model.
+ Execute LogMamba ModelpreTrain (MLM, RPD, ECO),inindependentlyTest setEvaluateModel.
  """
  logging.info("Running in PRE-TRAIN mode for LogMamba.")
  swanlab.init(
@@ -104,7 +104,7 @@ def pretrain_model(config: Config):
  config=config.__dict__
  )
 
- # --- 1. prepare备Encode器 (Encoder) ---
+ # --- 1. prepareprepareEncode (Encoder) ---
  logging.info("Preparing UnifiedLogEncoder...")
  if os.path.exists(config.encoder_save_path):
  encoder = UnifiedLogEncoder.load(config.encoder_save_path)
@@ -119,12 +119,12 @@ def pretrain_model(config: Config):
  config.param_vocab_size = encoder.param_vocab_size
  logging.info(f"Encoder ready. Template vocab: {config.template_vocab_size}, Param vocab: {config.param_vocab_size}")
 
- # --- 2. prepare备Dataset (Dataset) ---
+ # --- 2. prepareprepareDataset (Dataset) ---
  logging.info("Loading raw data for pre-training...")
  raw_logs = get_raw_data_for_fitting(config)
  full_dataset = PretrainDataset(config, encoder, raw_logs)
 
- # --- 【修改】willDataset划分as 80% Train, 10% Validate, 10% Test ---
+ # --- 【fix】willDatasetsplitas 80% Train, 10% Validate, 10% Test ---
  train_size = int(0.8 * len(full_dataset))
  val_size = int(0.1 * len(full_dataset))
  test_size = len(full_dataset) - train_size - val_size
@@ -132,13 +132,13 @@ def pretrain_model(config: Config):
 
  train_dataloader = DataLoader(train_dataset, batch_size=config.batch_size, shuffle=True, collate_fn=PretrainDataset.collate_fn)
  val_dataloader = DataLoader(val_dataset, batch_size=config.batch_size, shuffle=False, collate_fn=PretrainDataset.collate_fn)
- test_dataloader = DataLoader(test_dataset, batch_size=config.batch_size, shuffle=False, collate_fn=PretrainDataset.collate_fn) # NewnewTestDataLoad器
+ test_dataloader = DataLoader(test_dataset, batch_size=config.batch_size, shuffle=False, collate_fn=PretrainDataset.collate_fn) # NewnewTestDataLoad
  
  logging.info(
  f"Datasets ready. Train: {len(train_dataset)}, Validation: {len(val_dataset)}, Test: {len(test_dataset)}"
  )
 
- # --- 3. initializeModel、LossfunctionNumberandOptimize器 ---
+ # --- 3. initializeModel、LossfunctionNumberandOptimize ---
  # model = LogMamba(config).to(config.device)
  model = BiDirectionalLogMamba(config).to(config.device)
  
@@ -148,7 +148,7 @@ def pretrain_model(config: Config):
 
  optimizer = AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
 
- # --- 4. Train循环 ---
+ # --- 4. Train ---
  logging.info("Starting pre-training...")
  best_val_loss = float('inf')
 
@@ -186,7 +186,7 @@ def pretrain_model(config: Config):
 
  total_train_loss += total_loss.item()
 
- # CalculateTrainprepare确率
+ # CalculateTrainprepare
  with torch.no_grad():
  mlm_mask = mlm_labels != -100
  if mlm_mask.sum() > 0:
@@ -202,7 +202,7 @@ def pretrain_model(config: Config):
  total_train_eco_correct += (eco_preds == eco_labels).sum().item()
  total_train_eco_count += eco_labels.numel()
 
- # Update tqdm 进度条
+ # Update tqdm 
  train_mlm_acc = total_train_mlm_correct / total_train_mlm_count if total_train_mlm_count > 0 else 0
  train_rpd_acc = total_train_rpd_correct / total_train_rpd_count if total_train_rpd_count > 0 else 0
  train_eco_acc = total_train_eco_correct / total_train_eco_count if total_train_eco_count > 0 else 0
@@ -227,7 +227,7 @@ def pretrain_model(config: Config):
  })
 
  # ==================== Validatestage ====================
- # --- 【修改】Call重构EvaluatefunctionNumber ---
+ # --- 【fix】CallstructureEvaluatefunctionNumber ---
  val_metrics = evaluate_model(
  model, val_dataloader, mlm_criterion, rpd_criterion, eco_criterion, 
  config, config.device, description=f"Epoch {epoch+1}/{config.epochs} [Val]"
@@ -251,7 +251,7 @@ def pretrain_model(config: Config):
  "Epoch": epoch + 1
  })
 
- # Save最佳Model
+ # SaveModel
  if avg_val_loss < best_val_loss:
  best_val_loss = avg_val_loss
  torch.save(model.state_dict(), config.mamba_model_save_path)
@@ -259,24 +259,24 @@ def pretrain_model(config: Config):
 
  logging.info("Pre-training finished.")
  
- # --- 5. 【Newnew】最终Teststage ---
+ # --- 5. 【Newnew】Teststage ---
  logging.info("="*50)
  logging.info(" Running Final Evaluation on the Test Set ")
  logging.info("="*50)
  
- # LoadinValidation set上table现最好Model
+ # LoadinValidation settableModel
  logging.info(f"Loading best model from '{config.mamba_model_save_path}' for final testing...")
  # model = LogMamba(config).to(config.device)
  model = BiDirectionalLogMamba(config).to(config.device)
  model.load_state_dict(torch.load(config.mamba_model_save_path, map_location=config.device))
  
- # inTest set上EvaluateModel
+ # inTest setEvaluateModel
  test_metrics = evaluate_model(
  model, test_dataloader, mlm_criterion, rpd_criterion, eco_criterion,
  config, config.device, description="Final Test"
  )
 
- # 打印最终Test结果
+ # Test
  logging.info("--- Final Test Results ---")
  logging.info(f" - Test Loss: {test_metrics['loss']:.4f}")
  logging.info(f" - Test MLM Accuracy: {test_metrics['mlm_acc']:.4f}")
@@ -284,7 +284,7 @@ def pretrain_model(config: Config):
  logging.info(f" - Test ECO Accuracy: {test_metrics['eco_acc']:.4f}")
  logging.info("="*50)
  
- # 也可以will最终Test结果记录to swanlab
+ # willTestto swanlab
  swanlab.log({
  "Test/loss": test_metrics['loss'],
  "Test/mlm_accuracy": test_metrics['mlm_acc'],
@@ -293,7 +293,6 @@ def pretrain_model(config: Config):
  })
 
  swanlab.finish()
-
 
 if __name__ == "__main__": 
  config = Config()

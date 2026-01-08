@@ -22,10 +22,10 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("AblationTrainer")
 
 def calculate_accuracy(logits, labels, task_type):
- """辅助函Number：Calculate准确率"""
+ """auxiliaryhelpfunctionNumber：Calculateprepare"""
  with torch.no_grad():
  if task_type == 'mlm':
- # MLM: 多分类,忽略 -100
+ # MLM: split, -100
  preds = torch.argmax(logits, dim=-1)
  mask = labels != -100
  if mask.sum() == 0:
@@ -35,7 +35,7 @@ def calculate_accuracy(logits, labels, task_type):
  return correct / total
  
  elif task_type in ['rpd', 'eco']:
- # 二分类 (BCEWithLogitsLoss)
+ # split (BCEWithLogitsLoss)
  probs = torch.sigmoid(logits)
  preds = (probs > 0.5).float()
  correct = (preds == labels).sum().item()
@@ -45,7 +45,7 @@ def calculate_accuracy(logits, labels, task_type):
 
 def evaluate_model(model, dataloader, mlm_criterion, rpd_criterion, eco_criterion, config, device, description="Evaluate"):
  """
- Evaluate函Number：Return Loss Sum 三任务 Accuracy
+ EvaluatefunctionNumber：Return Loss Sum threetaskwork Accuracy
  """
  model.eval()
  total_loss = 0
@@ -89,11 +89,11 @@ def evaluate_model(model, dataloader, mlm_criterion, rpd_criterion, eco_criterio
 
 def train_ablation_model(config: Config, model_class, model_name: str, save_path: str):
  """
- TrainAblationModel,并ReturnTest set上指标.
+ TrainAblationModel,ReturnTest setmark.
  """
  logger.info(f"[{model_name}] Starting Training Pipeline...")
 
- # 1. 准备 Encoder
+ # 1. prepareprepare Encoder
  if os.path.exists(config.encoder_save_path):
  encoder = UnifiedLogEncoder.load(config.encoder_save_path)
  else:
@@ -106,17 +106,17 @@ def train_ablation_model(config: Config, model_class, model_name: str, save_path
  config.template_vocab_size = encoder.template_vocab_size
  config.param_vocab_size = encoder.param_vocab_size
 
- # 2. 准备Data
+ # 2. prepareprepareData
  logger.info(f"[{model_name}] Loading Data...")
  raw_logs = get_raw_data_for_fitting(config)
  full_dataset = PretrainDataset(config, encoder, raw_logs)
 
- # 划分Data集 (80/10/10)
+ # splitData (80/10/10)
  train_size = int(0.8 * len(full_dataset))
  val_size = int(0.1 * len(full_dataset))
  test_size = len(full_dataset) - train_size - val_size
  
- # 固定 seed 以保证可复现性
+ # seed restoreproperty
  generator = torch.Generator().manual_seed(42)
  train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size], generator=generator)
 
@@ -133,7 +133,7 @@ def train_ablation_model(config: Config, model_class, model_name: str, save_path
  eco_criterion = nn.BCEWithLogitsLoss()
  optimizer = AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
 
- # 4. Train循环
+ # 4. Train
  best_val_loss = float('inf')
  epochs = config.epochs 
 
@@ -188,11 +188,11 @@ def train_ablation_model(config: Config, model_class, model_name: str, save_path
 
 def evaluate_existing_model(config: Config, model, model_name: str):
  """
- IfModel已经存In,直接LoadData并InTest set上跑一timesEvaluate,以Get指标.
+ IfModelstoreIn,connectLoadDataInTest settimesEvaluate,Getmark.
  """
  logger.info(f"[{model_name}] Evaluating existing model on Test Set...")
  
- # 准备Data (与Trainwhen逻辑一致)
+ # prepareprepareData (Trainwhen)
  if os.path.exists(config.encoder_save_path):
  encoder = UnifiedLogEncoder.load(config.encoder_save_path)
  else:
@@ -216,6 +216,4 @@ def evaluate_existing_model(config: Config, model, model_name: str):
 
  test_metrics = evaluate_model(model, test_loader, mlm_criterion, rpd_criterion, eco_criterion, config, config.device, description="Testing Existing Model")
  return test_metrics
-
-
 

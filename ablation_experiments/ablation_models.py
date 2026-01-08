@@ -3,7 +3,7 @@ import torch.nn as nn
 from mamba_ssm import Mamba
 import math
 
-# 引用 Config
+# use Config
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -11,8 +11,8 @@ from utils.config import Config
 
 class UniDirectionalLogMamba(nn.Module):
  """
- Ablation Model: 单向 Mamba.
- Used for证明Bidirectional上下文重要性.
+ Ablation Model: singledirection Mamba.
+ Used forBidirectionalunderproperty.
  """
  def __init__(self, config: Config):
  super().__init__()
@@ -62,7 +62,7 @@ class UniDirectionalLogMamba(nn.Module):
 class LogTransformer(nn.Module):
  """
  Ablation Model: Transformer Encoder。
- Used for证明 Mamba In长序column上效率优势（虽然In短序column上 Transformer 效果可能接近）.
+ Used for Mamba Incolumn（Incolumn Transformer abilityconnect）.
  """
  def __init__(self, config: Config):
  super().__init__()
@@ -85,7 +85,7 @@ class LogTransformer(nn.Module):
  dropout=0.1,
  batch_first=True
  )
- self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers=4) # 保持层Number与 Mamba 规模相When
+ self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers=4) # holdlayerNumber Mamba templateWhen
  
  # Heads (Bidirectional context is inherent in Transformer Encoder with no mask)
  # Output dimension is d_model (not 2*d_model like Bi-Mamba, unless we concat)
@@ -129,9 +129,8 @@ class PositionalEncoding(nn.Module):
  def forward(self, x):
  max_len = self.pe.size(0) 
  if x.size(1) > max_len:
- x = x[:, :max_len, :]
+ x = x[:,:max_len,:]
 
- x = x + self.pe[:x.size(1), :]
+ x = x + self.pe[:x.size(1),:]
  return self.dropout(x)
-
 

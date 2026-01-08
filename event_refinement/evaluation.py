@@ -1,4 +1,4 @@
-# .event_refinement/evaluation.py
+#.event_refinement/evaluation.py
 
 import os
 import logging 
@@ -21,63 +21,63 @@ from event_refinement.event_refiner import EventRefiner
 # from event_refinement.event_refiner_copy import EventRefiner
 
 # =================================================================================
-# Newnew：auxiliaryfunctionNumber,Used forwilleventSaveas人类可读LogFile
+# Newnew：auxiliaryfunctionNumber,Used forwilleventSaveasLogFile
 # =================================================================================
 
 def _convert_sessions_to_event_dict(sessions: List[List[int]], raw_logs: List[Dict]) -> Dict[int, List[Dict]]:
  """
  willbased onindex session ListConvertasbased oneventIDDictionary.
- 这iswill内部Data结构适配toSavefunctionNumber所需格式关键Step.
+ iswillinsideDatastructuretoSavefunctionNumberkeykeyStep.
 
  Args:
- sessions (List[List[int]]): event划分,Each子List包含oneeventLogindex.
- raw_logs (List[Dict]): 包含all已Parse logDictionary完整List.
+ sessions (List[List[int]]): eventsplit,EachListoneeventLogindex.
+ raw_logs (List[Dict]): allParse logDictionaryList.
 
  Returns:
- Dict[int, List[Dict]]: oneDictionary,键iseventID（这里用sessionindex）,Valueis该event包含LogDictionaryList.
+ Dict[int, List[Dict]]: oneDictionary,keyiseventID（usesessionindex）,ValueiseventLogDictionaryList.
  """
  events_by_id = {}
  for i, session_indices in enumerate(sessions):
  if not session_indices: # skipNullevent
  continue
- # According toindexfrom raw_logs inGet完整LogDictionary
+ # According toindexfrom raw_logs inGetLogDictionary
  events_by_id[i] = [raw_logs[log_idx] for log_idx in session_indices]
  return events_by_id
 
 def _save_events_to_file(events_by_id: dict, output_filepath: Path):
  """
- willeventDictionarySaveto指定File,覆盖写入.
- （此functionNumberdirectly来自您请求,稍作修改以Use Path 对象）
+ willeventDictionarySavetospecifyFile,.
+ （thisfunctionNumberdirectly,fixUse Path ）
  """
  logging.info(f"--- Saving events to file: {output_filepath} ---")
- # 按Timestamp对整eventList进lineSort,EnsureFilecontenthas序
- # Filter掉可能存inNullevent
+ # TimestampeventListlineSort,EnsureFilecontenthas
+ # FilterabilitystoreinNullevent
  events_to_save = sorted([e for e in events_by_id.values() if e], key=lambda e: e[0]['Timestamp'])
  
  try:
  with open(output_filepath, 'w', encoding='utf-8') as f:
  for event_logs in tqdm(events_to_save, desc=f"Saving to {output_filepath.name}"):
- # Ensureevent内部Log也is按when间Sort
+ # EnsureeventinsideLogiswhenSort
  sorted_event_logs = sorted(event_logs, key=lambda log: log['Timestamp'])
  for log_dict in sorted_event_logs:
  f.write(log_dict['LogContent'].rstrip() + '\n')
- f.write('\n') # event之间用Nullline分隔
+ f.write('\n') # eventuseNulllinesplit
  logging.info(f"Successfully saved {len(events_to_save)} events to {output_filepath}")
  except Exception as e:
  logging.error(f"Failed to save events to file {output_filepath}: {e}")
 
 # =================================================================================
-# 主EvaluatefunctionNumber
+# EvaluatefunctionNumber
 # =================================================================================
 
 def run_evaluation(config: Config):
  """
- Execute完整eventOptimizeEvaluate流程.
+ ExecuteeventOptimizeEvaluate.
  """
  # --- 1. LoadpreTrainComponent ---
  logging.info("Step 1: Loading prerequisite components (Encoder and Model)...")
  
- # LoadEncode器
+ # LoadEncode
  if not os.path.exists(config.encoder_save_path):
  raise FileNotFounderror(f"Encoder not found at '{config.encoder_save_path}'. Please run training first to generate it.")
  encoder: UnifiedLogEncoder = UnifiedLogEncoder.load(config.encoder_save_path)
@@ -92,7 +92,7 @@ def run_evaluation(config: Config):
  model.load_state_dict(torch.load(config.mamba_model_save_path, map_location=config.device))
  logging.info(f"LogMamba model loaded from '{config.mamba_model_save_path}'.")
 
- # --- 2. LoadDataandstageone结果 ---
+ # --- 2. LoadDataandstageone ---
  logging.info("\nStep 2: Loading data and running Phase 1 initial session detection...")
  try:
  evaluation_dataset = BaseDataset(config, mode='eval', data_source=config.data_source_eval)
@@ -103,13 +103,13 @@ def run_evaluation(config: Config):
  except Exception as e:
  raise Runtimeerror(f"Failed to load data and get initial sessions: {e}", exc_info=True)
 
- # --- 3. Executestage二Optimize ---
+ # --- 3. ExecutestageOptimize ---
  logging.info("\nStep 3: initializing EventRefiner and running Phase 2 refinement...")
  refiner = EventRefiner(config, model, encoder, raw_logs)
  refined_sessions = refiner.refine(initial_sessions)
  logging.info(f"Refinement complete. Generated {len(refined_sessions)} refined sessions.")
  
- # --- 4. Evaluateand对比结果 ---
+ # --- 4. Evaluateand ---
  logging.info("\nStep 4: Calculating and comparing evaluation metrics...")
  if not ground_truth_labels:
  logging.warning("Cannot perform quantitative evaluation because ground truth labels are missing.")
@@ -126,7 +126,7 @@ def run_evaluation(config: Config):
  logging.info("Calculating metrics for refined (Phase 2) sessions...")
  refined_metrics = calculate_partition_metrics(ground_truth_labels, refined_sessions, num_logs)
  
- # 打印对比table格
+ # table
  pretty_print_comparison(baseline_metrics, refined_metrics)
  
  metrics_results = {
@@ -134,40 +134,37 @@ def run_evaluation(config: Config):
  "refined_metrics": refined_metrics
  }
 
- # --- 5. Save结果 (已Update) ---
+ # --- 5. Save (Update) ---
  logging.info("\nStep 5: Saving all results...")
  output_dir = Path(config.artifacts_dir)
  output_dir.mkdir(parents=True, exist_ok=True)
  
- # 5.1 SaveOptimize后event划分 (JSON格式,Used for机器process)
+ # 5.1 SaveOptimizebackwardeventsplit (JSON,Used forprocess)
  refined_sessions_path = output_dir / "refined_sessions.json"
  with open(refined_sessions_path, 'w') as f:
  json.dump(refined_sessions, f, indent=2)
  logging.info(f"Refined session indices saved to: {refined_sessions_path}")
 
- # 5.2 SaveEvaluate指标
+ # 5.2 SaveEvaluatemark
  metrics_path = output_dir / "evaluation_metrics.json"
  with open(metrics_path, 'w') as f:
  json.dump(metrics_results, f, indent=4)
  logging.info(f"Evaluation metrics saved to: {metrics_path}")
 
- # 5.3 【Newnew】Save基线eventas人类可读LogFile
+ # 5.3 【Newnew】SaveeventasLogFile
  baseline_events_dict = _convert_sessions_to_event_dict(initial_sessions, raw_logs)
  baseline_output_path = output_dir / "baseline_events_readable.log"
  _save_events_to_file(baseline_events_dict, baseline_output_path)
 
- # 5.4 【Newnew】SaveOptimize后eventas人类可读LogFile
+ # 5.4 【Newnew】SaveOptimizebackwardeventasLogFile
  refined_events_dict = _convert_sessions_to_event_dict(refined_sessions, raw_logs)
  refined_output_path = output_dir / "refined_events_readable.log"
  _save_events_to_file(refined_events_dict, refined_output_path)
 
-
  logging.info("\nEvaluation script finished successfully.")
-
 
 if __name__ == "__main__":
  config = Config()
  run_evaluation(config)
-
 
  

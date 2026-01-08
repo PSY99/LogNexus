@@ -3,12 +3,11 @@ import os
 import sys
 from datetime import datetime
 
-
 def logger_init(log_file_name='monitor',
  log_level=logging.DEBUG,
  log_dir='./logs/',
  only_file=False):
- # 指定Path
+ # Specify path
  if not os.path.exists(log_dir):
  os.makedirs(log_dir)
 

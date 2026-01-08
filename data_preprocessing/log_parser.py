@@ -6,8 +6,6 @@ from datetime import datetime
 import pandas as pd
 from urlextract import URLExtract
 
-
-
 def _parse_timestamp(ts_match_dict: dict, year_context: dict) -> datetime | None:
  """
  According topositivethenMatchDictionaryParseTimestamp.
@@ -37,11 +35,8 @@ def _parse_timestamp(ts_match_dict: dict, year_context: dict) -> datetime | None
  return None
  return None
 
-
-
-
 def template_to_regex(tmpl: str) -> str:
- r"""willLog templateConvertaspositivethentable达式."""
+ r"""willLog templateConvertaspositivethentable."""
  pieces = tmpl.split("<*>")
  regex = "^"
  for i, p in enumerate(pieces):
@@ -52,8 +47,6 @@ def template_to_regex(tmpl: str) -> str:
  regex += "$"
  return regex
 
-
-
 class TemplateMatcher:
  def __init__(self, csv_path, column="EventTemplate"):
  df = pd.read_csv(csv_path)
@@ -63,7 +56,7 @@ class TemplateMatcher:
  
  def match_line(self, line: str) -> tuple[str, int, list]:
  """
- 【已修改】让它ReturnParameter list,以便Parse器可以重用.
+ 【fix】ReturnParameter list,Parseuse.
  """
  for tmpl, rgx in self.compiled:
  match = rgx.match(line)
@@ -74,38 +67,36 @@ class TemplateMatcher:
  return tmpl, template_id, params
  raise Valueerror(f"Line does not match any template: {line}")
 
-
-
 class LogParser:
  """
- one封装allLogParseLogic类.
- 它as不sameDataset提供专门Parse方法.
+ oneallLogParseLogic.
+ assameDatasetextractParse.
  """
- # --- willallpositivethentable达式模式作as类属性 ---
+ # --- willallpositivethentabletemplateasproperty ---
  LOG_PARSING_PATTERN = re.compile(
- # 1. Timestamp (Timestamp) - support持两种常见格式
+ # 1. Timestamp (Timestamp) - supporthold
  r"^(?:\[(?P<ts_bracketed>[^]]+)]|(?P<ts_bare>\w{3}\s{1,2}\d{1,2}\s\d{2}:\d{2}:\d{2}))"
- # 2. 主机名 (Hostname) - Match但不捕获
+ # 2. name (Hostname) - Match
  r"\s+\S+\s+"
- # 3. 进程名 (process Name) - 【core捕获组】
- # 能够Match 'bluetooth' and 'sshd(pam_unix)' This way复杂Name
+ # 3. name (process Name) - 【coregroup】
+ # abilityMatch 'bluetooth' and 'sshd(pam_unix)' This wayrestoreName
  r"(?P<process_name>[a-zA-Z0-9_().\-/]+)"
- # 4. 【已修改】new加oneOptional版本号部分.
- # 它isone非捕获组 (?:...),MatchoneNull格后跟Number字、点、字母组合.
- # 这可以Match " 1.4.1" or " 2.8p1" 等.最后 '?' 使其Optional.
+ # 4. 【fix】newoneOptionalversionsplit.
+ # isonegroup (?:...),MatchoneNullbackwardNumber、、grouptogether.
+ # Match " 1.4.1" or " 2.8p1" .backward '?' Optional.
  r"(?:\s+[\w.-]+)?"
- # 4. OptionalPID - Match方括号内Number字
+ # 4. OptionalPID - MatchinsideNumber
  r"(?:\[(?P<pid>\d+)])?"
- # 5. 分隔符 (冒号andNull格)
+ # 5. split (andNull)
  r":\s*"
- # 6. Message体 (Message Body) - 捕获剩余全部content
+ # 6. Message (Message Body) - content
  r"(?P<message>.*)$"
  )
 
  APACHE_PATTERN = re.compile(
- # 【修positive】Use \[ and \] 来Match字面上方括号
+ # 【fixpositive】Use \[ and \] Match
  r"^\[(?P<ts_bracketed>[^]]+)\]\s+"
- # 【修positive】Use \[ and \] 来Match字面上方括号
+ # 【fixpositive】Use \[ and \] Match
  r"\[(?P<level>[^]]+)\]\s+"
  r"(?P<message>.*)$"
  )
@@ -144,13 +135,13 @@ class LogParser:
  HDFS_PATTERN = re.compile(
  # 1. Timestamp: 081109 203518
  r"^(?P<ts_date>\d{6})\s+(?P<ts_time>\d{6})\s+"
- # 2. PID/线程ID: 143
+ # 2. PID/ID: 143
  r"(?P<pid>\d+)\s+"
  # 3. LogLevel: INFO
  r"(?P<level>\S+)\s+"
- # 4. Component/Java类: dfs.DataNode$DataXceiver
+ # 4. Component/Java: dfs.DataNode$DataXceiver
  r"(?P<component>[\w$.]+):\s+"
- # 5. Message体
+ # 5. Message
  r"(?P<message>.*)$"
  )
  HDFS_BLOCK_ID_PATTERN = re.compile(r'(blk_[-]?\d+)')
@@ -171,11 +162,9 @@ class LogParser:
  ZOOKEEPER_CLIENT_IP_PORT_PATTERN = re.compile(r'/([\d.]+):(\d+)')
  ### ZOOKEEPER ADDITIONS END ###
 
-
  def __init__(self, template_matcher: TemplateMatcher):
  self.template_matcher = template_matcher
  self.url_extractor = URLExtract()
-
 
  def _extract_urls_from_params(self, params: list[str]) -> list[str]:
  all_urls = []
@@ -184,24 +173,22 @@ class LogParser:
  
  for param in params:
  if isinstance(param, str):
- # Use库来FindURL
+ # UseFindURL
  found_urls = self.url_extractor.find_urls(param)
  all_urls.extend(found_urls)
  
  return sorted(list(set(all_urls)))
 
-
  def _extract_ip_from_node_str(self, node_str: str) -> str | None:
  """
- fromone节点String(如 '/10.250.19.102:54106' or '10.250.10.6:50010')inExtract纯IP地址.
+ fromoneString( '/10.250.19.102:54106' or '10.250.10.6:50010')inExtractIP.
  """
  if not node_str:
  return None
- # self.IP_PATTERN 就iswe定义IP地址positivethentable达式
+ # self.IP_PATTERN isweIPpositivethentable
  match = self.IP_PATTERN.search(node_str)
- # IffoundIP地址,就Return它,OtherwiseReturnNone
+ # IffoundIP,Return,OtherwiseReturnNone
  return match.group(0) if match else None
-
 
  def _extract_ips_from_pipeline(self, pipeline_str: str) -> list[str]:
  """ Helper to extract all IPs from a HDFS pipeline string. """
@@ -212,7 +199,6 @@ class LogParser:
  if ip:
  ips.append(ip)
  return ips
-
 
  def _parse_hadoop(self, line: str):
  """
@@ -355,7 +341,6 @@ class LogParser:
  'URLs': urls
  }
 
-
  def _parse_bgl(self, line: str):
  match = self.BGL_PATTERN.match(line)
  if not match: return None
@@ -386,7 +371,6 @@ class LogParser:
  'URLs': urls,
  }
 
-
  def _parse_apache(self, line: str, year_context: dict, structured_info=None):
  match = self.APACHE_PATTERN.match(line)
  if not match:
@@ -407,7 +391,7 @@ class LogParser:
 
  urls = self._extract_urls_from_params(params)
 
- # 尝试fromMessage体inExtractPID
+ # fromMessageinExtractPID
  pid = None
  pid_match = self.APACHE_PID_PATTERN.search(message_body)
  if pid_match:
@@ -471,8 +455,8 @@ class LogParser:
  
  def _parse_hdfs(self, line: str, year_context: dict, structured_info=None):
  """
- 【完全重写】
- asHDFSLog设计、based on模板语义智能Parse器.
+ 【】
+ asHDFSLog、based ontemplateboardlanguageintelligentabilityParse.
  """
  match = self.HDFS_PATTERN.match(line)
  if not match:
@@ -497,12 +481,12 @@ class LogParser:
 
  urls = self._extract_urls_from_params(params)
 
- # --- based on模板语义实体Extract ---
+ # --- based ontemplateboardlanguageExtract ---
  src_ips, dst_ips = [], []
  block_id_match = self.HDFS_BLOCK_ID_PATTERN.search(message_body)
  block_id = block_id_match.group(1) if block_id_match else None
  
- # Rule1: Match "src: ... dest: ..." 格式 (E42, E39)
+ # Rule1: Match "src:... dest:..." (E42, E39)
  if ' src: ' in message_body and ' dest: ' in message_body:
  src_match = re.search(r'src:\s*([^ ]+)', message_body)
  dst_match = re.search(r'dest:\s*([^ ]+)', message_body)
@@ -511,7 +495,7 @@ class LogParser:
  if dst_match:
  dst_ips.append(self._extract_ip_from_node_str(dst_match.group(1)))
 
- # Rule2: Match "local=... remote=..." 格式 (E4, E5, E2, E1等异常Log)
+ # Rule2: Match "local=... remote=..." (E4, E5, E2, E1Log)
  elif 'local=' in message_body and 'remote=' in message_body:
  local_match = re.search(r'local=(.*?)[,\]]', message_body)
  remote_match = re.search(r'remote=(.*?)[,\]]', message_body)
@@ -520,33 +504,33 @@ class LogParser:
  if remote_match:
  dst_ips.append(self._extract_ip_from_node_str(remote_match.group(1)))
  
- # Rule3: Match "from ..." 格式 (E41)
+ # Rule3: Match "from..." (E41)
  elif ' from ' in message_body and 'Received block' in message_body:
  from_match = re.search(r'from\s*([^ ]+)', message_body)
  if from_match:
  src_ips.append(self._extract_ip_from_node_str(from_match.group(1)))
 
- # Rule4: Match "to ..." 格式 (E43, E45, E33, E32)
+ # Rule4: Match "to..." (E43, E45, E33, E32)
  elif ' to ' in message_body:
- # 场景 a: "Transmitted/Served block ... to ..." (E43, E45)
- match = re.search(r'block .*? to (.*)', message_body)
+ # a: "Transmitted/Served block... to..." (E43, E45)
+ match = re.search(r'block.*? to (.*)', message_body)
  if match:
- # 源IPusuallyinMessage体beginning,如 "10.250.14.224:50010:Transmitted..."
+ # IPusuallyinMessagebeginning, "10.250.14.224:50010:Transmitted..."
  src_part = message_body.split(':', 1)[0]
  if self.IP_PATTERN.match(src_part):
  src_ips.append(self._extract_ip_from_node_str(src_part))
  
- # 目标IPin "to" 后面
+ # markIPin "to" backward
  dst_nodes_str = match.group(1)
- # process多目标场景, 如 "to <ip1>, <ip2>" (E33)
+ # processmark, "to <ip1>, <ip2>" (E33)
  dst_nodes = [node.strip() for node in dst_nodes_str.replace(' and ',',').split(',')]
  dst_ips.extend([self._extract_ip_from_node_str(node) for node in dst_nodes])
  
- # 场景 b: "ask ... to replicate ... to datanode(s) ..." (E32)
- match = re.search(r'ask (.*?) to replicate .* to datanode\(s\)\s*(.*)', message_body)
+ # b: "ask... to replicate... to datanode(s)..." (E32)
+ match = re.search(r'ask (.*?) to replicate.* to datanode\(s\)\s*(.*)', message_body)
  if match:
  src_ips.append(self._extract_ip_from_node_str(match.group(1)))
- # 目标IPisNull格分隔List
+ # markIPisNullsplitList
  dst_nodes = match.group(2).split()
  dst_ips.extend([self._extract_ip_from_node_str(node) for node in dst_nodes])
 
@@ -554,10 +538,10 @@ class LogParser:
  elif 'blockMap updated' in message_body:
  match = re.search(r'updated:\s*([^ ]+)\s*is added to', message_body)
  if match:
- # in这上下文in,被Add节点可以被认asis源
+ # inunderin,Addasis
  src_ips.append(self._extract_ip_from_node_str(match.group(1)))
 
- # 后备Rule: If以上Rule都未Match,thenExtractallIP作as源IP (保证info不丢失)
+ # backwardprepareRule: IfRuleMatch,thenExtractallIPasIP (info)
  if not src_ips and not dst_ips:
  all_ips = self.IP_PATTERN.findall(line)
  src_ips.extend(all_ips)
@@ -575,7 +559,7 @@ class LogParser:
  'Level': gd.get('level'),
  'Component': gd.get('component'),
  'block_id': block_id,
- # 清理and去重,然后Return
+ # and,backwardReturn
  'src_ips': sorted(list(set(filter(None, src_ips)))),
  'dst_ips': sorted(list(set(filter(None, dst_ips)))),
  'job_id': job_id,
@@ -585,9 +569,9 @@ class LogParser:
  ### ZOOKEEPER_PARSE_METHOD START ###
  def _parse_zookeeper(self, line: str):
  """
- asZooKeeperLog设计专用Parse器.
+ asZooKeeperLoguseParse.
  """
- # 1. Use主模式进line基础Parse
+ # 1. UsetemplatelineParse
  base_match = self.ZOOKEEPER_PATTERN.match(line)
  if not base_match:
  return None
@@ -603,7 +587,7 @@ class LogParser:
  message_body = gd.get('message', '').strip()
  template, template_id, params = self.template_matcher.match_line(message_body)
 
- # 3. Parse线程/Componentinfo
+ # 3. Parse/Componentinfo
  thread_info_str = gd.get('thread_info', '')
  thread_parts = thread_info_str.split(':')
  thread_name, java_class, line_number = None, None, None
@@ -618,7 +602,7 @@ class LogParser:
  else:
  thread_name = thread_info_str
 
- # 4. fromMessage体inExtract关键实体
+ # 4. fromMessageinExtractkeykey
  session_id_match = self.ZOOKEEPER_SESSION_ID_PATTERN.search(message_body)
  session_id = session_id_match.group(1) if session_id_match else None
 
@@ -649,10 +633,9 @@ class LogParser:
  }
  ### ZOOKEEPER_PARSE_METHOD END ###
 
-
  def parse(self, line: str, dataset_type: str, year_context: dict, structured_info=None):
  """
- 公共分发方法,According toDatasetTypeCall相应Parse器.
+ split,According toDatasetTypeCallParse.
  """
  if dataset_type == "Hadoop":
  return self._parse_hadoop(line)
@@ -670,5 +653,4 @@ class LogParser:
  logging.warning(f"No specific parser for dataset '{dataset_type}'. Using default.")
  return self._parse_default(line, year_context, structured_info)
  
-
 

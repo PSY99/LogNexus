@@ -31,7 +31,7 @@ def collect_data():
  file_paths = glob.glob('../generated_processors_*/Linux_mode_wise_statistics.csv')
  
  if not file_paths:
- print("error: No Linux_mode_wise_statistics.csv files found in ./generated_processors_*/ directories.")
+ print("error: No Linux_mode_wise_statistics.csv files found in./generated_processors_*/ directories.")
  print("Please ensure the script is run in the same directory as 'generated_processors_*' folders.")
  return None
 
@@ -50,7 +50,7 @@ def collect_data():
  continue
 
  # Extract ARI mean values
- # Use .loc to avoid SettingWithCopyWarning
+ # Use.loc to avoid SettingWithCopyWarning
  filtered_df.loc[:, 'ARI_mean'] = filtered_df['Adjusted Rand index (ARI)'].astype(str).str.split('±').str[0].astype(float)
  
  for _, row in filtered_df.iterrows():
@@ -93,15 +93,15 @@ def plot_ari_comparison(df):
  # ax.set_title('Model Performance Comparison: Adjusted Rand index (ARI)', fontsize=20, pad=20)
  ax.set_xlabel('Model', fontsize=17, labelpad=18)
  ax.set_ylabel('Adjusted Rand index (ARI)', fontsize=17, labelpad=18)
- ax.tick_params(axis='x', labelsize=15) # single独Set X 轴label的字体Size
- plt.xticks(rotation=45, ha='right') # Use plt.xticks Set旋转and水平对齐 ax.tick_params(axis='y', labelsize=12)
- ax.set_ylim(0.2, 1.15) # ARI的范围is-1to1，但usuallyin0-1之间，Set上限略高于1
+ ax.tick_params(axis='x', labelsize=15) # Set X-axis label font size independently
+ plt.xticks(rotation=45, ha='right') # Use plt.xticks Setconvertand ax.tick_params(axis='y', labelsize=12)
+ ax.set_ylim(0.2, 1.15) # ARIis-1to1，usuallyin0-1，Set1
  
- # 修改图例
+ # fix
  handles, labels = ax.get_legend_handles_labels()
  ax.legend(handles=handles, labels=['Full Model (with refinement)', 'Base Model (no refinement)'], title='Mode', fontsize=15, title_fontsize=16)
 
- # # inEach柱子上方显示NumberValue
+ # # inEachNumberValue
  # for p in ax.patches:
  # ax.annotate(format(p.get_height(), '.4f'), 
  # (p.get_x() + p.get_width() / 2., p.get_height()), 
@@ -110,27 +110,26 @@ def plot_ari_comparison(df):
  # textcoords = 'offset points',
  # fontsize=10)
 
- # 调整布局以防止label被截断
+ # label
  plt.tight_layout()
  
- # Ensure./results/Directory存in
+ # Ensure./results/Directorystorein
  output_dir = './'
  os.makedirs(output_dir, exist_ok=True)
  
- # Save图table
+ # Savetable
  save_path = os.path.join(output_dir, 'model_ari_comparison.png')
  plt.savefig(save_path, dpi=300, bbox_inches='tight')
  
- print(f"图table已SuccessSave至: {save_path}")
+ print(f"tableSuccessSave: {save_path}")
  
- # 显示图table
+ # table
  plt.show()
 
-
 if __name__ == '__main__':
- # 1. 收setData
+ # 1. setData
  processed_data = collect_data()
  
- # 2. 绘制图table
+ # 2. table
  plot_ari_comparison(processed_data)
 

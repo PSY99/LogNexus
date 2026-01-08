@@ -19,7 +19,7 @@ from utils.llm_utils import call_llm_api
 # --- PROMPT DEFINITIONS ---
 ################################################################################
 
-# stagethree：willsingle条自然语言Rule翻译as独立Python“RulefunctionNumber”
+# stagethree：willsinglelanguagespeechRuleasindependentlyPython“RulefunctionNumber”
 PROMPT_FOR_RULE_FUNCTION = """
  You are an expert Python programmer. Your task is to convert a single natural language rule into a simple, stateless "Key Extractor" function.
 
@@ -61,7 +61,7 @@ PROMPT_FOR_RULE_FUNCTION = """
  # For a log with Parameters=['root', 'tty1'], it might return: ['PARAM_tty1']
 """
 
-# stage四：编写最终“主functionNumber”框架,CallallRulefunctionNumber
+# stage：“functionNumber”architecture,CallallRulefunctionNumber
 PROMPT_FOR_MAIN_FRAMEWORK = """
  You are an expert System Architect and Python Programmer. Your task is to write a complete and efficient `Eventprocessor` class that clusters logs into security events.
 
@@ -115,7 +115,7 @@ PROMPT_FOR_MAIN_FRAMEWORK = """
  
  The `Eventprocessor` class must adhere to the following design:
 
- 1. **`__init__(self, ...)`**: The constructor must accept the list of `logs` to be processed. The processor instance will be initialized with and tied to this specific dataset.
+ 1. **`__init__(self,...)`**: The constructor must accept the list of `logs` to be processed. The processor instance will be initialized with and tied to this specific dataset.
  ```python
  def __init__(self, logs: List[Dict]):
  ```
@@ -154,8 +154,6 @@ PROMPT_FOR_MAIN_FRAMEWORK = """
  **START YOUR RESPONSE DIRECTLY WITH:** ```python
 """
 
-
-
 def load_log_structures(path: str) -> Dict[str, str]:
  """
  Loads the log structure definitions from a JSON file.
@@ -187,10 +185,9 @@ def load_log_structures(path: str) -> Dict[str, str]:
  logging.error(f"error parsing log structures file {path}: {e}")
  raise
 
-
 def validate_python_syntax(code_str: str) -> Tuple[bool, str]:
  """
- Use Python 内置 AST 模块检查Generated codeisNohas语法error.
+ Use Python inside AST templateblockcheckexamineGenerated codeisNohaslanguageerror.
  Return: (isNoThrough, errorinfo)
  """
  try:
@@ -200,7 +197,6 @@ def validate_python_syntax(code_str: str) -> Tuple[bool, str]:
  return False, f"Syntaxerror at line {e.lineno}: {e.msg}"
  except Exception as e:
  return False, f"Parse error: {str(e)}"
-
 
 ################################################################################
 # --- NEW: SECURITY & VALIDATION SANDBOX (ROBUST VERSION) ---
@@ -373,8 +369,6 @@ class CodeValidator:
  # Catch compilation errors or exec errors
  return False, f"Sandboxed Execution Failed: {str(e)}"
 
-
-
 ################################################################################
 # --- CODE GENERATION FUNCTIONS ---
 ################################################################################
@@ -387,7 +381,7 @@ def generate_rule_functions(
  """
  logging.info(f"--- Stage 3: Generating Rule Functions (Safe-Synthesis Mode) ---")
  
- # ... (Load logic remains same)
+ #... (Load logic remains same)
  log_structures = load_log_structures(config.log_structures_path)
  dataset_name = getattr(config, 'dataset', 'Default')
  log_data_structure = log_structures.get(dataset_name, log_structures['Default'])
@@ -467,8 +461,6 @@ def generate_rule_functions(
  
  return rule_functions_code
 
-
-
 def generate_main_framework(
  client: Any, config: Config, function_codes: Dict[str, str], nl_rules: List[str]
 ) -> Optional[str]:
@@ -492,8 +484,8 @@ def generate_main_framework(
  if framework_code:
  logging.info(" -> ✅ Successfully generated the main framework code.")
  
- # ✨ Newnewcode：附加RulefunctionNumberList定义
- # 这会will "ALL_RULE_FUNCTIONS = [rule_1_..., rule_2_...]" 这linecode加toFile末尾
+ # ✨ Newnewcode：RulefunctionNumberList
+ # will "ALL_RULE_FUNCTIONS = [rule_1_..., rule_2_...]" linecodetoFile
  all_rules_list_str = f"ALL_RULE_FUNCTIONS = [{', '.join(function_codes)}]"
  framework_code += f"\n\n\n# This list is used by the host system to know which functions to pass to the processor\n{all_rules_list_str}\n"
  
@@ -501,7 +493,6 @@ def generate_main_framework(
  logging.error(" -> ❌ FAILED to generate the main framework code.")
  
  return framework_code
-
 
 def assemble_full_processor_file(
  config: Config,
@@ -546,7 +537,6 @@ def assemble_full_processor_file(
  except IOerror as e:
  logging.error(f"❌ Failed to write final processor file: {e}")
  raise
-
 
 def apply_and_cluster_events(logs: List[Dict[str, Any]], processor_code_path: str) -> Tuple[List[List[int]], Dict[int, int]]:
  """
@@ -606,6 +596,5 @@ def apply_and_cluster_events(logs: List[Dict[str, Any]], processor_code_path: st
  except Exception as e:
  logging.error(f"❌ An error occurred while applying the generated processor: {e}", exc_info=True)
  raise
-
 
  

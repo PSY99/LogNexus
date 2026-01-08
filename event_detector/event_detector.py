@@ -8,13 +8,12 @@ from typing import List, Dict, Any, Tuple
 import numpy as np
 import pandas as pd
 
-from . import code_generator
+from. import code_generator
 
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.config import Config
 from utils.llm_utils import call_llm_api, initialize_llm_client
-
 
 ################################################################################
 # --- DATASET-SPECIFIC KNOWLEDGE BASE (VERSION 2.0 - DATA-DRIVEN) ---
@@ -58,7 +57,7 @@ DATASET_GUIDANCE = {
  "**[MERGE CORES by Application Lifecycle]** This is the highest-level grouping. After initial grouping, identify all 'Event Cores' that share the **exact same `application_id`**. **Merge** them to reconstruct the entire lifecycle of a MapReduce application, from submission (e.g., template 'Created MRAppMaster for application <*>') to completion (e.g., 'job_... completed successfully' or 'failed'). The `application_id` is the ultimate **Correlation Identifier**.",
  "**[MERGE CORES by Job/Task Context]** As a mid-level grouping, merge 'Event Cores' that share the same `job_id` or `task_id` if they occur within a reasonable time window (e.g., 10 minutes) and are part of the same `application_id`.",
  "**[MERGE CORES by Container Activity]** Merge logs related to the same `container_id`, such as allocation, usage, and release (e.g., template 'Releasing unassigned and invalid container'), even if they have different `task_attempt_id`s, as a container's lifecycle is a distinct event.",
- "**[BOUNDARY Rule by State Change (Timeout)]** A log with the template `Diagnostics report from <*>: ... Timed out ...` marks a definitive failure for the corresponding `task_attempt_id`. This log and its associated core should NOT be merged with subsequent retry attempts, which will have a new `task_attempt_id`.",
+ "**[BOUNDARY Rule by State Change (Timeout)]** A log with the template `Diagnostics report from <*>:... Timed out...` marks a definitive failure for the corresponding `task_attempt_id`. This log and its associated core should NOT be merged with subsequent retry attempts, which will have a new `task_attempt_id`.",
  "**[KEY DIMENSION SPLIT Rule]** This is a critical boundary rule. Even if logs are close in time, if they belong to a different **`application_id`**, they MUST be treated as belonging to **new, separate logical events**. Each application is a distinct context."
  ]
  }}
@@ -118,7 +117,7 @@ DATASET_GUIDANCE = {
  "heuristic_rules": [
  "**[MERGE EVENT CORES Rule for Web Scanning Activity]** After initial grouping, identify 'Event Cores' containing logs with templates like `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, or `[client <*>] Directory index forbidden by rule: <*>`. If multiple such cores share the **exact same Key Source Identifier (the `ip` field)** and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), **merge** them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.",
  "**[MERGE EVENT CORES Rule for `mod_jk` Worker initialization]** Identify a log with `EventTemplate` `jk2_init() Found child <*>...` or `jk2_init() Can't find child <*>...` as a trigger. Greedily merge this with subsequent, adjacent logs (within a 2-second window) that match related templates like `workerEnv.init() ok <*>`, `mod_jk child init <*> <*>` and `mod_jk child workerEnv in error state <*>` and **lack a Key Source Identifier (`ip`)**. This forms a single logical 'mod_jk Worker initialization' event, capturing the full start-up or failure sequence of a single worker.",
- "**[MERGE EVENT CORES Rule for Service Restart]** Identify a log with `EventTemplate: 'Graceful restart requested, doing restart'` as the trigger for a 'Service Restart' event. Greedily merge all subsequent logs indicating service configuration and startup (e.g., `Digest: ...`, `LDAP: ...`, `mod_python: ...`, `mod_security/...`) until a log matching `EventTemplate: 'Apache/<*> configured -- resuming normal operations'` is found. This boundary log is included, and the event is closed, reconstructing the entire state transition of the service restart.",
+ "**[MERGE EVENT CORES Rule for Service Restart]** Identify a log with `EventTemplate: 'Graceful restart requested, doing restart'` as the trigger for a 'Service Restart' event. Greedily merge all subsequent logs indicating service configuration and startup (e.g., `Digest:...`, `LDAP:...`, `mod_python:...`, `mod_security/...`) until a log matching `EventTemplate: 'Apache/<*> configured -- resuming normal operations'` is found. This boundary log is included, and the event is closed, reconstructing the entire state transition of the service restart.",
  "**[MERGE EVENT CORES Rule for Mass Shutdown Notifications]** Identify a log with `EventTemplate: 'mod_jk2 Shutting down'`. Merge all subsequent, consecutive logs that share this **exact same `EventTemplate`** and occur within a tight time window (e.g., 15 seconds) into a single logical 'mod_jk Shutdown' event. The event is bounded by the first log with a different template or a timeout.",
  "**[KEY DIMENSION SPLIT Rule]** For events driven by external actors, if the **Key Source Identifier (the `ip` field)** changes between two log entries or 'Event Cores', they MUST be treated as belonging to **new, separate logical events**, even if they are temporally adjacent and share the same `EventTemplate`. Each unique `ip` value defines a distinct actor context.",
  "**[BOUNDARY Rule by Timeout]** For any event being constructed via heuristic merging (such as a 'Web Scanning/Probing' event), if no new related log or 'Event Core' is found that meets the merge criteria within a predefined session timeout (e.g., 60 seconds), the event is considered complete and is closed."
@@ -199,7 +198,7 @@ DATASET_GUIDANCE = {
 
  "**[B1: BOUNDARY Rule by Activity Gap (Timeout)]**: This is a crucial global rule. For any event being constructed via heuristic merging (like Startup, Election, etc.), if no new related log is found that meets the merge criteria within a **predefined time window (e.g., 60 seconds)**, the event is considered complete and is closed. This prevents unrelated logs from being incorrectly merged across large time gaps.",
 
- "**[B2: BOUNDARY Rule by Session State]**: A log with `EventTemplate`: 'Expiring session <*> ...' or 'Exception causing close of session <*> ...' marks the definitive end of the client session event identified by that `sessionid`.",
+ "**[B2: BOUNDARY Rule by Session State]**: A log with `EventTemplate`: 'Expiring session <*>...' or 'Exception causing close of session <*>...' marks the definitive end of the client session event identified by that `sessionid`.",
 
  "**[I1: ISOLATION Rule for Quorum Connection Issues]**: A 'Quorum Connection Event Core' (formed by Mandatory Rule M3) that contains error logs like 'Connection broken for id <*>' is treated as a **complete, isolated event** representing a peer connection failure. It should not be merged further unless it occurs strictly within the timeframe of a 'Leader Election Cycle' (Rule H2).",
 
@@ -209,9 +208,6 @@ DATASET_GUIDANCE = {
  """
  }
 }
-
-
-
 
 ################################################################################
 # --- PROMPT DEFINITION ---
@@ -266,32 +262,30 @@ Do not add any text or explanations outside of the JSON object.
 
 """
 
-
-
 # ==============================================================================
-# auxiliaryfunctionNumber: universal热点评分functionNumber (放置in类外部,因as它isone纯functionNumber)
+# auxiliaryfunctionNumber: universalsplitfunctionNumber (in,asisonefunctionNumber)
 # ==============================================================================
 def calculate_hotspot_score_final(window_logs: List[Dict]) -> float:
  """
- 最终版、完全universal热点评分functionNumber.
- 它based onLog密度、模板多样性（熵）andParameterValue多样性.
- 它False设每条Loghasone 'Parameters' 字段,其ValueasoneList.
+ version、universalsplitfunctionNumber.
+ based onLog、templateboardproperty（）andParameterValueproperty.
+ FalseLoghasone 'Parameters' segment,ValueasoneList.
  """
  num_logs = len(window_logs)
  if num_logs == 0:
  return 0.0
 
- # --- 特征1: 模板多样性 (Template Diversity) using Entropy ---
+ # --- 1: templateboardproperty (Template Diversity) using Entropy ---
  templates = [log['EventTemplate'] for log in window_logs]
  if not templates:
  template_entropy = 0
  else:
- # Use pandas Calculate value_counts 更高效
+ # Use pandas Calculate value_counts 
  template_counts = pd.Series(templates).value_counts()
  template_props = template_counts / num_logs
  template_entropy = -np.sum(template_props * np.log2(template_props))
 
- # --- 特征2: ParameterValue多样性 (Parameter Value Diversity) ---
+ # --- 2: ParameterValueproperty (Parameter Value Diversity) ---
  all_param_values = set()
  for log in window_logs:
  params = log.get('Parameters')
@@ -300,15 +294,14 @@ def calculate_hotspot_score_final(window_logs: List[Dict]) -> float:
  
  num_unique_params = len(all_param_values)
 
- # --- 最终得分Calculate ---
- # Use log1p (log(x+1)) 来平滑NumberValue,避免极端Value影响,并process0Value情况.
+ # --- splitCalculate ---
+ # Use log1p (log(x+1)) NumberValue,Value,process0Value.
  density_score = np.log1p(num_logs)
  template_diversity_score = template_entropy + 1
  param_diversity_score = np.log1p(num_unique_params) + 1
 
  score = density_score * template_diversity_score * param_diversity_score
  return score
-
 
 ################################################################################
 # --- DETECTOR CLASS ---
@@ -322,8 +315,8 @@ class MetaProgrammedDetector:
  def __init__(self, config: Config, client: Any):
  """
  initializes the detector with configuration and an LLM client.
- :param config: A Config object with all necessary paths and settings.
- :param client: An initialized LLM API client.
+:param config: A Config object with all necessary paths and settings.
+:param client: An initialized LLM API client.
  """
  self.config = config
  self.client = client
@@ -356,8 +349,8 @@ class MetaProgrammedDetector:
  
  all_templates_set = {log['EventTemplate'] for log in sorted_logs}
 
- # --- Pass 1: Scoring (不变) ---
- # ... (保持原has聚类评分Logic不变)
+ # --- Pass 1: Scoring (unchanged) ---
+ #... (holdhassplitLogicunchanged)
  session_timeout = timedelta(seconds=self.config.detector_session_gap_seconds)
  all_clusters = []
  if sorted_logs:
@@ -376,7 +369,7 @@ class MetaProgrammedDetector:
  
  all_clusters.sort(key=lambda x: x['score'], reverse=True)
 
- # --- 【关键修改】引入 sample_annotations Dictionary来记录采样原因 ---
+ # --- 【keykeyfix】 sample_annotations Dictionary ---
  final_samples_map = {} 
  sample_annotations = {} # Key: LogContent (or ID), Value: Strategy Tag
  template_representatives = {} 
@@ -401,7 +394,7 @@ class MetaProgrammedDetector:
  for log in template_representatives.values():
  key = log['LogContent']
  final_samples_map[key] = log
- # markeras多样性样本
+ # markerasproperty
  sample_annotations[key] = "STRATEGY_DIVERSITY: Unique Template Representative"
  
  # --- Pass 4: Contextual Deepening (markeras CONTEXT) ---
@@ -430,7 +423,7 @@ class MetaProgrammedDetector:
  key = log['LogContent']
  if key not in final_samples_map:
  final_samples_map[key] = log
- # markeras上下文样本
+ # markerasunder
  sample_annotations[key] = "STRATEGY_CONTEXT: Time-Window Cluster Member"
 
  # --- Pass 5: Fallback (markeras FALLBACK) ---
@@ -459,11 +452,11 @@ class MetaProgrammedDetector:
  except IOerror:
  raise IOerror(f"Failed to write sampled logs to {self.config.sampled_logs_path}")
 
- # --- 【关键修改】Generate带has Context infoString ---
+ # --- 【keykeyfix】Generatehas Context infoString ---
  formatted_logs = []
  for log in final_samples:
  key = log['LogContent']
- # Get对应 tag,If没hasthenDefaultas Fallback
+ # Get tag,IfhasthenDefaultas Fallback
  tag = sample_annotations.get(key, "STRATEGY_FALLBACK")
  formatted_logs.append(self._format_log_for_llm(log, tag))
 
@@ -486,7 +479,7 @@ class MetaProgrammedDetector:
  logging.error("Aborting: Sample generation failed.")
  return [], {}
 
- # --- NEW: Load采样LogDataUsed for Phase I 动态Validate ---
+ # --- NEW: LoadLogDataUsed for Phase I Validate ---
  validation_samples = []
  try:
  if os.path.exists(self.config.sampled_logs_path):

@@ -7,38 +7,38 @@ from collections import Counter
 
 def calculate_partition_metrics(ground_truth_labels: List[int], predicted_sessions: List[List[int]], num_logs: int) -> Dict:
  """
- Calculate事件划分任务Evaluate指标.
+ CalculateEvaluate.
 
  Args:
- ground_truth_labels (List[int]): Length为NList,表示每条LogTrue实事件ID.
- predicted_sessions (List[List[int]]): Predict事件划分,Each子List包含一事件LogIndex.
+ ground_truth_labels (List[int]): LengthNList,LogTrueID.
+ predicted_sessions (List[List[int]]): Predict,EachListLogIndex.
  num_logs (int): LogTotalNumber.
 
  Returns:
- Dict: 包含各种Evaluate指标Dictionary.
+ Dict: EvaluateDictionary.
  """
  if not ground_truth_labels:
  return {"error": "Ground truth labels are missing."}
 
- # 将 predicted_sessions Convert为与 ground_truth_labels 格式相同Predict标签List
+ # predicted_sessions Convert ground_truth_labels PredictList
  pred_labels = np.zeros(num_logs, dtype=int)
  for session_id, session_indices in enumerate(predicted_sessions):
  for log_idx in session_indices:
  if log_idx < num_logs:
  pred_labels[log_idx] = session_id
 
- # 确保两标签ListLength一致
+ # ListLength
  if len(ground_truth_labels) != len(pred_labels):
  raise ValueError(f"Mismatch in label lengths: ground_truth={len(ground_truth_labels)}, predicted={len(pred_labels)}")
 
- # Calculate指标
+ # Calculate
  ari = metrics.adjusted_rand_score(ground_truth_labels, pred_labels)
  nmi = metrics.normalized_mutual_info_score(ground_truth_labels, pred_labels)
  homogeneity = metrics.homogeneity_score(ground_truth_labels, pred_labels)
  completeness = metrics.completeness_score(ground_truth_labels, pred_labels)
  v_measure = metrics.v_measure_score(ground_truth_labels, pred_labels)
  
- # Calculate事件Count
+ # CalculateCount
  num_predicted_events = len(set(pred_labels))
  num_true_events = len(set(ground_truth_labels))
 
@@ -53,7 +53,7 @@ def calculate_partition_metrics(ground_truth_labels: List[int], predicted_sessio
  }
 
 def pretty_print_comparison(baseline_metrics: Dict, refined_metrics: Dict):
- """美观地打印基线SumOptimize后指标对比."""
+ """SumOptimize."""
  print("\n" + "="*80)
  print(f"{'Metric':<35} | {'Baseline (Phase 1)':<20} | {'Refined (Phase 2)':<20}")
  print("-"*80)

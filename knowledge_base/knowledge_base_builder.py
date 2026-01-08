@@ -47,7 +47,6 @@ Example:
 Provide ONLY the JSON object.
 """
 
-
 class KnowledgeBaseBuilder:
  """
  Builds and maintains an Event Knowledge Base from refined event sessions.
@@ -73,7 +72,7 @@ class KnowledgeBaseBuilder:
 
  self.knowledge_base = []
  self.faiss_index = None
- # --- NEW 1: initializeonememoryinVectorcache存 ---
+ # --- NEW 1: initializeonememoryinVectorcachestore ---
  self.event_embeddings = {}
  
  self._load_existing_kb()
@@ -91,17 +90,17 @@ class KnowledgeBaseBuilder:
  
  self.faiss_index = faiss.read_index(kb_faiss_path)
  
- # --- NEW 2: fromFAISSindex重建memoryinVectorcache存 ---
+ # --- NEW 2: fromFAISSindexmemoryinVectorcachestore ---
  if isinstance(self.faiss_index, faiss.indexIDMap) and self.faiss_index.ntotal > 0:
- # Get存储inindexIDMapinallCustomID
+ # GetstoreinindexIDMapinallCustomID
  list_of_ids = faiss.vector_to_array(self.faiss_index.id_map)
- # GetindexIDMap包装底层index (e.g., indexFlatIP)
+ # GetindexIDMaplayerindex (e.g., indexFlatIP)
  sub_index = self.faiss_index.index
- # 遍历allVector,Through它们内部顺序ID (0, 1, 2...) 来重建
+ # allVector,ThroughinsideID (0, 1, 2...) 
  for i, custom_id in enumerate(list_of_ids):
- # from底层index重建Vector
+ # fromlayerindexVector
  vector = sub_index.reconstruct(i)
- # 存入wecache存
+ # storewecachestore
  self.event_embeddings[int(custom_id)] = vector
  logging.info(f"Successfully rebuilt in-memory embedding cache with {len(self.event_embeddings)} vectors.")
  
@@ -229,10 +228,10 @@ class KnowledgeBaseBuilder:
  verification_path = os.path.join(self.verification_dir, f"event_{event_id}_logs.json")
  
  # --- MODIFICATION START ---
- # asEachSessionAddoneNew标注字段 'session_annotation_correct',初始Valueas null
+ # asEachSessionAddoneNewmarksegment 'session_annotation_correct',Valueas null
  session_logs = {
  "session_id": f"session_{random.randint(1000, 9999)}",
- "session_annotation_correct": None, # Newnew字段,Used for人工标注此Session划分isNopositive确
+ "session_annotation_correct": None, # Newnewsegment,Used formarkthisSessionsplitisNopositive
  "log_contents": [raw_logs[i]['LogContent'] for i in session_indices]
  }
  # --- MODIFICATION END ---
@@ -275,10 +274,10 @@ class KnowledgeBaseBuilder:
  entry_index = next(i for i, entry in enumerate(self.knowledge_base) if entry['event_id'] == similar_event_id)
  kb_entry = self.knowledge_base[entry_index]
  
- # --- MODIFIED 1: frommemorycache存inGetOldVector ---
+ # --- MODIFIED 1: frommemorycachestoreinGetOldVector ---
  if similar_event_id not in self.event_embeddings:
  logging.error(f"FATAL: Event ID {similar_event_id} found in FAISS but not in memory cache. inconsistency detected. Treating as new event.")
- similar_event_id = None # 强制CreateNewevent以避免崩溃
+ similar_event_id = None # CreateNewevent
  else:
  old_embedding = self.event_embeddings[similar_event_id]
  instance_count_before_update = kb_entry['instance_count']
@@ -289,7 +288,7 @@ class KnowledgeBaseBuilder:
  self.faiss_index.remove_ids(np.array([similar_event_id], dtype=np.int64))
  self.faiss_index.add_with_ids(updated_embedding.reshape(1, -1), np.array([similar_event_id], dtype=np.int64))
 
- # --- NEW 3: UpdatememoryinVectorcache存 ---
+ # --- NEW 3: UpdatememoryinVectorcachestore ---
  self.event_embeddings[similar_event_id] = updated_embedding
 
  kb_entry['instance_count'] += 1
@@ -339,7 +338,7 @@ class KnowledgeBaseBuilder:
  
  self.faiss_index.add_with_ids(embedding_to_add, np.array([event_id], dtype=np.int64))
 
- # --- NEW 4: willNewVectorAddtomemorycache存 ---
+ # --- NEW 4: willNewVectorAddtomemorycachestore ---
  self.event_embeddings[event_id] = new_session_embedding
 
  self._append_to_verification_file(event_id, session, raw_logs)
@@ -365,7 +364,6 @@ class KnowledgeBaseBuilder:
 
  logging.info(f"✅ Verification logs saved in '{self.verification_dir}' directory.")
  logging.info("Knowledge base saving complete.")
-
 
 if __name__ == '__main__':
  config = Config()

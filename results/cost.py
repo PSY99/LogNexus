@@ -14,15 +14,15 @@ lognexus_total_cost = lognexus_input_total + lognexus_output_total
 # Direct LLM Cost (Per 100 logs) - Raw Data from your image
 # I have transcribed the numbers from your image accurately.
 direct_inputs = [
-    4319, 8868, 8586, 9019, 9628, 9617, 8461, 9587, 8633, 8307,
-    9187, 8677, 9332, 7231, 9244, 9430, 7571, 9708, 8061, 6787,
-    7766, 7801, 9788, 8974, 9297, 5890, 5933, 6417, 7568, 9200
+ 4319, 8868, 8586, 9019, 9628, 9617, 8461, 9587, 8633, 8307,
+ 9187, 8677, 9332, 7231, 9244, 9430, 7571, 9708, 8061, 6787,
+ 7766, 7801, 9788, 8974, 9297, 5890, 5933, 6417, 7568, 9200
 ]
 
 direct_outputs = [
-    2729, 4230, 6653, 3551, 4860, 3532, 6912, 3614, 4917, 5360,
-    5038, 4449, 4807, 6071, 3773, 4890, 5689, 3642, 5023, 4898,
-    4769, 4242, 5606, 4945, 3818, 6979, 9632, 9347, 4740, 5693
+ 2729, 4230, 6653, 3551, 4860, 3532, 6912, 3614, 4917, 5360,
+ 5038, 4449, 4807, 6071, 3773, 4890, 5689, 3642, 5023, 4898,
+ 4769, 4242, 5606, 4945, 3818, 6979, 9632, 9347, 4740, 5693
 ]
 
 # Calculate cumulative cost for Direct LLM
@@ -75,19 +75,19 @@ ax.plot(x_project, y_lognexus_project, color='#1f77b4', linewidth=2.5, label='lo
 # Highlight Break-even Point
 ax.plot(break_even_x, lognexus_total_cost, 'ko', markersize=8, zorder=10)
 ax.annotate(f'Break-even Point\n~{int(break_even_x)} Logs', 
-            xy=(break_even_x, lognexus_total_cost), 
-            xytext=(break_even_x + 200, lognexus_total_cost - 90000),
-            arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=.2'),
-            fontsize=11, fontweight='bold')
+ xy=(break_even_x, lognexus_total_cost), 
+ xytext=(break_even_x + 200, lognexus_total_cost - 90000),
+ arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=.2'),
+ fontsize=11, fontweight='bold')
 
 # Fill the area to show savings
 ax.fill_between(x_project, y_lognexus_project, y_direct_project, 
-                where=(x_project > break_even_x), 
-                color='green', alpha=0.1, hatch='//', label='Token Savings')
+ where=(x_project > break_even_x), 
+ color='green', alpha=0.1, hatch='//', label='Token Savings')
 
 # Formatting
 def k_formatter(x, pos):
-    return f'{int(x/1000)}k'
+ return f'{int(x/1000)}k'
 
 ax.xaxis.set_major_formatter(FuncFormatter(k_formatter))
 ax.yaxis.set_major_formatter(FuncFormatter(k_formatter))

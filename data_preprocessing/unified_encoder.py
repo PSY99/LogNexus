@@ -13,12 +13,11 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.config import Config
 
-
 class UnifiedLogEncoder:
  """
  [upgraded]
- - core功能: 管理模板andParameterVocabularytable,并will原始LogDictionaryConvertas包含 template_id and param_ids Dictionary.
- - Newnew功能: support持 <CLS> and <MASK> 特殊模板token.
+ - coreability: templateboardandParameterVocabularytable,willLogDictionaryConvertas template_id and param_ids Dictionary.
+ - Newnewability: supporthold <CLS> and <MASK> templateboardtoken.
  """
  def __init__(self, cfg=Config):
  self.config = cfg
@@ -30,10 +29,10 @@ class UnifiedLogEncoder:
  }
  self.id_to_param = {v: k for k, v in self.param_to_id.items()}
 
- # --- 模板Vocabularytable ---
+ # --- templateboardVocabularytable ---
  self.template_to_id = {
  self.config.PAD_TOKEN: 0,
- # [NEW] asMLMandECOtaskAdd特殊token
+ # [NEW] asMLMandECOtaskAddtoken
  self.config.CLS_TOKEN: 1,
  self.config.MASK_TOKEN: 2,
  }
@@ -51,13 +50,13 @@ class UnifiedLogEncoder:
 
  def _load_templates_from_file(self, filepath: str):
  """
- [Newnew] from指定CSVFileinLoadLog template,并BuildVocabularytable.
- CSVFile应包含one名as 'EventTemplate' column.
+ [Newnew] fromspecifyCSVFileinLoadLog template,BuildVocabularytable.
+ CSVFileonenameas 'EventTemplate' column.
  """
  logging.info(f"Loading templates from file: {filepath}")
  try:
  with open(filepath, 'r', encoding='utf-8') as f:
- # Use DictReader 可以Throughcolumn名directly访问,更健壮
+ # Use DictReader Throughcolumnnamedirectly,
  reader = csv.DictReader(f)
  for row in reader:
  template = row.get('EventTemplate')
@@ -77,7 +76,7 @@ class UnifiedLogEncoder:
 
  def fit(self, data: list[dict]):
  """
- [已修改] inTrainData上samewhen学习模板andParameterVocabularytable.
+ [fix] inTrainDatasamewhentemplateboardandParameterVocabularytable.
  """
  print("Fitting the Unified Encoder on training data...")
  param_word_freq = defaultdict(int)
@@ -106,28 +105,28 @@ class UnifiedLogEncoder:
 
  def encode(self, entry: dict, include_params: bool = True) -> dict:
  """
- [已修改] willsingle条LogDictionaryEncodeas包含 template_id and param_ids Dictionary.
- 这is必要格式更改,以support持NewModel.
+ [fix] willsingleLogDictionaryEncodeas template_id and param_ids Dictionary.
+ is,supportholdNewModel.
  """
- # Encode模板
+ # Encodetemplateboard
  template_str = entry.get('EventTemplate', '')
- template_id = self.template_to_id.get(template_str, -1) # Use-1table示未找to,后续应Filter
+ template_id = self.template_to_id.get(template_str, -1) # Use-1tableto,backwardFilter
 
- # 2. According to include_params 标志processParameter
+ # 2. According to include_params markprocessParameter
  if not include_params:
- # If不包含Parameter,Createone全as PAD 张量并directlyReturn
+ # IfParameter,Createoneas PAD amountdirectlyReturn
  pad_id = self.param_to_id.get(self.config.PAD_TOKEN, 0)
  param_ids_vector = torch.full((self.config.max_params,), pad_id, dtype=torch.long)
  else:
- # If包含Parameter,Call内部方法进linepositive常Encode
+ # IfParameter,CallinsidelinepositiveEncode
  param_ids_vector = self._encode_params(entry)
  
  return {'template_id': template_id, 'param_ids': param_ids_vector}
 
  def _encode_params(self, entry: dict) -> torch.Tensor:
  """
- willLog parametersEncodeasID序column.
- (此部分Logic基本源自您code,RemoveIPandPID特殊process,简化as统oneParameter)
+ willLog parametersEncodeasIDcolumn.
+ (thissplitLogiccode,RemoveIPandPIDprocess,asoneParameter)
  """
  all_tokens = []
  for param in entry.get('Parameters', []):
@@ -148,7 +147,7 @@ class UnifiedLogEncoder:
  def _normalize_and_tokenize_param(self, param: str) -> list[str]:
  param = str(param)
  if re.fullmatch(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', param):
- return ['<IP_ADDR>'] # 统oneIPtable示
+ return ['<IP_ADDR>'] # oneIPtable
  if re.search(r'\d{2}:\d{2}:\d{2}', param):
  return []
  if re.fullmatch(r'0x[0-9a-fA-F]+', param, re.IGNORECASE) or re.fullmatch(r'[+-]?\d+(\.\d+)?', param):
@@ -167,7 +166,5 @@ class UnifiedLogEncoder:
  print(f"Unified Encoder state loaded from {filepath}")
  return encoder
  
-
-
 
  

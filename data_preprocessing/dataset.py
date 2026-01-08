@@ -20,16 +20,13 @@ from event_detector.detect_event_baseline import detect_security_events_apache, 
 from utils.config import Config
 from data_preprocessing.log_parser import LogParser, TemplateMatcher
 
-
-
-
 # =================================================================================
-# 2. 【全New】下一模板PredictData集 (NextTemplateDataset)
+# 2. 【New】PredictData (NextTemplateDataset)
 # =================================================================================
 class BaseDataset(Dataset):
  """
- 为“下一模板Predict”任务准备Data.
- - 支持 'train', 'eval', 'online' 三种模式,Load对应Data集.
+ “Predict”Data.
+ - 'train', 'eval', 'online' ,LoadData.
  """
  def __init__(self, config: Config, mode='train', data_source=None):
  self.config = config
@@ -47,7 +44,7 @@ class BaseDataset(Dataset):
  self.parser = LogParser(self.template_matcher)
  self.num_templates = len(self.template_matcher.template_to_id)
 
- # LoadSumParse原始Log (逻辑与之前类似)
+ # LoadSumParseLog ()
  if data_source == 'structured' and mode == 'train':
  structured_df = pd.read_csv(config.train_structured_file_path)
  self.raw_logs = self._parse_from_structured(config.train_origin_log_file_path, structured_df)
@@ -61,11 +58,11 @@ class BaseDataset(Dataset):
  
  logging.info(f"Total logs parsed: {len(self.raw_logs)}")
 
- # UseRuleGenerate初始事件Window
+ # UseRuleGenerateWindow
  if config.event_detection_strategy == 'rule_based':
  logging.info("Using rule-based event detection.")
  self.sessions, self.log_to_pseudo_label = self._detect_events_baseline(self.raw_logs)
- # UseLLMGenerate事件Window
+ # UseLLMGenerateWindow
  elif config.event_detection_strategy == 'llm_based':
  logging.info("Using LLM-based event detection.")
  detector = MetaProgrammedDetector(config, self.client)
@@ -78,11 +75,11 @@ class BaseDataset(Dataset):
  logging.info(f"Dataset initialized. Mode: {mode}. Sessions: {len(self.sessions)}.")
 
  def __len__(self):
- # TrainwhenReturn样本Number,EvaluatewhenReturnLogNumber（因为EvaluateYes基于Log）
+ # TrainwhenReturnNumber,EvaluatewhenReturnLogNumber（EvaluateYesLog）
  return len(self.raw_logs)
 
  def get_sessions_for_eval(self):
- """Evaluatewhen需要原始SessionList"""
+ """EvaluatewhenSessionList"""
  return self.sessions
  
  def _parse_log_line(self, line: str, year_context: dict, structured_info=None):
@@ -134,9 +131,8 @@ class BaseDataset(Dataset):
  else:
  raise ValueError(f"No specific event detection rule for dataset {self.config.dataset}.")
 
-
 # =================================================================================
-# 3. 其他辅助函Number (Used for主scriptCall)
+# 3. Number (Used forscriptCall)
 # =================================================================================
 
 def get_raw_data_for_fitting(config: Config):
@@ -154,5 +150,4 @@ def get_raw_data_for_fitting(config: Config):
  else:
  raise ValueError(f"Unsupported data source for fitting: {config.data_source_train}")
  
-
 

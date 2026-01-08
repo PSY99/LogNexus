@@ -2,10 +2,9 @@ import re
 from datetime import datetime, timedelta
 from collections import defaultdict, deque
 
-
-# --- 启发式SessionBuildRule ---
+# --- Heuristic Session Building Rules ---
 def detect_security_events_Linux(merged_data):
- # ... (此函Number代码保持不变,此处为简洁省略)
+ # ... (This function's code remains unchanged, omitted here for brevity)
  SESSION_TIME_WINDOW = timedelta(minutes=10)
  ENTITY_TIME_WINDOW = timedelta(seconds=30)
  PARAM_TIME_WINDOW = timedelta(seconds=60)
@@ -53,7 +52,6 @@ def detect_security_events_Linux(merged_data):
  security_events = list(events.values())
  log_index_to_event_id = {log_idx: event_id for event_id, logs in enumerate(security_events) for log_idx in logs}
  return security_events, log_index_to_event_id
-
 
 def detect_security_events_openssh(merged_data):
  """
@@ -164,7 +162,6 @@ def detect_security_events_openssh(merged_data):
  active_events_state.append(new_event_state)
 
  return security_events, log_index_to_event_id
-
 
 def detect_security_events_apache(merged_data):
  """

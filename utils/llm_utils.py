@@ -7,7 +7,7 @@ from typing import Optional, Any
 
 from openai import OpenAI, RateLimiterror, APIConnectionerror
 
-from .config import Config
+from.config import Config
 
 def initialize_llm_client(config: Config) -> Optional[OpenAI]:
  """
@@ -31,7 +31,6 @@ def initialize_llm_client(config: Config) -> Optional[OpenAI]:
  except Exception as e:
  logging.error(f"Failed to initialize OpenAI client: {e}")
  return None
-
 
 def call_llm_api(
  client: OpenAI,
@@ -79,11 +78,11 @@ def call_llm_api(
  
  if first_newline != -1 and first_newline < end_index:
  # Extractnewlineafter,end markerbeforecontent
- content = content[first_newline + 1 : end_index].strip()
+ content = content[first_newline + 1: end_index].strip()
  else:
- # Edge case：only hasone linecodewith no换line (rare)
+ # Edge case：only hasone linecodewith nochangeline (rare)
  # directlyskip ``` (3characters)
- content = content[start_index + 3 : end_index].strip()
+ content = content[start_index + 3: end_index].strip()
  else:
  # only hasstart markerno endmarker,possiblytruncated,orformat error
  # in this case,usuallykeep start_index afterallcontentsafer

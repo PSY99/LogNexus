@@ -1,4 +1,4 @@
-# ./data_preprocessing/pretrain_dataset.py
+#./data_preprocessing/pretrain_dataset.py
 
 import os
 import random
@@ -15,26 +15,26 @@ from data_preprocessing.unified_encoder import UnifiedLogEncoder
 
 class PretrainDataset(Dataset):
  """
- as MLM, RPD, ECO preTraintaskprepare备DataDataset.
- - 对EachLog样本动态应用three种Convert.
+ as MLM, RPD, ECO preTraintaskprepareprepareDataDataset.
+ - EachLogusethreeConvert.
  """
  def __init__(self, config: Config, encoder: UnifiedLogEncoder, raw_logs: list[dict]):
  self.config = config
  self.encoder = encoder
  self.raw_logs = raw_logs
  
- # Get特殊 token ID
+ # Get token ID
  self.mask_template_id = self.encoder.template_to_id[self.config.MASK_TOKEN]
  self.pad_template_id = self.encoder.template_to_id.get(self.config.PAD_TOKEN)
  self.pad_param_id = self.encoder.param_to_id.get(self.config.PAD_TOKEN)
 
- # 1. Use滑动Window方法CreateLog序column
+ # 1. UseWindowCreateLogcolumn
  self.log_sequences = self._create_sliding_windows(
  raw_logs, self.config.window_size, self.config.step_size
  )
  
- # prepare备 RPD task所需“污染”Parameter池
- # wefromallLogin收setallParameter,Used for随机替换
+ # prepareprepare RPD task“”Parameter
+ # wefromallLoginsetallParameter,Used forchange
  self.param_pool = list(set(
  param for log in raw_logs if log.get('Parameters') for param in log['Parameters']
  ))
@@ -47,35 +47,35 @@ class PretrainDataset(Dataset):
 
  def _create_sliding_windows(self, logs: list[dict], window_size: int, step_size: int) -> list[list[dict]]:
  """
- in整LogList上应用滑动Window来Create序column.
+ inLogListuseWindowCreatecolumn.
  """
  sequences = []
  num_logs = len(logs)
  
- # fromindex 0 start,以 step_size asstep长进line滑动
+ # fromindex 0 start, step_size asstepline
  for i in range(0, num_logs - window_size + 1, step_size):
- # ExtractoneWindowSize序column
- window = logs[i : i + window_size]
+ # ExtractoneWindowSizecolumn
+ window = logs[i: i + window_size]
  sequences.append(window)
  
  return sequences
 
  def __len__(self):
- # DatasetLengthis序columnCount
+ # DatasetLengthiscolumnCount
  return len(self.log_sequences)
 
  def __getitem__(self, idx):
- # Getone由滑动WindowGenerate、固定LengthLog序column
+ # GetoneWindowGenerate、LengthLogcolumn
  log_sequence = self.log_sequences[idx]
 
- # initializeUsed for存储整序column结果List
+ # initializeUsed forstorecolumnList
  seq_template_ids = []
  seq_param_ids = []
  seq_mlm_labels = []
  seq_rpd_labels = []
  seq_eco_labels = []
 
- # 遍历序columnin每one条Log
+ # columninoneLog
  for log_entry in log_sequence:
  original_log = log_entry
  mod_template = original_log['EventTemplate']
@@ -83,8 +83,8 @@ class PretrainDataset(Dataset):
  
  # initializeCurrentLoglabel
  mlm_label = -100 # CrossEntropyLoss ignore_index
- rpd_label = 0 # 0 table示 'correct'
- eco_label = 0 # 0 table示 'correct'
+ rpd_label = 0 # 0 table 'correct'
+ eco_label = 0 # 0 table 'correct'
 
  # --- 1. Masked Language Model (MLM) ---
  if random.random() < self.config.mlm_prob:
@@ -99,7 +99,7 @@ class PretrainDataset(Dataset):
  original_param = mod_params[param_idx_to_replace]
  
  replacement_param = original_param
- # Ensure替换Parameter与原始Parameter不same
+ # EnsurechangeParameterParametersame
  while replacement_param == original_param and len(self.param_pool) > 1:
  replacement_param = random.choice(self.param_pool)
  
@@ -109,29 +109,29 @@ class PretrainDataset(Dataset):
  # --- 3. Event (Parameter) Order Corruption (ECO) ---
  if len(set(mod_params)) > 1 and random.random() < 0.5:
  shuffled_params = copy.deepcopy(mod_params)
- # Ensure打乱后顺序与原始顺序不same
+ # Ensurebackwardsame
  while shuffled_params == mod_params:
  random.shuffle(shuffled_params)
  mod_params = shuffled_params
  eco_label = 1 # markeras 'corrupted'
 
- # Use encoder 对修改后single条Log进lineEncode
+ # Use encoder fixbackwardsingleLoglineEncode
  encoded_input = self.encoder.encode({
  'EventTemplate': mod_template,
  'Parameters': mod_params
  })
  
- # willEncode结果andlabelAddto序columnListin
+ # willEncodeandlabelAddtocolumnListin
  seq_template_ids.append(encoded_input['template_id'])
  seq_param_ids.append(encoded_input['param_ids'])
  seq_mlm_labels.append(mlm_label)
  seq_rpd_labels.append(rpd_label)
  seq_eco_labels.append(eco_label)
 
- # 【重要】因as滑动WindowEnsureEachSequence length都is window_size,
- # 所以we不再need to进line填充or截断.
+ # 【】asWindowEnsureEachSequence lengthis window_size,
+ # weneed tolineor.
 
- # willListConvertas张量并Return
+ # willListConvertasamountReturn
  return {
  "template_ids": torch.tensor(seq_template_ids, dtype=torch.long),
  "param_ids": torch.stack(seq_param_ids),
@@ -143,8 +143,8 @@ class PretrainDataset(Dataset):
  @staticmethod
  def collate_fn(batch: list[dict]):
  """
- Custom collate functionNumber,willBatchinDictionaryList（EachDictionary包含one序column）堆叠成Batch张量.
- 这functionNumberNo需改变.
+ Custom collate functionNumber,willBatchinDictionaryList（EachDictionaryonecolumn）intoBatchamount.
+ functionNumberNo.
  """
  template_ids_list = [item['template_ids'] for item in batch]
  param_ids_list = [item['param_ids'] for item in batch]

@@ -10,186 +10,185 @@ from collections import defaultdict
 #==============================================================================#
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: dict) -> list[str]:
-    """
-    Extracts the Process ID (PID) as a linking key.
-    This rule groups all logs sharing the exact same PID.
-    """
-    pid = log.get('PID')
-    if pid is not None:
-        return [f"PID_{pid}"]
-    return []
+ """
+ Extracts the Process ID (PID) as a linking key.
+ This rule groups all logs sharing the exact same PID.
+ """
+ pid = log.get('PID')
+ if pid is not None:
+ return [f"PID_{pid}"]
+ return []
 
 from typing import Dict, List
 
 def rule_2_merge_event_cores_rule_for_web_scanning_activity_a(log: Dict) -> List[str]:
-    """
-    After initial grouping, identify 'Event Cores' or individual logs containing templates indicative of client-side probing, such as `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, `[client <*>] Directory index forbidden by rule: <*>`, or `[client <*>] Invalid URI in request <*> <*>`. If multiple such logs or cores share the exact same Key Source Identifier (the `ip` field) and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), merge them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.
-    """
-    
-    # Define the set of templates that indicate web scanning/probing activity.
-    probing_templates = {
-        '[client <*>] File does not exist: <*>',
-        '[client <*>] script not found or unable to stat: <*>',
-        '[client <*>] Directory index forbidden by rule: <*>',
-        '[client <*>] Invalid URI in request <*> <*>',
-    }
+ """
+ After initial grouping, identify 'Event Cores' or individual logs containing templates indicative of client-side probing, such as `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, `[client <*>] Directory index forbidden by rule: <*>`, or `[client <*>] Invalid URI in request <*> <*>`. If multiple such logs or cores share the exact same Key Source Identifier (the `ip` field) and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), merge them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.
+ """
+ 
+ # Define the set of templates that indicate web scanning/probing activity.
+ probing_templates = {
+ '[client <*>] File does not exist: <*>',
+ '[client <*>] script not found or unable to stat: <*>',
+ '[client <*>] Directory index forbidden by rule: <*>',
+ '[client <*>] Invalid URI in request <*> <*>',
+ }
 
-    event_template = log.get('EventTemplate')
+ event_template = log.get('EventTemplate')
 
-    # Check if the log's template is one of the specified probing templates.
-    if event_template in probing_templates:
-        # The rule states that the linking key is the source IP address.
-        ip_address = log.get('ip')
-        
-        # If an IP address is found, create the key.
-        if ip_address:
-            return [f"IP_{ip_address}"]
+ # Check if the log's template is one of the specified probing templates.
+ if event_template in probing_templates:
+ # The rule states that the linking key is the source IP address.
+ ip_address = log.get('ip')
+ 
+ # If an IP address is found, create the key.
+ if ip_address:
+ return [f"IP_{ip_address}"]
 
-    # If the log does not match the criteria, return an empty list.
-    return []
+ # If the log does not match the criteria, return an empty list.
+ return []
 
 from typing import Dict, List
 
 def rule_3_merge_event_cores_rule_for_mod_jk_worker_state_tra(log: Dict) -> List[str]:
-    """
-    Identifies logs related to mod_jk worker state transitions and provides a
-    common key for grouping them.
-    """
-    event_template = log.get('EventTemplate')
-    if not event_template:
-        return []
+ """
+ Identifies logs related to mod_jk worker state transitions and provides a
+ common key for grouping them.
+ """
+ event_template = log.get('EventTemplate')
+ if not event_template:
+ return []
 
-    # Templates that trigger the start of a potential sequence.
-    trigger_templates = {
-        'jk2_init() Found child <*>...',
-        'jk2_init() Can\'t find child <*>...',
-        'workerEnv.init() ok <*>'
-    }
+ # Templates that trigger the start of a potential sequence.
+ trigger_templates = {
+ 'jk2_init() Found child <*>...',
+ 'jk2_init() Can\'t find child <*>...',
+ 'workerEnv.init() ok <*>'
+ }
 
-    # Templates for subsequent logs that can be merged into the sequence.
-    mergeable_templates = {
-        'mod_jk child init <*> <*>',
-        'mod_jk child workerEnv in error state <*>',
-        'mod_jk2 Shutting down'
-    }
+ # Templates for subsequent logs that can be merged into the sequence.
+ mergeable_templates = {
+ 'mod_jk child init <*> <*>',
+ 'mod_jk child workerEnv in error state <*>',
+ 'mod_jk2 Shutting down'
+ }
 
-    # A constant key to group all related mod_jk transition events.
-    # This allows the orchestrator to merge them into a single logical event.
-    linking_key = 'GROUP_MODJK_WORKER_STATE_TRANSITION'
+ # A constant key to group all related mod_jk transition events.
+ # This allows the orchestrator to merge them into a single logical event.
+ linking_key = 'GROUP_MODJK_WORKER_STATE_TRANSITION'
 
-    # Trigger logs always produce the linking key.
-    if event_template in trigger_templates:
-        return [linking_key]
+ # Trigger logs always produce the linking key.
+ if event_template in trigger_templates:
+ return [linking_key]
 
-    # Mergeable logs produce the key only if they lack an IP address,
-    # as specified by the rule.
-    if event_template in mergeable_templates:
-        if not log.get('ip'):
-            return [linking_key]
+ # Mergeable logs produce the key only if they lack an IP address,
+ # as specified by the rule.
+ if event_template in mergeable_templates:
+ if not log.get('ip'):
+ return [linking_key]
 
-    return []
+ return []
 
 def rule_4_merge_event_cores_rule_for_service_restart_identif(log: dict) -> list[str]:
-    """
-    Identifies logs related to a service restart sequence based on EventTemplates.
+ """
+ Identifies logs related to a service restart sequence based on EventTemplates.
 
-    This rule flags three types of logs with a common key:
-    1. Trigger logs indicating module configuration.
-    2. Intermediate logs indicating service initialization, if they lack an IP.
-    3. A specific boundary log indicating the service has resumed normal operations.
+ This rule flags three types of logs with a common key:
+ 1. Trigger logs indicating module configuration.
+ 2. Intermediate logs indicating service initialization, if they lack an IP.
+ 3. A specific boundary log indicating the service has resumed normal operations.
 
-    All matching logs are tagged with 'SERVICE_RESTART_GLOBAL' to be grouped
-    by a stateful orchestrator.
-    """
-    event_template = log.get('EventTemplate')
-    if not event_template:
-        return []
+ All matching logs are tagged with 'SERVICE_RESTART_GLOBAL' to be grouped
+ by a stateful orchestrator.
+ """
+ event_template = log.get('EventTemplate')
+ if not event_template:
+ return []
 
-    # Define the templates for each part of the service restart sequence.
-    trigger_templates = {
-        'mod_security/<*> configured',
-        'LDAP: Built with OpenLDAP LDAP SDK'
-    }
-    intermediate_templates = {
-        'workerEnv.init() ok <*>',
-        'mod_jk child init <*> <*>'
-    }
-    boundary_template = 'Apache/<*> configured -- resuming normal operations'
+ # Define the templates for each part of the service restart sequence.
+ trigger_templates = {
+ 'mod_security/<*> configured',
+ 'LDAP: Built with OpenLDAP LDAP SDK'
+ }
+ intermediate_templates = {
+ 'workerEnv.init() ok <*>',
+ 'mod_jk child init <*> <*>'
+ }
+ boundary_template = 'Apache/<*> configured -- resuming normal operations'
 
-    # 1. Check for trigger logs.
-    if event_template in trigger_templates:
-        return ['SERVICE_RESTART_GLOBAL']
+ # 1. Check for trigger logs.
+ if event_template in trigger_templates:
+ return ['SERVICE_RESTART_GLOBAL']
 
-    # 2. Check for intermediate logs, which have an additional condition.
-    if event_template in intermediate_templates:
-        # Condition: must lack an 'ip' field.
-        if not log.get('ip'):
-            return ['SERVICE_RESTART_GLOBAL']
+ # 2. Check for intermediate logs, which have an additional condition.
+ if event_template in intermediate_templates:
+ # Condition: must lack an 'ip' field.
+ if not log.get('ip'):
+ return ['SERVICE_RESTART_GLOBAL']
 
-    # 3. Check for the boundary log.
-    if event_template == boundary_template:
-        return ['SERVICE_RESTART_GLOBAL']
+ # 3. Check for the boundary log.
+ if event_template == boundary_template:
+ return ['SERVICE_RESTART_GLOBAL']
 
-    # If the log matches none of the above, it's not part of this sequence.
-    return []
+ # If the log matches none of the above, it's not part of this sequence.
+ return []
 
 def rule_5_merge_event_cores_rule_for_mass_shutdown_notificat(log: dict) -> list[str]:
-    """
-    Identifies logs with the specific EventTemplate 'mod_jk2 Shutting down'
-    and creates a linking key based on this template.
-    """
-    event_template = log.get('EventTemplate')
+ """
+ Identifies logs with the specific EventTemplate 'mod_jk2 Shutting down'
+ and creates a linking key based on this template.
+ """
+ event_template = log.get('EventTemplate')
 
-    if event_template == 'mod_jk2 Shutting down':
-        # The rule states that logs with this exact template should be merged.
-        # Therefore, the template itself serves as the perfect linking key.
-        # The orchestrator will use this key, along with its own time-window logic,
-        # to group consecutive occurrences.
-        return [f"TEMPLATE_{event_template}"]
+ if event_template == 'mod_jk2 Shutting down':
+ # The rule states that logs with this exact template should be merged.
+ # Therefore, the template itself serves as the perfect linking key.
+ # The orchestrator will use this key, along with its own time-window logic,
+ # to group consecutive occurrences.
+ return [f"TEMPLATE_{event_template}"]
 
-    return []
+ return []
 
 from typing import Dict, List
 
 def rule_6_key_dimension_split_rule_for_events_driven_by_exte(log: Dict) -> List[str]:
-    """
-    Extracts a key based on the 'ip' field to create a distinct dimension for each external actor.
+ """
+ Extracts a key based on the 'ip' field to create a distinct dimension for each external actor.
 
-    This rule treats each unique IP address as a separate logical event context.
-    If a log entry contains an 'ip' field, a key 'IP_<ip_address>' is generated.
-    This allows the orchestrator to split event streams based on the source IP.
-    """
-    # The rule applies to events containing an 'ip' field.
-    ip_address = log.get('ip')
+ This rule treats each unique IP address as a separate logical event context.
+ If a log entry contains an 'ip' field, a key 'IP_<ip_address>' is generated.
+ This allows the orchestrator to split event streams based on the source IP.
+ """
+ # The rule applies to events containing an 'ip' field.
+ ip_address = log.get('ip')
 
-    # Check if the ip_address is present and not None or an empty string.
-    if ip_address:
-        # Each unique 'ip' value defines a distinct actor context.
-        # The key is formatted as "IP_value".
-        return [f"IP_{ip_address}"]
+ # Check if the ip_address is present and not None or an empty string.
+ if ip_address:
+ # Each unique 'ip' value defines a distinct actor context.
+ # The key is formatted as "IP_value".
+ return [f"IP_{ip_address}"]
 
-    # If no 'ip' field is found or it's empty, the rule does not apply.
-    return []
+ # If no 'ip' field is found or it's empty, the rule does not apply.
+ return []
 
 from typing import Dict, List
 
 def rule_7_boundary_rule_by_timeout_for_any_event_being_const(log: Dict) -> List[str]:
-    """
-    This rule describes a timeout-based boundary condition for event construction.
-    It is a meta-rule that governs the behavior of the event correlation engine
-    (the orchestrator) rather than defining a specific key to be extracted from a
-    single log entry.
+ """
+ This rule describes a timeout-based boundary condition for event construction.
+ It is a meta-rule that governs the behavior of the event correlation engine
+ (the orchestrator) rather than defining a specific key to be extracted from a
+ single log entry.
 
-    The key extractor's role is to find linking keys within a log. This rule
-    does not specify any such keys; it specifies a temporal condition for closing
-    an event. The stateful orchestrator is responsible for tracking time and
-    implementing this timeout logic for events constructed using keys from other rules.
+ The key extractor's role is to find linking keys within a log. This rule
+ does not specify any such keys; it specifies a temporal condition for closing
+ an event. The stateful orchestrator is responsible for tracking time and
+ implementing this timeout logic for events constructed using keys from other rules.
 
-    Therefore, this function correctly returns an empty list as no keys can be
-    derived from a single log based on this rule.
-    """
-    return []
-
+ Therefore, this function correctly returns an empty list as no keys can be
+ derived from a single log based on this rule.
+ """
+ return []
 
 #==============================================================================#
 # --- Stage 4: Main Event Processor Framework ---
@@ -204,278 +203,276 @@ from typing import List, Dict, Tuple, Callable, Optional, Any
 ############################################################
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: dict) -> list[str]:
-    """
-    Extracts the Process ID (PID) as a linking key.
-    This rule groups all logs sharing the exact same PID.
-    """
-    pid = log.get('PID')
-    if pid is not None:
-        return [f"PID_{pid}"]
-    return []
+ """
+ Extracts the Process ID (PID) as a linking key.
+ This rule groups all logs sharing the exact same PID.
+ """
+ pid = log.get('PID')
+ if pid is not None:
+ return [f"PID_{pid}"]
+ return []
 
 def rule_2_merge_event_cores_rule_for_web_scanning_activity_a(log: Dict) -> List[str]:
-    """
-    After initial grouping, identify 'Event Cores' or individual logs containing templates indicative of client-side probing, such as `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, `[client <*>] Directory index forbidden by rule: <*>`, or `[client <*>] Invalid URI in request <*> <*>`. If multiple such logs or cores share the exact same Key Source Identifier (the `ip` field) and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), merge them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.
-    """
-    probing_templates = {
-        '[client <*>] File does not exist: <*>',
-        '[client <*>] script not found or unable to stat: <*>',
-        '[client <*>] Directory index forbidden by rule: <*>',
-        '[client <*>] Invalid URI in request <*> <*>',
-    }
+ """
+ After initial grouping, identify 'Event Cores' or individual logs containing templates indicative of client-side probing, such as `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, `[client <*>] Directory index forbidden by rule: <*>`, or `[client <*>] Invalid URI in request <*> <*>`. If multiple such logs or cores share the exact same Key Source Identifier (the `ip` field) and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), merge them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.
+ """
+ probing_templates = {
+ '[client <*>] File does not exist: <*>',
+ '[client <*>] script not found or unable to stat: <*>',
+ '[client <*>] Directory index forbidden by rule: <*>',
+ '[client <*>] Invalid URI in request <*> <*>',
+ }
 
-    event_template = log.get('EventTemplate')
+ event_template = log.get('EventTemplate')
 
-    if event_template in probing_templates:
-        ip_address = log.get('ip')
-        if ip_address:
-            return [f"IP_{ip_address}"]
+ if event_template in probing_templates:
+ ip_address = log.get('ip')
+ if ip_address:
+ return [f"IP_{ip_address}"]
 
-    return []
+ return []
 
 def rule_3_merge_event_cores_rule_for_mod_jk_worker_state_tra(log: Dict) -> List[str]:
-    """
-    Identifies logs related to mod_jk worker state transitions and provides a
-    common key for grouping them.
-    """
-    event_template = log.get('EventTemplate')
-    if not event_template:
-        return []
+ """
+ Identifies logs related to mod_jk worker state transitions and provides a
+ common key for grouping them.
+ """
+ event_template = log.get('EventTemplate')
+ if not event_template:
+ return []
 
-    trigger_templates = {
-        'jk2_init() Found child <*>...',
-        'jk2_init() Can\'t find child <*>...',
-        'workerEnv.init() ok <*>'
-    }
-    mergeable_templates = {
-        'mod_jk child init <*> <*>',
-        'mod_jk child workerEnv in error state <*>',
-        'mod_jk2 Shutting down'
-    }
+ trigger_templates = {
+ 'jk2_init() Found child <*>...',
+ 'jk2_init() Can\'t find child <*>...',
+ 'workerEnv.init() ok <*>'
+ }
+ mergeable_templates = {
+ 'mod_jk child init <*> <*>',
+ 'mod_jk child workerEnv in error state <*>',
+ 'mod_jk2 Shutting down'
+ }
 
-    linking_key = 'GROUP_MODJK_WORKER_STATE_TRANSITION'
+ linking_key = 'GROUP_MODJK_WORKER_STATE_TRANSITION'
 
-    if event_template in trigger_templates:
-        return [linking_key]
+ if event_template in trigger_templates:
+ return [linking_key]
 
-    if event_template in mergeable_templates:
-        if not log.get('ip'):
-            return [linking_key]
+ if event_template in mergeable_templates:
+ if not log.get('ip'):
+ return [linking_key]
 
-    return []
+ return []
 
 def rule_4_merge_event_cores_rule_for_service_restart_identif(log: dict) -> list[str]:
-    """
-    Identifies logs related to a service restart sequence based on EventTemplates.
-    """
-    event_template = log.get('EventTemplate')
-    if not event_template:
-        return []
+ """
+ Identifies logs related to a service restart sequence based on EventTemplates.
+ """
+ event_template = log.get('EventTemplate')
+ if not event_template:
+ return []
 
-    trigger_templates = {
-        'mod_security/<*> configured',
-        'LDAP: Built with OpenLDAP LDAP SDK'
-    }
-    intermediate_templates = {
-        'workerEnv.init() ok <*>',
-        'mod_jk child init <*> <*>'
-    }
-    boundary_template = 'Apache/<*> configured -- resuming normal operations'
+ trigger_templates = {
+ 'mod_security/<*> configured',
+ 'LDAP: Built with OpenLDAP LDAP SDK'
+ }
+ intermediate_templates = {
+ 'workerEnv.init() ok <*>',
+ 'mod_jk child init <*> <*>'
+ }
+ boundary_template = 'Apache/<*> configured -- resuming normal operations'
 
-    if event_template in trigger_templates:
-        return ['SERVICE_RESTART_GLOBAL']
+ if event_template in trigger_templates:
+ return ['SERVICE_RESTART_GLOBAL']
 
-    if event_template in intermediate_templates:
-        if not log.get('ip'):
-            return ['SERVICE_RESTART_GLOBAL']
+ if event_template in intermediate_templates:
+ if not log.get('ip'):
+ return ['SERVICE_RESTART_GLOBAL']
 
-    if event_template == boundary_template:
-        return ['SERVICE_RESTART_GLOBAL']
+ if event_template == boundary_template:
+ return ['SERVICE_RESTART_GLOBAL']
 
-    return []
+ return []
 
 def rule_5_merge_event_cores_rule_for_mass_shutdown_notificat(log: dict) -> list[str]:
-    """
-    Identifies logs with the specific EventTemplate 'mod_jk2 Shutting down'
-    and creates a linking key based on this template.
-    """
-    event_template = log.get('EventTemplate')
+ """
+ Identifies logs with the specific EventTemplate 'mod_jk2 Shutting down'
+ and creates a linking key based on this template.
+ """
+ event_template = log.get('EventTemplate')
 
-    if event_template == 'mod_jk2 Shutting down':
-        return [f"TEMPLATE_{event_template}"]
+ if event_template == 'mod_jk2 Shutting down':
+ return [f"TEMPLATE_{event_template}"]
 
-    return []
+ return []
 
 def rule_6_key_dimension_split_rule_for_events_driven_by_exte(log: Dict) -> List[str]:
-    """
-    Extracts a key based on the 'ip' field to create a distinct dimension for each external actor.
-    """
-    ip_address = log.get('ip')
-    if ip_address:
-        return [f"IP_{ip_address}"]
-    return []
+ """
+ Extracts a key based on the 'ip' field to create a distinct dimension for each external actor.
+ """
+ ip_address = log.get('ip')
+ if ip_address:
+ return [f"IP_{ip_address}"]
+ return []
 
 def rule_7_boundary_rule_by_timeout_for_any_event_being_const(log: Dict) -> List[str]:
-    """
-    This is a meta-rule that governs the behavior of the event correlation engine.
-    It does not extract keys from a single log, so it correctly returns an empty list.
-    """
-    return []
-
+ """
+ This is a meta-rule that governs the behavior of the event correlation engine.
+ It does not extract keys from a single log, so it correctly returns an empty list.
+ """
+ return []
 
 ############################################################
 ### THE `EventProcessor` CLASS IMPLEMENTATION ###
 ############################################################
 
 class EventProcessor:
-    """
-    Orchestrates the clustering of logs into security events using a
-    single-pass approach with a Union-Find data structure.
+ """
+ Orchestrates the clustering of logs into security events using a
+ single-pass approach with a Union-Find data structure.
 
-    This stateful class processes a list of logs, applying a set of
-    stateless rule functions to extract linking keys. It then uses these
-    keys, in conjunction with configurable time windows, to group related
-    logs into cohesive events.
-    """
+ This stateful class processes a list of logs, applying a set of
+ stateless rule functions to extract linking keys. It then uses these
+ keys, in conjunction with configurable time windows, to group related
+ logs into cohesive events.
+ """
 
-    def __init__(self, logs: List[Dict]):
-        """
-        Initializes the EventProcessor with a list of logs.
+ def __init__(self, logs: List[Dict]):
+ """
+ Initializes the EventProcessor with a list of logs.
 
-        The logs are expected to be pre-sorted by timestamp for the
-        single-pass algorithm to function correctly.
+ The logs are expected to be pre-sorted by timestamp for the
+ single-pass algorithm to function correctly.
 
-        Args:
-            logs: A list of log dictionaries.
-        """
-        self.logs = logs
-        self.num_logs = len(logs)
-        # Initialize Union-Find data structures
-        self.parent = list(range(self.num_logs))
-        self.size = [1] * self.num_logs
+ Args:
+ logs: A list of log dictionaries.
+ """
+ self.logs = logs
+ self.num_logs = len(logs)
+ # Initialize Union-Find data structures
+ self.parent = list(range(self.num_logs))
+ self.size = [1] * self.num_logs
 
-    def find(self, i: int) -> int:
-        """
-        Finds the root of the set containing element `i` with path compression.
+ def find(self, i: int) -> int:
+ """
+ Finds the root of the set containing element `i` with path compression.
 
-        Args:
-            i: The index of the element.
+ Args:
+ i: The index of the element.
 
-        Returns:
-            The root of the set containing element `i`.
-        """
-        if self.parent[i] == i:
-            return i
-        # Path compression
-        self.parent[i] = self.find(self.parent[i])
-        return self.parent[i]
+ Returns:
+ The root of the set containing element `i`.
+ """
+ if self.parent[i] == i:
+ return i
+ # Path compression
+ self.parent[i] = self.find(self.parent[i])
+ return self.parent[i]
 
-    def union(self, i: int, j: int) -> None:
-        """
-        Merges the sets containing elements `i` and `j` using union by size.
+ def union(self, i: int, j: int) -> None:
+ """
+ Merges the sets containing elements `i` and `j` using union by size.
 
-        Args:
-            i: The index of the first element.
-            j: The index of the second element.
-        """
-        root_i = self.find(i)
-        root_j = self.find(j)
-        if root_i != root_j:
-            # Union by size: attach smaller tree to the root of the larger tree
-            if self.size[root_i] < self.size[root_j]:
-                root_i, root_j = root_j, root_i
-            self.parent[root_j] = root_i
-            self.size[root_i] += self.size[root_j]
+ Args:
+ i: The index of the first element.
+ j: The index of the second element.
+ """
+ root_i = self.find(i)
+ root_j = self.find(j)
+ if root_i != root_j:
+ # Union by size: attach smaller tree to the root of the larger tree
+ if self.size[root_i] < self.size[root_j]:
+ root_i, root_j = root_j, root_i
+ self.parent[root_j] = root_i
+ self.size[root_i] += self.size[root_j]
 
-    def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
-        """
-        Clusters logs into events based on rules and time windows.
+ def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
+ """
+ Clusters logs into events based on rules and time windows.
 
-        This method performs a single pass over the logs. For each log, it
-        extracts linking keys using the provided rule functions. If a key has
-        been seen recently (within its defined time window), the current log's
-        event set is merged with the previous log's event set.
+ This method performs a single pass over the logs. For each log, it
+ extracts linking keys using the provided rule functions. If a key has
+ been seen recently (within its defined time window), the current log's
+ event set is merged with the previous log's event set.
 
-        Args:
-            rule_functions: A list of functions to extract linking keys from logs.
+ Args:
+ rule_functions: A list of functions to extract linking keys from logs.
 
-        Returns:
-            A tuple containing:
-            - security_events: A list of lists, where each inner list contains
-              the original indices of logs belonging to a single event.
-            - log_index_to_event_id: A dictionary mapping each log's original
-              index to its corresponding event ID.
-        """
-        # State tracking: key -> (last_seen_log_index, last_seen_timestamp)
-        key_state: Dict[str, Tuple[int, datetime]] = {}
+ Returns:
+ A tuple containing:
+ - security_events: A list of lists, where each inner list contains
+ the original indices of logs belonging to a single event.
+ - log_index_to_event_id: A dictionary mapping each log's original
+ index to its corresponding event ID.
+ """
+ # State tracking: key -> (last_seen_log_index, last_seen_timestamp)
+ key_state: Dict[str, Tuple[int, datetime]] = {}
 
-        # Time window configuration: key_prefix -> timedelta
-        # These values are derived from rule descriptions or reasonable defaults.
-        time_windows = {
-            'IP_': timedelta(seconds=60),          # Rule 2: web scanning session
-            'PID_': timedelta(seconds=60),         # Default for process activity
-            'TEMPLATE_': timedelta(seconds=10),    # Rule 5: mass shutdowns are rapid
-            'GROUP_': timedelta(seconds=300),      # Rule 3: worker state transitions
-            'SERVICE_RESTART_GLOBAL': timedelta(seconds=300), # Rule 4: service restarts
-        }
-        default_window = timedelta(seconds=60)
+ # Time window configuration: key_prefix -> timedelta
+ # These values are derived from rule descriptions or reasonable defaults.
+ time_windows = {
+ 'IP_': timedelta(seconds=60), # Rule 2: web scanning session
+ 'PID_': timedelta(seconds=60), # Default for process activity
+ 'TEMPLATE_': timedelta(seconds=10), # Rule 5: mass shutdowns are rapid
+ 'GROUP_': timedelta(seconds=300), # Rule 3: worker state transitions
+ 'SERVICE_RESTART_GLOBAL': timedelta(seconds=300), # Rule 4: service restarts
+ }
+ default_window = timedelta(seconds=60)
 
-        # --- Single-Pass Processing ---
-        for i, log in enumerate(self.logs):
-            current_timestamp = log.get('Timestamp')
-            if not isinstance(current_timestamp, datetime):
-                # Skip logs with invalid or missing timestamps
-                continue
+ # --- Single-Pass Processing ---
+ for i, log in enumerate(self.logs):
+ current_timestamp = log.get('Timestamp')
+ if not isinstance(current_timestamp, datetime):
+ # Skip logs with invalid or missing timestamps
+ continue
 
-            # Get all unique keys for the current log from all rules
-            all_keys = set()
-            for rule_func in rule_functions:
-                try:
-                    keys = rule_func(log)
-                    if keys:
-                        all_keys.update(keys)
-                except Exception:
-                    # In a production system, this would be logged.
-                    # For this task, we fail silently to maintain robustness.
-                    pass
+ # Get all unique keys for the current log from all rules
+ all_keys = set()
+ for rule_func in rule_functions:
+ try:
+ keys = rule_func(log)
+ if keys:
+ all_keys.update(keys)
+ except Exception:
+ # In a production system, this would be logged.
+ # For this task, we fail silently to maintain robustness.
+ pass
 
-            # --- Core Clustering Logic ---
-            for key in all_keys:
-                if key in key_state:
-                    last_seen_index, last_seen_timestamp = key_state[key]
+ # --- Core Clustering Logic ---
+ for key in all_keys:
+ if key in key_state:
+ last_seen_index, last_seen_timestamp = key_state[key]
 
-                    # Determine the appropriate time window for this key
-                    window = default_window
-                    for prefix, td in time_windows.items():
-                        if key.startswith(prefix):
-                            window = td
-                            break
+ # Determine the appropriate time window for this key
+ window = default_window
+ for prefix, td in time_windows.items():
+ if key.startswith(prefix):
+ window = td
+ break
 
-                    # If the key appeared recently, merge the log sets
-                    if current_timestamp - last_seen_timestamp <= window:
-                        self.union(i, last_seen_index)
+ # If the key appeared recently, merge the log sets
+ if current_timestamp - last_seen_timestamp <= window:
+ self.union(i, last_seen_index)
 
-                # Always update the state to reflect the latest sighting of the key
-                key_state[key] = (i, current_timestamp)
+ # Always update the state to reflect the latest sighting of the key
+ key_state[key] = (i, current_timestamp)
 
-        # --- Finalization ---
-        # Group log indices by their final root parent in the Union-Find structure
-        clusters = collections.defaultdict(list)
-        for i in range(self.num_logs):
-            root = self.find(i)
-            clusters[root].append(i)
+ # --- Finalization ---
+ # Group log indices by their final root parent in the Union-Find structure
+ clusters = collections.defaultdict(list)
+ for i in range(self.num_logs):
+ root = self.find(i)
+ clusters[root].append(i)
 
-        # Format the output to match the required contract
-        security_events: List[List[int]] = list(clusters.values())
-        log_index_to_event_id: Dict[int, int] = {}
-        for event_id, event_logs in enumerate(security_events):
-            # Sort logs within an event for deterministic output, though not required
-            event_logs.sort()
-            for log_index in event_logs:
-                log_index_to_event_id[log_index] = event_id
+ # Format the output to match the required contract
+ security_events: List[List[int]] = list(clusters.values())
+ log_index_to_event_id: Dict[int, int] = {}
+ for event_id, event_logs in enumerate(security_events):
+ # Sort logs within an event for deterministic output, though not required
+ event_logs.sort()
+ for log_index in event_logs:
+ log_index_to_event_id[log_index] = event_id
 
-        return security_events, log_index_to_event_id
-
+ return security_events, log_index_to_event_id
 
 # This list is used by the host system to know which functions to pass to the processor
 ALL_RULE_FUNCTIONS = [rule_1_group_all_logs_sharing_the_exact_same_process_id_p, rule_2_merge_event_cores_rule_for_web_scanning_activity_a, rule_3_merge_event_cores_rule_for_mod_jk_worker_state_tra, rule_4_merge_event_cores_rule_for_service_restart_identif, rule_5_merge_event_cores_rule_for_mass_shutdown_notificat, rule_6_key_dimension_split_rule_for_events_driven_by_exte, rule_7_boundary_rule_by_timeout_for_any_event_being_const]

@@ -6,24 +6,23 @@ from typing import List
 import itertools
 
 # --- MODIFICATION START ---
-# 1. modifiedvariable名并Update注释，以反映其New用途
+# 1. modifiedvariablenameUpdate，Newuse
 
-# 定义划分Ratio
+# splitRatio
 TRAIN_RATIO = 0.6
-ONLINE_EVAL_RATIO = 0.1 # 原来的 GUARD_RATIO，现inUsed forCreatein线Evaluateset
+ONLINE_EVAL_RATIO = 0.1 # GUARD_RATIO，inUsed forCreateinEvaluateset
 TEST_RATIO = 0.3
 
-# new加oneprocesslineNumber的上限
+# newoneprocesslineNumber
 MAX_LINES_TO_PROCESS = 80000
 
 # EnsureRatiototalandas1
 assert TRAIN_RATIO + ONLINE_EVAL_RATIO + TEST_RATIO == 1.0, "Ratios must sum to 1.0"
 # --- MODIFICATION END ---
 
-
 def get_files_to_split(dataset_dir: str, dataset_name: str) -> List[str]:
  """
- According toDatasetName，Findallneed to被samestepSplit的相关File。
+ According toDatasetName，Findallneed tosamestepSplitkeyFile。
  """
  base_filename = f"{dataset_name}_full"
  potential_files = [
@@ -42,24 +41,23 @@ def get_files_to_split(dataset_dir: str, dataset_name: str) -> List[str]:
  
  return existing_files
 
-
 def split_dataset(dataset_name: str, project_dir: str):
  """
- 对指定的DatasetExecutewhen序划分，GenerateTraining set、in线EvaluatesetandTest set。
- 该functionNumber会samestepprocessall相关的LogFile（原始、结构化等）。
+ specifyDatasetExecutewhensplit，GenerateTraining set、inEvaluatesetandTest set。
+ functionNumbersamestepprocessallkeyLogFile（、structure）。
 
  Args:
- dataset_name (str): 要process的DatasetName (例如 'Linux', 'OpenSSH').
- project_dir (str): 项目的根Directory.
+ dataset_name (str): processDatasetName ( 'Linux', 'OpenSSH').
+ project_dir (str): Directory.
  """
  logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
  logging.info(f"--- Starting dataset split for '{dataset_name}' ---")
 
- # 1. BuildPath并找toall相关File
+ # 1. BuildPathtoallkeyFile
  dataset_dir = os.path.join(project_dir, 'data', dataset_name)
  files_to_process = get_files_to_split(dataset_dir, dataset_name)
 
- # 2. determine划分点
+ # 2. determinesplit
  primary_file = os.path.join(dataset_dir, f"{dataset_name}_full.log_structured.csv")
  if not os.path.exists(primary_file):
  primary_file = files_to_process[0]
@@ -84,8 +82,8 @@ def split_dataset(dataset_name: str, project_dir: str):
  logging.info(f"Dataset has {original_total_lines} lines, which is within the {MAX_LINES_TO_PROCESS} limit. Using all lines.")
 
  # --- MODIFICATION START ---
- # 2. Update划分点CalculateandLog记录
- # based onhas效lineNumberCalculate划分点
+ # 2. UpdatesplitCalculateandLog
+ # based onhaslineNumberCalculatesplit
  train_end_line = int(effective_total_lines * TRAIN_RATIO)
  online_eval_end_line = int(effective_total_lines * (TRAIN_RATIO + ONLINE_EVAL_RATIO))
 
@@ -95,7 +93,7 @@ def split_dataset(dataset_name: str, project_dir: str):
  logging.info(f"Test set: lines {online_eval_end_line} to {effective_total_lines - 1} ({effective_total_lines - online_eval_end_line} lines)")
  # --- MODIFICATION END ---
 
- # 3. 遍历EachFile并Execute切分
+ # 3. EachFileExecutesplit
  for file_path in files_to_process:
  logging.info(f"processing file: {os.path.basename(file_path)}...")
  
@@ -108,13 +106,13 @@ def split_dataset(dataset_name: str, project_dir: str):
  lines = list(itertools.islice(f, effective_total_lines))
 
  # --- MODIFICATION START ---
- # 3. new加对 online_eval 部分的切片andSave
- # According toCalculate出的lineNumber进line切分
+ # 3. new online_eval splitandSave
+ # According toCalculateoutlineNumberlinesplit
  train_lines = lines[:train_end_line]
- online_eval_lines = lines[train_end_line:online_eval_end_line] # New切片
+ online_eval_lines = lines[train_end_line:online_eval_end_line] # New
  test_lines = lines[online_eval_end_line:]
 
- # 定义OutputFilePath
+ # OutputFilePath
  base, ext = os.path.splitext(os.path.basename(file_path).replace('_full', ''))
  train_file_path = os.path.join(dataset_dir, f"{base}_train{ext}")
  online_eval_file_path = os.path.join(dataset_dir, f"{base}_online_eval{ext}") # NewPath
@@ -127,7 +125,7 @@ def split_dataset(dataset_name: str, project_dir: str):
  f.writelines(train_lines)
  logging.info(f" -> Saved train set to {os.path.basename(train_file_path)} ({len(train_lines)} lines)")
 
- # New：写入in线EvaluatesetFile
+ # New：inEvaluatesetFile
  with open(online_eval_file_path, 'w', encoding='utf-8') as f:
  if is_csv and header:
  f.write(header)
@@ -143,7 +141,6 @@ def split_dataset(dataset_name: str, project_dir: str):
  # --- MODIFICATION END ---
 
  logging.info(f"--- Dataset split for '{dataset_name}' completed successfully! ---")
-
 
 if __name__ == '__main__':
  parser = argparse.ArgumentParser(
