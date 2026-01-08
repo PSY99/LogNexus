@@ -1,0 +1,93 @@
+[
+  {
+    "session_id": "session_8962",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:10:56 2006] [notice] Graceful restart requested, doing restart"
+    ]
+  },
+  {
+    "session_id": "session_8227",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [notice] Digest: done"
+    ]
+  },
+  {
+    "session_id": "session_8786",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] config.update(): Can't create channel.jni:jni"
+    ]
+  },
+  {
+    "session_id": "session_4512",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] config.update(): Can't create vm:"
+    ]
+  },
+  {
+    "session_id": "session_8944",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] config.update(): Can't create worker.jni:onStartup"
+    ]
+  },
+  {
+    "session_id": "session_1091",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] config.update(): Can't create worker.jni:onShutdown"
+    ]
+  },
+  {
+    "session_id": "session_1841",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:02 2006] [notice] mod_python: Creating 32 session mutexes based on 150 max processes and 0 max threads."
+    ]
+  },
+  {
+    "session_id": "session_5266",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [notice] Digest: done"
+    ]
+  },
+  {
+    "session_id": "session_9377",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] config.update(): Can't create channel.jni:jni"
+    ]
+  },
+  {
+    "session_id": "session_1388",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] config.update(): Can't create vm:"
+    ]
+  },
+  {
+    "session_id": "session_8407",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] config.update(): Can't create worker.jni:onStartup"
+    ]
+  },
+  {
+    "session_id": "session_7451",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] config.update(): Can't create worker.jni:onShutdown"
+    ]
+  },
+  {
+    "session_id": "session_3100",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:17 2006] [notice] mod_python: Creating 32 session mutexes based on 150 max processes and 0 max threads."
+    ]
+  }
+]

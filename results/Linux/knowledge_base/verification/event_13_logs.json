@@ -1,0 +1,233 @@
+[
+  {
+    "session_id": "session_7190",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:45:51 combo udev[15972]: creating device node '/udev/vcsa2'"
+    ]
+  },
+  {
+    "session_id": "session_2147",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:45:51 combo udev[15959]: creating device node '/udev/vcs2'"
+    ]
+  },
+  {
+    "session_id": "session_7398",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:45:51 combo udev[15960]: creating device node '/udev/vcsa2'"
+    ]
+  },
+  {
+    "session_id": "session_9581",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:45:51 combo udev[15980]: creating device node '/udev/vcs2'"
+    ]
+  },
+  {
+    "session_id": "session_3874",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:09 combo udev[16080]: creating device node '/udev/vcsa3'"
+    ]
+  },
+  {
+    "session_id": "session_3865",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:09 combo udev[16081]: creating device node '/udev/vcs3'"
+    ]
+  },
+  {
+    "session_id": "session_3845",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:10 combo udev[16098]: creating device node '/udev/vcs3'"
+    ]
+  },
+  {
+    "session_id": "session_3272",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:10 combo udev[16101]: creating device node '/udev/vcsa3'"
+    ]
+  },
+  {
+    "session_id": "session_3893",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 05:21:29 combo udev[8721]: creating device node '/udev/vcsa4'"
+    ]
+  },
+  {
+    "session_id": "session_9571",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 05:21:29 combo udev[8722]: creating device node '/udev/vcs4'"
+    ]
+  },
+  {
+    "session_id": "session_4156",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 05:21:29 combo udev[8740]: creating device node '/udev/vcs4'"
+    ]
+  },
+  {
+    "session_id": "session_9358",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 05:21:29 combo udev[8742]: creating device node '/udev/vcsa4'"
+    ]
+  },
+  {
+    "session_id": "session_9136",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:20:01 combo udev[10668]: creating device node '/udev/vcs4'"
+    ]
+  },
+  {
+    "session_id": "session_6568",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:20:01 combo udev[10709]: creating device node '/udev/vcs4'"
+    ]
+  },
+  {
+    "session_id": "session_1761",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:22:32 combo udev[2053]: creating device node '/udev/lp0'"
+    ]
+  },
+  {
+    "session_id": "session_7257",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:33 combo udev[2496]: creating device node '/udev/vcsa5'"
+    ]
+  },
+  {
+    "session_id": "session_9628",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:33 combo udev[2432]: creating device node '/udev/vcs5'"
+    ]
+  },
+  {
+    "session_id": "session_3651",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:34 combo udev[2584]: creating device node '/udev/vcs6'"
+    ]
+  },
+  {
+    "session_id": "session_4854",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:34 combo udev[2606]: creating device node '/udev/vcs1'"
+    ]
+  },
+  {
+    "session_id": "session_6157",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:34 combo udev[2631]: creating device node '/udev/vcsa1'"
+    ]
+  },
+  {
+    "session_id": "session_8165",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:35 combo udev[2630]: creating device node '/udev/vcsa2'"
+    ]
+  },
+  {
+    "session_id": "session_1637",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:44 combo udev[2799]: creating device node '/udev/vcsa5'"
+    ]
+  },
+  {
+    "session_id": "session_8616",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:44 combo udev[2801]: creating device node '/udev/vcs5'"
+    ]
+  },
+  {
+    "session_id": "session_6834",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:45 combo udev[2802]: creating device node '/udev/vcs4'"
+    ]
+  },
+  {
+    "session_id": "session_2262",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:45 combo udev[2804]: creating device node '/udev/vcs3'"
+    ]
+  },
+  {
+    "session_id": "session_9570",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:45 combo udev[2805]: creating device node '/udev/vcsa4'"
+    ]
+  },
+  {
+    "session_id": "session_3113",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:46 combo udev[2823]: creating device node '/udev/vcsa6'"
+    ]
+  },
+  {
+    "session_id": "session_2239",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:46 combo udev[2824]: creating device node '/udev/vcs1'"
+    ]
+  },
+  {
+    "session_id": "session_6890",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:47 combo udev[2828]: creating device node '/udev/vcsa2'"
+    ]
+  },
+  {
+    "session_id": "session_2483",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:47 combo udev[2821]: creating device node '/udev/vcsa7'"
+    ]
+  },
+  {
+    "session_id": "session_2450",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:47 combo udev[2814]: creating device node '/udev/vcs7'"
+    ]
+  },
+  {
+    "session_id": "session_5197",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:59 combo udev[2920]: creating device node '/udev/vcs7'"
+    ]
+  },
+  {
+    "session_id": "session_4225",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:23:59 combo udev[2921]: creating device node '/udev/vcsa7'"
+    ]
+  }
+]

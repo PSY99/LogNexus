@@ -1,0 +1,1967 @@
+[
+  {
+    "session_id": "session_8275",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 13:14:33 combo sshd(pam_unix)[18914]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:34 combo sshd(pam_unix)[18916]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:34 combo sshd(pam_unix)[18918]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:34 combo sshd(pam_unix)[18917]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:35 combo sshd(pam_unix)[18922]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:37 combo sshd(pam_unix)[18924]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:43 combo sshd(pam_unix)[18926]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:44 combo sshd(pam_unix)[18928]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:44 combo sshd(pam_unix)[18930]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:44 combo sshd(pam_unix)[18929]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:46 combo sshd(pam_unix)[18934]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:47 combo sshd(pam_unix)[18936]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:47 combo sshd(pam_unix)[18937]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:53 combo sshd(pam_unix)[18940]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:54 combo sshd(pam_unix)[18942]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 12 13:14:54 combo sshd(pam_unix)[18943]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4040",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 06:58:36 combo sshd(pam_unix)[24841]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:40 combo sshd(pam_unix)[24843]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:45 combo sshd(pam_unix)[24845]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:46 combo sshd(pam_unix)[24846]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:50 combo sshd(pam_unix)[24849]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:55 combo sshd(pam_unix)[24851]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:57 combo sshd(pam_unix)[24852]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:58:59 combo sshd(pam_unix)[24855]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:00 combo sshd(pam_unix)[24857]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:01 combo sshd(pam_unix)[24859]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:05 combo sshd(pam_unix)[24861]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:06 combo sshd(pam_unix)[24862]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:10 combo sshd(pam_unix)[24867]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:10 combo sshd(pam_unix)[24865]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:11 combo sshd(pam_unix)[24869]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:15 combo sshd(pam_unix)[24871]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:16 combo sshd(pam_unix)[24872]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:17 combo sshd(pam_unix)[24874]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:19 combo sshd(pam_unix)[24877]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:20 combo sshd(pam_unix)[24878]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:20 combo sshd(pam_unix)[24882]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 06:59:21 combo sshd(pam_unix)[24881]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 07:05:56 combo sshd(pam_unix)[24910]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 07:06:06 combo sshd(pam_unix)[24912]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 07:06:18 combo sshd(pam_unix)[24914]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1459",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 08:09:20 combo sshd(pam_unix)[24998]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5056",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 20:24:59 combo sshd(pam_unix)[26087]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:00 combo sshd(pam_unix)[26089]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:01 combo sshd(pam_unix)[26090]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:02 combo sshd(pam_unix)[26094]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:02 combo sshd(pam_unix)[26097]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:02 combo sshd(pam_unix)[26092]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:04 combo sshd(pam_unix)[26098]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:09 combo sshd(pam_unix)[26101]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:11 combo sshd(pam_unix)[26103]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:11 combo sshd(pam_unix)[26104]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:25:13 combo sshd(pam_unix)[26111]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:26:16 combo sshd(pam_unix)[26114]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:26:17 combo sshd(pam_unix)[26117]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:26:18 combo sshd(pam_unix)[26113]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root",
+      "Jan 14 20:30:30 combo sshd(pam_unix)[26126]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.72.254.36  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2655",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 06:02:26 combo sshd(pam_unix)[4507]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:30 combo sshd(pam_unix)[4511]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:31 combo sshd(pam_unix)[4513]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4047",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 21:28:43 combo sshd(pam_unix)[5443]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:43 combo sshd(pam_unix)[5446]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:43 combo sshd(pam_unix)[5442]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:43 combo sshd(pam_unix)[5448]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:43 combo sshd(pam_unix)[5447]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:44 combo sshd(pam_unix)[5451]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:44 combo sshd(pam_unix)[5452]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:44 combo sshd(pam_unix)[5457]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:44 combo sshd(pam_unix)[5454]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root",
+      "Feb 19 21:28:45 combo sshd(pam_unix)[5459]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.96.97.37  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8644",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  5 02:14:22 combo sshd(pam_unix)[2630]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:22 combo sshd(pam_unix)[2623]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:22 combo sshd(pam_unix)[2624]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:22 combo sshd(pam_unix)[2625]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:22 combo sshd(pam_unix)[2622]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:24 combo sshd(pam_unix)[2632]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:24 combo sshd(pam_unix)[2633]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:24 combo sshd(pam_unix)[2635]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:25 combo sshd(pam_unix)[2638]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root",
+      "Dec  5 02:14:27 combo sshd(pam_unix)[2640]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.20.75.139  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5438",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5442]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5447]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5443]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5448]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5446]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5440]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5441]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5445]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5439]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test",
+      "Dec  5 10:39:36 combo sshd(pam_unix)[5444]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.njust.edu.cn  user=test"
+    ]
+  },
+  {
+    "session_id": "session_8297",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  8 14:10:58 combo sshd(pam_unix)[11667]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:58 combo sshd(pam_unix)[11660]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:58 combo sshd(pam_unix)[11665]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:58 combo sshd(pam_unix)[11661]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:58 combo sshd(pam_unix)[11662]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:59 combo sshd(pam_unix)[11671]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:59 combo sshd(pam_unix)[11672]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:10:59 combo sshd(pam_unix)[11669]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root",
+      "Dec  8 14:11:03 combo sshd(pam_unix)[11676]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81-233-245-217-no37.tbcn.telia.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9308",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16225]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16227]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16222]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16224]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16226]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16213]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16215]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16219]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16212]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root",
+      "Dec  9 10:14:08 combo sshd(pam_unix)[16217]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-xe04.kiosk.ws  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5124",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  7 15:45:10 combo sshd(pam_unix)[29228]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:10 combo sshd(pam_unix)[29226]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:10 combo sshd(pam_unix)[29221]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:10 combo sshd(pam_unix)[29222]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:11 combo sshd(pam_unix)[29220]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:11 combo sshd(pam_unix)[29229]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:11 combo sshd(pam_unix)[29225]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:11 combo sshd(pam_unix)[29227]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:13 combo sshd(pam_unix)[29223]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test",
+      "Jan  7 15:45:13 combo sshd(pam_unix)[29224]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.71.234.22  user=test"
+    ]
+  },
+  {
+    "session_id": "session_3232",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  8 20:04:00 combo sshd(pam_unix)[3161]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.apcosoft.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2933",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  9 20:04:14 combo sshd(pam_unix)[6731]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-67-184-108-28.hsd1.il.comcast.net  user=test",
+      "Jan  9 20:04:14 combo sshd(pam_unix)[6732]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-67-184-108-28.hsd1.il.comcast.net  user=test",
+      "Jan  9 20:04:14 combo sshd(pam_unix)[6735]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-67-184-108-28.hsd1.il.comcast.net  user=test",
+      "Jan  9 20:04:14 combo sshd(pam_unix)[6737]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-67-184-108-28.hsd1.il.comcast.net  user=test"
+    ]
+  },
+  {
+    "session_id": "session_4788",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 14:15:28 combo sshd(pam_unix)[9048]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mailman.ywso.com  user=test",
+      "Jan 10 14:15:28 combo sshd(pam_unix)[9052]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mailman.ywso.com  user=test",
+      "Jan 10 14:15:28 combo sshd(pam_unix)[9047]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mailman.ywso.com  user=test",
+      "Jan 10 14:15:28 combo sshd(pam_unix)[9051]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mailman.ywso.com  user=test",
+      "Jan 10 14:15:28 combo sshd(pam_unix)[9049]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mailman.ywso.com  user=test",
+      "Jan 10 14:15:28 combo sshd(pam_unix)[9050]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mailman.ywso.com  user=test"
+    ]
+  },
+  {
+    "session_id": "session_1697",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9111]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9118]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9113]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9119]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9122]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9120]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9112]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9110]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9121]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root",
+      "Jan 10 14:43:12 combo sshd(pam_unix)[9123]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.80.222.134  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8505",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 21:05:51 combo sshd(pam_unix)[16716]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16720]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16719]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16721]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16728]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16718]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16726]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16733]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:52 combo sshd(pam_unix)[16729]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test",
+      "Jan 11 21:05:54 combo sshd(pam_unix)[16732]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=customer-reverse-entry.69.59.170.12  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6236",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:40:40 combo sshd(pam_unix)[17319]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:40 combo sshd(pam_unix)[17318]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:42 combo sshd(pam_unix)[17323]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:44 combo sshd(pam_unix)[17326]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:45 combo sshd(pam_unix)[17327]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:45 combo sshd(pam_unix)[17330]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:46 combo sshd(pam_unix)[17322]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:48 combo sshd(pam_unix)[17329]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 12 03:40:48 combo sshd(pam_unix)[17336]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test"
+    ]
+  },
+  {
+    "session_id": "session_9828",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 09:48:50 combo sshd(pam_unix)[18598]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:50 combo sshd(pam_unix)[18601]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:50 combo sshd(pam_unix)[18597]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:51 combo sshd(pam_unix)[18604]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:51 combo sshd(pam_unix)[18603]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:52 combo sshd(pam_unix)[18607]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:57 combo sshd(pam_unix)[18609]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:57 combo sshd(pam_unix)[18610]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:58 combo sshd(pam_unix)[18613]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:48:59 combo sshd(pam_unix)[18615]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:49:01 combo sshd(pam_unix)[18617]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:49:02 combo sshd(pam_unix)[18619]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:49:02 combo sshd(pam_unix)[18621]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:49:03 combo sshd(pam_unix)[18623]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:49:04 combo sshd(pam_unix)[18625]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root",
+      "Jan 12 09:49:04 combo sshd(pam_unix)[18627]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.145.53.114  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9233",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 14:57:44 combo sshd(pam_unix)[19074]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=60-248-97-31.hinet-ip.hinet.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3839",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 12:59:54 combo sshd(pam_unix)[22535]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-69-110-112-188.dsl.pltn13.pacbell.net  user=root",
+      "Jan 13 12:59:54 combo sshd(pam_unix)[22534]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-69-110-112-188.dsl.pltn13.pacbell.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8752",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 20:11:40 combo sshd(pam_unix)[23183]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:41 combo sshd(pam_unix)[23187]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:41 combo sshd(pam_unix)[23193]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:43 combo sshd(pam_unix)[23182]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:43 combo sshd(pam_unix)[23192]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:43 combo sshd(pam_unix)[23184]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:44 combo sshd(pam_unix)[23188]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:45 combo sshd(pam_unix)[23191]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:45 combo sshd(pam_unix)[23199]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root",
+      "Jan 13 20:11:46 combo sshd(pam_unix)[23197]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.118.170.60  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5107",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 19:03:38 combo sshd(pam_unix)[25981]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=alternativadigital.inext.net.mx  user=test",
+      "Jan 14 19:03:38 combo sshd(pam_unix)[25982]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=alternativadigital.inext.net.mx  user=test"
+    ]
+  },
+  {
+    "session_id": "session_3457",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 05:10:02 combo sshd(pam_unix)[31708]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:02 combo sshd(pam_unix)[31710]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:02 combo sshd(pam_unix)[31712]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31714]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31715]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31718]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31720]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31721]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31724]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm",
+      "Jan 15 05:10:03 combo sshd(pam_unix)[31723]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=connect.borran.com  user=adm"
+    ]
+  },
+  {
+    "session_id": "session_8822",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:47:38 combo sshd(pam_unix)[32740]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:38 combo sshd(pam_unix)[32738]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:38 combo sshd(pam_unix)[32742]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:38 combo sshd(pam_unix)[32743]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:39 combo sshd(pam_unix)[32744]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:39 combo sshd(pam_unix)[32749]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:39 combo sshd(pam_unix)[32745]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:39 combo sshd(pam_unix)[32752]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:39 combo sshd(pam_unix)[32754]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root",
+      "Jan 15 16:47:40 combo sshd(pam_unix)[32753]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212-41-230-229.hebragasse.xdsl-line.inode.at  user=root"
+    ]
+  },
+  {
+    "session_id": "session_6516",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:59:49 combo sshd(pam_unix)[321]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:51 combo sshd(pam_unix)[323]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:51 combo sshd(pam_unix)[324]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:53 combo sshd(pam_unix)[325]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:53 combo sshd(pam_unix)[328]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:54 combo sshd(pam_unix)[331]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:57 combo sshd(pam_unix)[333]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:57 combo sshd(pam_unix)[336]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:58 combo sshd(pam_unix)[334]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 16:59:59 combo sshd(pam_unix)[339]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root",
+      "Jan 15 17:00:01 combo sshd(pam_unix)[341]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.xmjl.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_6908",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:54:13 combo sshd(pam_unix)[2897]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:13 combo sshd(pam_unix)[2898]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:14 combo sshd(pam_unix)[2899]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:14 combo sshd(pam_unix)[2905]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:14 combo sshd(pam_unix)[2906]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:15 combo sshd(pam_unix)[2908]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:16 combo sshd(pam_unix)[2915]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:16 combo sshd(pam_unix)[2911]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:17 combo sshd(pam_unix)[2912]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Jan 16 12:54:18 combo sshd(pam_unix)[2903]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6705",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:39:19 combo sshd(pam_unix)[5991]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 17 06:39:19 combo sshd(pam_unix)[5994]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 17 06:39:19 combo sshd(pam_unix)[5993]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 17 06:39:22 combo sshd(pam_unix)[5992]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 17 06:39:23 combo sshd(pam_unix)[6001]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 17 06:39:29 combo sshd(pam_unix)[6005]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test",
+      "Jan 17 06:39:41 combo sshd(pam_unix)[6011]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.107.5  user=test"
+    ]
+  },
+  {
+    "session_id": "session_2077",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 10:46:50 combo sshd(pam_unix)[6371]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:50 combo sshd(pam_unix)[6375]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:50 combo sshd(pam_unix)[6370]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:50 combo sshd(pam_unix)[6374]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:51 combo sshd(pam_unix)[6378]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:53 combo sshd(pam_unix)[6382]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:54 combo sshd(pam_unix)[6383]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:55 combo sshd(pam_unix)[6386]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:55 combo sshd(pam_unix)[6387]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody",
+      "Jan 17 10:46:55 combo sshd(pam_unix)[6380]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=pppzss.shenzhen.gd.cn  user=nobody"
+    ]
+  },
+  {
+    "session_id": "session_9353",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8662]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8668]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=tes",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8660]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8667]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8661]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8659]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8665]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8664]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test",
+      "Jan 18 04:28:18 combo sshd(pam_unix)[8663]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wsip-24-120-168-221.lv.lv.cox.net  user=test"
+    ]
+  },
+  {
+    "session_id": "session_5811",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 15:35:47 combo sshd(pam_unix)[9628]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=24.75.10.188  user=root",
+      "Jan 18 15:35:47 combo sshd(pam_unix)[9632]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=24.75.10.188  user=root",
+      "Jan 18 15:35:47 combo sshd(pam_unix)[9633]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=24.75.10.188  user=root",
+      "Jan 18 15:35:47 combo sshd(pam_unix)[9629]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=24.75.10.188  user=root",
+      "Jan 18 15:35:48 combo sshd(pam_unix)[9635]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=24.75.10.188  user=root",
+      "Jan 18 15:35:48 combo sshd(pam_unix)[9637]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=24.75.10.188  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1559",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 02:44:05 combo sshd(pam_unix)[10536]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:06 combo sshd(pam_unix)[10541]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:07 combo sshd(pam_unix)[10535]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:08 combo sshd(pam_unix)[10534]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:09 combo sshd(pam_unix)[10544]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:09 combo sshd(pam_unix)[10540]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:10 combo sshd(pam_unix)[10548]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:12 combo sshd(pam_unix)[10552]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:17 combo sshd(pam_unix)[10549]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:19 combo sshd(pam_unix)[10546]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:19 combo sshd(pam_unix)[10554]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:22 combo sshd(pam_unix)[10556]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:24 combo sshd(pam_unix)[10558]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:27 combo sshd(pam_unix)[10560]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root",
+      "Jan 19 02:44:29 combo sshd(pam_unix)[10562]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.57.24  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9570",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12263]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12258]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12249]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12256]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12250]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12257]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12251]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12252]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12261]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test",
+      "Jan 19 04:13:51 combo sshd(pam_unix)[12259]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.108.13.91  user=test"
+    ]
+  },
+  {
+    "session_id": "session_4215",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 09:30:59 combo sshd(pam_unix)[12767]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:30:59 combo sshd(pam_unix)[12766]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:00 combo sshd(pam_unix)[12772]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:00 combo sshd(pam_unix)[12774]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:01 combo sshd(pam_unix)[12771]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:01 combo sshd(pam_unix)[12770]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:04 combo sshd(pam_unix)[12780]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:05 combo sshd(pam_unix)[12778]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:05 combo sshd(pam_unix)[12782]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 19 09:31:06 combo sshd(pam_unix)[12784]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2779",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 14:55:26 combo sshd(pam_unix)[13236]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:27 combo sshd(pam_unix)[13238]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:27 combo sshd(pam_unix)[13239]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:27 combo sshd(pam_unix)[13240]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:27 combo sshd(pam_unix)[13243]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:28 combo sshd(pam_unix)[13245]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:30 combo sshd(pam_unix)[13248]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:31 combo sshd(pam_unix)[13250]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root",
+      "Jan 19 14:55:31 combo sshd(pam_unix)[13251]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.191.68.130  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9313",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 19:50:08 combo sshd(pam_unix)[13643]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 19 19:50:10 combo sshd(pam_unix)[13645]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 19 19:50:13 combo sshd(pam_unix)[13654]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 19 19:50:13 combo sshd(pam_unix)[13656]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 19 19:50:16 combo sshd(pam_unix)[13658]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7645",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 01:35:37 combo sshd(pam_unix)[14128]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 20 01:35:37 combo sshd(pam_unix)[14129]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 20 01:35:47 combo sshd(pam_unix)[14133]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 20 01:35:47 combo sshd(pam_unix)[14132]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root",
+      "Jan 20 01:35:56 combo sshd(pam_unix)[14136]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dsl-kk-151.195.95.61.touchtelindia.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8614",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 01:54:44 combo sshd(pam_unix)[14156]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:54:53 combo sshd(pam_unix)[14158]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:54:55 combo sshd(pam_unix)[14160]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:04 combo sshd(pam_unix)[14162]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:05 combo sshd(pam_unix)[14164]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:14 combo sshd(pam_unix)[14170]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:16 combo sshd(pam_unix)[14172]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:24 combo sshd(pam_unix)[14174]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:26 combo sshd(pam_unix)[14176]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:34 combo sshd(pam_unix)[14178]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:36 combo sshd(pam_unix)[14180]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:40 combo sshd(pam_unix)[14182]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:43 combo sshd(pam_unix)[14184]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:46 combo sshd(pam_unix)[14186]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root",
+      "Jan 20 01:55:49 combo sshd(pam_unix)[14188]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.219.231.2  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2681",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 03:16:49 combo sshd(pam_unix)[14314]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:49 combo sshd(pam_unix)[14310]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:49 combo sshd(pam_unix)[14308]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:49 combo sshd(pam_unix)[14322]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:50 combo sshd(pam_unix)[14321]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:50 combo sshd(pam_unix)[14311]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:50 combo sshd(pam_unix)[14313]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:51 combo sshd(pam_unix)[14307]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:51 combo sshd(pam_unix)[14309]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root",
+      "Jan 20 03:16:52 combo sshd(pam_unix)[14306]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.100.127.12  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9845",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19955]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19965]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19958]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19960]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19963]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19956]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19964]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19969]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:17 combo sshd(pam_unix)[19970]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test",
+      "Jan 21 18:51:18 combo sshd(pam_unix)[19973]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=82.179.185.68  user=test"
+    ]
+  },
+  {
+    "session_id": "session_5327",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20421]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20419]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20417]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20418]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20415]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20420]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:17 combo sshd(pam_unix)[20416]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:19 combo sshd(pam_unix)[20429]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:19 combo sshd(pam_unix)[20430]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root",
+      "Jan 21 23:58:22 combo sshd(pam_unix)[20433]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.200.44.248  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7547",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 16:37:08 combo sshd(pam_unix)[25820]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:09 combo sshd(pam_unix)[25823]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:09 combo sshd(pam_unix)[25822]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:09 combo sshd(pam_unix)[25826]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:14 combo sshd(pam_unix)[25830]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:15 combo sshd(pam_unix)[25832]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:16 combo sshd(pam_unix)[25835]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:16 combo sshd(pam_unix)[25834]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:16 combo sshd(pam_unix)[25828]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root",
+      "Jan 22 16:37:17 combo sshd(pam_unix)[25838]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.129.113.52  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2136",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28526]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28521]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28534]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28532]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28524]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28522]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28527]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28523]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 05:28:15 combo sshd(pam_unix)[28525]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4595",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28575]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28581]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28574]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28583]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28572]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28580]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28586]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28585]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 05:56:55 combo sshd(pam_unix)[28573]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9060",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:10:34 combo sshd(pam_unix)[28622]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:34 combo sshd(pam_unix)[28623]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:34 combo sshd(pam_unix)[28624]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:34 combo sshd(pam_unix)[28625]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:34 combo sshd(pam_unix)[28626]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:34 combo sshd(pam_unix)[28629]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:35 combo sshd(pam_unix)[28631]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:35 combo sshd(pam_unix)[28633]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:10:35 combo sshd(pam_unix)[28636]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9215",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28678]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28677]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28679]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28680]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28684]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28685]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28682]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28689]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 06:47:25 combo sshd(pam_unix)[28692]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3225",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28797]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28796]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28798]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28801]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28799]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28804]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28800]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28802]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 07:27:32 combo sshd(pam_unix)[28807]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1883",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28903]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28904]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28905]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28906]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28908]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28912]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28914]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28915]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root",
+      "Jan 23 08:33:01 combo sshd(pam_unix)[28916]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ztc2-f.nas.tiscali.de  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1249",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28944]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28945]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28946]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28942]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28934]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28933]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28938]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28932]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 08:43:50 combo sshd(pam_unix)[28935]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1958",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29021]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29023]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29022]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29024]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29025]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29032]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29029]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29033]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 09:34:42 combo sshd(pam_unix)[29034]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5404",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29117]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29120]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29119]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29123]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29127]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29126]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29128]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29129]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:13:47 combo sshd(pam_unix)[29124]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3770",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29179]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29178]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29174]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29172]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29185]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29177]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29183]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29188]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 10:49:34 combo sshd(pam_unix)[29175]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1301",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29260]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29263]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29270]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29273]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29274]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29266]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29259]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29269]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 11:37:03 combo sshd(pam_unix)[29265]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2682",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29375]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29377]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29378]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29372]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29370]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29381]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29369]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29366]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 12:42:21 combo sshd(pam_unix)[29367]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8307",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29463]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29468]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29464]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29460]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29459]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29470]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29457]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:52 combo sshd(pam_unix)[29472]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:53 combo sshd(pam_unix)[29467]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test",
+      "Jan 23 13:19:55 combo sshd(pam_unix)[29473]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.232.48.98  user=test"
+    ]
+  },
+  {
+    "session_id": "session_9314",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29488]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29490]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29493]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29492]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29497]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29499]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:33 combo sshd(pam_unix)[29502]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:34 combo sshd(pam_unix)[29504]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 13:29:34 combo sshd(pam_unix)[29495]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9898",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30294]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30291]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30292]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30304]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30296]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30293]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30295]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30301]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root",
+      "Jan 23 23:14:44 combo sshd(pam_unix)[30306]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=65.168.94.4  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9389",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30495]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30496]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30505]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30499]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30501]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30502]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30500]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30511]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30512]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root",
+      "Jan 24 01:08:17 combo sshd(pam_unix)[30497]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host-213.50.3.6.addr.tdcsong.se  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9752",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 16:40:08 combo sshd(pam_unix)[32564]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:08 combo sshd(pam_unix)[32555]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:09 combo sshd(pam_unix)[32567]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:09 combo sshd(pam_unix)[32566]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:09 combo sshd(pam_unix)[32568]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:10 combo sshd(pam_unix)[32572]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:10 combo sshd(pam_unix)[32573]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:13 combo sshd(pam_unix)[32576]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:17 combo sshd(pam_unix)[32578]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:19 combo sshd(pam_unix)[32580]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:20 combo sshd(pam_unix)[32582]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:21 combo sshd(pam_unix)[32584]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:21 combo sshd(pam_unix)[32585]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:21 combo sshd(pam_unix)[32588]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:21 combo sshd(pam_unix)[32589]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:23 combo sshd(pam_unix)[32592]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root",
+      "Jan 24 16:40:25 combo sshd(pam_unix)[32594]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66.199.253.10  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4144",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 15:32:36 combo sshd(pam_unix)[3224]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=196.1.179.102  user=test",
+      "Jan 26 15:32:36 combo sshd(pam_unix)[3225]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=196.1.179.102  user=test"
+    ]
+  },
+  {
+    "session_id": "session_8089",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 16:31:24 combo sshd(pam_unix)[3252]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=196.1.179.102  user=test",
+      "Jan 26 16:31:24 combo sshd(pam_unix)[3251]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=196.1.179.102  user=test"
+    ]
+  },
+  {
+    "session_id": "session_7501",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 27 17:31:27 combo sshd(pam_unix)[3310]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:37 combo sshd(pam_unix)[3312]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:47 combo sshd(pam_unix)[3314]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:48 combo sshd(pam_unix)[3316]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:55 combo sshd(pam_unix)[3318]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:57 combo sshd(pam_unix)[3320]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:58 combo sshd(pam_unix)[3322]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:31:59 combo sshd(pam_unix)[3324]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:05 combo sshd(pam_unix)[3326]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:07 combo sshd(pam_unix)[3328]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:08 combo sshd(pam_unix)[3330]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:09 combo sshd(pam_unix)[3332]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:12 combo sshd(pam_unix)[3334]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:15 combo sshd(pam_unix)[3336]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:17 combo sshd(pam_unix)[3338]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:18 combo sshd(pam_unix)[3340]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:19 combo sshd(pam_unix)[3342]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:19 combo sshd(pam_unix)[3344]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:19 combo sshd(pam_unix)[3346]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:21 combo sshd(pam_unix)[3348]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:25 combo sshd(pam_unix)[3350]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody",
+      "Jan 27 17:32:25 combo sshd(pam_unix)[3352]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.82.188.147  user=nobody"
+    ]
+  },
+  {
+    "session_id": "session_3698",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 28 05:01:16 combo sshd(pam_unix)[3363]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=h8441253073.dsl.speedlinq.nl  user=root",
+      "Jan 28 05:01:16 combo sshd(pam_unix)[3365]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=h8441253073.dsl.speedlinq.nl  user=root",
+      "Jan 28 05:01:16 combo sshd(pam_unix)[3367]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=h8441253073.dsl.speedlinq.nl  user=root",
+      "Jan 28 05:01:21 combo sshd(pam_unix)[3369]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=h8441253073.dsl.speedlinq.nl  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9275",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 28 21:02:42 combo sshd(pam_unix)[3372]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test",
+      "Jan 28 21:02:42 combo sshd(pam_unix)[3371]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test",
+      "Jan 28 21:02:43 combo sshd(pam_unix)[3375]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test",
+      "Jan 28 21:02:44 combo sshd(pam_unix)[3376]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test",
+      "Jan 28 21:02:44 combo sshd(pam_unix)[3378]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test",
+      "Jan 28 21:02:44 combo sshd(pam_unix)[3380]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test",
+      "Jan 28 21:02:45 combo sshd(pam_unix)[3381]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6520",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 29 22:37:47 combo sshd(pam_unix)[3418]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:47 combo sshd(pam_unix)[3417]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:47 combo sshd(pam_unix)[3422]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:47 combo sshd(pam_unix)[3415]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:47 combo sshd(pam_unix)[3421]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:47 combo sshd(pam_unix)[3425]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:48 combo sshd(pam_unix)[3427]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:48 combo sshd(pam_unix)[3429]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:49 combo sshd(pam_unix)[3431]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test",
+      "Jan 29 22:37:53 combo sshd(pam_unix)[3433]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=julia.arkos.de  user=test"
+    ]
+  },
+  {
+    "session_id": "session_2375",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3491]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3477]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3474]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3483]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3481]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3480]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3484]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3482]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3476]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test",
+      "Jan 30 07:49:00 combo sshd(pam_unix)[3490]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-67-124-23-108.dsl.lsan03.pacbell.net  user=test"
+    ]
+  },
+  {
+    "session_id": "session_2268",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3522]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root",
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3517]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root",
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3527]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root",
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3523]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root",
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3528]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root",
+      "Jan 30 11:25:57 combo sshd(pam_unix)[3533]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root",
+      "Jan 30 11:25:57 combo sshd(pam_unix)[3534]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.fullerproperties.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8412",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3521]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ftc.fullerproperties.com  user=root",
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3518]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ftc.fullerproperties.com  user=root",
+      "Jan 30 11:25:55 combo sshd(pam_unix)[3524]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ftc.fullerproperties.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2911",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 12:00:57 combo sshd(pam_unix)[3574]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=222.117.59.34  user=amanda",
+      "Jan 30 12:00:57 combo sshd(pam_unix)[3577]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=222.117.59.34  user=amanda",
+      "Jan 30 12:00:57 combo sshd(pam_unix)[3571]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=222.117.59.34  user=amanda",
+      "Jan 30 12:00:57 combo sshd(pam_unix)[3570]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=222.117.59.34  user=amanda",
+      "Jan 30 12:00:57 combo sshd(pam_unix)[3569]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=222.117.59.34  user=amanda"
+    ]
+  },
+  {
+    "session_id": "session_4919",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 12:01:10 combo sshd(pam_unix)[3580]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ast198.internetdsl.tpnet.pl  user=root",
+      "Jan 30 12:01:10 combo sshd(pam_unix)[3579]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=ast198.internetdsl.tpnet.pl  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8417",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 23:13:43 combo sshd(pam_unix)[3593]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206-248-137-78.dsl.teksavvy.com  user=test",
+      "Jan 30 23:13:43 combo sshd(pam_unix)[3595]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206-248-137-78.dsl.teksavvy.com  user=test",
+      "Jan 30 23:13:46 combo sshd(pam_unix)[3597]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206-248-137-78.dsl.teksavvy.com  user=test",
+      "Jan 30 23:13:46 combo sshd(pam_unix)[3599]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206-248-137-78.dsl.teksavvy.com  user=test",
+      "Jan 30 23:13:47 combo sshd(pam_unix)[3601]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206-248-137-78.dsl.teksavvy.com  user=test",
+      "Jan 30 23:13:51 combo sshd(pam_unix)[3603]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206-248-137-78.dsl.teksavvy.com  user=test"
+    ]
+  },
+  {
+    "session_id": "session_3323",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 04:34:58 combo sshd(pam_unix)[3629]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:34:59 combo sshd(pam_unix)[3631]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:07 combo sshd(pam_unix)[3633]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:09 combo sshd(pam_unix)[3635]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:17 combo sshd(pam_unix)[3637]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:19 combo sshd(pam_unix)[3639]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:19 combo sshd(pam_unix)[3641]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:26 combo sshd(pam_unix)[3643]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:27 combo sshd(pam_unix)[3645]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:29 combo sshd(pam_unix)[3647]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:29 combo sshd(pam_unix)[3649]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:33 combo sshd(pam_unix)[3651]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:36 combo sshd(pam_unix)[3653]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:37 combo sshd(pam_unix)[3655]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:39 combo sshd(pam_unix)[3657]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:39 combo sshd(pam_unix)[3659]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:43 combo sshd(pam_unix)[3661]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:46 combo sshd(pam_unix)[3663]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:47 combo sshd(pam_unix)[3665]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:49 combo sshd(pam_unix)[3667]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp",
+      "Jan 31 04:35:49 combo sshd(pam_unix)[3669]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=jwhp5.chem.ncsu.edu  user=ftp"
+    ]
+  },
+  {
+    "session_id": "session_3555",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 07:09:27 combo sshd(pam_unix)[3717]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.96.171.182  user=test",
+      "Jan 31 07:09:50 combo sshd(pam_unix)[3717]: 1 more authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.96.171.182  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6353",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 15:21:23 combo sshd(pam_unix)[3748]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Jan 31 15:21:23 combo sshd(pam_unix)[3746]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test"
+    ]
+  },
+  {
+    "session_id": "session_3197",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 16:43:41 combo sshd(pam_unix)[3760]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:42 combo sshd(pam_unix)[3767]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:42 combo sshd(pam_unix)[3763]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:43 combo sshd(pam_unix)[3768]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:43 combo sshd(pam_unix)[3771]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:44 combo sshd(pam_unix)[3773]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:44 combo sshd(pam_unix)[3759]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:47 combo sshd(pam_unix)[3764]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody",
+      "Jan 31 16:43:58 combo sshd(pam_unix)[3774]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.189.192.156  user=nobody"
+    ]
+  },
+  {
+    "session_id": "session_1969",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 18:44:45 combo sshd(pam_unix)[3779]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:47 combo sshd(pam_unix)[3781]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:48 combo sshd(pam_unix)[3783]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:48 combo sshd(pam_unix)[3786]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:49 combo sshd(pam_unix)[3787]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:50 combo sshd(pam_unix)[3785]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:52 combo sshd(pam_unix)[3791]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:54 combo sshd(pam_unix)[3793]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:54 combo sshd(pam_unix)[3795]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:57 combo sshd(pam_unix)[3797]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:44:59 combo sshd(pam_unix)[3799]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:45:00 combo sshd(pam_unix)[3801]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root",
+      "Jan 31 18:45:01 combo sshd(pam_unix)[3803]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.100.28.173  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9342",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  1 00:36:21 combo sshd(pam_unix)[3826]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:21 combo sshd(pam_unix)[3827]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:21 combo sshd(pam_unix)[3831]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:21 combo sshd(pam_unix)[3832]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:21 combo sshd(pam_unix)[3828]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:21 combo sshd(pam_unix)[3833]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:22 combo sshd(pam_unix)[3829]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:22 combo sshd(pam_unix)[3835]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:22 combo sshd(pam_unix)[3830]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root",
+      "Feb  1 00:36:22 combo sshd(pam_unix)[3834]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=64.77.164.126  user=root"
+    ]
+  },
+  {
+    "session_id": "session_6563",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  1 02:06:53 combo sshd(pam_unix)[3846]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:06:56 combo sshd(pam_unix)[3848]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:06:58 combo sshd(pam_unix)[3850]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:00 combo sshd(pam_unix)[3852]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:01 combo sshd(pam_unix)[3854]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:02 combo sshd(pam_unix)[3856]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:03 combo sshd(pam_unix)[3858]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:04 combo sshd(pam_unix)[3860]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:06 combo sshd(pam_unix)[3862]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root",
+      "Feb  1 02:07:08 combo sshd(pam_unix)[3864]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=216.120.255.208  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3839",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  1 02:30:46 combo sshd(pam_unix)[3866]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:30:50 combo sshd(pam_unix)[3868]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:30:53 combo sshd(pam_unix)[3870]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:30:54 combo sshd(pam_unix)[3872]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:30:56 combo sshd(pam_unix)[3874]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:00 combo sshd(pam_unix)[3876]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:00 combo sshd(pam_unix)[3878]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:02 combo sshd(pam_unix)[3880]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:03 combo sshd(pam_unix)[3882]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:03 combo sshd(pam_unix)[3884]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:05 combo sshd(pam_unix)[3886]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:10 combo sshd(pam_unix)[3888]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:11 combo sshd(pam_unix)[3890]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:12 combo sshd(pam_unix)[3892]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:13 combo sshd(pam_unix)[3894]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:13 combo sshd(pam_unix)[3896]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:15 combo sshd(pam_unix)[3898]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:20 combo sshd(pam_unix)[3900]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:21 combo sshd(pam_unix)[3902]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:22 combo sshd(pam_unix)[3904]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test",
+      "Feb  1 02:31:23 combo sshd(pam_unix)[3906]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.137.206.147  user=test"
+    ]
+  },
+  {
+    "session_id": "session_9530",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  1 21:35:58 combo sshd(pam_unix)[3942]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:35:58 combo sshd(pam_unix)[3940]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:35:59 combo sshd(pam_unix)[3946]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:36:00 combo sshd(pam_unix)[3944]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:36:00 combo sshd(pam_unix)[3945]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:36:00 combo sshd(pam_unix)[3943]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:36:00 combo sshd(pam_unix)[3953]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:36:01 combo sshd(pam_unix)[3954]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test",
+      "Feb  1 21:36:01 combo sshd(pam_unix)[3939]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=219.135.191.21  user=test"
+    ]
+  },
+  {
+    "session_id": "session_3555",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 12:25:21 combo sshd(pam_unix)[3983]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:21 combo sshd(pam_unix)[3985]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:22 combo sshd(pam_unix)[3989]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:23 combo sshd(pam_unix)[3986]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:24 combo sshd(pam_unix)[3992]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:25 combo sshd(pam_unix)[3991]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:26 combo sshd(pam_unix)[3995]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:28 combo sshd(pam_unix)[3997]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:31 combo sshd(pam_unix)[3999]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:32 combo sshd(pam_unix)[4001]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root",
+      "Feb  2 12:25:33 combo sshd(pam_unix)[4003]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.136.20.50  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3895",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 22:15:05 combo sshd(pam_unix)[4005]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root",
+      "Feb  2 22:15:05 combo sshd(pam_unix)[4006]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root",
+      "Feb  2 22:15:07 combo sshd(pam_unix)[4009]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root",
+      "Feb  2 22:15:08 combo sshd(pam_unix)[4011]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root",
+      "Feb  2 22:15:13 combo sshd(pam_unix)[4013]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root",
+      "Feb  2 22:15:13 combo sshd(pam_unix)[4014]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root",
+      "Feb  2 22:15:19 combo sshd(pam_unix)[4017]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.162.81.22  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1541",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  3 05:24:15 combo sshd(pam_unix)[4021]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.138.138.26  user=root",
+      "Feb  3 05:24:15 combo sshd(pam_unix)[4019]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.138.138.26  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7826",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:17:26 combo sshd(pam_unix)[4067]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:26 combo sshd(pam_unix)[4069]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:27 combo sshd(pam_unix)[4071]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:36 combo sshd(pam_unix)[4073]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:36 combo sshd(pam_unix)[4075]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:36 combo sshd(pam_unix)[4076]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:37 combo sshd(pam_unix)[4079]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:39 combo sshd(pam_unix)[4081]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:46 combo sshd(pam_unix)[4083]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:46 combo sshd(pam_unix)[4085]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:46 combo sshd(pam_unix)[4086]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:47 combo sshd(pam_unix)[4089]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:49 combo sshd(pam_unix)[4091]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:50 combo sshd(pam_unix)[4093]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:56 combo sshd(pam_unix)[4095]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:56 combo sshd(pam_unix)[4097]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:56 combo sshd(pam_unix)[4098]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:57 combo sshd(pam_unix)[4101]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:59 combo sshd(pam_unix)[4103]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root",
+      "Feb  5 18:17:59 combo sshd(pam_unix)[4104]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.154.205.252  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4483",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 01:42:06 combo sshd(pam_unix)[4109]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:06 combo sshd(pam_unix)[4112]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:07 combo sshd(pam_unix)[4113]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:07 combo sshd(pam_unix)[4118]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:07 combo sshd(pam_unix)[4110]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:08 combo sshd(pam_unix)[4108]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:08 combo sshd(pam_unix)[4107]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:09 combo sshd(pam_unix)[4121]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:09 combo sshd(pam_unix)[4124]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root",
+      "Feb  6 01:42:09 combo sshd(pam_unix)[4111]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.86.92.242  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5315",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 23:01:50 combo sshd(pam_unix)[4189]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.228.173.152  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8591",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 23:04:35 combo sshd(pam_unix)[4191]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:35 combo sshd(pam_unix)[4192]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:35 combo sshd(pam_unix)[4195]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:44 combo sshd(pam_unix)[4199]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:45 combo sshd(pam_unix)[4197]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:46 combo sshd(pam_unix)[4201]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:46 combo sshd(pam_unix)[4202]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:48 combo sshd(pam_unix)[4205]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:50 combo sshd(pam_unix)[4207]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:50 combo sshd(pam_unix)[4208]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:51 combo sshd(pam_unix)[4211]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:51 combo sshd(pam_unix)[4212]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root",
+      "Feb  6 23:04:54 combo sshd(pam_unix)[4215]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.113.24.228  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4620",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4250]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4240]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4236]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4248]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4246]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4238]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4237]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4245]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4239]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root",
+      "Feb  7 05:47:11 combo sshd(pam_unix)[4247]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-219-105-155.hinet-ip.hinet.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4336",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 06:55:56 combo sshd(pam_unix)[4266]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.96.171.173  user=test"
+    ]
+  },
+  {
+    "session_id": "session_7066",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 18:39:50 combo sshd(pam_unix)[4340]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:50 combo sshd(pam_unix)[4339]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:52 combo sshd(pam_unix)[4347]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:53 combo sshd(pam_unix)[4345]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:54 combo sshd(pam_unix)[4343]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:55 combo sshd(pam_unix)[4349]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:59 combo sshd(pam_unix)[4352]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:59 combo sshd(pam_unix)[4351]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:39:59 combo sshd(pam_unix)[4355]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:40:00 combo sshd(pam_unix)[4356]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root",
+      "Feb  8 18:40:03 combo sshd(pam_unix)[4359]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.166.155.143  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1390",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 22:42:09 combo sshd(pam_unix)[4372]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200.30.175.22  user=root",
+      "Feb  8 22:42:09 combo sshd(pam_unix)[4370]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200.30.175.22  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9488",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  9 00:04:14 combo sshd(pam_unix)[4374]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200.30.175.22  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9550",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  9 00:57:39 combo sshd(pam_unix)[4404]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:39 combo sshd(pam_unix)[4405]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:39 combo sshd(pam_unix)[4398]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:39 combo sshd(pam_unix)[4406]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:41 combo sshd(pam_unix)[4400]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:41 combo sshd(pam_unix)[4401]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:41 combo sshd(pam_unix)[4399]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:41 combo sshd(pam_unix)[4403]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:41 combo sshd(pam_unix)[4407]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test",
+      "Feb  9 00:57:44 combo sshd(pam_unix)[4402]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-145-62-59.adsl.ttn.net  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6905",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4431]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4433]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4430]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4434]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4432]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4427]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4429]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test",
+      "Feb  9 17:15:08 combo sshd(pam_unix)[4428]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-68-120-97-218.dsl.sntc01.sbcglobal.net  user=test"
+    ]
+  },
+  {
+    "session_id": "session_1681",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4462]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4461]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4467]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4465]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4472]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4463]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:35 combo sshd(pam_unix)[4474]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:37 combo sshd(pam_unix)[4464]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:38 combo sshd(pam_unix)[4477]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root",
+      "Feb 10 00:11:38 combo sshd(pam_unix)[4478]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=217-159-208-230-dsl.est.estpak.ee  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3883",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 06:02:02 combo sshd(pam_unix)[4481]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:06 combo sshd(pam_unix)[4483]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:11 combo sshd(pam_unix)[4485]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:12 combo sshd(pam_unix)[4487]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:13 combo sshd(pam_unix)[4489]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:13 combo sshd(pam_unix)[4491]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:16 combo sshd(pam_unix)[4493]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:19 combo sshd(pam_unix)[4495]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:20 combo sshd(pam_unix)[4497]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:21 combo sshd(pam_unix)[4499]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:23 combo sshd(pam_unix)[4501]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:23 combo sshd(pam_unix)[4503]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root",
+      "Feb 10 06:02:23 combo sshd(pam_unix)[4505]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=web003.knoxville.xxpansion.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3137",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:33:22 combo sshd(pam_unix)[4520]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.varpalota.hu  user=root",
+      "Feb 10 07:33:22 combo sshd(pam_unix)[4519]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.varpalota.hu  user=root",
+      "Feb 10 07:33:22 combo sshd(pam_unix)[4518]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=mail.varpalota.hu  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9305",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 11 12:02:20 combo sshd(pam_unix)[4650]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:20 combo sshd(pam_unix)[4652]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:20 combo sshd(pam_unix)[4659]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:20 combo sshd(pam_unix)[4653]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:21 combo sshd(pam_unix)[4658]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:21 combo sshd(pam_unix)[4661]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:21 combo sshd(pam_unix)[4654]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:22 combo sshd(pam_unix)[4663]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:22 combo sshd(pam_unix)[4666]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test",
+      "Feb 11 12:02:24 combo sshd(pam_unix)[4668]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.178.20.170  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6629",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 06:21:47 combo sshd(pam_unix)[4702]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66-195-16-3.dimenoc.com  user=root",
+      "Feb 12 06:21:47 combo sshd(pam_unix)[4704]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66-195-16-3.dimenoc.com  user=root",
+      "Feb 12 06:21:47 combo sshd(pam_unix)[4703]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66-195-16-3.dimenoc.com  user=root",
+      "Feb 12 06:22:54 combo sshd(pam_unix)[4710]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66-195-16-3.dimenoc.com  user=root",
+      "Feb 12 06:22:54 combo sshd(pam_unix)[4711]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66-195-16-3.dimenoc.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1341",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4726]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4728]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4731]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4727]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4736]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4732]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4730]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4739]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4740]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root",
+      "Feb 12 10:41:36 combo sshd(pam_unix)[4743]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=165.132.224.7  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7020",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 13 13:33:44 combo sshd(pam_unix)[4801]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:44 combo sshd(pam_unix)[4799]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:45 combo sshd(pam_unix)[4803]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:46 combo sshd(pam_unix)[4806]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:46 combo sshd(pam_unix)[4807]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:46 combo sshd(pam_unix)[4805]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:46 combo sshd(pam_unix)[4811]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:47 combo sshd(pam_unix)[4812]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:47 combo sshd(pam_unix)[4814]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test",
+      "Feb 13 13:33:47 combo sshd(pam_unix)[4816]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.189.216.84  user=test"
+    ]
+  },
+  {
+    "session_id": "session_3938",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 13 15:55:50 combo sshd(pam_unix)[4819]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:00 combo sshd(pam_unix)[4821]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:10 combo sshd(pam_unix)[4823]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:13 combo sshd(pam_unix)[4825]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:20 combo sshd(pam_unix)[4827]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:23 combo sshd(pam_unix)[4829]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:30 combo sshd(pam_unix)[4831]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:33 combo sshd(pam_unix)[4833]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root",
+      "Feb 13 15:56:40 combo sshd(pam_unix)[4835]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61.107.1.198  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2244",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 15 14:10:05 combo sshd(pam_unix)[4973]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:09 combo sshd(pam_unix)[4971]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:15 combo sshd(pam_unix)[4975]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:15 combo sshd(pam_unix)[4977]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:25 combo sshd(pam_unix)[4980]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:25 combo sshd(pam_unix)[4979]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:30 combo sshd(pam_unix)[4983]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:33 combo sshd(pam_unix)[4985]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:35 combo sshd(pam_unix)[4987]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:35 combo sshd(pam_unix)[4989]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:36 combo sshd(pam_unix)[4991]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:37 combo sshd(pam_unix)[4993]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:39 combo sshd(pam_unix)[4995]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:43 combo sshd(pam_unix)[4997]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:43 combo sshd(pam_unix)[4999]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:45 combo sshd(pam_unix)[5001]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:45 combo sshd(pam_unix)[5003]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:46 combo sshd(pam_unix)[5005]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:47 combo sshd(pam_unix)[5007]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:49 combo sshd(pam_unix)[5009]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root",
+      "Feb 15 14:10:53 combo sshd(pam_unix)[5011]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203.95.1.26  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5921",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 15 18:54:11 combo sshd(pam_unix)[5027]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:11 combo sshd(pam_unix)[5029]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:12 combo sshd(pam_unix)[5028]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:14 combo sshd(pam_unix)[5035]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:14 combo sshd(pam_unix)[5036]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:14 combo sshd(pam_unix)[5039]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:15 combo sshd(pam_unix)[5030]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:18 combo sshd(pam_unix)[5042]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 18:54:20 combo sshd(pam_unix)[5041]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test"
+    ]
+  },
+  {
+    "session_id": "session_7345",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 15 19:30:53 combo sshd(pam_unix)[5047]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 19:30:55 combo sshd(pam_unix)[5045]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 19:30:55 combo sshd(pam_unix)[5046]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 19:30:56 combo sshd(pam_unix)[5051]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 19:30:56 combo sshd(pam_unix)[5052]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test",
+      "Feb 15 19:31:00 combo sshd(pam_unix)[5055]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=xdsl-81-173-145-209.netcologne.de  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6394",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 16 16:43:15 combo sshd(pam_unix)[5110]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:15 combo sshd(pam_unix)[5107]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:15 combo sshd(pam_unix)[5097]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:15 combo sshd(pam_unix)[5111]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:15 combo sshd(pam_unix)[5113]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:23 combo sshd(pam_unix)[5100]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:23 combo sshd(pam_unix)[5101]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:23 combo sshd(pam_unix)[5099]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:23 combo sshd(pam_unix)[5098]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test",
+      "Feb 16 16:43:24 combo sshd(pam_unix)[5108]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=wef.hebiace.edu.cn  user=test"
+    ]
+  },
+  {
+    "session_id": "session_6852",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 16 23:52:52 combo sshd(pam_unix)[5122]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:02 combo sshd(pam_unix)[5124]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:11 combo sshd(pam_unix)[5126]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:12 combo sshd(pam_unix)[5128]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:15 combo sshd(pam_unix)[5130]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:21 combo sshd(pam_unix)[5132]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:22 combo sshd(pam_unix)[5134]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:25 combo sshd(pam_unix)[5136]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:31 combo sshd(pam_unix)[5138]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:32 combo sshd(pam_unix)[5140]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:35 combo sshd(pam_unix)[5142]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:41 combo sshd(pam_unix)[5144]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:42 combo sshd(pam_unix)[5146]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:45 combo sshd(pam_unix)[5148]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:51 combo sshd(pam_unix)[5150]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:52 combo sshd(pam_unix)[5152]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:53:55 combo sshd(pam_unix)[5154]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:54:01 combo sshd(pam_unix)[5156]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:54:02 combo sshd(pam_unix)[5158]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:54:05 combo sshd(pam_unix)[5160]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:54:05 combo sshd(pam_unix)[5162]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root",
+      "Feb 16 23:54:11 combo sshd(pam_unix)[5164]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=69.42.162.212  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1880",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 17 12:08:58 combo sshd(pam_unix)[5202]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:58 combo sshd(pam_unix)[5208]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:58 combo sshd(pam_unix)[5204]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:58 combo sshd(pam_unix)[5201]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:58 combo sshd(pam_unix)[5205]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:58 combo sshd(pam_unix)[5211]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:59 combo sshd(pam_unix)[5213]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:59 combo sshd(pam_unix)[5214]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:59 combo sshd(pam_unix)[5216]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root",
+      "Feb 17 12:08:59 combo sshd(pam_unix)[5219]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=68.red-217-126-158.staticip.rima-tde.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7446",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 17 15:03:33 combo sshd(pam_unix)[5226]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=data.nhwsh.tp.edu.tw  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3709",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5248]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5247]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5249]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5250]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5251]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5245]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:18 combo sshd(pam_unix)[5246]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:19 combo sshd(pam_unix)[5253]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 17 16:38:19 combo sshd(pam_unix)[5252]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4184",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 03:55:39 combo sshd(pam_unix)[5280]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=host227.infiniconsys.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3390",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 04:03:23 combo sshd(pam_unix)[5282]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-31-236-3.static.tfn.net.tw  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4039",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 04:26:34 combo sshd(pam_unix)[5284]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=adsl-126.47.82.info.com.ph  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4813",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 04:29:58 combo sshd(pam_unix)[5286]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-66-176-150-53.hsd1.fl.comcast.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2099",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 04:45:02 combo sshd(pam_unix)[5288]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=66-169-125-252.dhcp.ftwo.tx.charter.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7804",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 05:16:07 combo sshd(pam_unix)[5290]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=211.242.213.22  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8299",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 05:44:27 combo sshd(pam_unix)[5292]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:27 combo sshd(pam_unix)[5293]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:28 combo sshd(pam_unix)[5294]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:28 combo sshd(pam_unix)[5298]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:28 combo sshd(pam_unix)[5299]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:28 combo sshd(pam_unix)[5300]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:28 combo sshd(pam_unix)[5301]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:29 combo sshd(pam_unix)[5306]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:29 combo sshd(pam_unix)[5308]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test",
+      "Feb 18 05:44:29 combo sshd(pam_unix)[5307]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=dialup-mum-203.94.231.54.mtnl.net.in  user=test"
+    ]
+  },
+  {
+    "session_id": "session_9222",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 14:02:56 combo sshd(pam_unix)[5315]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5319]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5320]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5321]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5322]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5324]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5318]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5317]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root",
+      "Feb 18 14:02:57 combo sshd(pam_unix)[5316]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c-24-7-117-28.hsd1.ca.comcast.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3534",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 16:57:40 combo sshd(pam_unix)[5333]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.96.171.181  user=test",
+      "Feb 18 16:57:55 combo sshd(pam_unix)[5333]: 1 more authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.96.171.181  user=test"
+    ]
+  },
+  {
+    "session_id": "session_9271",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5340]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5337]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5341]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5335]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5339]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5336]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5338]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:34:59 combo sshd(pam_unix)[5349]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:35:03 combo sshd(pam_unix)[5351]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root",
+      "Feb 19 02:35:03 combo sshd(pam_unix)[5352]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=200-103-106-42.pvoce700-nrp1.e.brasiltelecom.net.br  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8871",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5626]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5628]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5617]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5624]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5614]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5618]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5616]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5625]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5627]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root",
+      "Feb 20 07:24:30 combo sshd(pam_unix)[5615]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=210.14.28.60  user=root"
+    ]
+  },
+  {
+    "session_id": "session_1368",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 22 11:46:37 combo sshd(pam_unix)[5992]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:37 combo sshd(pam_unix)[5989]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:38 combo sshd(pam_unix)[5991]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:38 combo sshd(pam_unix)[5995]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:38 combo sshd(pam_unix)[5996]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:39 combo sshd(pam_unix)[6001]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:39 combo sshd(pam_unix)[5997]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:41 combo sshd(pam_unix)[6005]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:41 combo sshd(pam_unix)[6004]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root",
+      "Feb 22 11:46:42 combo sshd(pam_unix)[6003]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=203186089173.ctinets.com  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9775",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6028]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6022]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6027]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6020]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6029]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6030]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6031]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6032]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6026]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root",
+      "Feb 22 13:26:34 combo sshd(pam_unix)[6021]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220.194.58.127  user=root"
+    ]
+  },
+  {
+    "session_id": "session_5890",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 12:02:26 combo sshd(pam_unix)[6064]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=80.34.110.175  user=fax"
+    ]
+  },
+  {
+    "session_id": "session_5172",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 12:02:26 combo sshd(pam_unix)[6070]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=175.red-80-34-110.staticip.rima-tde.net  user=fax",
+      "Feb 23 12:02:26 combo sshd(pam_unix)[6072]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=175.red-80-34-110.staticip.rima-tde.net  user=fax",
+      "Feb 23 12:02:26 combo sshd(pam_unix)[6066]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=175.red-80-34-110.staticip.rima-tde.net  user=fax",
+      "Feb 23 12:02:26 combo sshd(pam_unix)[6067]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=175.red-80-34-110.staticip.rima-tde.net  user=fax",
+      "Feb 23 12:02:26 combo sshd(pam_unix)[6073]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=175.red-80-34-110.staticip.rima-tde.net  user=fax"
+    ]
+  },
+  {
+    "session_id": "session_8294",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6153]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6152]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6154]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6150]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6158]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6161]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6162]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:21 combo sshd(pam_unix)[6163]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:22 combo sshd(pam_unix)[6168]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 05:45:22 combo sshd(pam_unix)[6160]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9092",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 07:13:15 combo sshd(pam_unix)[6170]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:15 combo sshd(pam_unix)[6172]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:15 combo sshd(pam_unix)[6173]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:15 combo sshd(pam_unix)[6174]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:15 combo sshd(pam_unix)[6176]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:15 combo sshd(pam_unix)[6177]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:16 combo sshd(pam_unix)[6178]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:16 combo sshd(pam_unix)[6186]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:16 combo sshd(pam_unix)[6175]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 07:13:17 combo sshd(pam_unix)[6184]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root"
+    ]
+  },
+  {
+    "session_id": "session_4238",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6213]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6209]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6205]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6206]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6216]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6223]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6211]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6212]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6221]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root",
+      "Feb 24 10:39:45 combo sshd(pam_unix)[6219]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=206.51.234.204  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8511",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6247]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6248]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6251]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6253]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6256]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6258]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6252]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6259]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6246]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root",
+      "Feb 24 11:16:38 combo sshd(pam_unix)[6245]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=83.228.113.166  user=root"
+    ]
+  },
+  {
+    "session_id": "session_3634",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 20:53:47 combo sshd(pam_unix)[6346]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6345]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6356]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6347]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6357]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6351]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6359]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6358]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:48 combo sshd(pam_unix)[6348]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root",
+      "Feb 24 20:53:49 combo sshd(pam_unix)[6350]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=218.14.157.80  user=root"
+    ]
+  },
+  {
+    "session_id": "session_9760",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 14:15:17 combo sshd(pam_unix)[6486]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=59.124.26.22  user=root"
+    ]
+  },
+  {
+    "session_id": "session_8832",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 26 09:02:53 combo sshd(pam_unix)[6549]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.63.163.84  user=root",
+      "Feb 26 09:02:53 combo sshd(pam_unix)[6550]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.63.163.84  user=root",
+      "Feb 26 09:02:53 combo sshd(pam_unix)[6546]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202.63.163.84  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7756",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6556]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root",
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6557]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root",
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6548]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root",
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6559]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root",
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6558]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root",
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6547]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root",
+      "Feb 26 09:02:54 combo sshd(pam_unix)[6562]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=202-63-163-84.static.exatt.net  user=root"
+    ]
+  },
+  {
+    "session_id": "session_7023",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 26 11:48:18 combo sshd(pam_unix)[6591]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:18 combo sshd(pam_unix)[6589]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:18 combo sshd(pam_unix)[6595]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:18 combo sshd(pam_unix)[6594]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:19 combo sshd(pam_unix)[6596]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:19 combo sshd(pam_unix)[6598]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:19 combo sshd(pam_unix)[6590]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:19 combo sshd(pam_unix)[6593]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:19 combo sshd(pam_unix)[6592]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root",
+      "Feb 26 11:48:19 combo sshd(pam_unix)[6597]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=63.116.211.67  user=root"
+    ]
+  },
+  {
+    "session_id": "session_2133",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 26 13:43:51 combo sshd(pam_unix)[6609]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:52 combo sshd(pam_unix)[6622]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:52 combo sshd(pam_unix)[6620]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:53 combo sshd(pam_unix)[6611]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:54 combo sshd(pam_unix)[6624]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:56 combo sshd(pam_unix)[6626]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:56 combo sshd(pam_unix)[6613]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:57 combo sshd(pam_unix)[6628]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:58 combo sshd(pam_unix)[6615]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:43:59 combo sshd(pam_unix)[6617]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:44:03 combo sshd(pam_unix)[6630]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:44:06 combo sshd(pam_unix)[6632]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:44:07 combo sshd(pam_unix)[6636]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:44:07 combo sshd(pam_unix)[6637]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:44:08 combo sshd(pam_unix)[6634]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody",
+      "Feb 26 13:44:14 combo sshd(pam_unix)[6641]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=221.230.128.214  user=nobody"
+    ]
+  },
+  {
+    "session_id": "session_9845",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 27 06:45:42 combo sshd(pam_unix)[6666]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81.137.10.194  user=test",
+      "Feb 27 06:45:48 combo sshd(pam_unix)[6668]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=81.137.10.194  user=test"
+    ]
+  },
+  {
+    "session_id": "session_4974",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 28 01:48:59 combo sshd(pam_unix)[6721]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:00 combo sshd(pam_unix)[6728]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:00 combo sshd(pam_unix)[6726]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:00 combo sshd(pam_unix)[6724]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:00 combo sshd(pam_unix)[6723]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:00 combo sshd(pam_unix)[6727]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:00 combo sshd(pam_unix)[6725]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:02 combo sshd(pam_unix)[6735]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:02 combo sshd(pam_unix)[6737]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root",
+      "Feb 28 01:49:02 combo sshd(pam_unix)[6736]: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=www.buller.hoover.fresno.k12.ca.us  user=root"
+    ]
+  }
+]

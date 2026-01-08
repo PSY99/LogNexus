@@ -1,0 +1,21 @@
+[
+  {
+    "session_id": "session_3118",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:43:06 combo kernel: Kernel logging (proc) stopped.",
+      "Dec  9 09:43:06 combo kernel: Kernel log daemon terminating.",
+      "Dec  9 09:43:25 combo syslog: syslogd startup succeeded",
+      "Dec  9 09:43:25 combo syslog: klogd startup succeeded",
+      "Dec  9 09:43:25 combo kernel: klogd 1.4.1, log source = /proc/kmsg started.",
+      "Dec  9 09:45:51 combo udev[15950]: removing device node '/udev/vcsa2'",
+      "Dec  9 09:45:51 combo udev[15949]: removing device node '/udev/vcs2'",
+      "Dec  9 09:45:51 combo udev[15967]: removing device node '/udev/vcsa2'",
+      "Dec  9 09:45:51 combo udev[15975]: removing device node '/udev/vcs2'",
+      "Dec  9 09:48:09 combo udev[16035]: removing device node '/udev/vcsa3'",
+      "Dec  9 09:48:09 combo udev[16034]: removing device node '/udev/vcs3'",
+      "Dec  9 09:48:09 combo udev[16089]: removing device node '/udev/vcs3'",
+      "Dec  9 09:48:09 combo udev[16093]: removing device node '/udev/vcsa3'"
+    ]
+  }
+]

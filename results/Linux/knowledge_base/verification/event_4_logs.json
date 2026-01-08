@@ -1,0 +1,366 @@
+[
+  {
+    "session_id": "session_8610",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  4 04:07:32 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_9386",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  5 04:03:05 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_3703",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 04:03:38 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8210",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  8 04:07:53 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_4262",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 10 04:13:53 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_3054",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 11 04:06:31 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_7177",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 12 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_7706",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 13 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8204",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 14 04:02:06 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6237",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_5404",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 16 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_5799",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 17 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_7213",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 18 04:02:17 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8904",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 19 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_1032",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 20 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_9711",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 21 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8968",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 22 04:02:06 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_4108",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 23 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_9020",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 24 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_7241",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 25 04:02:17 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6902",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 26 04:02:06 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_1529",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 27 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_1522",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 28 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6738",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 29 04:02:06 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6286",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 30 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6014",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 31 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_7178",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  1 04:02:17 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_4583",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  2 04:02:06 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_1602",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  3 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8226",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  4 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_9328",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  5 04:02:06 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_9585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  6 04:02:07 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6517",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  7 04:02:36 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8170",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  8 04:05:57 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_1478",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  9 04:02:37 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8726",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 04:02:52 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_4969",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 04:14:24 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6936",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 04:08:43 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_5616",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 04:09:56 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_4185",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 04:04:05 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_7753",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 04:11:26 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6015",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:07:09 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_8463",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 04:07:30 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_5431",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:09:42 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_2129",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 04:09:04 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_2939",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 04:03:36 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_3522",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 21 04:07:17 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_1459",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 04:11:04 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_4970",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 04:04:12 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_3789",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 04:09:18 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6752",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 25 04:11:15 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  },
+  {
+    "session_id": "session_6425",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 04:04:30 combo logrotate: ALERT exited abnormally with [1]"
+    ]
+  }
+]

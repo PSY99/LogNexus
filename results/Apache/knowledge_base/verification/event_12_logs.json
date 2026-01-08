@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": "session_4105",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [notice] Apache/2.0.49 (Fedora) configured -- resuming normal operations"
+    ]
+  },
+  {
+    "session_id": "session_9948",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] Apache/2.0.49 (Fedora) configured -- resuming normal operations"
+    ]
+  }
+]

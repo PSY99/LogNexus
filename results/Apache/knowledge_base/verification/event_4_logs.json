@@ -1,0 +1,1750 @@
+[
+  {
+    "session_id": "session_8249",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:26 2006] [error] mod_jk child workerEnv in error state 6",
+      "[Mon Jan 16 03:48:30 2006] [error] mod_jk child workerEnv in error state 6"
+    ]
+  },
+  {
+    "session_id": "session_8008",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:29 2006] [error] jk2_init() Can't find child 1238 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8656",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:30 2006] [error] jk2_init() Can't find child 1239 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6471",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:31 2006] [error] jk2_init() Can't find child 1241 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6692",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:31 2006] [error] jk2_init() Can't find child 1242 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2758",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:31 2006] [error] jk2_init() Can't find child 1243 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8946",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:31 2006] [error] jk2_init() Can't find child 1244 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3613",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:10 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Mon Jan 16 17:01:15 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_9008",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:11 2006] [error] jk2_init() Can't find child 3264 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6052",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:11 2006] [error] jk2_init() Can't find child 3265 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2551",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:14 2006] [error] jk2_init() Can't find child 3266 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4250",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:15 2006] [error] jk2_init() Can't find child 3267 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:41 2006] [error] jk2_init() Can't find child 3939 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5972",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:42 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Tue Jan 17 01:20:43 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_8190",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:42 2006] [error] jk2_init() Can't find child 3941 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1213",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:43 2006] [error] jk2_init() Can't find child 3942 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7926",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:43 2006] [error] jk2_init() Can't find child 3944 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6886",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:43 2006] [error] jk2_init() Can't find child 3945 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8192",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 18 02:06:41 2006] [error] jk2_init() Can't find child 7693 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9890",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:19 2006] [error] jk2_init() Can't find child 15259 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7245",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:23 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Fri Jan 20 05:37:32 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_7564",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:29 2006] [error] jk2_init() Can't find child 15261 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2404",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 08:19:25 2006] [error] jk2_init() Can't find child 15497 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:56 2006] [error] jk2_init() Can't find child 20022 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9945",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:57 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Sat Jan 21 19:20:58 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Sat Jan 21 19:20:58 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_7637",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:57 2006] [error] jk2_init() Can't find child 20024 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9914",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:58 2006] [error] jk2_init() Can't find child 20026 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1532",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:58 2006] [error] jk2_init() Can't find child 20027 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1692",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21333 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7138",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21334 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3550",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21335 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5460",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_5161",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21337 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6789",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21338 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1368",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21339 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1431",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] jk2_init() Can't find child 21340 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3256",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:18 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Sun Jan 22 08:28:20 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Sun Jan 22 08:28:24 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Sun Jan 22 08:28:27 2006] [error] mod_jk child workerEnv in error state 7",
+      "[Sun Jan 22 08:28:33 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_1176",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:19 2006] [error] jk2_init() Can't find child 25155 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9817",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:22 2006] [error] jk2_init() Can't find child 25157 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7068",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:23 2006] [error] jk2_init() Can't find child 25158 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5498",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:25 2006] [error] jk2_init() Can't find child 25160 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4737",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:28 2006] [error] jk2_init() Can't find child 25162 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6461",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:32 2006] [error] jk2_init() Can't find child 25163 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3827",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:45:40 2006] [error] jk2_init() Can't find child 26281 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6609",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:45:42 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_8412",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:38 2006] [error] jk2_init() Can't find child 26283 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8297",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:39 2006] [error] jk2_init() Can't find child 26284 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5614",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:39 2006] [error] mod_jk child workerEnv in error state 7"
+    ]
+  },
+  {
+    "session_id": "session_6789",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:40 2006] [error] jk2_init() Can't find child 26286 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7946",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:40 2006] [error] jk2_init() Can't find child 26287 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6867",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:40 2006] [error] jk2_init() Can't find child 26288 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6685",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:40 2006] [error] jk2_init() Can't find child 26289 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3872",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:46 2006] [error] mod_jk child workerEnv in error state 8"
+    ]
+  },
+  {
+    "session_id": "session_3318",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:47 2006] [error] jk2_init() Can't find child 30430 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9334",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:47 2006] [error] jk2_init() Can't find child 30431 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9333",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 12:52:11 2006] [error] jk2_init() Can't find child 32229 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1338",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:17 2006] [error] jk2_init() Can't find child 452 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9097",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:18 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Tue Jan 24 20:49:19 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Tue Jan 24 20:49:19 2006] [error] mod_jk child workerEnv in error state 8"
+    ]
+  },
+  {
+    "session_id": "session_3151",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:18 2006] [error] jk2_init() Can't find child 454 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3381",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:19 2006] [error] jk2_init() Can't find child 456 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6355",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:19 2006] [error] jk2_init() Can't find child 457 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6693",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 459 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9193",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 460 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7726",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 461 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6056",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 462 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2014",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 464 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6383",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 465 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9632",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [error] jk2_init() Can't find child 466 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6414",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 467 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6502",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 469 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8309",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 470 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5317",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 471 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4784",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 472 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2587",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 474 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3697",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 475 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1230",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 476 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4904",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 477 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1971",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [error] jk2_init() Can't find child 479 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2380",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:22 2006] [error] jk2_init() Can't find child 480 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2357",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:22 2006] [error] jk2_init() Can't find child 481 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7865",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:22 2006] [error] jk2_init() Can't find child 482 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9373",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:27 2006] [error] jk2_init() Can't find child 484 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7277",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:27 2006] [error] jk2_init() Can't find child 485 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2274",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:28 2006] [error] jk2_init() Can't find child 486 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2103",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:28 2006] [error] jk2_init() Can't find child 487 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4890",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:28 2006] [error] jk2_init() Can't find child 489 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6186",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [error] jk2_init() Can't find child 491 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8439",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [error] jk2_init() Can't find child 492 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1009",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [error] jk2_init() Can't find child 493 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6047",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [error] jk2_init() Can't find child 494 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4899",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [error] jk2_init() Can't find child 495 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4783",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [error] jk2_init() Can't find child 496 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9272",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:32 2006] [error] jk2_init() Can't find child 498 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2226",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:33 2006] [error] jk2_init() Can't find child 500 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5943",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:34 2006] [error] jk2_init() Can't find child 501 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4879",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:34 2006] [error] jk2_init() Can't find child 503 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8742",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:34 2006] [error] jk2_init() Can't find child 504 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9988",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:01 2006] [error] jk2_init() Can't find child 886 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2174",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:02 2006] [error] jk2_init() Can't find child 887 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5717",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:02 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 01:20:11 2006] [error] mod_jk child workerEnv in error state 8"
+    ]
+  },
+  {
+    "session_id": "session_3712",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:04 2006] [error] jk2_init() Can't find child 889 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4362",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:08 2006] [error] jk2_init() Can't find child 891 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6621",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:11 2006] [error] jk2_init() Can't find child 892 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3043",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:12 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 01:24:14 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 01:24:18 2006] [error] mod_jk child workerEnv in error state 8"
+    ]
+  },
+  {
+    "session_id": "session_4633",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:12 2006] [error] jk2_init() Can't find child 894 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1102",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:17 2006] [error] jk2_init() Can't find child 896 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4764",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:18 2006] [error] jk2_init() Can't find child 897 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8380",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:43 2006] [error] jk2_init() Can't find child 3058 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:45 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 07:33:48 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child workerEnv in error state 8",
+      "[Wed Jan 25 07:33:59 2006] [error] mod_jk child workerEnv in error state 8"
+    ]
+  },
+  {
+    "session_id": "session_1692",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:47 2006] [error] jk2_init() Can't find child 3060 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2631",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:48 2006] [error] jk2_init() Can't find child 3061 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4240",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:49 2006] [error] jk2_init() Can't find child 3063 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5531",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:49 2006] [error] jk2_init() Can't find child 3064 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4918",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:49 2006] [error] jk2_init() Can't find child 3065 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8223",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:49 2006] [error] jk2_init() Can't find child 3066 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3283",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [error] jk2_init() Can't find child 3068 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4415",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [error] jk2_init() Can't find child 3069 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3198",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [error] jk2_init() Can't find child 3070 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6510",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [error] jk2_init() Can't find child 3071 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6878",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [error] jk2_init() Can't find child 3073 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4568",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [error] jk2_init() Can't find child 3074 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3366",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:54 2006] [error] jk2_init() Can't find child 3075 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4245",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:57 2006] [error] jk2_init() Can't find child 3076 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5725",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:01 2006] [error] jk2_init() Can't find child 3256 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7651",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:01 2006] [error] jk2_init() Can't find child 3257 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1873",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:02 2006] [error] jk2_init() Can't find child 3258 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6272",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:02 2006] [error] jk2_init() Can't find child 3260 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3745",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:02 2006] [error] jk2_init() Can't find child 3261 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3043",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [error] jk2_init() Can't find child 3262 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3709",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [error] jk2_init() Can't find child 3265 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6702",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [error] jk2_init() Can't find child 3266 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3236",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [error] jk2_init() Can't find child 3267 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7043",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [error] jk2_init() Can't find child 3268 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2004",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 20:29:02 2006] [error] jk2_init() Can't find child 3355 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4636",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 20:29:02 2006] [error] jk2_init() Can't find child 3356 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1928",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 00:46:36 2006] [error] jk2_init() Can't find child 3358 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6032",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:52 2006] [error] jk2_init() Can't find child 3386 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7764",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:54 2006] [error] jk2_init() Can't find child 3389 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9039",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:54 2006] [error] jk2_init() Can't find child 3390 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8253",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:54 2006] [error] jk2_init() Can't find child 3391 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4711",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:54 2006] [error] jk2_init() Can't find child 3392 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4392",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:01 2006] [error] jk2_init() Can't find child 4025 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7132",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:02 2006] [error] jk2_init() Can't find child 4026 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2709",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:05 2006] [error] jk2_init() Can't find child 4029 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3156",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:05 2006] [error] jk2_init() Can't find child 4030 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:08 2006] [error] jk2_init() Can't find child 4031 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4529",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:09 2006] [error] jk2_init() Can't find child 4032 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8390",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:10 2006] [error] jk2_init() Can't find child 4034 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6622",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:10 2006] [error] jk2_init() Can't find child 4035 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2490",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:10 2006] [error] jk2_init() Can't find child 4036 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6504",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:10 2006] [error] jk2_init() Can't find child 4037 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2429",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [error] jk2_init() Can't find child 4039 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2377",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [error] jk2_init() Can't find child 4040 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3572",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [error] jk2_init() Can't find child 4041 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8869",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [error] jk2_init() Can't find child 4042 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8155",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [error] jk2_init() Can't find child 4044 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [error] jk2_init() Can't find child 4045 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5999",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:05:02 2006] [error] jk2_init() Can't find child 4366 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7624",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:05:04 2006] [error] jk2_init() Can't find child 4367 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1041",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:05:05 2006] [error] jk2_init() Can't find child 4368 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1425",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:27:59 2006] [error] jk2_init() Can't find child 4640 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7862",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:28:03 2006] [error] jk2_init() Can't find child 4641 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4758",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:34 2006] [error] jk2_init() Can't find child 4643 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3575",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:35 2006] [error] jk2_init() Can't find child 4645 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4671",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:36 2006] [error] jk2_init() Can't find child 4646 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1866",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:36 2006] [error] jk2_init() Can't find child 4649 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3888",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 13 20:24:02 2006] [error] jk2_init() Can't find child 4860 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6144",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:34 2006] [error] jk2_init() Can't find child 4915 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5602",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:35 2006] [error] jk2_init() Can't find child 4916 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6551",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:35 2006] [error] jk2_init() Can't find child 4917 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4011",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:36 2006] [error] jk2_init() Can't find child 4918 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6480",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:36 2006] [error] jk2_init() Can't find child 4921 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6751",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 19:10:30 2006] [error] jk2_init() Can't find child 4946 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2983",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:44:54 2006] [error] jk2_init() Can't find child 5013 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1736",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:44:55 2006] [error] jk2_init() Can't find child 5015 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7909",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:51:59 2006] [error] jk2_init() Can't find child 5016 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3520",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:00 2006] [error] jk2_init() Can't find child 5018 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5829",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:01 2006] [error] jk2_init() Can't find child 5019 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6905",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:01 2006] [error] jk2_init() Can't find child 5020 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3490",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:01 2006] [error] jk2_init() Can't find child 5021 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3151",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:13 2006] [error] jk2_init() Can't find child 5063 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5229",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:14 2006] [error] jk2_init() Can't find child 5065 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1123",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:29 2006] [error] jk2_init() Can't find child 5066 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2379",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:33 2006] [error] jk2_init() Can't find child 5069 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9072",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:34 2006] [error] jk2_init() Can't find child 5070 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8696",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:34 2006] [error] jk2_init() Can't find child 5071 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8838",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:34 2006] [error] jk2_init() Can't find child 5072 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7084",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:25 2006] [error] jk2_init() Can't find child 5074 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2867",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:27 2006] [error] jk2_init() Can't find child 5075 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3530",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:28 2006] [error] jk2_init() Can't find child 5076 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8733",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:28 2006] [error] jk2_init() Can't find child 5077 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9541",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:29 2006] [error] jk2_init() Can't find child 5079 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1616",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:29 2006] [error] jk2_init() Can't find child 5080 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9830",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:29 2006] [error] jk2_init() Can't find child 5081 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7869",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:04:54 2006] [error] jk2_init() Can't find child 5082 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4275",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:05:08 2006] [error] jk2_init() Can't find child 5085 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2004",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:05:10 2006] [error] jk2_init() Can't find child 5086 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9759",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:05:13 2006] [error] jk2_init() Can't find child 5087 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3139",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:44 2006] [error] jk2_init() Can't find child 5277 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6388",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:45 2006] [error] jk2_init() Can't find child 5278 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8913",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:45 2006] [error] jk2_init() Can't find child 5279 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7573",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:05 2006] [error] jk2_init() Can't find child 5463 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9522",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:05 2006] [error] jk2_init() Can't find child 5464 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1700",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:06 2006] [error] jk2_init() Can't find child 5465 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2750",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:06 2006] [error] jk2_init() Can't find child 5467 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4287",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:06 2006] [error] jk2_init() Can't find child 5468 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2021",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:08 2006] [error] jk2_init() Can't find child 5563 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9189",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:09 2006] [error] jk2_init() Can't find child 5565 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6952",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:02:44 2006] [error] jk2_init() Can't find child 5566 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3183",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:08 2006] [error] jk2_init() Can't find child 5654 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5498",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:17 2006] [error] jk2_init() Can't find child 5655 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7190",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:41 2006] [error] jk2_init() Can't find child 5656 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3298",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:42 2006] [error] jk2_init() Can't find child 5657 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6946",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:43 2006] [error] jk2_init() Can't find child 5660 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5822",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:43 2006] [error] jk2_init() Can't find child 5661 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4934",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:43 2006] [error] jk2_init() Can't find child 5662 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2623",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:29 2006] [error] jk2_init() Can't find child 5736 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4165",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:30 2006] [error] jk2_init() Can't find child 5737 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8536",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:30 2006] [error] jk2_init() Can't find child 5739 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7853",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:30 2006] [error] jk2_init() Can't find child 5738 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1734",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 11:51:45 2006] [error] jk2_init() Can't find child 6009 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7536",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 20:59:32 2006] [error] jk2_init() Can't find child 6040 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_2989",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 24 17:07:19 2006] [error] jk2_init() Can't find child 6322 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3247",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 00:08:42 2006] [error] jk2_init() Can't find child 6385 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4179",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:35 2006] [error] jk2_init() Can't find child 6418 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9987",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:36 2006] [error] jk2_init() Can't find child 6420 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9445",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:38 2006] [error] jk2_init() Can't find child 6421 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6766",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:38 2006] [error] jk2_init() Can't find child 6424 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4842",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [error] jk2_init() Can't find child 6425 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9663",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6435 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_5801",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6437 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9761",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6441 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3237",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6442 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9519",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6443 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7654",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6444 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6335",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6447 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7679",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [error] jk2_init() Can't find child 6448 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:12 2006] [error] jk2_init() Can't find child 6449 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_4491",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:13 2006] [error] jk2_init() Can't find child 6450 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6434",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:14 2006] [error] jk2_init() Can't find child 6452 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_1174",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:14 2006] [error] jk2_init() Can't find child 6453 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_7845",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:14 2006] [error] jk2_init() Can't find child 6454 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9347",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:14 2006] [error] jk2_init() Can't find child 6455 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_8861",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [error] jk2_init() Can't find child 6458 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_9143",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [error] jk2_init() Can't find child 6459 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_6578",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [error] jk2_init() Can't find child 6460 in scoreboard"
+    ]
+  },
+  {
+    "session_id": "session_3772",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [error] jk2_init() Can't find child 6461 in scoreboard"
+    ]
+  }
+]

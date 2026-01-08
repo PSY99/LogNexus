@@ -1,0 +1,9 @@
+[
+  {
+    "session_id": "session_7252",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 12 02:35:35 LabSZ sshd[6980]: fatal: Read from socket failed: Connection reset by peer [preauth]"
+    ]
+  }
+]

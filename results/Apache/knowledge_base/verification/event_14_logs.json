@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": "session_3345",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 11:55:15 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:15 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:15 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:15 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:15 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:15 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:16 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /",
+      "[Fri Jan 27 11:55:16 2006] [error] [client 202.143.128.18] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+    "Description": "Dataset-specific key attributes for parameter consistency checks, using explicit Primary and Secondary fields.",
+    "OpenSSH": {
+        "PrimaryAttributes": [
+            "ip"
+        ],
+        "SecondaryAttributes": [
+            "PID"
+        ]
+    },
+    "Linux": {
+        "PrimaryAttributes": [
+            "ip"
+        ],
+        "SecondaryAttributes": [
+            "PID"
+        ]
+    },
+    "Apache": {
+        "PrimaryAttributes": [
+            "ip"
+        ],
+        "SecondaryAttributes": [
+            "PID"
+        ]
+    }
+}

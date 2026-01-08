@@ -1,0 +1,52 @@
+[
+  {
+    "session_id": "session_5484",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 05:21:28 combo udev[8712]: removing device node '/udev/vcsa4'",
+      "Dec 15 05:21:28 combo udev[8711]: removing device node '/udev/vcs4'",
+      "Dec 15 05:21:29 combo udev[8730]: removing device node '/udev/vcs4'",
+      "Dec 15 05:21:29 combo udev[8736]: removing device node '/udev/vcsa4'"
+    ]
+  },
+  {
+    "session_id": "session_8729",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:19:56 combo shutdown: shutting down for system reboot",
+      "Jan 26 12:19:57 combo udev[10610]: removing device node '/udev/vcsa4'",
+      "Jan 26 12:19:57 combo udev[10606]: removing device node '/udev/vcsa2'",
+      "Jan 26 12:19:57 combo udev[10608]: removing device node '/udev/vcsa3'",
+      "Jan 26 12:19:57 combo udev[10613]: removing device node '/udev/vcs6'",
+      "Jan 26 12:19:57 combo udev[10614]: removing device node '/udev/vcsa6'",
+      "Jan 26 12:19:57 combo udev[10609]: removing device node '/udev/vcs4'",
+      "Jan 26 12:19:57 combo udev[10611]: removing device node '/udev/vcs5'",
+      "Jan 26 12:19:57 combo udev[10607]: removing device node '/udev/vcs3'",
+      "Jan 26 12:19:57 combo udev[10612]: removing device node '/udev/vcsa5'",
+      "Jan 26 12:19:57 combo udev[10605]: removing device node '/udev/vcs2'",
+      "Jan 26 12:20:01 combo udev[10704]: removing device node '/udev/vcs4'",
+      "Jan 26 12:20:02 combo udev[10768]: removing device node '/udev/vcs7'",
+      "Jan 26 12:20:02 combo udev[10771]: removing device node '/udev/vcsa7'",
+      "Jan 26 12:20:02 combo udev[10749]: removing device node '/udev/vcs4'",
+      "Jan 26 12:20:11 combo udev[10872]: removing device node '/udev/vcsa4'",
+      "Jan 26 12:20:12 combo udev[10878]: removing device node '/udev/vcs4'",
+      "Jan 26 12:20:21 combo udev[10926]: removing device node '/udev/vcsa4'",
+      "Jan 26 12:20:31 combo udev[11080]: removing device node '/udev/vcsa4'",
+      "Jan 26 12:23:34 combo udev[2423]: removing device node '/udev/vcs8'",
+      "Jan 26 12:23:34 combo udev[2424]: removing device node '/udev/vcsa8'",
+      "Jan 26 12:23:36 combo udev[2682]: removing device node '/udev/vcsa5'",
+      "Jan 26 12:23:36 combo udev[2693]: removing device node '/udev/vcs5'",
+      "Jan 26 12:23:37 combo udev[2703]: removing device node '/udev/vcs4'",
+      "Jan 26 12:23:38 combo udev[2720]: removing device node '/udev/vcs3'",
+      "Jan 26 12:23:38 combo udev[2729]: removing device node '/udev/vcsa4'",
+      "Jan 26 12:23:39 combo udev[2738]: removing device node '/udev/vcs6'",
+      "Jan 26 12:23:40 combo udev[2756]: removing device node '/udev/vcs1'",
+      "Jan 26 12:23:42 combo udev[2765]: removing device node '/udev/vcsa1'",
+      "Jan 26 12:23:42 combo udev[2774]: removing device node '/udev/vcsa3'",
+      "Jan 26 12:23:43 combo udev[2783]: removing device node '/udev/vcs2'",
+      "Jan 26 12:23:43 combo udev[2793]: removing device node '/udev/vcsa2'",
+      "Jan 26 12:23:57 combo udev[2905]: removing device node '/udev/vcs7'",
+      "Jan 26 12:23:57 combo udev[2914]: removing device node '/udev/vcsa7'"
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "session_id": "session_2679",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:45:50 combo init: open(/dev/pts/0): No such file or directory"
+    ]
+  },
+  {
+    "session_id": "session_8181",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:08 combo init: open(/dev/pts/0): No such file or directory"
+    ]
+  },
+  {
+    "session_id": "session_2199",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:33 combo init: open(/dev/pts/0): No such file or directory"
+    ]
+  },
+  {
+    "session_id": "session_8049",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 05:21:28 combo init: open(/dev/pts/0): No such file or directory"
+    ]
+  }
+]

@@ -1,0 +1,135 @@
+[
+  {
+    "event_id": 0,
+    "generalized_summary": "An authentication attempt via SSH failed for a user account from a remote source.",
+    "severity": "Warning",
+    "suggested_action": "Investigate for possible brute-force or unauthorized access attempts from the source IP and consider blocking or alerting if repeated failures are observed.",
+    "key_parameters": [
+      "user",
+      "source_ip",
+      "port"
+    ],
+    "structural_signature": [
+      "Connection closed by <*> [preauth]",
+      "Did not receive identification string from <*>",
+      "Failed password for <*> from <*> port <*> ssh2",
+      "pam_unix(sshd:auth): authentication failure; logname=<*> uid=<*> euid=<*> tty=<*> ruser=<*> rhost=<*> user=<*>"
+    ],
+    "instance_count": 32,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 1,
+    "generalized_summary": "An authentication attempt to the SSH service failed due to invalid credentials or unknown user, often originating from an external source.",
+    "severity": "Warning",
+    "suggested_action": "Review the frequency and pattern of failed authentication attempts, investigate repeated attempts from the same source IP, and consider implementing access controls or blocking suspicious sources.",
+    "key_parameters": [
+      "user",
+      "source_ip",
+      "port",
+      "authentication_method",
+      "error_message"
+    ],
+    "structural_signature": [
+      "Address <*> maps to <*> but this does not map back to the address - POSSIBLE BREAK-IN ATTEMPT!",
+      "Bad protocol version identification <*> from <*> port <*>",
+      "Connection closed by <*> [preauth]",
+      "Did not receive identification string from <*>",
+      "Disconnecting: Too many authentication failures for <*> [preauth]",
+      "Failed password for <*> from <*> port <*> ssh2",
+      "Failed password for invalid user <*> from <*> port <*> ssh2",
+      "Invalid user <*> from <*>",
+      "PAM service(sshd) ignoring max retries; <*> > <*>",
+      "Received disconnect from <*>: <*>: Bye Bye [preauth]",
+      "Received disconnect from <*>: <*>: Closed due to user request. [preauth]",
+      "error: Received disconnect from <*>: <*>: <*>: Auth fail [preauth]",
+      "error: Received disconnect from <*>: <*>: No more user authentication methods available. [preauth]",
+      "fatal: Read from socket failed: Connection reset by peer [preauth]",
+      "input_userauth_request: invalid user <*> [preauth]",
+      "pam_unix(sshd:auth): authentication failure; logname=<*> uid=<*> euid=<*> tty=<*> ruser=<*> rhost=<*> user=<*>",
+      "pam_unix(sshd:auth): check pass; user unknown",
+      "reverse mapping checking getaddrinfo for <*> [<*>] failed - POSSIBLE BREAK-IN ATTEMPT!"
+    ],
+    "instance_count": 79,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 2,
+    "generalized_summary": "An authentication attempt via SSH failed due to invalid credentials or unknown user from a remote source.",
+    "severity": "Warning",
+    "suggested_action": "Monitor for repeated failed attempts from the same source IP and consider blocking or alerting if brute-force activity is detected.",
+    "key_parameters": [
+      "user",
+      "source_ip",
+      "port",
+      "authentication_method",
+      "authentication_result"
+    ],
+    "structural_signature": [
+      "Connection closed by <*> [preauth]",
+      "Disconnecting: Too many authentication failures for <*> [preauth]",
+      "Failed password for <*> from <*> port <*> ssh2",
+      "Failed password for invalid user <*> from <*> port <*> ssh2",
+      "Invalid user <*> from <*>",
+      "PAM <*> more authentication failures; logname=<*> uid=<*> euid=<*> tty=<*> ruser=<*> rhost=<*> user=<*>",
+      "PAM service(sshd) ignoring max retries; <*> > <*>",
+      "Received disconnect from <*>: <*>: Bye Bye [preauth]",
+      "fatal: Read from socket failed: Connection reset by peer [preauth]",
+      "input_userauth_request: invalid user <*> [preauth]",
+      "message repeated <*> times: [ Failed password for <*> from <*> port <*> ssh2]",
+      "pam_unix(sshd:auth): authentication failure; logname=<*> uid=<*> euid=<*> tty=<*> ruser=<*> rhost=<*> user=<*>",
+      "pam_unix(sshd:auth): check pass; user unknown"
+    ],
+    "instance_count": 15,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 3,
+    "generalized_summary": "A remote host attempted to connect via SSH, but its reverse DNS lookup failed, indicating a possible unauthorized access attempt.",
+    "severity": "Warning",
+    "suggested_action": "Investigate the source IP for suspicious activity and monitor for repeated attempts; consider updating access controls or blocking the IP if malicious behavior is confirmed.",
+    "key_parameters": [
+      "source_ip",
+      "hostname",
+      "service",
+      "event_type"
+    ],
+    "structural_signature": [
+      "reverse mapping checking getaddrinfo for <*> [<*>] failed - POSSIBLE BREAK-IN ATTEMPT!"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 4,
+    "generalized_summary": "A user session was terminated for an SSH connection.",
+    "severity": "Informational",
+    "suggested_action": "No action needed, this is a normal operational log. Optionally, correlate with session start and other activity for auditing purposes.",
+    "key_parameters": [
+      "user"
+    ],
+    "structural_signature": [
+      "pam_unix(sshd:session): session closed for user <*>"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 5,
+    "generalized_summary": "An SSH connection attempt was terminated because the remote peer reset the socket before authentication could complete.",
+    "severity": "Warning",
+    "suggested_action": "Monitor for repeated occurrences from the same source to identify potential scanning or attack activity; otherwise, this may be a benign network interruption.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process",
+      "error_message",
+      "connection_state"
+    ],
+    "structural_signature": [
+      "fatal: Read from socket failed: Connection reset by peer [preauth]"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  }
+]

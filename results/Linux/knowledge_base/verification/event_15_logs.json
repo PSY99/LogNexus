@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": "session_5716",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 11:53:05 combo sendmail: sendmail shutdown failed"
+    ]
+  },
+  {
+    "session_id": "session_2499",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 11:53:06 combo sendmail: sm-client shutdown failed"
+    ]
+  }
+]

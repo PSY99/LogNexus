@@ -1,0 +1,822 @@
+[
+  {
+    "session_id": "session_6642",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:42 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 03:48:43 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 03:48:44 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 03:48:45 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 03:48:46 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 03:48:47 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 03:48:48 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6447",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:24 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 17:01:25 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 17:01:26 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 17:01:27 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 17:01:28 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Jan 16 17:01:29 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_5192",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:55 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 17 01:20:56 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 17 01:20:57 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 17 01:20:58 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 17 01:20:59 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 17 01:21:00 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 17 01:21:01 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4903",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 18 02:06:56 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_1014",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:49 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 20 05:37:50 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 20 05:37:51 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 20 05:37:52 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6335",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 08:19:39 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_5306",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:21:10 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 21 19:21:11 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 21 19:21:12 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 21 19:21:13 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 21 19:21:14 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 21 19:21:15 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 21 19:21:16 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_1551",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 04:10:56 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2405",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:14 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4729",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 21:46:57 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 21:46:58 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 21:46:59 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 21:47:00 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 21:47:01 2006] [notice] mod_jk2 Shutting down",
+      "[Sun Jan 22 21:47:03 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4901",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:57 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 00:41:58 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 00:41:59 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_3305",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 12:52:29 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4484",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:54:20 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:21 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:22 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:23 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:24 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:25 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:26 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:27 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:28 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:29 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:30 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:31 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:32 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:33 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:34 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:35 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:36 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:37 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:38 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:39 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:40 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:41 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:42 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:43 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:44 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:45 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:46 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:47 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:48 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:49 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:50 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:51 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:52 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:53 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:54 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:55 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:56 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:57 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:58 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:54:59 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:00 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:01 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:02 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:03 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:04 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:05 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:06 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:07 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:08 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:09 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:10 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:11 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Jan 24 20:55:12 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6456",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:15 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:20:16 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:20:17 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:20:18 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:20:19 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_1503",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:24 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:25 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:26 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:27 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:28 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:29 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:30 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 01:24:31 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4097",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:38:45 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:46 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:47 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:49 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:50 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:51 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:52 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:53 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:54 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:55 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:56 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:57 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:58 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:38:59 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:39:00 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:39:01 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:39:02 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:39:03 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:39:04 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Jan 25 07:39:05 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6072",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Jan 26 12:20:09 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_5449",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:14 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 27 09:40:15 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 27 09:40:16 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2458",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 20:29:16 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 27 20:29:17 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Jan 27 20:29:18 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2301",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 00:46:48 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 00:46:49 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6312",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:57 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 22:25:58 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6247",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:26:05 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 22:26:06 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 22:26:07 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 22:26:08 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 22:26:09 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Jan 28 22:26:10 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4083",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 01 05:09:06 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_8850",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:39 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:19:42 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:19:46 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:19:49 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_3247",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:19:57 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:00 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:04 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:05 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:06 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:07 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:08 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:09 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:10 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:11 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:12 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:13 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:14 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:15 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 04 22:20:16 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4998",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:20:22 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_1430",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:20:48 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2639",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:05:18 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 08 21:05:19 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 08 21:05:20 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 08 21:05:21 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 08 21:05:22 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2050",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 09 17:14:56 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2530",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:28:12 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 04:28:13 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 04:28:15 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 04:28:16 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2826",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:50 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 09:53:51 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 09:53:52 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 09:53:53 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 09:53:54 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 09:53:55 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 11 09:53:56 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_8962",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 13 20:24:05 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 13 20:24:06 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 13 20:24:07 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_9736",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:53 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 08:35:54 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 08:35:55 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 08:35:58 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 08:35:59 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 08:36:00 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 08:36:01 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4161",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 19:10:51 2006] [notice] mod_jk2 Shutting down",
+      "[Tue Feb 14 19:10:54 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_3726",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 07:33:06 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_7249",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:45:10 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:45:26 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:45:35 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_8238",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:16 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:52:17 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:52:18 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:52:19 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:52:20 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:52:21 2006] [notice] mod_jk2 Shutting down",
+      "[Wed Feb 15 16:52:22 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_5238",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:55:00 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 00:55:01 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_1779",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:55:08 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_7795",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:55:18 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 00:55:20 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 00:55:24 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6611",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:55:30 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_5486",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:55:40 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 00:55:42 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 00:55:46 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6448",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:56:19 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_3079",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:44 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:45 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:46 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:47 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:48 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:49 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:51 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:00:55 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2804",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:05:16 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_9417",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:05:38 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:05:39 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:05:40 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:05:41 2006] [notice] mod_jk2 Shutting down",
+      "[Thu Feb 16 01:05:43 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_7967",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:57 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Feb 17 23:31:58 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Feb 17 23:31:59 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Feb 17 23:32:00 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4154",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:17 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 00:56:18 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 00:56:19 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 00:56:20 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 00:56:21 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 00:56:22 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 00:56:23 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_8884",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:04:52 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:53 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:54 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:55 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:56 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:57 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:58 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:04:59 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:00 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:01 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:02 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:03 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:04 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:05 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:06 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:07 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:08 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:09 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:10 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:11 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:12 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:13 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:14 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:15 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:16 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:17 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:18 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:19 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:20 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:21 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:22 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:23 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:24 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:25 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:26 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:27 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:28 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:29 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:30 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:31 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:32 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:33 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:34 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:35 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:36 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:37 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:38 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:39 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:40 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:41 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:42 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:43 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:44 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:45 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:46 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:47 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:48 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:49 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:50 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:51 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:52 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:53 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:54 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:55 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:56 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:57 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:58 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:05:59 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:00 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:01 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:02 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:03 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:04 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:05 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:06 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:07 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:08 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:09 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:10 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:11 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:12 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:13 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:14 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:15 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:16 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:17 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:18 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:19 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:20 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:21 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:22 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:23 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:24 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:25 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:26 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:27 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:28 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 05:06:29 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_1952",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:11 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_5675",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:27 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_7744",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:33 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4285",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:38:00 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 10:38:01 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 10:38:02 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 10:38:03 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 10:38:04 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 10:38:05 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 10:38:06 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_3522",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:44 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 19:48:45 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 19:48:46 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 19:48:47 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 19:48:48 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 19:48:49 2006] [notice] mod_jk2 Shutting down",
+      "[Mon Feb 20 19:48:50 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_6057",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 11:51:46 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_7443",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 20:59:40 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_4717",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 24 17:07:37 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Feb 24 17:07:39 2006] [notice] mod_jk2 Shutting down",
+      "[Fri Feb 24 17:07:40 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_2587",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 00:09:23 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_8494",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 00:09:39 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_9793",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:41 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:42 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:43 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:44 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:45 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:46 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:47 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:48 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:49 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:50 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:51 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:52 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:53 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:54 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:55 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:56 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:57 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:58 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:48:59 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:00 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:01 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:02 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:03 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:04 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:05 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:06 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:07 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:08 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:09 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:10 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:49:11 2006] [notice] mod_jk2 Shutting down"
+    ]
+  },
+  {
+    "session_id": "session_8129",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:19 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:20 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:21 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:22 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:23 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:24 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:25 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:26 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:27 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:28 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:29 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:30 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:31 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:32 2006] [notice] mod_jk2 Shutting down",
+      "[Sat Feb 25 03:52:33 2006] [notice] mod_jk2 Shutting down"
+    ]
+  }
+]

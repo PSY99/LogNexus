@@ -1,0 +1,58 @@
+[
+  {
+    "session_id": "session_5909",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:10:02 combo telnetd[15498]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_2872",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:36:11 combo telnetd[15651]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_5017",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:39:50 combo telnetd[15477]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_3483",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:41:07 combo telnetd[15712]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_1082",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:51:31 combo telnetd[15862]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_2289",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:12:28 combo telnetd[15526]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_2626",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:12:28 combo telnetd[15638]: ttloop:  read: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_7009",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:12:28 combo telnetd[16146]: ttloop:  read: Connection reset by peer"
+    ]
+  }
+]

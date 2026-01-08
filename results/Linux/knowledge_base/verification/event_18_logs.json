@@ -1,0 +1,219 @@
+[
+  {
+    "session_id": "session_1605",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4142]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_5637",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4143]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4011",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4129]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_9589",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4128]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4745",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4127]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_8590",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4132]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4643",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4138]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_7301",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4137]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4319",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4136]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_5498",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4135]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_8652",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4131]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_7836",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4134]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4935",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4133]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_5682",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4140]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_6363",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4139]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_5618",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4130]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_5945",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 06:36:20 combo ftpd[4141]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_8254",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4757]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4902",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4759]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_2271",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4758]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_6656",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4756]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_2249",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4750]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_8056",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4754]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_6955",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4753]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_7449",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4746]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4818",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4747]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_7450",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4748]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_8208",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4749]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_2035",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4751]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_1281",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4755]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4807",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4752]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  }
+]

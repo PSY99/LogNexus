@@ -1,0 +1,1 @@
+You should download all the files from the [BERT base uncased model](https://huggingface.co/bert-base-uncased) and place it in this directory.

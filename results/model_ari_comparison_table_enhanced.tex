@@ -1,0 +1,31 @@
+
+\begin{table*}[htbp]
+\centering
+\caption{Comparison of Adjusted Rand Index (ARI) for Different LLMs. The 'Improvement' column shows the percentage increase of the Full Model over the Base Model. The best-performing model in each category is highlighted in \textbf{bold}.}
+\label{tab:ari_comparison_enhanced}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Base Model (no refinement)} & \textbf{Full Model (with refinement)} & \textbf{Improvement (\%)} \\
+\midrule
+\multicolumn{4}{c}{\textit{Proprietary LLMs}} \\
+\midrule
+claude-3-5-haiku & 0.8220 $\pm$ 0.0000 & 0.8894 $\pm$ 0.0000 & +8.2\% \\
+claude-sonnet-4-5 & 0.6287 $\pm$ 0.3763 & 0.6552 $\pm$ 0.3799 & +4.2\% \\
+gemini-2.0-flash & 0.8499 $\pm$ 0.0022 & 0.9118 $\pm$ 0.0070 & +7.3\% \\
+gemini-2.5-pro & 0.8869 $\pm$ 0.0610 & 0.9190 $\pm$ 0.0293 & +3.6\% \\
+gemini-3-pro-preview & 0.3801 $\pm$ 0.2107 & 0.8216 $\pm$ 0.0218 & +116.2\% \\
+gpt-4o & 0.8263 $\pm$ 0.0021 & 0.8932 $\pm$ 0.0021 & +8.1\% \\
+\textbf{gpt-4o-mini} & \textbf{0.9277 $\pm$ 0.0000} & \textbf{0.9289 $\pm$ 0.0000} & \textbf{+0.1\%} \\
+gpt-5-mini & 0.2395 $\pm$ 0.2959 & 0.3653 $\pm$ 0.3263 & +52.5\% \\
+gpt-o3 & 0.8406 $\pm$ 0.0223 & 0.8963 $\pm$ 0.0259 & +6.6\% \\
+\midrule
+\multicolumn{4}{c}{\textit{Open-source LLMs}} \\
+\midrule
+deepseek-r1 & 0.8478 $\pm$ 0.0262 & 0.9124 $\pm$ 0.0234 & +7.6\% \\
+deepseek-v3.2 & 0.9083 $\pm$ 0.0634 & 0.9352 $\pm$ 0.0407 & +3.0\% \\
+qwen3-235b-a22b-instruct & 0.7361 $\pm$ 0.1635 & 0.8321 $\pm$ 0.1099 & +13.0\% \\
+\textbf{qwen3-30b-a3b-instruct} & \textbf{0.9412 $\pm$ 0.0169} & \textbf{0.9458 $\pm$ 0.0221} & \textbf{+0.5\%} \\
+qwen3-next-80b-a3b-instruct & 0.9019 $\pm$ 0.0692 & 0.9389 $\pm$ 0.0435 & +4.1\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

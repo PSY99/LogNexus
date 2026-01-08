@@ -1,0 +1,163 @@
+[
+  {
+    "session_id": "session_1659",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4167]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_5671",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4168]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_4154",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4166]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_7061",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4173]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_5451",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4171]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_4267",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4169]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_5027",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4170]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_8859",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4177]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_8088",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4175]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_7924",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4172]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_3064",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4174]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_8401",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4176]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_3481",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4182]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_3434",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4180]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_9574",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4179]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_1316",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4181]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_5683",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4178]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_1786",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4188]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_5690",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4184]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_7492",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4185]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_8817",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4183]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_4937",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4187]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  },
+  {
+    "session_id": "session_3369",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  6 12:24:00 combo ftpd[4186]: User unknown timed out after 900 seconds at Mon Feb  6 12:24:00 2006"
+    ]
+  }
+]

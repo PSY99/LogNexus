@@ -1,0 +1,2809 @@
+[
+  {
+    "session_id": "session_1285",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4513]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4962",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4506]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9173",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4507]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2615",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4508]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7136",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4512]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9354",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4511]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3567",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4514]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7153",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4510]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7261",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4509]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7161",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 03:28:16 combo sshd(pam_unix)[4523]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9412",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8701]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9617",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8700]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7662",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8709]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4586",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8708]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9091",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8695]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9379",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8710]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4237",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8702]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7067",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8699]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7042",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8698]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9692",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 10:12:58 combo sshd(pam_unix)[8697]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9706",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 03:55:10 combo sshd(pam_unix)[10222]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8658",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 19:07:10 combo sshd(pam_unix)[16534]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4686",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 19:07:14 combo sshd(pam_unix)[16540]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2751",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 19:07:14 combo sshd(pam_unix)[16547]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8093",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 19:07:14 combo sshd(pam_unix)[16545]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7071",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:43:57 combo sshd(pam_unix)[17339]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2919",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:43:58 combo sshd(pam_unix)[17342]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2464",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:43:59 combo sshd(pam_unix)[17344]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9199",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:43:59 combo sshd(pam_unix)[17338]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3697",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:43:59 combo sshd(pam_unix)[17345]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5004",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:44:00 combo sshd(pam_unix)[17350]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8779",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:44:02 combo sshd(pam_unix)[17352]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4215",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:44:02 combo sshd(pam_unix)[17346]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4423",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:44:04 combo sshd(pam_unix)[17356]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3857",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 03:44:05 combo sshd(pam_unix)[17351]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4288",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19719]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9652",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19720]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2783",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19717]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4630",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19722]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7524",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19724]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5065",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19726]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4782",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19728]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7235",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19730]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9719",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19732]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1382",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 22:37:31 combo sshd(pam_unix)[19734]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1814",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:46:34 combo sshd(pam_unix)[22927]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3598",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:46:34 combo sshd(pam_unix)[22928]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4817",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:46:44 combo sshd(pam_unix)[22931]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5206",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:46:44 combo sshd(pam_unix)[22932]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7509",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:46:54 combo sshd(pam_unix)[22935]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7370",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:46:54 combo sshd(pam_unix)[22936]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8467",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:03 combo sshd(pam_unix)[22939]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6767",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:04 combo sshd(pam_unix)[22941]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5553",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:04 combo sshd(pam_unix)[22942]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1461",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:11 combo sshd(pam_unix)[22945]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4014",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:14 combo sshd(pam_unix)[22947]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6271",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:14 combo sshd(pam_unix)[22948]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5796",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:21 combo sshd(pam_unix)[22951]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7769",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:24 combo sshd(pam_unix)[22953]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4933",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:24 combo sshd(pam_unix)[22954]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1825",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:32 combo sshd(pam_unix)[22957]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9144",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:34 combo sshd(pam_unix)[22960]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1981",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:37 combo sshd(pam_unix)[22959]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8684",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:42 combo sshd(pam_unix)[22963]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4119",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:43 combo sshd(pam_unix)[22965]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6895",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:44 combo sshd(pam_unix)[22966]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2886",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 17:47:44 combo sshd(pam_unix)[22968]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9940",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 18:03:28 combo sshd(pam_unix)[23003]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6030",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 18:03:40 combo sshd(pam_unix)[23005]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6770",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 18:03:48 combo sshd(pam_unix)[23007]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4583",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 18:31:39 combo sshd(pam_unix)[23042]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8236",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:28 combo sshd(pam_unix)[23716]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5606",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:28 combo sshd(pam_unix)[23718]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3331",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:29 combo sshd(pam_unix)[23717]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9295",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:30 combo sshd(pam_unix)[23719]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8946",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:32 combo sshd(pam_unix)[23727]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4117",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:33 combo sshd(pam_unix)[23729]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5116",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:34 combo sshd(pam_unix)[23731]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9800",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:35 combo sshd(pam_unix)[23724]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6126",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:35 combo sshd(pam_unix)[23733]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5248",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:38:36 combo sshd(pam_unix)[23726]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4477",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:39:30 combo sshd(pam_unix)[23738]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7899",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 02:39:34 combo sshd(pam_unix)[23739]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6264",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25752]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7603",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25751]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7973",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25763]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9363",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25753]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6473",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25754]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5463",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25764]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4487",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25757]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5834",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25760]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1637",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25762]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2166",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 16:54:44 combo sshd(pam_unix)[25766]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8942",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:52:59 combo sshd(pam_unix)[300]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7607",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:52:59 combo sshd(pam_unix)[302]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5378",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:52:59 combo sshd(pam_unix)[309]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1090",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:52:59 combo sshd(pam_unix)[310]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3799",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:52:59 combo sshd(pam_unix)[32765]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1055",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:53:00 combo sshd(pam_unix)[304]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2631",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:53:00 combo sshd(pam_unix)[306]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7994",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:53:00 combo sshd(pam_unix)[32767]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8911",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 16:53:01 combo sshd(pam_unix)[32766]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7545",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:22:51 combo sshd(pam_unix)[953]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8134",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:23:01 combo sshd(pam_unix)[955]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2861",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:23:11 combo sshd(pam_unix)[957]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9135",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:23:21 combo sshd(pam_unix)[959]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7062",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:23:28 combo sshd(pam_unix)[961]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9645",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:23:31 combo sshd(pam_unix)[963]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8157",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 00:23:36 combo sshd(pam_unix)[965]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6241",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:26 combo sshd(pam_unix)[2110]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8007",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:26 combo sshd(pam_unix)[2109]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:26 combo sshd(pam_unix)[2112]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7470",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:26 combo sshd(pam_unix)[2111]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2207",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:27 combo sshd(pam_unix)[2117]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5433",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:27 combo sshd(pam_unix)[2118]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3741",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:27 combo sshd(pam_unix)[2122]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8219",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:27 combo sshd(pam_unix)[2121]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3793",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:27 combo sshd(pam_unix)[2120]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6454",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:52:27 combo sshd(pam_unix)[2123]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8341",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:01 combo sshd(pam_unix)[2130]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3773",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:02 combo sshd(pam_unix)[2131]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1185",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:02 combo sshd(pam_unix)[2133]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3794",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:02 combo sshd(pam_unix)[2135]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5642",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:02 combo sshd(pam_unix)[2139]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5174",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:02 combo sshd(pam_unix)[2141]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9899",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:02 combo sshd(pam_unix)[2137]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1528",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:03 combo sshd(pam_unix)[2148]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7394",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:03 combo sshd(pam_unix)[2134]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5332",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:55:03 combo sshd(pam_unix)[2140]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8499",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2162]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3393",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2161]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4827",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2160]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3008",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2157]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2930",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2163]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2858",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2166]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3277",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:52 combo sshd(pam_unix)[2158]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1210",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:53 combo sshd(pam_unix)[2155]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7134",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:53 combo sshd(pam_unix)[2154]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9095",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:56:56 combo sshd(pam_unix)[2156]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8465",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:37 combo sshd(pam_unix)[2181]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9427",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:37 combo sshd(pam_unix)[2175]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5168",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:37 combo sshd(pam_unix)[2176]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9314",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:38 combo sshd(pam_unix)[2177]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4972",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:39 combo sshd(pam_unix)[2185]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7193",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:39 combo sshd(pam_unix)[2187]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3155",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:39 combo sshd(pam_unix)[2191]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7567",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:40 combo sshd(pam_unix)[2183]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3145",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:40 combo sshd(pam_unix)[2189]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7426",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:58:40 combo sshd(pam_unix)[2190]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9078",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2860]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9177",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2869]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7741",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2866]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4817",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2867]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8536",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2864]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7207",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2859]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7877",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:28 combo sshd(pam_unix)[2861]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2283",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:29 combo sshd(pam_unix)[2873]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8858",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:29 combo sshd(pam_unix)[2875]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2668",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 12:39:30 combo sshd(pam_unix)[2877]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5216",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:02 combo sshd(pam_unix)[6023]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3908",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:02 combo sshd(pam_unix)[6029]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7045",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:02 combo sshd(pam_unix)[6027]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4815",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:04 combo sshd(pam_unix)[6026]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4019",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:04 combo sshd(pam_unix)[6022]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3584",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:04 combo sshd(pam_unix)[6025]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9374",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:05 combo sshd(pam_unix)[6030]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5721",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:06 combo sshd(pam_unix)[6031]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3113",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 06:41:06 combo sshd(pam_unix)[6024]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2324",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:40:57 combo sshd(pam_unix)[7189]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4715",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:40:57 combo sshd(pam_unix)[7191]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1543",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:41:06 combo sshd(pam_unix)[7193]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6516",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:41:06 combo sshd(pam_unix)[7195]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9298",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:41:16 combo sshd(pam_unix)[7197]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7751",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:41:17 combo sshd(pam_unix)[7199]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2111",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 20:41:19 combo sshd(pam_unix)[7201]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7881",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7510]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4013",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7514]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2746",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7517]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3303",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7512]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6179",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7511]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1564",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7518]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3597",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7515]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7129",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7513]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7516]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4687",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 00:03:43 combo sshd(pam_unix)[7509]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4769",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:28:28 combo sshd(pam_unix)[8678]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3537",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:28:32 combo sshd(pam_unix)[8680]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9215",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:14 combo sshd(pam_unix)[8692]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9228",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:14 combo sshd(pam_unix)[8690]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1426",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:14 combo sshd(pam_unix)[8693]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4330",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:14 combo sshd(pam_unix)[8691]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8963",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:14 combo sshd(pam_unix)[8689]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6491",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:15 combo sshd(pam_unix)[8701]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:15 combo sshd(pam_unix)[8699]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2182",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:15 combo sshd(pam_unix)[8704]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2886",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:15 combo sshd(pam_unix)[8703]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9268",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:34:15 combo sshd(pam_unix)[8705]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1164",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:38 combo sshd(pam_unix)[15343]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2756",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:43 combo sshd(pam_unix)[15345]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6689",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:46 combo sshd(pam_unix)[15347]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4377",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:50 combo sshd(pam_unix)[15349]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4870",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:53 combo sshd(pam_unix)[15351]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3491",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:54 combo sshd(pam_unix)[15353]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2207",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 06:36:56 combo sshd(pam_unix)[15355]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5018",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15781]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8799",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15788]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8559",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15779]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7499",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15777]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1832",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15776]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9162",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15778]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2838",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15780]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7263",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15789]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4066",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15791]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5995",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 11:27:10 combo sshd(pam_unix)[15792]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1969",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 05:23:19 combo sshd(pam_unix)[24892]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7383",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 05:23:20 combo sshd(pam_unix)[24894]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8745",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 05:23:20 combo sshd(pam_unix)[24896]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5837",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 05:23:20 combo sshd(pam_unix)[24895]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4466",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 05:51:09 combo sshd(pam_unix)[24935]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6933",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 05:51:10 combo sshd(pam_unix)[24937]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7430",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 06:08:26 combo sshd(pam_unix)[24968]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8011",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26136]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5698",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26138]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6529",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26137]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4147",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26133]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9934",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26135]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3187",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26134]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8582",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26139]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6483",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26140]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4912",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26146]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8944",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 20:01:14 combo sshd(pam_unix)[26148]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5358",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28738]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1237",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28740]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3815",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28741]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1979",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28737]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1511",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28739]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8293",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28730]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1819",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28733]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3930",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28729]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2375",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:21 combo sshd(pam_unix)[28734]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3116",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 06:57:29 combo sshd(pam_unix)[28747]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4820",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:41 combo sshd(pam_unix)[31630]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1764",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:42 combo sshd(pam_unix)[31632]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2533",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:44 combo sshd(pam_unix)[31634]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1550",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:49 combo sshd(pam_unix)[31636]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2903",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:52 combo sshd(pam_unix)[31638]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6440",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:54 combo sshd(pam_unix)[31640]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6529",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 05:46:57 combo sshd(pam_unix)[31642]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8171",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 29 09:27:47 combo unix_chkpwd[3396]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3465",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:55 combo unix_chkpwd[3558]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7400",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:55 combo unix_chkpwd[3557]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9342",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:55 combo unix_chkpwd[3559]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2058",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:55 combo unix_chkpwd[3560]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9962",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:55 combo unix_chkpwd[3561]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3008",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:56 combo unix_chkpwd[3562]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6564",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:56 combo unix_chkpwd[3563]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6217",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:57 combo unix_chkpwd[3564]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6279",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:57 combo unix_chkpwd[3565]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4423",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 30 11:30:57 combo unix_chkpwd[3566]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5989",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:41 combo unix_chkpwd[3621]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9406",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:41 combo unix_chkpwd[3622]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7172",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:42 combo unix_chkpwd[3623]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5162",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:42 combo unix_chkpwd[3624]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5776",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:43 combo unix_chkpwd[3625]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8674",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:44 combo unix_chkpwd[3626]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3564",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:44 combo unix_chkpwd[3627]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3492",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 03:22:45 combo unix_chkpwd[3628]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5597",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3708]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4266",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3710]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9287",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3711]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3811",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3709]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5252",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3712]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8350",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3713]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4215",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3707]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2755",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3714]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5876",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:01 combo unix_chkpwd[3715]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2899",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 31 05:01:02 combo unix_chkpwd[3716]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7018",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 11:34:17 combo unix_chkpwd[3979]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1539",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 11:34:17 combo unix_chkpwd[3978]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6093",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 11:34:17 combo unix_chkpwd[3977]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8099",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 11:34:17 combo unix_chkpwd[3982]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7061",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 11:34:17 combo unix_chkpwd[3980]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2297",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  2 11:34:17 combo unix_chkpwd[3981]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2861",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:36 combo unix_chkpwd[4061]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7531",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:36 combo unix_chkpwd[4060]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6552",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:37 combo unix_chkpwd[4062]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8000",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:40 combo unix_chkpwd[4063]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2339",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:42 combo unix_chkpwd[4064]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2436",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:42 combo unix_chkpwd[4065]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3489",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  5 18:11:44 combo unix_chkpwd[4066]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9126",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:44 combo unix_chkpwd[4280]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6955",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:45 combo unix_chkpwd[4283]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1061",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:48 combo unix_chkpwd[4284]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1670",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:49 combo unix_chkpwd[4286]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2082",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:54 combo unix_chkpwd[4288]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3370",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:55 combo unix_chkpwd[4289]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9753",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  7 19:55:59 combo unix_chkpwd[4290]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2134",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:50 combo unix_chkpwd[4310]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4226",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:50 combo unix_chkpwd[4309]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6665",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:50 combo unix_chkpwd[4311]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6250",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:50 combo unix_chkpwd[4313]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7649",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:55 combo unix_chkpwd[4320]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1421",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:58 combo unix_chkpwd[4325]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8422",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:58 combo unix_chkpwd[4326]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9698",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:25:59 combo unix_chkpwd[4328]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3204",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:00 combo unix_chkpwd[4329]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2983",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:03 combo unix_chkpwd[4332]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5108",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:06 combo unix_chkpwd[4333]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1314",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:06 combo unix_chkpwd[4334]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8980",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:08 combo unix_chkpwd[4335]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7928",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:08 combo unix_chkpwd[4336]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2497",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:11 combo unix_chkpwd[4337]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8122",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb  8 09:26:15 combo unix_chkpwd[4338]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2513",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4569]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1185",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4571]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8878",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4567]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7866",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4568]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9082",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4576]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8643",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4575]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6338",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4574]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5752",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4573]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3353",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4572]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2940",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 10 07:43:21 combo unix_chkpwd[4570]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4124",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 13 03:57:50 combo unix_chkpwd[4798]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7972",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4911]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2820",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4905]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9063",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4906]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1984",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4907]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1978",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4909]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3018",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4913]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2943",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4912]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1599",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4910]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2634",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4914]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3035",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 14 01:42:18 combo unix_chkpwd[4908]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6836",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 15 17:50:33 combo unix_chkpwd[5026]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7506",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 18 06:10:07 combo unix_chkpwd[5314]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8963",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:53 combo unix_chkpwd[5395]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5340",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:53 combo unix_chkpwd[5393]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9005",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:53 combo unix_chkpwd[5392]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3972",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:53 combo unix_chkpwd[5394]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3563",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:53 combo unix_chkpwd[5396]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5141",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:54 combo unix_chkpwd[5397]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3598",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:54 combo unix_chkpwd[5398]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2696",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:54 combo unix_chkpwd[5399]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6953",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:55 combo unix_chkpwd[5400]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5903",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 19 11:29:58 combo unix_chkpwd[5401]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7995",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:13 combo unix_chkpwd[5702]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6718",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:14 combo unix_chkpwd[5703]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7140",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:15 combo unix_chkpwd[5706]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8898",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:17 combo unix_chkpwd[5708]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6364",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:18 combo unix_chkpwd[5711]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6467",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:18 combo unix_chkpwd[5712]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8094",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:23 combo unix_chkpwd[5724]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7820",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:23 combo unix_chkpwd[5725]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4264",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:24 combo unix_chkpwd[5726]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3611",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:28 combo unix_chkpwd[5727]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5818",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:29 combo unix_chkpwd[5728]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5440",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:29 combo unix_chkpwd[5729]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6127",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:30 combo unix_chkpwd[5730]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9966",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:30 combo unix_chkpwd[5731]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2055",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:31 combo unix_chkpwd[5732]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3728",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 20 12:14:32 combo unix_chkpwd[5733]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1511",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:46 combo unix_chkpwd[6096]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6920",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:47 combo unix_chkpwd[6097]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8691",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:47 combo unix_chkpwd[6098]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7363",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:47 combo unix_chkpwd[6099]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4355",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:47 combo unix_chkpwd[6100]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1035",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:47 combo unix_chkpwd[6101]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2303",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:49 combo unix_chkpwd[6102]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9748",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:50 combo unix_chkpwd[6103]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9547",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:50 combo unix_chkpwd[6104]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9060",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 13:54:51 combo unix_chkpwd[6105]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7496",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:47 combo unix_chkpwd[6126]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5318",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:47 combo unix_chkpwd[6127]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3732",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:47 combo unix_chkpwd[6128]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6713",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6129]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_2999",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6130]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7390",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6131]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9975",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6132]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5740",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6133]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3805",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6134]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_4125",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 23 18:10:48 combo unix_chkpwd[6135]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6428",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6314]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9207",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6317]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6387",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6310]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9484",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6311]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8244",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6312]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6196",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6316]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8089",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6313]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3603",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6319]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_5310",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6315]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_1771",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 24 15:43:45 combo unix_chkpwd[6318]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8317",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 12:44:54 combo unix_chkpwd[6481]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_9417",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 12:44:54 combo unix_chkpwd[6482]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8262",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 12:44:54 combo unix_chkpwd[6483]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6145",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 12:44:54 combo unix_chkpwd[6484]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_7988",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 12:44:54 combo unix_chkpwd[6485]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8020",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 27 06:47:17 combo unix_chkpwd[6678]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_6918",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 27 06:47:17 combo unix_chkpwd[6679]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_8680",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 27 06:47:22 combo unix_chkpwd[6680]: check pass; user unknown"
+    ]
+  },
+  {
+    "session_id": "session_3265",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 27 06:47:22 combo unix_chkpwd[6681]: check pass; user unknown"
+    ]
+  }
+]

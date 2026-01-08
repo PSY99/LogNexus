@@ -1,0 +1,955 @@
+[
+  {
+    "session_id": "session_2356",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:29 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 03:48:30 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 03:48:31 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 03:48:31 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 03:48:31 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 03:48:31 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_5000",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:10 2006] [error] mod_jk child init 1 0",
+      "[Mon Jan 16 17:01:11 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 17:01:11 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 17:01:14 2006] [error] mod_jk child init 1 -2",
+      "[Mon Jan 16 17:01:15 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_5146",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:41 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 17 01:20:42 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 17 01:20:43 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 17 01:20:43 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 17 01:20:43 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_3425",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 18 02:06:41 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_3494",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:19 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 20 05:37:29 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_1763",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 08:19:25 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_1214",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:56 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 21 19:20:57 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 21 19:20:58 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 21 19:20:58 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2375",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [notice] Digest: generating secret for digest authentication ..."
+    ]
+  },
+  {
+    "session_id": "session_8144",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 04:11:03 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7876",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:18 2006] [error] mod_jk child init 1 0",
+      "[Sun Jan 22 08:28:19 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 08:28:22 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 08:28:23 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 08:28:25 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 08:28:28 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 08:28:32 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2066",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:45:40 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_6563",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:38 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 21:46:39 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 21:46:40 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 21:46:40 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 21:46:40 2006] [error] mod_jk child init 1 -2",
+      "[Sun Jan 22 21:46:40 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7689",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:47 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 00:41:47 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2848",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 12:52:11 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_4042",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:17 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:18 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:19 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:19 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:20 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:21 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:22 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:22 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:22 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:27 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:27 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:28 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:28 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:28 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:29 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:29 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:29 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:29 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:29 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:29 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:32 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:33 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:34 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:34 2006] [error] mod_jk child init 1 -2",
+      "[Tue Jan 24 20:49:34 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_5222",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:01 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 01:20:02 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 01:20:04 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_6145",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:08 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 01:24:11 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 01:24:12 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 01:24:17 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 01:24:18 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_5916",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:43 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:47 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:48 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:49 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:49 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:49 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:49 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:50 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:54 2006] [error] mod_jk child init 1 -2",
+      "[Wed Jan 25 07:33:57 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_6427",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 891 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_1594",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 887 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6902",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 892 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6126",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3058 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7678",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 890 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_1846",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 894 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5143",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3059 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_3308",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3060 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9966",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3064 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4504",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3065 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7340",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3066 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5716",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3070 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_8619",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3071 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6762",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3072 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4145",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3073 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7238",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3075 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_3810",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 483 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9483",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 485 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4010",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 494 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5796",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 495 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9043",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 891 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_2094",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 887 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_3032",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 892 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9065",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3058 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4451",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 890 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5847",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 894 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_3784",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3059 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5060",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3060 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_1491",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3064 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_3346",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3065 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7354",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3066 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_1854",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3070 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9854",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3071 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6729",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3072 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9895",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3073 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9362",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 3075 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6472",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 483 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9301",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 485 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_3842",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 494 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7125",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:09 2006] [warn] child process 495 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_2294",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 891 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6813",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 887 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9402",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 892 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7640",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3058 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9818",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 890 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5301",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 894 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9977",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3059 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4385",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3060 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6936",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3064 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_7059",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3065 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9960",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3066 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4814",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3070 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5291",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3071 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_5688",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3072 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_2060",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3073 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_6242",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 3075 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4989",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 483 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_8144",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 485 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_2730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 494 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_9079",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:20:10 2006] [warn] child process 495 still did not exit, sending a SIGTERM"
+    ]
+  },
+  {
+    "session_id": "session_4422",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [notice] Digest: generating secret for digest authentication ..."
+    ]
+  },
+  {
+    "session_id": "session_2883",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:23 2006] [error] mod_jk child init 1 0"
+    ]
+  },
+  {
+    "session_id": "session_7937",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:01 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:01 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:02 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:02 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:02 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:03 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:03 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:03 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:03 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 09:40:03 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7383",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 20:29:02 2006] [error] mod_jk child init 1 -2",
+      "[Fri Jan 27 20:29:02 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_1285",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 00:46:36 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_3595",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:52 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 28 22:25:54 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 28 22:25:54 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 28 22:25:54 2006] [error] mod_jk child init 1 -2",
+      "[Sat Jan 28 22:25:54 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_8534",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:01 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:02 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:05 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:05 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:08 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:09 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:10 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:10 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:10 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:10 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:11 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:11 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:11 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:11 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:11 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 04 22:19:11 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_6603",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:05:02 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 08 21:05:04 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 08 21:05:05 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2942",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:27:59 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 11 04:28:03 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2052",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:34 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 11 09:53:35 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 11 09:53:36 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 11 09:53:36 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2055",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 13 20:24:02 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2150",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:34 2006] [error] mod_jk child init 1 -2",
+      "[Tue Feb 14 08:35:35 2006] [error] mod_jk child init 1 -2",
+      "[Tue Feb 14 08:35:35 2006] [error] mod_jk child init 1 -2",
+      "[Tue Feb 14 08:35:36 2006] [error] mod_jk child init 1 -2",
+      "[Tue Feb 14 08:35:36 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7927",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 19:10:30 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_8675",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:44:54 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 15 16:44:55 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7349",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:51:59 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 15 16:52:00 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 15 16:52:01 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 15 16:52:01 2006] [error] mod_jk child init 1 -2",
+      "[Wed Feb 15 16:52:01 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_3364",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:13 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 00:54:14 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 00:54:29 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 00:54:33 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 00:54:34 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 00:54:34 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 00:54:34 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_5367",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:25 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:00:27 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:00:28 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:00:28 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:00:29 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:00:29 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:00:29 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_1759",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:04:54 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:05:08 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:05:10 2006] [error] mod_jk child init 1 -2",
+      "[Thu Feb 16 01:05:13 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_6779",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:44 2006] [error] mod_jk child init 1 -2",
+      "[Fri Feb 17 23:31:45 2006] [error] mod_jk child init 1 -2",
+      "[Fri Feb 17 23:31:45 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2570",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:05 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 00:56:05 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 00:56:06 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 00:56:06 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 00:56:06 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_4585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:08 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 05:00:09 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_5401",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:02:44 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_1200",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:03 2006] [error] mod_jk child init 1 0",
+      "[Mon Feb 20 09:06:08 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 09:06:17 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_1093",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:41 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 10:37:42 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 10:37:43 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 10:37:43 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 10:37:43 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_4520",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:29 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 19:48:30 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 19:48:30 2006] [error] mod_jk child init 1 -2",
+      "[Mon Feb 20 19:48:30 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7408",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 11:51:45 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_7592",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 20:59:32 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_2348",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 24 17:07:19 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_9898",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 00:08:42 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_8413",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:35 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:36 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:38 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:38 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:39 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:48:40 2006] [error] mod_jk child init 1 -2"
+    ]
+  },
+  {
+    "session_id": "session_8838",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:12 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:13 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:14 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:14 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:14 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:14 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:15 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:15 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:15 2006] [error] mod_jk child init 1 -2",
+      "[Sat Feb 25 03:52:15 2006] [error] mod_jk child init 1 -2"
+    ]
+  }
+]

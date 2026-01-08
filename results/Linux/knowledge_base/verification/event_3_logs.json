@@ -1,0 +1,135 @@
+[
+  {
+    "session_id": "session_2902",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  4 04:07:00 combo cups: cupsd shutdown succeeded",
+      "Dec  4 04:07:11 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_9295",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 11 04:06:29 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_2727",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 18 04:02:14 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_3096",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 25 04:02:13 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_5970",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  1 04:02:13 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_6954",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  8 04:05:51 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_2516",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Jan 11 22:10:33 combo xinetd[16825]: warning: can't get client address: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_1802",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Jan 12 02:01:15 combo xinetd[17166]: warning: can't get client address: Connection reset by peer",
+      "Jan 12 02:01:15 combo ftpd[17166]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_4351",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Jan 12 02:01:21 combo xinetd[17168]: warning: can't get client address: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_9335",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 04:11:19 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_7264",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Jan 16 11:23:38 combo xinetd[2736]: warning: can't get client address: Connection reset by peer",
+      "Jan 16 11:23:38 combo ftpd[2736]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_3586",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 04:10:55 combo cups: cupsd startup succeeded"
+    ]
+  },
+  {
+    "session_id": "session_7038",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb 10 21:52:19 combo xinetd[4600]: warning: can't get client address: Connection reset by peer",
+      "Feb 10 21:52:19 combo ftpd[4600]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_7593",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb 12 13:11:14 combo xinetd[4760]: warning: can't get client address: Connection reset by peer",
+      "Feb 12 13:11:15 combo ftpd[4760]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_3325",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb 12 13:11:14 combo xinetd[4761]: warning: can't get client address: Connection reset by peer",
+      "Feb 12 13:11:15 combo ftpd[4761]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_9708",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb 12 13:11:15 combo ftpd[4762]: getpeername (ftpd): Transport endpoint is not connected",
+      "Feb 12 13:11:15 combo xinetd[4762]: warning: can't get client address: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_1973",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb 12 13:11:15 combo xinetd[4763]: warning: can't get client address: Connection reset by peer"
+    ]
+  },
+  {
+    "session_id": "session_1089",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb 12 13:11:15 combo xinetd[4764]: warning: can't get client address: Connection reset by peer"
+    ]
+  }
+]

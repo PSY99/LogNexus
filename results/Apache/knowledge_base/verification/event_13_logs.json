@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": "session_2755",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:05 2006] [notice] suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)"
+    ]
+  },
+  {
+    "session_id": "session_7669",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] mod_security/1.9dev2 configured"
+    ]
+  }
+]

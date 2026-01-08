@@ -1,0 +1,9 @@
+[
+  {
+    "session_id": "session_1292",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 12 01:35:58 LabSZ sshd[29506]: pam_unix(sshd:session): session closed for user jmzhu"
+    ]
+  }
+]

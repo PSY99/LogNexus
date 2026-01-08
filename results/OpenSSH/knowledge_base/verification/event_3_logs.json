@@ -1,0 +1,9 @@
+[
+  {
+    "session_id": "session_7528",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 12 00:53:17 LabSZ sshd[4296]: reverse mapping checking getaddrinfo for 224.247.186.60.broad.hz.zj.dynamic.163data.com.cn [60.186.247.224] failed - POSSIBLE BREAK-IN ATTEMPT!"
+    ]
+  }
+]

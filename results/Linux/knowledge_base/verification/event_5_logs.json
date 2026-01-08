@@ -1,0 +1,65 @@
+[
+  {
+    "session_id": "session_3052",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  4 04:07:33 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_6606",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:43:21 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_1183",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 11 04:06:31 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_3806",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 18 04:02:17 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_9133",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 25 04:02:17 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_7111",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  1 04:02:17 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_5000",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  8 04:05:57 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_2107",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 04:11:26 combo syslogd 1.4.1: restart."
+    ]
+  },
+  {
+    "session_id": "session_7971",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 04:11:04 combo syslogd 1.4.1: restart."
+    ]
+  }
+]

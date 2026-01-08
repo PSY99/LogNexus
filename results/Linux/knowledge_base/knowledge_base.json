@@ -1,0 +1,355 @@
+[
+  {
+    "event_id": 0,
+    "generalized_summary": "An authentication attempt via SSH failed for a user from a remote host.",
+    "severity": "Warning",
+    "suggested_action": "Monitor for repeated authentication failures from the same user or source; investigate for possible brute-force or unauthorized access attempts.",
+    "key_parameters": [
+      "user",
+      "source_ip_or_hostname",
+      "process_id",
+      "timestamp"
+    ],
+    "structural_signature": [
+      "<*> more authentication failure; logname= uid=<*> euid=<*> tty=<*> ruser=<*> rhost=<*> user=<*>",
+      "authentication failure; logname=<*> uid=<*> euid=<*> tty=<*> ruser=<*> rhost=<*> user=<*>"
+    ],
+    "instance_count": 136,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 1,
+    "generalized_summary": "A remote host established a new FTP connection to the server.",
+    "severity": "Informational",
+    "suggested_action": "Review connection patterns for unusual or unauthorized access attempts; consider correlating with authentication and activity logs for potential security concerns.",
+    "key_parameters": [
+      "source_ip",
+      "source_hostname",
+      "timestamp",
+      "process_id"
+    ],
+    "structural_signature": [
+      "ANONYMOUS FTP LOGIN FROM <*>, <*> (<*>)",
+      "connection from <*> (<*>) at <*>",
+      "warning: can't get client address: Connection reset by peer"
+    ],
+    "instance_count": 46,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 2,
+    "generalized_summary": "A user session was opened or closed via privilege escalation using the 'su' command.",
+    "severity": "Informational",
+    "suggested_action": "Review session activity for unusual or unauthorized privilege escalation, especially if the user or initiator is unexpected.",
+    "key_parameters": [
+      "user",
+      "action_type (opened/closed)",
+      "initiator_uid",
+      "process_id",
+      "timestamp",
+      "host"
+    ],
+    "structural_signature": [
+      "session closed for user <*>",
+      "session opened for user <*> by <*>"
+    ],
+    "instance_count": 113,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 3,
+    "generalized_summary": "The printing service daemon was stopped or started successfully.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal operational event. Review for unexpected service restarts if occurring frequently.",
+    "key_parameters": [
+      "service_name",
+      "event_type",
+      "status"
+    ],
+    "structural_signature": [
+      "<*> shutdown succeeded",
+      "<*> startup succeeded",
+      "getpeername (ftpd): Transport endpoint is not connected",
+      "warning: can't get client address: Connection reset by peer"
+    ],
+    "instance_count": 18,
+    "annotation_correct": false
+  },
+  {
+    "event_id": 4,
+    "generalized_summary": "A scheduled log rotation process exited abnormally with an error.",
+    "severity": "Error",
+    "suggested_action": "Investigate the log rotation configuration and recent changes to identify and resolve the cause of abnormal termination; ensure log files are being rotated and retained as expected.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process_name",
+      "alert_type",
+      "exit_code"
+    ],
+    "structural_signature": [
+      "ALERT exited abnormally with <*>"
+    ],
+    "instance_count": 52,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 5,
+    "generalized_summary": "The system logging service was restarted.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is an informational event unless unexpected restarts are observed.",
+    "key_parameters": [
+      "timestamp",
+      "service_name",
+      "event_type"
+    ],
+    "structural_signature": [
+      "restart."
+    ],
+    "instance_count": 9,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 6,
+    "generalized_summary": "An authentication attempt was made for an unknown or non-existent user account.",
+    "severity": "Warning",
+    "suggested_action": "Review for repeated or suspicious attempts, as this may indicate brute-force or enumeration activity; consider implementing account lockout or alerting if patterns persist.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process_name",
+      "process_id",
+      "user"
+    ],
+    "structural_signature": [
+      "check pass; user <*>"
+    ],
+    "instance_count": 401,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 7,
+    "generalized_summary": "A remote Telnet connection was terminated due to receiving invalid or incomplete character data from the peer.",
+    "severity": "Warning",
+    "suggested_action": "Review the source and nature of the connection attempts to determine if they are benign misconfigurations or indicative of malicious activity, such as protocol misuse or scanning.",
+    "key_parameters": [
+      "timestamp",
+      "process_name",
+      "process_id",
+      "error_message"
+    ],
+    "structural_signature": [
+      "Received SNMP packet(s) from <*>",
+      "getpeername (ftpd): Transport endpoint is not connected",
+      "ttloop: peer died: Invalid or incomplete multibyte or wide character",
+      "warning: can't get client address: Connection reset by peer"
+    ],
+    "instance_count": 65,
+    "annotation_correct": false
+  },
+  {
+    "event_id": 8,
+    "generalized_summary": "A network connection to the Telnet service was unexpectedly terminated by the remote peer.",
+    "severity": "Informational",
+    "suggested_action": "Review recent connection attempts to the Telnet service for patterns of abnormal disconnects; monitor for potential network issues or unauthorized access attempts.",
+    "key_parameters": [
+      "service",
+      "process_id",
+      "error_message"
+    ],
+    "structural_signature": [
+      "ttloop: read: Connection reset by peer"
+    ],
+    "instance_count": 8,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 9,
+    "generalized_summary": "An authentication attempt failed due to an invalid or unrecognized username.",
+    "severity": "Warning",
+    "suggested_action": "Review for repeated failed login attempts to identify possible brute-force or unauthorized access attempts.",
+    "key_parameters": [
+      "username",
+      "process_name",
+      "process_id"
+    ],
+    "structural_signature": [
+      "Couldn't authenticate user",
+      "bad username [<*>]"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 10,
+    "generalized_summary": "A Telnet session was terminated due to a read operation timing out.",
+    "severity": "Informational",
+    "suggested_action": "Review network connectivity and client activity to determine if timeouts are expected or indicative of connectivity issues or abandoned sessions.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process_name",
+      "process_id"
+    ],
+    "structural_signature": [
+      "ttloop: read: Connection timed out"
+    ],
+    "instance_count": 57,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 11,
+    "generalized_summary": "System logging and device management services were stopped, started, or modified as part of normal system operations.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; these are standard operational logs. Review only if unexpected service interruptions or device issues are observed.",
+    "key_parameters": [
+      "service_name",
+      "action",
+      "device_node"
+    ],
+    "structural_signature": [
+      "<*> startup succeeded",
+      "Kernel log daemon terminating.",
+      "Kernel logging <*> stopped.",
+      "klogd <*>, log source = <*> started.",
+      "removing device node <*>"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 12,
+    "generalized_summary": "A process attempted to open a pseudo-terminal device file that does not exist.",
+    "severity": "Warning",
+    "suggested_action": "Verify if the missing device file is expected; investigate system configuration or process requirements if this error persists.",
+    "key_parameters": [
+      "process_name",
+      "device_file",
+      "error_message"
+    ],
+    "structural_signature": [
+      "open(<*>): No such file or directory"
+    ],
+    "instance_count": 4,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 13,
+    "generalized_summary": "The system created a new device node as part of hardware or virtual device initialization.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal system operation unless unexpected device nodes are being created.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process_name",
+      "process_id",
+      "device_node_path"
+    ],
+    "structural_signature": [
+      "creating device node <*>"
+    ],
+    "instance_count": 33,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 14,
+    "generalized_summary": "A device node was removed from the system by the device manager.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal system operation unless unexpected device removals are observed.",
+    "key_parameters": [
+      "device_node",
+      "process_id"
+    ],
+    "structural_signature": [
+      "removing device node <*>",
+      "shutting down for system reboot"
+    ],
+    "instance_count": 2,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 15,
+    "generalized_summary": "An attempt to shut down the mail service failed.",
+    "severity": "Error",
+    "suggested_action": "Investigate the cause of the shutdown failure and verify the mail service status to ensure proper operation.",
+    "key_parameters": [
+      "service_name",
+      "action",
+      "outcome"
+    ],
+    "structural_signature": [
+      "<*> shutdown failed"
+    ],
+    "instance_count": 2,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 16,
+    "generalized_summary": "The system kernel has loaded the IP tables module, indicating initialization of firewall functionality.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a standard informational message indicating normal firewall module initialization.",
+    "key_parameters": [
+      "timestamp",
+      "module_name",
+      "component"
+    ],
+    "structural_signature": [
+      "ip_tables: (C) <*> Netfilter core team"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 17,
+    "generalized_summary": "The system initiated a transition to a different operational runlevel.",
+    "severity": "Warning",
+    "suggested_action": "Verify that the runlevel change was expected and authorized, as this may indicate a system reboot or shutdown.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process",
+      "target_runlevel"
+    ],
+    "structural_signature": [
+      "Switching to runlevel: <*>"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 18,
+    "generalized_summary": "An FTP server process encountered a network error indicating that a connection endpoint was not established during an operation.",
+    "severity": "Warning",
+    "suggested_action": "Review network connectivity and FTP server health; if this event occurs frequently, investigate for underlying network issues or misconfigurations.",
+    "key_parameters": [
+      "timestamp",
+      "host",
+      "process_name",
+      "process_id",
+      "operation",
+      "error_message"
+    ],
+    "structural_signature": [
+      "getpeername (ftpd): Transport endpoint is not connected"
+    ],
+    "instance_count": 31,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 19,
+    "generalized_summary": "An unauthenticated user session was terminated due to inactivity timeout.",
+    "severity": "Informational",
+    "suggested_action": "No immediate action needed; review for excessive occurrences which may indicate automated scanning or abuse.",
+    "key_parameters": [
+      "process_id",
+      "user",
+      "timeout_duration",
+      "event_timestamp"
+    ],
+    "structural_signature": [
+      "User <*> timed out after <*> seconds at <*>"
+    ],
+    "instance_count": 23,
+    "annotation_correct": true
+  }
+]

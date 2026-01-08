@@ -1,0 +1,65 @@
+{
+    "Traditional": {
+        "Adjusted Rand Index (ARI)": 0.023013486392519426,
+        "Normalized Mutual Info (NMI)": 0.4332221205518998,
+        "Homogeneity": 0.28080103462345873,
+        "Completeness": 0.94757180470398,
+        "V-Measure": 0.4332221205518998,
+        "Predicted Event Count": 20,
+        "True Event Count": 492
+    },
+    "DeepCASE": {
+        "Adjusted Rand Index (ARI)": 0.823411343384796,
+        "Normalized Mutual Info (NMI)": 0.9691944837992474,
+        "Homogeneity": 0.9404168845461164,
+        "Completeness": 0.9997889205496954,
+        "V-Measure": 0.9691944837992473,
+        "Predicted Event Count": 277,
+        "True Event Count": 492
+    },
+    "Zero-shot LLM": {
+        "Adjusted Rand Index (ARI)": 0.9088501185213425,
+        "Normalized Mutual Info (NMI)": 0.9829071150250756,
+        "Homogeneity": 0.986988057651044,
+        "Completeness": 0.9788597807406288,
+        "V-Measure": 0.9829071150250756,
+        "Predicted Event Count": 467,
+        "True Event Count": 492
+    },
+    "Pretrained": {
+        "Adjusted Rand Index (ARI)": 0.24018888537762942,
+        "Normalized Mutual Info (NMI)": 0.768278182906868,
+        "Homogeneity": 0.7098315069966921,
+        "Completeness": 0.8372133251181433,
+        "V-Measure": 0.7682781829068679,
+        "Predicted Event Count": 255,
+        "True Event Count": 492
+    },
+    "LLM_Knowledge": {
+        "Adjusted Rand Index (ARI)": 0.8860311034722625,
+        "Normalized Mutual Info (NMI)": 0.9841016599570143,
+        "Homogeneity": 0.9740273423676181,
+        "Completeness": 0.9943865518633805,
+        "V-Measure": 0.9841016599570143,
+        "Predicted Event Count": 415,
+        "True Event Count": 492
+    },
+    "LLM_Naive": {
+        "Adjusted Rand Index (ARI)": 0.9292263381933129,
+        "Normalized Mutual Info (NMI)": 0.9841947889861065,
+        "Homogeneity": 0.9882024061458989,
+        "Completeness": 0.9802195460110578,
+        "V-Measure": 0.9841947889861067,
+        "Predicted Event Count": 500,
+        "True Event Count": 492
+    },
+    "LLM_Cot": {
+        "Adjusted Rand Index (ARI)": 0.8998036724425,
+        "Normalized Mutual Info (NMI)": 0.9847271165984359,
+        "Homogeneity": 0.9738865683331328,
+        "Completeness": 0.9958117185937657,
+        "V-Measure": 0.9847271165984361,
+        "Predicted Event Count": 413,
+        "True Event Count": 492
+    }
+}

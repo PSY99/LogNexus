@@ -1,0 +1,58 @@
+[
+  {
+    "session_id": "session_5955",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] env.createBean2(): Factory error creating channel.jni:jni ( channel.jni, jni)"
+    ]
+  },
+  {
+    "session_id": "session_6446",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] env.createBean2(): Factory error creating vm: ( vm, )"
+    ]
+  },
+  {
+    "session_id": "session_7030",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] env.createBean2(): Factory error creating worker.jni:onStartup ( worker.jni, onStartup)"
+    ]
+  },
+  {
+    "session_id": "session_5143",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [error] env.createBean2(): Factory error creating worker.jni:onShutdown ( worker.jni, onShutdown)"
+    ]
+  },
+  {
+    "session_id": "session_2756",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] env.createBean2(): Factory error creating channel.jni:jni ( channel.jni, jni)"
+    ]
+  },
+  {
+    "session_id": "session_2673",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] env.createBean2(): Factory error creating vm: ( vm, )"
+    ]
+  },
+  {
+    "session_id": "session_7790",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] env.createBean2(): Factory error creating worker.jni:onStartup ( worker.jni, onStartup)"
+    ]
+  },
+  {
+    "session_id": "session_7542",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [error] env.createBean2(): Factory error creating worker.jni:onShutdown ( worker.jni, onShutdown)"
+    ]
+  }
+]

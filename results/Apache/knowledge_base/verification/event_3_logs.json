@@ -1,0 +1,670 @@
+[
+  {
+    "session_id": "session_2761",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:26 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:31 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:31 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:31 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 03:48:31 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_4917",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:10 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 17:01:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 17:01:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 17:01:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 17:01:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Jan 16 17:01:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2361",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:41 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 17 01:20:42 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 17 01:20:42 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 17 01:20:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 17 01:20:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 17 01:20:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 17 01:20:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2571",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 18 02:06:41 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_6290",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 20 05:37:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 20 05:37:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 20 05:37:32 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_3388",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 08:19:25 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_4698",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:56 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 21 19:20:57 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 21 19:20:57 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 21 19:20:58 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 21 19:20:58 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 21 19:20:58 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 21 19:20:58 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_3769",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 04:11:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2626",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:18 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:22 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:24 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:25 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:27 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:32 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 08:28:33 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_5541",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:45:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:45:42 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_1875",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:38 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:46:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:46:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:46:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:46:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:46:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sun Jan 22 21:46:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2310",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:46 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 00:41:47 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 00:41:47 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_9468",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 12:52:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_6474",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:17 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:18 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:18 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:20 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:21 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:22 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:22 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:22 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:22 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:22 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:26 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:27 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:27 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:32 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:33 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:33 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Jan 24 20:49:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7936",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:20:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:20:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:20:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:20:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_1800",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:08 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:12 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:12 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:17 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:18 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 01:24:18 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_5556",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:45 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:47 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:48 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:48 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:49 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:49 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:49 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:49 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:50 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:57 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Jan 25 07:33:59 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_9376",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Jan 26 12:23:23 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_6846",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:00 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 09:40:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_3233",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 20:29:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 20:29:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Jan 27 20:29:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2112",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 00:46:33 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 00:46:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2802",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:44 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:52 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:53 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:53 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Jan 28 22:25:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_4991",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 01 05:08:51 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2983",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:18:59 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:08 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:09 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:09 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:10 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:10 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:10 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:10 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 04 22:19:11 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_1410",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:04:59 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 08 21:05:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 08 21:05:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 08 21:05:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 08 21:05:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_9353",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 09 17:14:45 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_4981",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:27:56 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 04:27:59 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 04:28:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 04:28:06 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2765",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 09:53:35 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 09:53:35 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 09:53:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 09:53:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 09:53:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 11 09:53:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_8942",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 13 20:24:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 13 20:24:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 13 20:24:02 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_9487",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 08:35:35 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 08:35:35 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 08:35:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 08:35:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 08:35:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 08:35:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_9301",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 19:10:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Tue Feb 14 19:10:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_1716",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 07:33:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_5994",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:44:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:44:55 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:44:55 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2514",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:51:59 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:52:00 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:52:00 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:52:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:52:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:52:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Wed Feb 15 16:52:01 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7327",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:13 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:32 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:33 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:33 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 00:54:34 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_2167",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:25 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:27 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:00:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7846",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:04:54 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:04:59 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:05:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:05:08 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:05:10 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Thu Feb 16 01:05:13 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_6630",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Feb 17 23:31:44 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Feb 17 23:31:45 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Feb 17 23:31:45 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_4481",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 00:56:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 00:56:05 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 00:56:06 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 00:56:06 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 00:56:06 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 00:56:06 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7608",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:04 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:08 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:09 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 05:00:09 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_4464",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:02:44 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7295",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:03 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 09:06:08 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 09:06:17 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_1388",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:41 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 10:37:42 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 10:37:42 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 10:37:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 10:37:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 10:37:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 10:37:43 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_8208",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:28 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 19:48:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 19:48:29 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 19:48:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 19:48:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 19:48:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Mon Feb 20 19:48:30 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7307",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 11:51:45 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7612",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 22 20:59:32 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_5809",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 24 17:07:18 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Feb 24 17:07:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Fri Feb 24 17:07:19 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_6049",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 00:08:42 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 00:08:45 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_7430",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:35 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:36 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:37 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:38 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:38 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:38 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:38 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:39 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:48:40 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  },
+  {
+    "session_id": "session_5088",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:12 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:13 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:13 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:14 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties",
+      "[Sat Feb 25 03:52:15 2006] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties"
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+Mode,Inference Time (ms),MLM Acc,RPD Acc,ECO Acc,Adjusted Rand Index (ARI),Normalized Mutual Info (NMI),Homogeneity,Completeness,V-Measure,Predicted Event Count,True Event Count
+transformer,334323.59,0.9906769582658722,0.9607496995192308,0.9958984375,1.0000,0.9984,0.9969,0.9999,0.9984,97,119

@@ -1,0 +1,10 @@
+[
+  {
+    "session_id": "session_5654",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:40:59 combo gdm(pam_unix)[2828]: bad username [\\]",
+      "Dec  9 09:41:01 combo gdm-binary[2828]: Couldn't authenticate user"
+    ]
+  }
+]

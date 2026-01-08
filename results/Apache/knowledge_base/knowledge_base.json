@@ -1,0 +1,279 @@
+[
+  {
+    "event_id": 0,
+    "generalized_summary": "A client attempted to access a directory on the web server, but directory listing was denied by server configuration.",
+    "severity": "Informational",
+    "suggested_action": "Review server directory listing settings to ensure they align with security policies; monitor for repeated attempts from the same source IP as it may indicate reconnaissance.",
+    "key_parameters": [
+      "timestamp",
+      "source_ip",
+      "directory_path"
+    ],
+    "structural_signature": [
+      "[client <*>] Directory index forbidden by rule: <*>"
+    ],
+    "instance_count": 1066,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 1,
+    "generalized_summary": "A client attempted to access a file or script on the web server that does not exist or could not be found.",
+    "severity": "Warning",
+    "suggested_action": "Review repeated or suspicious requests for non-existent files or scripts to identify potential reconnaissance or exploitation attempts; consider blocking offending IPs if malicious activity is confirmed.",
+    "key_parameters": [
+      "timestamp",
+      "log_level",
+      "source_ip",
+      "requested_path",
+      "error_message"
+    ],
+    "structural_signature": [
+      "[client <*>] File does not exist: <*>",
+      "[client <*>] script not found or unable to stat: <*>",
+      "mod_security/<*> configured"
+    ],
+    "instance_count": 205,
+    "annotation_correct": false
+  },
+  {
+    "event_id": 2,
+    "generalized_summary": "A server process was initialized and assigned to a specific slot in the process scoreboard.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal informational event indicating process initialization.",
+    "key_parameters": [
+      "timestamp",
+      "process_id",
+      "scoreboard_slot"
+    ],
+    "structural_signature": [
+      "jk2_init() Found child <*> in scoreboard slot <*>"
+    ],
+    "instance_count": 134,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 3,
+    "generalized_summary": "The application successfully initialized its worker environment using a configuration file.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal startup or reload event indicating successful initialization.",
+    "key_parameters": [
+      "timestamp",
+      "event_severity",
+      "event_action",
+      "configuration_file"
+    ],
+    "structural_signature": [
+      "workerEnv.init() ok <*>"
+    ],
+    "instance_count": 50,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 4,
+    "generalized_summary": "A web server module reported an error initializing or managing a child process during startup or operation.",
+    "severity": "Error",
+    "suggested_action": "Investigate the server's process management and module configuration for potential misconfiguration or resource issues; review related logs for recurring errors.",
+    "key_parameters": [
+      "timestamp",
+      "module_name",
+      "function_name",
+      "child_process_id",
+      "error_state"
+    ],
+    "structural_signature": [
+      "jk2_init() Can't find child <*> in scoreboard",
+      "mod_jk child workerEnv in error state <*>"
+    ],
+    "instance_count": 247,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 5,
+    "generalized_summary": "A child process associated with the mod_jk module failed to initialize or terminate as expected.",
+    "severity": "Error",
+    "suggested_action": "Review the mod_jk configuration and process management; investigate for underlying issues causing repeated child process failures.",
+    "key_parameters": [
+      "timestamp",
+      "log_level",
+      "module",
+      "process_id",
+      "action",
+      "status_code"
+    ],
+    "structural_signature": [
+      "Digest: generating secret for digest authentication ...",
+      "child process <*> still did not exit, sending a SIGTERM",
+      "mod_jk child init <*> <*>"
+    ],
+    "instance_count": 109,
+    "annotation_correct": false
+  },
+  {
+    "event_id": 6,
+    "generalized_summary": "The application module initiated a shutdown process.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal informational event indicating module shutdown.",
+    "key_parameters": [
+      "timestamp",
+      "module_name",
+      "event_type"
+    ],
+    "structural_signature": [
+      "mod_jk2 Shutting down"
+    ],
+    "instance_count": 61,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 7,
+    "generalized_summary": "A client request was rejected because the requested URI exceeded the server's maximum allowed length.",
+    "severity": "Warning",
+    "suggested_action": "Review the source and intent of the request; investigate for possible malicious activity such as attempted buffer overflow or web application attack.",
+    "key_parameters": [
+      "timestamp",
+      "log_level",
+      "client_ip",
+      "error_message"
+    ],
+    "structural_signature": [
+      "[client <*>] request failed: URI too long (longer than <*>)"
+    ],
+    "instance_count": 3,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 8,
+    "generalized_summary": "The server process received a request to perform a graceful restart and is initiating the restart procedure.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a normal operational event indicating a controlled server restart.",
+    "key_parameters": [
+      "timestamp",
+      "event_type"
+    ],
+    "structural_signature": [
+      "Digest: done",
+      "Graceful restart requested, doing restart",
+      "config.update(): Can't create <*>",
+      "mod_python: Creating <*> session mutexes based on <*> max processes and <*> max threads."
+    ],
+    "instance_count": 13,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 9,
+    "generalized_summary": "The system reports that the LDAP module was initialized using a specific LDAP SDK.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is an informational message indicating module initialization.",
+    "key_parameters": [
+      "timestamp",
+      "module",
+      "sdk_type"
+    ],
+    "structural_signature": [
+      "LDAP: Built with OpenLDAP LDAP SDK"
+    ],
+    "instance_count": 3,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 10,
+    "generalized_summary": "The system reported that SSL support is unavailable for LDAP operations.",
+    "severity": "Warning",
+    "suggested_action": "Review LDAP configuration to determine if SSL support is required and address any missing dependencies or misconfigurations.",
+    "key_parameters": [
+      "timestamp",
+      "service",
+      "feature",
+      "status_message"
+    ],
+    "structural_signature": [
+      "LDAP: SSL support unavailable"
+    ],
+    "instance_count": 3,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 11,
+    "generalized_summary": "An error occurred while attempting to create a component or channel using a factory method.",
+    "severity": "Error",
+    "suggested_action": "Review the configuration and dependencies for the specified component to resolve the factory creation error.",
+    "key_parameters": [
+      "component_type",
+      "component_name",
+      "factory_method",
+      "error_message"
+    ],
+    "structural_signature": [
+      "env.createBean2(): Factory error creating <*> (<*>, <*>)"
+    ],
+    "instance_count": 8,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 12,
+    "generalized_summary": "The web server has completed its configuration and is resuming normal operations.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is a standard informational message indicating the service is running.",
+    "key_parameters": [
+      "service",
+      "version",
+      "platform"
+    ],
+    "structural_signature": [
+      "Apache/<*> configured -- resuming normal operations"
+    ],
+    "instance_count": 2,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 13,
+    "generalized_summary": "The suEXEC mechanism was enabled for handling privileged execution of web server scripts.",
+    "severity": "Informational",
+    "suggested_action": "No action needed; this is an informational message indicating normal web server configuration.",
+    "key_parameters": [
+      "mechanism",
+      "wrapper_path"
+    ],
+    "structural_signature": [
+      "mod_security/<*> configured",
+      "suEXEC mechanism enabled (wrapper: <*>)"
+    ],
+    "instance_count": 2,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 14,
+    "generalized_summary": "A client sent an HTTP request without specifying a hostname, which does not comply with protocol requirements.",
+    "severity": "Warning",
+    "suggested_action": "Review the source IP for repeated protocol violations and ensure client configurations comply with HTTP standards; monitor for potential misconfigurations or malicious activity.",
+    "key_parameters": [
+      "timestamp",
+      "log_level",
+      "source_ip",
+      "error_message",
+      "request_uri"
+    ],
+    "structural_signature": [
+      "[client <*>] client sent <*> request without hostname (see RFC2616 section <*>): /"
+    ],
+    "instance_count": 1,
+    "annotation_correct": true
+  },
+  {
+    "event_id": 15,
+    "generalized_summary": "A client attempted to access a file or script on the web server that does not exist or could not be found.",
+    "severity": "Warning",
+    "suggested_action": "Review repeated access attempts to non-existent resources for signs of scanning or probing, and consider blocking or monitoring the source IP if suspicious activity persists.",
+    "key_parameters": [
+      "client_ip",
+      "requested_resource",
+      "error_message"
+    ],
+    "structural_signature": [
+      "[client <*>] File does not exist: <*>",
+      "[client <*>] script not found or unable to stat: <*>"
+    ],
+    "instance_count": 4,
+    "annotation_correct": true
+  }
+]

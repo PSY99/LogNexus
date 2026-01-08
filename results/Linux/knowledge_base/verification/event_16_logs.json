@@ -1,0 +1,9 @@
+[
+  {
+    "session_id": "session_9778",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:17:19 combo kernel: ip_tables: (C) 2000-2002 Netfilter core team"
+    ]
+  }
+]

@@ -1,0 +1,458 @@
+[
+  {
+    "session_id": "session_7827",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:41:07 combo telnetd[15476]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3075",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:41:18 combo telnetd[15478]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_2491",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:41:25 combo telnetd[15480]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6054",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:42:20 combo telnetd[15482]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_1290",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:46:06 combo telnetd[15489]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4932",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:46:14 combo telnetd[15491]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9889",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:46:53 combo telnetd[15493]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_7399",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:47:40 combo telnetd[15495]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5097",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:47:48 combo telnetd[15497]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9045",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:48:15 combo telnetd[15499]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5183",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:49:42 combo telnetd[15501]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_8949",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:54:19 combo telnetd[15510]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_2108",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:54:35 combo telnetd[15512]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_7995",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:55:37 combo telnetd[15518]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6960",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:56:25 combo telnetd[15520]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4988",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:56:38 combo telnetd[15522]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3805",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:59:22 combo telnetd[15525]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5770",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:59:26 combo telnetd[15527]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_1387",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 08:59:40 combo telnetd[15529]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9282",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:00:06 combo telnetd[15530]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3023",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:01:11 combo telnetd[15555]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6148",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:01:44 combo telnetd[15557]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9845",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:04:41 combo telnetd[15559]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3563",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:09:23 combo telnetd[15565]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5616",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:11:15 combo telnetd[15574]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_2251",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:11:49 combo telnetd[15576]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5890",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:12:08 combo telnetd[15578]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_1806",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:12:48 combo telnetd[15580]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5509",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:14:12 combo telnetd[15582]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4060",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:14:19 combo telnetd[15584]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4927",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:15:05 combo telnetd[15586]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_1716",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:15:41 combo telnetd[15592]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_8344",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:17:22 combo telnetd[15594]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3002",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:18:10 combo telnetd[15596]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9971",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:18:31 combo telnetd[15598]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_7582",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:18:50 combo telnetd[15600]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6820",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:24:03 combo telnetd[15612]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_7328",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:31:09 combo telnetd[15630]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_8783",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:31:59 combo telnetd[15632]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3469",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:32:18 combo telnetd[15634]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4245",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:33:20 combo telnetd[15637]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_8956",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:33:22 combo telnetd[15639]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_8487",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:33:36 combo telnetd[15641]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_7702",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:36:14 combo telnetd[15653]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6683",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:44:16 combo telnetd[15861]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4482",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:51:14 combo telnetd[16127]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9139",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:51:20 combo telnetd[16129]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5253",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:52:00 combo telnetd[16131]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9369",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:53:26 combo telnetd[16133]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_1851",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:54:34 combo telnetd[16135]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6018",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:55:21 combo telnetd[16141]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_4300",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:58:06 combo telnetd[16143]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9809",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:58:09 combo telnetd[16145]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3964",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:58:30 combo telnetd[16148]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_6368",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:58:32 combo telnetd[16147]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3120",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:58:53 combo telnetd[16151]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_5385",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:59:21 combo telnetd[16153]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9291",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:01:33 combo telnetd[16176]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_2881",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:03:10 combo telnetd[16178]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_8420",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:03:13 combo telnetd[16180]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_2705",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:08:36 combo telnetd[16201]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_3160",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:09:57 combo telnetd[16203]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  },
+  {
+    "session_id": "session_9999",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Jan 11 22:10:31 combo xinetd[16823]: warning: can't get client address: Connection reset by peer",
+      "Jan 11 22:10:31 combo ftpd[16823]: getpeername (ftpd): Transport endpoint is not connected"
+    ]
+  },
+  {
+    "session_id": "session_9042",
+    "session_annotation_correct": false,
+    "log_contents": [
+      "Feb  1 17:02:24 combo snmpd[2300]: Received SNMP packet(s) from 208.53.158.10"
+    ]
+  },
+  {
+    "session_id": "session_6458",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 04:02:59 combo telnetd[6464]: ttloop:  peer died: Invalid or incomplete multibyte or wide character"
+    ]
+  }
+]

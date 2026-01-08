@@ -1,0 +1,13 @@
+{
+  "comment": "This file defines the log data structure for different datasets, which is dynamically injected into LLM prompts.",
+  
+  "Default": {
+    "comment": "A superset structure used as a fallback or for generic logs like Linux/OpenSSH.",
+    "structure": "{'Timestamp': datetime, 'LogContent': str, 'EventTemplate': str, 'TemplateID': int, 'Parameters': List[str], 'ProcessName': Optional[str], 'PID': Optional[int], 'ip': Optional[str], 'rhost': List[str]}"
+  },
+
+  "Apache": {
+    "comment": "Structure for Apache logs, which is similar to default but reliably has an IP.",
+    "structure": "`{'Timestamp': datetime, 'LogContent': str, 'EventTemplate': str, 'TemplateID': int, 'Parameters': List[str], 'Level': Optional[str], 'PID': Optional[int], 'ip': Optional[str], 'URLs': List[str]}`"
+  }
+}

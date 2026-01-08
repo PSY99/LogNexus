@@ -1,0 +1,9 @@
+[
+  {
+    "session_id": "session_3540",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:19:56 combo init: Switching to runlevel: 6"
+    ]
+  }
+]

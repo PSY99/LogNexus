@@ -1,0 +1,401 @@
+[
+  {
+    "session_id": "session_8243",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:41:22 combo telnetd[15597]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_8280",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:52:32 combo telnetd[15479]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_2184",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:52:39 combo telnetd[15481]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_8809",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:53:35 combo telnetd[15483]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3249",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:57:20 combo telnetd[15490]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_4845",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:57:29 combo telnetd[15492]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_5996",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:58:07 combo telnetd[15494]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6470",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:58:54 combo telnetd[15496]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_7916",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 10:59:31 combo telnetd[15500]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_4503",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:00:57 combo telnetd[15502]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1802",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:05:33 combo telnetd[15511]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_7017",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:05:50 combo telnetd[15513]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6481",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:06:51 combo telnetd[15519]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_2376",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:07:42 combo telnetd[15521]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3110",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:08:01 combo telnetd[15523]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_5088",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:10:41 combo telnetd[15528]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6380",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:11:20 combo telnetd[15531]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_7244",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:12:25 combo telnetd[15556]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_4205",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:12:59 combo telnetd[15558]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_9178",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:15:55 combo telnetd[15560]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1166",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:20:37 combo telnetd[15566]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_7195",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:22:30 combo telnetd[15575]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_5560",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:23:06 combo telnetd[15577]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_2904",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:23:24 combo telnetd[15579]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6302",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:24:03 combo telnetd[15581]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_5230",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:25:26 combo telnetd[15583]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_9829",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:25:34 combo telnetd[15585]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_2684",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:26:20 combo telnetd[15587]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1031",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:26:55 combo telnetd[15593]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_9092",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:28:37 combo telnetd[15595]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6339",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:29:49 combo telnetd[15599]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6123",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:30:07 combo telnetd[15601]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3346",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:35:17 combo telnetd[15613]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1641",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:42:23 combo telnetd[15631]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1338",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:43:13 combo telnetd[15633]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_5569",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:43:54 combo telnetd[15635]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_9437",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:44:37 combo telnetd[15640]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_9477",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:45:54 combo telnetd[15643]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3528",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:47:29 combo telnetd[15654]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_4151",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:52:24 combo telnetd[15711]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3862",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:02:35 combo telnetd[16130]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_4162",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:02:51 combo telnetd[16128]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1563",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:03:15 combo telnetd[16132]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_4313",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:04:42 combo telnetd[16134]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3259",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:05:49 combo telnetd[16136]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_2614",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:06:35 combo telnetd[16142]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3851",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:09:21 combo telnetd[16144]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_8459",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:09:44 combo telnetd[16150]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1542",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:09:46 combo telnetd[16149]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_2373",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:10:07 combo telnetd[16152]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3237",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:10:35 combo telnetd[16154]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_6729",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:12:48 combo telnetd[16177]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_9820",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:14:25 combo telnetd[16179]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1304",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:14:27 combo telnetd[16181]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_1613",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:19:57 combo telnetd[16202]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_3595",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 12:21:11 combo telnetd[16204]: ttloop:  read: Connection timed out"
+    ]
+  },
+  {
+    "session_id": "session_7403",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 25 06:14:13 combo telnetd[6465]: ttloop:  read: Connection timed out"
+    ]
+  }
+]

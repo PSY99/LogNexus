@@ -1,0 +1,23 @@
+[
+  {
+    "session_id": "session_5104",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [notice] LDAP: SSL support unavailable"
+    ]
+  },
+  {
+    "session_id": "session_9148",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:05 2006] [notice] LDAP: SSL support unavailable"
+    ]
+  },
+  {
+    "session_id": "session_4871",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [notice] LDAP: SSL support unavailable"
+    ]
+  }
+]

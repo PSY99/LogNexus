@@ -1,0 +1,900 @@
+[
+  {
+    "session_id": "session_2155",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  4 04:06:55 combo su(pam_unix)[28160]: session opened for user cyrus by (uid=0)",
+      "Dec  4 04:06:56 combo su(pam_unix)[28160]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8390",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  5 04:03:02 combo su(pam_unix)[3214]: session opened for user cyrus by (uid=0)",
+      "Dec  5 04:03:04 combo su(pam_unix)[3214]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4381",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 04:03:37 combo su(pam_unix)[4945]: session opened for user cyrus by (uid=0)",
+      "Dec  7 04:03:38 combo su(pam_unix)[4945]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_6549",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  7 04:18:44 combo su(pam_unix)[6202]: session opened for user news by (uid=0)",
+      "Dec  7 04:18:44 combo su(pam_unix)[6202]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9467",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  8 04:07:52 combo su(pam_unix)[9639]: session opened for user cyrus by (uid=0)",
+      "Dec  8 04:07:52 combo su(pam_unix)[9639]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4889",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  8 04:28:11 combo su(pam_unix)[10034]: session opened for user news by (uid=0)",
+      "Dec  8 04:28:12 combo su(pam_unix)[10034]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_2056",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 05:01:17 combo su(pam_unix)[15078]: session opened for user news by (uid=0)",
+      "Dec  9 05:01:18 combo su(pam_unix)[15078]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_5900",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:40:20 combo login(pam_unix)[2420]: session opened for user root by LOGIN(uid=0)"
+    ]
+  },
+  {
+    "session_id": "session_5199",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:41:51 combo login(pam_unix)[2419]: session opened for user root by LOGIN(uid=0)",
+      "Dec  9 09:45:49 combo login(pam_unix)[2419]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_9986",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:07 combo login(pam_unix)[2420]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_1401",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 09:48:33 combo login(pam_unix)[2418]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_1968",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:45:50 combo sshd(pam_unix)[16349]: session opened for user root by (uid=0)",
+      "Dec  9 11:48:17 combo sshd(pam_unix)[16349]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_9434",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:49:03 combo sshd(pam_unix)[16398]: session opened for user root by (uid=0)",
+      "Dec  9 11:51:23 combo sshd(pam_unix)[16398]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_9071",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec  9 11:52:05 combo sshd(pam_unix)[16414]: session opened for user root by (uid=0)",
+      "Dec  9 11:52:06 combo sshd(pam_unix)[16414]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_3786",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 10 04:13:51 combo su(pam_unix)[18084]: session opened for user cyrus by (uid=0)",
+      "Dec 10 04:13:52 combo su(pam_unix)[18084]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4300",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 10 04:19:08 combo su(pam_unix)[18455]: session opened for user news by (uid=0)",
+      "Dec 10 04:19:09 combo su(pam_unix)[18455]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9368",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 11 04:06:20 combo su(pam_unix)[20737]: session opened for user cyrus by (uid=0)",
+      "Dec 11 04:06:21 combo su(pam_unix)[20737]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4504",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 11 04:12:39 combo su(pam_unix)[22189]: session opened for user news by (uid=0)",
+      "Dec 11 04:12:39 combo su(pam_unix)[22189]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4857",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 12 04:02:05 combo su(pam_unix)[27498]: session opened for user cyrus by (uid=0)",
+      "Dec 12 04:02:05 combo su(pam_unix)[27498]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_7260",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 12 04:07:33 combo su(pam_unix)[27869]: session opened for user news by (uid=0)",
+      "Dec 12 04:07:34 combo su(pam_unix)[27869]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_5760",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 13 04:02:06 combo su(pam_unix)[30147]: session opened for user cyrus by (uid=0)",
+      "Dec 13 04:02:06 combo su(pam_unix)[30147]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1627",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 13 04:07:59 combo su(pam_unix)[31373]: session opened for user news by (uid=0)",
+      "Dec 13 04:07:59 combo su(pam_unix)[31373]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7338",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 14 04:02:05 combo su(pam_unix)[1185]: session opened for user cyrus by (uid=0)",
+      "Dec 14 04:02:06 combo su(pam_unix)[1185]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1028",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 14 04:09:18 combo su(pam_unix)[5867]: session opened for user news by (uid=0)",
+      "Dec 14 04:09:19 combo su(pam_unix)[5867]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_8825",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 04:02:06 combo su(pam_unix)[8145]: session opened for user cyrus by (uid=0)",
+      "Dec 15 04:02:06 combo su(pam_unix)[8145]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_5398",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 15 04:07:34 combo su(pam_unix)[8516]: session opened for user news by (uid=0)",
+      "Dec 15 04:07:35 combo su(pam_unix)[8516]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4990",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 16 04:02:05 combo su(pam_unix)[10883]: session opened for user cyrus by (uid=0)",
+      "Dec 16 04:02:06 combo su(pam_unix)[10883]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1132",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 16 04:08:01 combo su(pam_unix)[12109]: session opened for user news by (uid=0)",
+      "Dec 16 04:08:02 combo su(pam_unix)[12109]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4040",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 17 04:02:05 combo su(pam_unix)[14387]: session opened for user cyrus by (uid=0)",
+      "Dec 17 04:02:06 combo su(pam_unix)[14387]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_2922",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 17 04:07:36 combo su(pam_unix)[14758]: session opened for user news by (uid=0)",
+      "Dec 17 04:07:37 combo su(pam_unix)[14758]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4274",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 18 04:02:06 combo su(pam_unix)[17043]: session opened for user cyrus by (uid=0)",
+      "Dec 18 04:02:06 combo su(pam_unix)[17043]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_3860",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 18 04:08:11 combo su(pam_unix)[18489]: session opened for user news by (uid=0)",
+      "Dec 18 04:08:12 combo su(pam_unix)[18489]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7968",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 19 04:02:05 combo su(pam_unix)[23806]: session opened for user cyrus by (uid=0)",
+      "Dec 19 04:02:06 combo su(pam_unix)[23806]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_3578",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 19 04:07:31 combo su(pam_unix)[24177]: session opened for user news by (uid=0)",
+      "Dec 19 04:07:32 combo su(pam_unix)[24177]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7534",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 20 04:02:05 combo su(pam_unix)[26455]: session opened for user cyrus by (uid=0)",
+      "Dec 20 04:02:06 combo su(pam_unix)[26455]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_2630",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 20 04:08:02 combo su(pam_unix)[27681]: session opened for user news by (uid=0)",
+      "Dec 20 04:08:02 combo su(pam_unix)[27681]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_8107",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 21 04:02:05 combo su(pam_unix)[29958]: session opened for user cyrus by (uid=0)",
+      "Dec 21 04:02:06 combo su(pam_unix)[29958]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_5819",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 21 04:07:34 combo su(pam_unix)[30329]: session opened for user news by (uid=0)",
+      "Dec 21 04:07:35 combo su(pam_unix)[30329]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4601",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 22 04:02:05 combo su(pam_unix)[32607]: session opened for user cyrus by (uid=0)",
+      "Dec 22 04:02:06 combo su(pam_unix)[32607]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4049",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 22 04:07:56 combo su(pam_unix)[1367]: session opened for user news by (uid=0)",
+      "Dec 22 04:07:57 combo su(pam_unix)[1367]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4764",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 23 04:02:05 combo su(pam_unix)[3683]: session opened for user cyrus by (uid=0)",
+      "Dec 23 04:02:06 combo su(pam_unix)[3683]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_2595",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 23 04:07:35 combo su(pam_unix)[4054]: session opened for user news by (uid=0)",
+      "Dec 23 04:07:36 combo su(pam_unix)[4054]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7842",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 24 04:02:05 combo su(pam_unix)[6332]: session opened for user cyrus by (uid=0)",
+      "Dec 24 04:02:06 combo su(pam_unix)[6332]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_6585",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 24 04:08:00 combo su(pam_unix)[7558]: session opened for user news by (uid=0)",
+      "Dec 24 04:08:00 combo su(pam_unix)[7558]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_1649",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 25 04:02:05 combo su(pam_unix)[9836]: session opened for user cyrus by (uid=0)",
+      "Dec 25 04:02:06 combo su(pam_unix)[9836]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1578",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 25 04:07:48 combo su(pam_unix)[10427]: session opened for user news by (uid=0)",
+      "Dec 25 04:07:50 combo su(pam_unix)[10427]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_3387",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 26 04:02:05 combo su(pam_unix)[15745]: session opened for user cyrus by (uid=0)",
+      "Dec 26 04:02:06 combo su(pam_unix)[15745]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_7525",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 26 04:08:02 combo su(pam_unix)[16976]: session opened for user news by (uid=0)",
+      "Dec 26 04:08:03 combo su(pam_unix)[16976]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_1052",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 27 04:02:05 combo su(pam_unix)[19254]: session opened for user cyrus by (uid=0)",
+      "Dec 27 04:02:06 combo su(pam_unix)[19254]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_7890",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 27 04:07:39 combo su(pam_unix)[19625]: session opened for user news by (uid=0)",
+      "Dec 27 04:07:39 combo su(pam_unix)[19625]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_6979",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 28 04:02:05 combo su(pam_unix)[21903]: session opened for user cyrus by (uid=0)",
+      "Dec 28 04:02:06 combo su(pam_unix)[21903]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8350",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 28 04:09:26 combo su(pam_unix)[26547]: session opened for user news by (uid=0)",
+      "Dec 28 04:09:27 combo su(pam_unix)[26547]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_3189",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 29 04:02:05 combo su(pam_unix)[28825]: session opened for user cyrus by (uid=0)",
+      "Dec 29 04:02:06 combo su(pam_unix)[28825]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_9269",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 29 04:07:37 combo su(pam_unix)[29196]: session opened for user news by (uid=0)",
+      "Dec 29 04:07:38 combo su(pam_unix)[29196]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_6119",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 30 04:02:05 combo su(pam_unix)[31475]: session opened for user cyrus by (uid=0)",
+      "Dec 30 04:02:06 combo su(pam_unix)[31475]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_5900",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 30 04:08:04 combo su(pam_unix)[32701]: session opened for user news by (uid=0)",
+      "Dec 30 04:08:04 combo su(pam_unix)[32701]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_2549",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 31 04:02:05 combo su(pam_unix)[2546]: session opened for user cyrus by (uid=0)",
+      "Dec 31 04:02:06 combo su(pam_unix)[2546]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8743",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Dec 31 04:07:33 combo su(pam_unix)[2919]: session opened for user news by (uid=0)",
+      "Dec 31 04:07:34 combo su(pam_unix)[2919]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_8442",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  1 04:02:05 combo su(pam_unix)[5199]: session opened for user cyrus by (uid=0)",
+      "Jan  1 04:02:06 combo su(pam_unix)[5199]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_2112",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  1 04:08:16 combo su(pam_unix)[6648]: session opened for user news by (uid=0)",
+      "Jan  1 04:08:17 combo su(pam_unix)[6648]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_2886",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  2 04:02:05 combo su(pam_unix)[11973]: session opened for user cyrus by (uid=0)",
+      "Jan  2 04:02:05 combo su(pam_unix)[11973]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_7849",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  2 04:07:36 combo su(pam_unix)[12344]: session opened for user news by (uid=0)",
+      "Jan  2 04:07:37 combo su(pam_unix)[12344]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4432",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  3 04:02:05 combo su(pam_unix)[14623]: session opened for user cyrus by (uid=0)",
+      "Jan  3 04:02:06 combo su(pam_unix)[14623]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_7840",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  3 04:08:05 combo su(pam_unix)[15851]: session opened for user news by (uid=0)",
+      "Jan  3 04:08:06 combo su(pam_unix)[15851]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7188",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  4 04:02:05 combo su(pam_unix)[18133]: session opened for user cyrus by (uid=0)",
+      "Jan  4 04:02:06 combo su(pam_unix)[18133]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_3276",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  4 04:07:34 combo su(pam_unix)[18504]: session opened for user news by (uid=0)",
+      "Jan  4 04:07:36 combo su(pam_unix)[18504]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_8824",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  5 04:02:05 combo su(pam_unix)[20782]: session opened for user cyrus by (uid=0)",
+      "Jan  5 04:02:05 combo su(pam_unix)[20782]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8528",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  5 04:08:04 combo su(pam_unix)[22008]: session opened for user news by (uid=0)",
+      "Jan  5 04:08:04 combo su(pam_unix)[22008]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_6193",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  6 04:02:05 combo su(pam_unix)[24286]: session opened for user cyrus by (uid=0)",
+      "Jan  6 04:02:06 combo su(pam_unix)[24286]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1542",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  6 04:07:40 combo su(pam_unix)[24657]: session opened for user news by (uid=0)",
+      "Jan  6 04:07:41 combo su(pam_unix)[24657]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_5609",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  7 04:02:31 combo su(pam_unix)[26996]: session opened for user cyrus by (uid=0)",
+      "Jan  7 04:02:32 combo su(pam_unix)[26996]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1280",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  7 04:08:32 combo su(pam_unix)[28236]: session opened for user news by (uid=0)",
+      "Jan  7 04:08:32 combo su(pam_unix)[28236]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_4555",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  8 04:05:44 combo su(pam_unix)[30587]: session opened for user cyrus by (uid=0)",
+      "Jan  8 04:05:44 combo su(pam_unix)[30587]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_9030",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  8 04:11:32 combo su(pam_unix)[31183]: session opened for user news by (uid=0)",
+      "Jan  8 04:11:33 combo su(pam_unix)[31183]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_8122",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  9 04:02:35 combo su(pam_unix)[4145]: session opened for user cyrus by (uid=0)",
+      "Jan  9 04:02:35 combo su(pam_unix)[4145]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_9530",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan  9 04:08:48 combo su(pam_unix)[5374]: session opened for user news by (uid=0)",
+      "Jan  9 04:08:49 combo su(pam_unix)[5374]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_3113",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 04:02:50 combo su(pam_unix)[7761]: session opened for user cyrus by (uid=0)",
+      "Jan 10 04:02:51 combo su(pam_unix)[7761]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_5488",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 10 04:08:41 combo su(pam_unix)[8132]: session opened for user news by (uid=0)",
+      "Jan 10 04:08:42 combo su(pam_unix)[8132]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9476",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 04:14:22 combo su(pam_unix)[10614]: session opened for user cyrus by (uid=0)",
+      "Jan 11 04:14:23 combo su(pam_unix)[10614]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4540",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 11 04:22:22 combo su(pam_unix)[15265]: session opened for user news by (uid=0)",
+      "Jan 11 04:22:23 combo su(pam_unix)[15265]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7552",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 04:08:41 combo su(pam_unix)[17735]: session opened for user cyrus by (uid=0)",
+      "Jan 12 04:08:42 combo su(pam_unix)[17735]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_6781",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 12 04:16:04 combo su(pam_unix)[18112]: session opened for user news by (uid=0)",
+      "Jan 12 04:16:05 combo su(pam_unix)[18112]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9614",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 04:09:54 combo su(pam_unix)[20527]: session opened for user cyrus by (uid=0)",
+      "Jan 13 04:09:55 combo su(pam_unix)[20527]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_9589",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 13 04:16:20 combo su(pam_unix)[21759]: session opened for user news by (uid=0)",
+      "Jan 13 04:16:21 combo su(pam_unix)[21759]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_6846",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 04:04:04 combo su(pam_unix)[24206]: session opened for user cyrus by (uid=0)",
+      "Jan 14 04:04:04 combo su(pam_unix)[24206]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8504",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 14 04:09:50 combo su(pam_unix)[24577]: session opened for user news by (uid=0)",
+      "Jan 14 04:09:51 combo su(pam_unix)[24577]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_6179",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 04:11:11 combo su(pam_unix)[27093]: session opened for user cyrus by (uid=0)",
+      "Jan 15 04:11:11 combo su(pam_unix)[27093]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1379",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 15 04:17:28 combo su(pam_unix)[28543]: session opened for user news by (uid=0)",
+      "Jan 15 04:17:29 combo su(pam_unix)[28543]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_1319",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:07:07 combo su(pam_unix)[1618]: session opened for user cyrus by (uid=0)",
+      "Jan 16 04:07:08 combo su(pam_unix)[1618]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_7276",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 16 04:12:53 combo su(pam_unix)[1999]: session opened for user news by (uid=0)",
+      "Jan 16 04:12:54 combo su(pam_unix)[1999]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9530",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 04:07:29 combo su(pam_unix)[4505]: session opened for user cyrus by (uid=0)",
+      "Jan 17 04:07:29 combo su(pam_unix)[4505]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_2660",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 17 04:13:44 combo su(pam_unix)[5733]: session opened for user news by (uid=0)",
+      "Jan 17 04:13:45 combo su(pam_unix)[5733]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_2648",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:09:40 combo su(pam_unix)[8191]: session opened for user cyrus by (uid=0)",
+      "Jan 18 04:09:41 combo su(pam_unix)[8191]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_4185",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 18 04:15:33 combo su(pam_unix)[8568]: session opened for user news by (uid=0)",
+      "Jan 18 04:15:34 combo su(pam_unix)[8568]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_3034",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 04:09:02 combo su(pam_unix)[11021]: session opened for user cyrus by (uid=0)",
+      "Jan 19 04:09:03 combo su(pam_unix)[11021]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_6860",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 19 04:16:53 combo su(pam_unix)[12273]: session opened for user news by (uid=0)",
+      "Jan 19 04:16:54 combo su(pam_unix)[12273]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9556",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 04:03:35 combo su(pam_unix)[14728]: session opened for user cyrus by (uid=0)",
+      "Jan 20 04:03:35 combo su(pam_unix)[14728]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_9305",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 20 04:09:22 combo su(pam_unix)[15098]: session opened for user news by (uid=0)",
+      "Jan 20 04:09:23 combo su(pam_unix)[15098]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7202",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 21 04:07:16 combo su(pam_unix)[17486]: session opened for user cyrus by (uid=0)",
+      "Jan 21 04:07:17 combo su(pam_unix)[17486]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1629",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 21 04:13:35 combo su(pam_unix)[18714]: session opened for user news by (uid=0)",
+      "Jan 21 04:13:36 combo su(pam_unix)[18714]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_5736",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 04:10:48 combo su(pam_unix)[21124]: session opened for user cyrus by (uid=0)",
+      "Jan 22 04:10:48 combo su(pam_unix)[21124]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8853",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 22 04:16:40 combo su(pam_unix)[21719]: session opened for user news by (uid=0)",
+      "Jan 22 04:16:41 combo su(pam_unix)[21719]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7667",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 04:04:10 combo su(pam_unix)[27145]: session opened for user cyrus by (uid=0)",
+      "Jan 23 04:04:11 combo su(pam_unix)[27145]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_1927",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 23 04:10:38 combo su(pam_unix)[28378]: session opened for user news by (uid=0)",
+      "Jan 23 04:10:39 combo su(pam_unix)[28378]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_2731",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 04:09:16 combo su(pam_unix)[31091]: session opened for user cyrus by (uid=0)",
+      "Jan 24 04:09:17 combo su(pam_unix)[31091]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_9116",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 24 04:15:16 combo su(pam_unix)[31469]: session opened for user news by (uid=0)",
+      "Jan 24 04:15:16 combo su(pam_unix)[31469]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_9532",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 25 04:11:13 combo su(pam_unix)[1489]: session opened for user cyrus by (uid=0)",
+      "Jan 25 04:11:14 combo su(pam_unix)[1489]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_5431",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 25 04:17:22 combo su(pam_unix)[2749]: session opened for user news by (uid=0)",
+      "Jan 25 04:17:23 combo su(pam_unix)[2749]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_7387",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 04:04:29 combo su(pam_unix)[5074]: session opened for user cyrus by (uid=0)",
+      "Jan 26 04:04:29 combo su(pam_unix)[5074]: session closed for user cyrus"
+    ]
+  },
+  {
+    "session_id": "session_8534",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 04:12:13 combo su(pam_unix)[9726]: session opened for user news by (uid=0)",
+      "Jan 26 04:12:14 combo su(pam_unix)[9726]: session closed for user news"
+    ]
+  },
+  {
+    "session_id": "session_1868",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 11:46:22 combo sshd(pam_unix)[10375]: session opened for user root by (uid=0)"
+    ]
+  },
+  {
+    "session_id": "session_1975",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Jan 26 12:20:00 combo sshd(pam_unix)[10375]: session closed for user root"
+    ]
+  },
+  {
+    "session_id": "session_2426",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "Feb 28 04:48:54 combo sshd(pam_unix)[6741]: session opened for user root by (uid=0)"
+    ]
+  }
+]

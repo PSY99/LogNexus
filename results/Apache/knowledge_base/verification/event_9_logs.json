@@ -1,0 +1,23 @@
+[
+  {
+    "session_id": "session_7974",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:00 2006] [notice] LDAP: Built with OpenLDAP LDAP SDK"
+    ]
+  },
+  {
+    "session_id": "session_6372",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:04 2006] [notice] LDAP: Built with OpenLDAP LDAP SDK"
+    ]
+  },
+  {
+    "session_id": "session_9866",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:07 2006] [notice] LDAP: Built with OpenLDAP LDAP SDK"
+    ]
+  }
+]

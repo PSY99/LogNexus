@@ -1,0 +1,12 @@
+{
+  "mandatory_rules": [
+    "Group all logs sharing the exact same Process ID (PID) and ProcessName ('sshd') into a foundational 'Event Core'. This grouping is absolute and these cores must never be split internally, as they represent the lifecycle of a single server process handling one connection."
+  ],
+  "heuristic_rules": [
+    "**[MERGE EVENT CORES Rule for SSH Attack Campaign]** After initial grouping by PID, identify all 'Event Cores' from the 'sshd' process that represent failed, incomplete, or suspicious pre-authentication activity (e.g., EventTemplate IDs 0, 1, 2, 4, 5, 6, 7, 8, 11, 13, 14, 16). **Merge** all such cores that share the **exact same Key Source Identifier (the value of the 'ip' or 'rhost' field)** and occur within a 30-minute window. This reconstructs a single logical 'SSH Attack Campaign' event from a single external actor, overcoming the separation caused by multiple PIDs.",
+    "**[BOUNDARY Rule by Successful Login]** An 'Event Core' initiated by a log with EventTemplate ID 18 ('pam_unix(sshd:session): session opened for user...') represents a successful login. This core MUST start a new, distinct 'Successful SSH Session' event. It must NOT be merged with any preceding 'SSH Attack Campaign' event, even if the Key Source Identifier is identical. All subsequent logs sharing the same PID as the 'session opened' log are part of this new session event.",
+    "**[KEY DIMENSION SPLIT Rule]** 'Event Cores' MUST be kept in separate logical events if their associated Key Source Identifier (the value in the 'ip' or 'rhost' field) is different. This is a hard boundary ensuring that simultaneous activities from different actors are not incorrectly merged.",
+    "**[STATE TRANSITION BOUNDARY Rule for Session End]** An 'Event Core' containing a log that indicates a session has closed (e.g., a hypothetical 'pam_unix(sshd:session): session closed for user' log) definitively terminates the 'Successful SSH Session' event associated with that PID. This prevents unrelated, later activity from being merged into the completed session.",
+    "**[TIME-BASED BOUNDARY Rule]** If the time gap between two consecutive logs within a potential 'SSH Attack Campaign' event (grouped by the same Key Source Identifier) exceeds a defined threshold (e.g., 30 minutes), the new log and its 'Event Core' should start a new logical event. This prevents unrelated scanning activities separated by a long period of inactivity from being grouped together."
+  ]
+}

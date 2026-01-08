@@ -1,0 +1,59 @@
+[
+  {
+    "session_id": "session_3101",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 04:59:42 2006] [error] [client 222.66.5.9] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:42 2006] [error] [client 222.66.5.9] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:43 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:43 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:44 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:46 2006] [error] [client 222.66.5.9] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:46 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:47 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:49 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:49 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:50 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats.pl",
+      "[Mon Feb 20 04:59:53 2006] [error] [client 222.66.5.9] script not found or unable to stat: /var/www/cgi-bin/awstats"
+    ]
+  },
+  {
+    "session_id": "session_6677",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 04:59:43 2006] [error] [client 218.78.247.21] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 218.78.247.21] script not found or unable to stat: /var/www/cgi-bin/awstats"
+    ]
+  },
+  {
+    "session_id": "session_7266",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 04:59:43 2006] [error] [client 218.78.247.22] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 218.78.247.22] File does not exist: /var/www/html/awstats/awstats.pl",
+      "[Mon Feb 20 04:59:45 2006] [error] [client 218.78.247.22] script not found or unable to stat: /var/www/cgi-bin/awstats",
+      "[Mon Feb 20 04:59:48 2006] [error] [client 218.78.247.22] script not found or unable to stat: /var/www/cgi-bin/awstats"
+    ]
+  },
+  {
+    "session_id": "session_7711",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 04:59:52 2006] [error] [client 218.78.247.28] script not found or unable to stat: /var/www/cgi-bin/awstats"
+    ]
+  }
+]

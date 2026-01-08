@@ -1,0 +1,940 @@
+[
+  {
+    "session_id": "session_8772",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:26 2006] [notice] jk2_init() Found child 1237 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_1896",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 03:48:30 2006] [notice] jk2_init() Found child 1240 in scoreboard slot 19"
+    ]
+  },
+  {
+    "session_id": "session_7612",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:10 2006] [notice] jk2_init() Found child 3263 in scoreboard slot 0"
+    ]
+  },
+  {
+    "session_id": "session_7868",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Jan 16 17:01:15 2006] [notice] jk2_init() Found child 3268 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_5884",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:42 2006] [notice] jk2_init() Found child 3940 in scoreboard slot 9"
+    ]
+  },
+  {
+    "session_id": "session_4959",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 17 01:20:43 2006] [notice] jk2_init() Found child 3943 in scoreboard slot 23"
+    ]
+  },
+  {
+    "session_id": "session_2724",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:23 2006] [notice] jk2_init() Found child 15260 in scoreboard slot 15"
+    ]
+  },
+  {
+    "session_id": "session_1250",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 20 05:37:32 2006] [notice] jk2_init() Found child 15262 in scoreboard slot 22"
+    ]
+  },
+  {
+    "session_id": "session_2893",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:57 2006] [notice] jk2_init() Found child 20023 in scoreboard slot 13"
+    ]
+  },
+  {
+    "session_id": "session_9001",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:58 2006] [notice] jk2_init() Found child 20025 in scoreboard slot 22"
+    ]
+  },
+  {
+    "session_id": "session_2758",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 21 19:20:58 2006] [notice] jk2_init() Found child 20028 in scoreboard slot 25"
+    ]
+  },
+  {
+    "session_id": "session_2123",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 04:11:03 2006] [notice] jk2_init() Found child 21336 in scoreboard slot 4"
+    ]
+  },
+  {
+    "session_id": "session_9552",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:18 2006] [notice] jk2_init() Found child 25154 in scoreboard slot 0"
+    ]
+  },
+  {
+    "session_id": "session_3007",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:20 2006] [notice] jk2_init() Found child 25156 in scoreboard slot 5"
+    ]
+  },
+  {
+    "session_id": "session_7980",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:24 2006] [notice] jk2_init() Found child 25159 in scoreboard slot 9"
+    ]
+  },
+  {
+    "session_id": "session_3844",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:27 2006] [notice] jk2_init() Found child 25161 in scoreboard slot 13"
+    ]
+  },
+  {
+    "session_id": "session_9148",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 08:28:33 2006] [notice] jk2_init() Found child 25164 in scoreboard slot 17"
+    ]
+  },
+  {
+    "session_id": "session_2453",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:45:42 2006] [notice] jk2_init() Found child 26282 in scoreboard slot 19"
+    ]
+  },
+  {
+    "session_id": "session_7668",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sun Jan 22 21:46:39 2006] [notice] jk2_init() Found child 26285 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_8114",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 00:41:46 2006] [notice] jk2_init() Found child 30429 in scoreboard slot 3"
+    ]
+  },
+  {
+    "session_id": "session_4161",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:18 2006] [notice] jk2_init() Found child 453 in scoreboard slot 13"
+    ]
+  },
+  {
+    "session_id": "session_3265",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:19 2006] [notice] jk2_init() Found child 455 in scoreboard slot 15"
+    ]
+  },
+  {
+    "session_id": "session_3754",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:19 2006] [notice] jk2_init() Found child 458 in scoreboard slot 20"
+    ]
+  },
+  {
+    "session_id": "session_5385",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:20 2006] [notice] jk2_init() Found child 463 in scoreboard slot 31"
+    ]
+  },
+  {
+    "session_id": "session_4675",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [notice] jk2_init() Found child 468 in scoreboard slot 36"
+    ]
+  },
+  {
+    "session_id": "session_9828",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:21 2006] [notice] jk2_init() Found child 473 in scoreboard slot 41"
+    ]
+  },
+  {
+    "session_id": "session_7744",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:22 2006] [notice] jk2_init() Found child 478 in scoreboard slot 46"
+    ]
+  },
+  {
+    "session_id": "session_4777",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:26 2006] [notice] jk2_init() Found child 483 in scoreboard slot 51"
+    ]
+  },
+  {
+    "session_id": "session_3297",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:28 2006] [notice] jk2_init() Found child 488 in scoreboard slot 56"
+    ]
+  },
+  {
+    "session_id": "session_7293",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [notice] jk2_init() Found child 490 in scoreboard slot 58"
+    ]
+  },
+  {
+    "session_id": "session_9887",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:29 2006] [notice] jk2_init() Found child 497 in scoreboard slot 65"
+    ]
+  },
+  {
+    "session_id": "session_6257",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:33 2006] [notice] jk2_init() Found child 499 in scoreboard slot 67"
+    ]
+  },
+  {
+    "session_id": "session_1375",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Jan 24 20:49:34 2006] [notice] jk2_init() Found child 502 in scoreboard slot 70"
+    ]
+  },
+  {
+    "session_id": "session_7543",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:02 2006] [notice] jk2_init() Found child 888 in scoreboard slot 2"
+    ]
+  },
+  {
+    "session_id": "session_5057",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:20:11 2006] [notice] jk2_init() Found child 890 in scoreboard slot 4"
+    ]
+  },
+  {
+    "session_id": "session_8622",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:12 2006] [notice] jk2_init() Found child 893 in scoreboard slot 5"
+    ]
+  },
+  {
+    "session_id": "session_9515",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:14 2006] [notice] jk2_init() Found child 895 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_4948",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 01:24:18 2006] [notice] jk2_init() Found child 898 in scoreboard slot 10"
+    ]
+  },
+  {
+    "session_id": "session_1479",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:45 2006] [notice] jk2_init() Found child 3059 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_6630",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:48 2006] [notice] jk2_init() Found child 3062 in scoreboard slot 11"
+    ]
+  },
+  {
+    "session_id": "session_3813",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [notice] jk2_init() Found child 3067 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_2289",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:50 2006] [notice] jk2_init() Found child 3072 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_1248",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Jan 25 07:33:59 2006] [notice] jk2_init() Found child 3077 in scoreboard slot 26"
+    ]
+  },
+  {
+    "session_id": "session_1007",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] jk2_init() Found child 2311 in scoreboard slot 0"
+    ]
+  },
+  {
+    "session_id": "session_4981",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] jk2_init() Found child 2312 in scoreboard slot 1"
+    ]
+  },
+  {
+    "session_id": "session_9193",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] jk2_init() Found child 2313 in scoreboard slot 2"
+    ]
+  },
+  {
+    "session_id": "session_1553",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] jk2_init() Found child 2314 in scoreboard slot 3"
+    ]
+  },
+  {
+    "session_id": "session_6339",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] jk2_init() Found child 2315 in scoreboard slot 4"
+    ]
+  },
+  {
+    "session_id": "session_7520",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:22 2006] [notice] jk2_init() Found child 2316 in scoreboard slot 5"
+    ]
+  },
+  {
+    "session_id": "session_9080",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:23 2006] [notice] jk2_init() Found child 2318 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_2310",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Jan 26 12:23:23 2006] [notice] jk2_init() Found child 2317 in scoreboard slot 6"
+    ]
+  },
+  {
+    "session_id": "session_3782",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:00 2006] [notice] jk2_init() Found child 3255 in scoreboard slot 8"
+    ]
+  },
+  {
+    "session_id": "session_1416",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:02 2006] [notice] jk2_init() Found child 3259 in scoreboard slot 12"
+    ]
+  },
+  {
+    "session_id": "session_2270",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [notice] jk2_init() Found child 3263 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_2452",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [notice] jk2_init() Found child 3264 in scoreboard slot 17"
+    ]
+  },
+  {
+    "session_id": "session_5120",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 09:40:03 2006] [notice] jk2_init() Found child 3269 in scoreboard slot 22"
+    ]
+  },
+  {
+    "session_id": "session_3842",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Jan 27 20:29:01 2006] [notice] jk2_init() Found child 3354 in scoreboard slot 8"
+    ]
+  },
+  {
+    "session_id": "session_9150",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 00:46:33 2006] [notice] jk2_init() Found child 3357 in scoreboard slot 13"
+    ]
+  },
+  {
+    "session_id": "session_1068",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:44 2006] [notice] jk2_init() Found child 3385 in scoreboard slot 10"
+    ]
+  },
+  {
+    "session_id": "session_8140",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:53 2006] [notice] jk2_init() Found child 3387 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_1781",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Jan 28 22:25:53 2006] [notice] jk2_init() Found child 3388 in scoreboard slot 23"
+    ]
+  },
+  {
+    "session_id": "session_6447",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 01 05:08:51 2006] [notice] jk2_init() Found child 3908 in scoreboard slot 8"
+    ]
+  },
+  {
+    "session_id": "session_2193",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:18:59 2006] [notice] jk2_init() Found child 4024 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_5026",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:02 2006] [notice] jk2_init() Found child 4027 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_5712",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:04 2006] [notice] jk2_init() Found child 4028 in scoreboard slot 17"
+    ]
+  },
+  {
+    "session_id": "session_5395",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:09 2006] [notice] jk2_init() Found child 4033 in scoreboard slot 29"
+    ]
+  },
+  {
+    "session_id": "session_4727",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [notice] jk2_init() Found child 4038 in scoreboard slot 34"
+    ]
+  },
+  {
+    "session_id": "session_2197",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 04 22:19:11 2006] [notice] jk2_init() Found child 4043 in scoreboard slot 39"
+    ]
+  },
+  {
+    "session_id": "session_8514",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:04:59 2006] [notice] jk2_init() Found child 4365 in scoreboard slot 1"
+    ]
+  },
+  {
+    "session_id": "session_6470",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 08 21:05:05 2006] [notice] jk2_init() Found child 4369 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_6980",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 09 17:14:45 2006] [notice] jk2_init() Found child 4426 in scoreboard slot 4"
+    ]
+  },
+  {
+    "session_id": "session_2993",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:27:56 2006] [notice] jk2_init() Found child 4639 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_5976",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 04:28:06 2006] [notice] jk2_init() Found child 4642 in scoreboard slot 13"
+    ]
+  },
+  {
+    "session_id": "session_8137",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:35 2006] [notice] jk2_init() Found child 4644 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_2247",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:36 2006] [notice] jk2_init() Found child 4647 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_3571",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 11 09:53:36 2006] [notice] jk2_init() Found child 4648 in scoreboard slot 17"
+    ]
+  },
+  {
+    "session_id": "session_3168",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 13 20:24:01 2006] [notice] jk2_init() Found child 4859 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_5375",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 13 20:24:02 2006] [notice] jk2_init() Found child 4861 in scoreboard slot 12"
+    ]
+  },
+  {
+    "session_id": "session_2044",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:36 2006] [notice] jk2_init() Found child 4919 in scoreboard slot 18"
+    ]
+  },
+  {
+    "session_id": "session_4549",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 08:35:36 2006] [notice] jk2_init() Found child 4920 in scoreboard slot 19"
+    ]
+  },
+  {
+    "session_id": "session_3190",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Tue Feb 14 19:10:28 2006] [notice] jk2_init() Found child 4945 in scoreboard slot 7"
+    ]
+  },
+  {
+    "session_id": "session_9179",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 07:33:05 2006] [notice] jk2_init() Found child 4970 in scoreboard slot 4"
+    ]
+  },
+  {
+    "session_id": "session_1114",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:44:55 2006] [notice] jk2_init() Found child 5014 in scoreboard slot 11"
+    ]
+  },
+  {
+    "session_id": "session_6524",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:00 2006] [notice] jk2_init() Found child 5017 in scoreboard slot 14"
+    ]
+  },
+  {
+    "session_id": "session_2777",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Wed Feb 15 16:52:01 2006] [notice] jk2_init() Found child 5022 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_2097",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:14 2006] [notice] jk2_init() Found child 5064 in scoreboard slot 11"
+    ]
+  },
+  {
+    "session_id": "session_7087",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:32 2006] [notice] jk2_init() Found child 5067 in scoreboard slot 20"
+    ]
+  },
+  {
+    "session_id": "session_3772",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:33 2006] [notice] jk2_init() Found child 5068 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_4799",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 00:54:34 2006] [notice] jk2_init() Found child 5073 in scoreboard slot 26"
+    ]
+  },
+  {
+    "session_id": "session_4640",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:00:29 2006] [notice] jk2_init() Found child 5078 in scoreboard slot 16"
+    ]
+  },
+  {
+    "session_id": "session_9229",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:04:59 2006] [notice] jk2_init() Found child 5083 in scoreboard slot 5"
+    ]
+  },
+  {
+    "session_id": "session_6157",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Thu Feb 16 01:05:03 2006] [notice] jk2_init() Found child 5084 in scoreboard slot 9"
+    ]
+  },
+  {
+    "session_id": "session_5740",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 17 23:31:39 2006] [notice] jk2_init() Found child 5276 in scoreboard slot 1"
+    ]
+  },
+  {
+    "session_id": "session_2939",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:04 2006] [notice] jk2_init() Found child 5462 in scoreboard slot 2"
+    ]
+  },
+  {
+    "session_id": "session_9141",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 00:56:06 2006] [notice] jk2_init() Found child 5466 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_3854",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:03 2006] [notice] jk2_init() Found child 5557 in scoreboard slot 108"
+    ]
+  },
+  {
+    "session_id": "session_4106",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:04 2006] [notice] jk2_init() Found child 5561 in scoreboard slot 112"
+    ]
+  },
+  {
+    "session_id": "session_2450",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:04 2006] [notice] jk2_init() Found child 5560 in scoreboard slot 111"
+    ]
+  },
+  {
+    "session_id": "session_4124",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:04 2006] [notice] jk2_init() Found child 5559 in scoreboard slot 110"
+    ]
+  },
+  {
+    "session_id": "session_2143",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:04 2006] [notice] jk2_init() Found child 5558 in scoreboard slot 109"
+    ]
+  },
+  {
+    "session_id": "session_1282",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:04 2006] [notice] jk2_init() Found child 5562 in scoreboard slot 113"
+    ]
+  },
+  {
+    "session_id": "session_1543",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 05:00:09 2006] [notice] jk2_init() Found child 5564 in scoreboard slot 115"
+    ]
+  },
+  {
+    "session_id": "session_3491",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 09:06:03 2006] [notice] jk2_init() Found child 5653 in scoreboard slot 0"
+    ]
+  },
+  {
+    "session_id": "session_9486",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:42 2006] [notice] jk2_init() Found child 5658 in scoreboard slot 4"
+    ]
+  },
+  {
+    "session_id": "session_8506",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 10:37:43 2006] [notice] jk2_init() Found child 5659 in scoreboard slot 5"
+    ]
+  },
+  {
+    "session_id": "session_2564",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:28 2006] [notice] jk2_init() Found child 5734 in scoreboard slot 2"
+    ]
+  },
+  {
+    "session_id": "session_3403",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:29 2006] [notice] jk2_init() Found child 5735 in scoreboard slot 3"
+    ]
+  },
+  {
+    "session_id": "session_8297",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Mon Feb 20 19:48:30 2006] [notice] jk2_init() Found child 5740 in scoreboard slot 11"
+    ]
+  },
+  {
+    "session_id": "session_9263",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 24 17:07:18 2006] [notice] jk2_init() Found child 6320 in scoreboard slot 5"
+    ]
+  },
+  {
+    "session_id": "session_3681",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Fri Feb 24 17:07:19 2006] [notice] jk2_init() Found child 6321 in scoreboard slot 8"
+    ]
+  },
+  {
+    "session_id": "session_6537",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 00:08:45 2006] [notice] jk2_init() Found child 6386 in scoreboard slot 13"
+    ]
+  },
+  {
+    "session_id": "session_5053",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:37 2006] [notice] jk2_init() Found child 6419 in scoreboard slot 14"
+    ]
+  },
+  {
+    "session_id": "session_4515",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:38 2006] [notice] jk2_init() Found child 6422 in scoreboard slot 17"
+    ]
+  },
+  {
+    "session_id": "session_5572",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:38 2006] [notice] jk2_init() Found child 6423 in scoreboard slot 18"
+    ]
+  },
+  {
+    "session_id": "session_3759",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6426 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_1993",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6427 in scoreboard slot 22"
+    ]
+  },
+  {
+    "session_id": "session_3100",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6428 in scoreboard slot 23"
+    ]
+  },
+  {
+    "session_id": "session_1842",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6429 in scoreboard slot 24"
+    ]
+  },
+  {
+    "session_id": "session_7740",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6431 in scoreboard slot 26"
+    ]
+  },
+  {
+    "session_id": "session_5730",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6430 in scoreboard slot 25"
+    ]
+  },
+  {
+    "session_id": "session_6014",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:39 2006] [notice] jk2_init() Found child 6432 in scoreboard slot 27"
+    ]
+  },
+  {
+    "session_id": "session_3403",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6433 in scoreboard slot 28"
+    ]
+  },
+  {
+    "session_id": "session_7017",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6434 in scoreboard slot 29"
+    ]
+  },
+  {
+    "session_id": "session_1694",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6436 in scoreboard slot 31"
+    ]
+  },
+  {
+    "session_id": "session_5040",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6438 in scoreboard slot 33"
+    ]
+  },
+  {
+    "session_id": "session_3772",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6439 in scoreboard slot 34"
+    ]
+  },
+  {
+    "session_id": "session_8712",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6440 in scoreboard slot 35"
+    ]
+  },
+  {
+    "session_id": "session_2368",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6445 in scoreboard slot 40"
+    ]
+  },
+  {
+    "session_id": "session_7637",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:48:40 2006] [notice] jk2_init() Found child 6446 in scoreboard slot 41"
+    ]
+  },
+  {
+    "session_id": "session_5826",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:13 2006] [notice] jk2_init() Found child 6451 in scoreboard slot 3"
+    ]
+  },
+  {
+    "session_id": "session_1814",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [notice] jk2_init() Found child 6456 in scoreboard slot 12"
+    ]
+  },
+  {
+    "session_id": "session_9399",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [notice] jk2_init() Found child 6457 in scoreboard slot 14"
+    ]
+  },
+  {
+    "session_id": "session_2170",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [notice] jk2_init() Found child 6462 in scoreboard slot 21"
+    ]
+  },
+  {
+    "session_id": "session_8995",
+    "session_annotation_correct": true,
+    "log_contents": [
+      "[Sat Feb 25 03:52:15 2006] [notice] jk2_init() Found child 6463 in scoreboard slot 22"
+    ]
+  }
+]
