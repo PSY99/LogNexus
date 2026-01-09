@@ -1,5 +1,5 @@
 class DSU:
-    """高效的并查集数据结构"""
+    """Efficient Disjoint Set Union (Union-Find) data structure"""
     def __init__(self, n):
         self.parent = list(range(n))
     def find(self, i):

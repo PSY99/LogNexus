@@ -1,29 +1,29 @@
-# 设置要运行的次数 
+# Set number of runs 
 NUM_RUNS=5
 
 EVAL_SCRIPT="run_ablation.py" 
 
-# 获取 config 中设置的数据集名称，用于构建目录名
+# Get dataset name from config for building directory name
 export DATASET_NAME="OpenSSH"
 
-echo "Starting batch evaluatfor $NUM_RUNS runs..."
+echo "Starting batch evaluation for $NUM_RUNS runs..."
 echo "=================================================="
 
-# 循环指定的次数
+# Loop for the specified number of runs
 for i in $(seq 1 $NUM_RUNS)
 do
-    # 格式化数字，使其总是两位数（例如 01, 02, ..., 10）
+    # Format the number to always have two digits (e.g., 01, 02, ..., 10)
     formatted_i=$(printf "%02d" $i)
 
-    # 构建本次运行的 artifacts 目录后缀
+    # Build the suffix for the artifacts directory for this run
     export ARTIFACTS_SUFFIX="${DATASET_NAME}_${formatted_i}"
 
     echo ""
     echo "--- RUN $i/$NUM_RUNS ---"
     echo "Setting artifacts directory to: event_detector/generated_processors/${ARTIFACTS_SUFFIX}"
     
-    # 运行评估脚本
-    # 环境变量 ARTIFACTS_SUFFIX 将被 python 脚本读取
+    # Run the evaluation script
+    # The environment variable ARTIFACTS_SUFFIX will be read by the python script
     python "$EVAL_SCRIPT"
 
     echo "--- Finished RUN $i/$NUM_RUNS ---"
