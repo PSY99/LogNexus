@@ -12,352 +12,355 @@ from collections import defaultdict
 from typing import Dict, List
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Extracts the Process ID (PID) as a linking key.
- """
- pid = log.get('PID')
- 
- # A PID of 0 is a valid process ID (often for kernel tasks).
- # The rule is to group by the *exact* same PID, so we check if it exists (is not None).
- if pid is not None:
- return [f"PID_{pid}"]
- 
- return []
+    """
+    Extracts the Process ID (PID) as a linking key.
+    """
+    pid = log.get('PID')
+    
+    # A PID of 0 is a valid process ID (often for kernel tasks).
+    # The rule is to group by the *exact* same PID, so we check if it exists (is not None).
+    if pid is not None:
+        return [f"PID_{pid}"]
+        
+    return []
 
 from typing import Dict, List
 
+
 def rule_2_logs_that_lack_a_pid_such_as_those_from_the_kernel(log: Dict) -> List[str]:
- """
- Identifies logs from specific system processes that lack a PID and treats them
- as individual 'Event Cores'.
- """
- # The rule applies to logs that lack a PID. This includes logs where PID is
- # not present (None) or is 0 (often used for kernel/swapper processes).
- pid = log.get('PID')
+    """
+    Identifies logs from specific system processes that lack a PID and treats them
+    as individual 'Event Cores'.
+    """
+    # The rule applies to logs that lack a PID. This includes logs where PID is
+    # not present (None) or is 0 (often used for kernel/swapper processes).
+    pid = log.get('PID')
 
- # The primary condition is that the log lacks a meaningful, positive PID.
- if pid: # If PID is a positive integer, this rule does not apply.
- return []
+    # The primary condition is that the log lacks a meaningful, positive PID.
+    if pid:  # If PID is a positive integer, this rule does not apply.
+        return []
 
- # The rule provides examples of processes to target. We'll use this list
- # to scope the rule to intended system logs.
- target_processes = {'kernel', 'network', 'syslog', 'rc'}
- process_name = log.get('ProcessName')
+    # The rule provides examples of processes to target. We'll use this list
+    # to scope the rule to intended system logs.
+    target_processes = {'kernel', 'network', 'syslog', 'rc'}
+    process_name = log.get('ProcessName')
 
- # Check if the process name is one of the specified targets.
- if process_name and process_name in target_processes:
- # The rule states these are "individual, single-line 'Event Cores'".
- # To make them individual, we create a unique key based on the LogContent.
- # This ensures each unique log line is treated as its own event.
- log_content = log.get('LogContent')
- if log_content:
- # The key type "EVENTCORE" signifies that this log is a standalone event.
- return [f"EVENTCORE_{log_content}"]
+    # Check if the process name is one of the specified targets.
+    if process_name and process_name in target_processes:
+        # The rule states these are "individual, single-line 'Event Cores'".
+        # To make them individual, we create a unique key based on the LogContent.
+        # This ensures each unique log line is treated as its own event.
+        log_content = log.get('LogContent')
+        if log_content:
+            # The key type "EVENTCORE" signifies that this log is a standalone event.
+            return [f"EVENTCORE_{log_content}"]
 
- # If the conditions are not met, return an empty list.
- return []
+    # If the conditions are not met, return an empty list.
+    return []
 
 from typing import Dict, List, Optional
 
 def rule_3_merge_event_cores_rule_for_network_attackscan_afte(log: Dict) -> List[str]:
- """
- After initial PID-based grouping, identify all 'Event Cores' containing
- failure templates like 'authentication failure', 'check pass; user unknown',
- 'FAILED LOGIN', 'connection unexpectedly closed', 'peer died',
- 'probable port-scan', or 'Connection from <*> on illegal port'.
- Merge all such cores, regardless of their original PID or process name,
- if they share the exact same Key Source Identifier (IP address or rhost FQDN).
- """
- 
- # Define the set of phrases that indicate a potential network attack/scan
- attack_phrases = {
- 'authentication failure',
- 'check pass; user unknown',
- 'failed login',
- 'connection unexpectedly closed',
- 'peer died',
- 'probable port-scan',
- 'connection from <*> on illegal port'
- }
+    """
+    After initial PID-based grouping, identify all 'Event Cores' containing
+    failure templates like 'authentication failure', 'check pass; user unknown',
+    'FAILED LOGIN', 'connection unexpectedly closed', 'peer died',
+    'probable port-scan', or 'Connection from <*> on illegal port'.
+    Merge all such cores, regardless of their original PID or process name,
+    if they share the exact same Key Source Identifier (IP address or rhost FQDN).
+    """
+    
+    # Define the set of phrases that indicate a potential network attack/scan
+    attack_phrases = {
+        'authentication failure',
+        'check pass; user unknown',
+        'failed login',
+        'connection unexpectedly closed',
+        'peer died',
+        'probable port-scan',
+        'connection from <*> on illegal port'
+    }
 
- event_template = log.get('EventTemplate', '')
- if not event_template:
- return []
+    event_template = log.get('EventTemplate', '')
+    if not event_template:
+        return []
 
- template_lower = event_template.lower()
+    template_lower = event_template.lower()
 
- # Check if the event template matches any of the attack phrases
- is_attack_event = any(phrase in template_lower for phrase in attack_phrases)
+    # Check if the event template matches any of the attack phrases
+    is_attack_event = any(phrase in template_lower for phrase in attack_phrases)
 
- if not is_attack_event:
- return []
+    if not is_attack_event:
+        return []
 
- # If it's an attack event, extract keys from the source identifier (IP or rhost)
- keys = []
- 
- # Extract IP address if it exists
- ip_address = log.get('ip')
- if ip_address:
- keys.append(f"IP_{ip_address}")
+    # If it's an attack event, extract keys from the source identifier (IP or rhost)
+    keys = []
+    
+    # Extract IP address if it exists
+    ip_address = log.get('ip')
+    if ip_address:
+        keys.append(f"IP_{ip_address}")
 
- # Extract remote host(s) if they exist
- remote_hosts = log.get('rhost')
- if remote_hosts:
- for host in remote_hosts:
- if host: # Ensure the host string is not empty
- keys.append(f"RHOST_{host}")
+    # Extract remote host(s) if they exist
+    remote_hosts = log.get('rhost')
+    if remote_hosts:
+        for host in remote_hosts:
+            if host:  # Ensure the host string is not empty
+                keys.append(f"RHOST_{host}")
 
- return keys
+    return keys
 
 def rule_4_boundary_rule_by_state_change_an_event_core_repres(log: Dict) -> List[str]:
- """
- Identifies a successful login event which acts as a boundary for event correlation.
+    """
+    Identifies a successful login event which acts as a boundary for event correlation.
 
- This rule detects an 'Event Core' representing a successful login (e.g.,
- 'session opened for user'). Such an event must not be merged with preceding
- 'Network Attack' events. It signals the start of a new, distinct 'User Session'.
- """
- keys = []
- event_template = log.get('EventTemplate', '')
+    This rule detects an 'Event Core' representing a successful login (e.g.,
+    'session opened for user'). Such an event must not be merged with preceding
+    'Network Attack' events. It signals the start of a new, distinct 'User Session'.
+    """
+    keys = []
+    event_template = log.get('EventTemplate', '')
 
- if not event_template:
- return []
+    if not event_template:
+        return []
 
- # Keywords that indicate a successful login, which initiates a new user session boundary.
- success_login_patterns = [
- "session opened for user",
- "Accepted password for",
- "Accepted publickey for"
- ]
+    # Keywords that indicate a successful login, which initiates a new user session boundary.
+    success_login_patterns = [
+        "session opened for user",
+        "Accepted password for",
+        "Accepted publickey for"
+    ]
 
- # Check if the event template contains any of the success patterns.
- if any(pattern in event_template for pattern in success_login_patterns):
- # This key signals to the orchestrator that this log entry is a "state change"
- # and should start a new group, effectively creating a boundary.
- keys.append("STATECHANGE_BOUNDARY_SUCCESSFUL_LOGIN")
+    # Check if the event template contains any of the success patterns.
+    if any(pattern in event_template for pattern in success_login_patterns):
+        # This key signals to the orchestrator that this log entry is a "state change"
+        # and should start a new group, effectively creating a boundary.
+        keys.append("STATECHANGE_BOUNDARY_SUCCESSFUL_LOGIN")
 
- return keys
+    return keys
 
 def rule_5_merge_event_cores_rule_for_system_boot_identify_a_(log: dict) -> list[str]:
- """
- Identifies logs related to a system boot event based on specific templates and process names.
+    """
+    Identifies logs related to a system boot event based on specific templates and process names.
 
- This function acts as a stateless key extractor for a system boot event correlation rule.
- It identifies three types of logs:
- 1. Trigger logs: These start the system boot event window.
- - EventTemplate is 'syslogd <*>: restart.'
- - EventTemplate is 'Linux version <*>'
- 2. Candidate logs: These are logs that should be merged into the active boot event.
- - ProcessName is 'kernel'
- - EventTemplate contains 'startup succeeded'
- - EventTemplate contains 'Version <*> Starting'
- 3. Terminator logs: These signal the end of the boot event window.
- - EventTemplate contains 'session opened for user'
+    This function acts as a stateless key extractor for a system boot event correlation rule.
+    It identifies three types of logs:
+    1. Trigger logs: These start the system boot event window.
+       - EventTemplate is 'syslogd <*>: restart.'
+       - EventTemplate is 'Linux version <*>'
+    2. Candidate logs: These are logs that should be merged into the active boot event.
+       - ProcessName is 'kernel'
+       - EventTemplate contains 'startup succeeded'
+       - EventTemplate contains 'Version <*> Starting'
+    3. Terminator logs: These signal the end of the boot event window.
+       - EventTemplate contains 'session opened for user'
 
- The orchestrator will use these keys to manage the stateful logic of the merge window.
- """
- keys = set()
- event_template = log.get('EventTemplate', '')
- process_name = log.get('ProcessName', '')
+    The orchestrator will use these keys to manage the stateful logic of the merge window.
+    """
+    keys = set()
+    event_template = log.get('EventTemplate', '')
+    process_name = log.get('ProcessName', '')
 
- # Rule Part 1: Identify the trigger for a 'System Boot' event.
- if event_template in ('syslogd <*>: restart.', 'Linux version <*>'):
- keys.add("EVENT_SystemBootTrigger")
+    # Rule Part 1: Identify the trigger for a 'System Boot' event.
+    if event_template in ('syslogd <*>: restart.', 'Linux version <*>'):
+        keys.add("EVENT_SystemBootTrigger")
 
- # Rule Part 2: Identify logs to be greedily merged.
- if process_name == 'kernel':
- keys.add("EVENT_SystemBootCandidate")
- if 'startup succeeded' in event_template:
- keys.add("EVENT_SystemBootCandidate")
- if 'Version <*> Starting' in event_template:
- keys.add("EVENT_SystemBootCandidate")
+    # Rule Part 2: Identify logs to be greedily merged.
+    if process_name == 'kernel':
+        keys.add("EVENT_SystemBootCandidate")
+    if 'startup succeeded' in event_template:
+        keys.add("EVENT_SystemBootCandidate")
+    if 'Version <*> Starting' in event_template:
+        keys.add("EVENT_SystemBootCandidate")
 
- # Rule Part 3: Identify the merge window termination condition.
- if 'session opened for user' in event_template:
- keys.add("EVENT_SystemBootTerminator")
+    # Rule Part 3: Identify the merge window termination condition.
+    if 'session opened for user' in event_template:
+        keys.add("EVENT_SystemBootTerminator")
 
- return list(keys)
+    return list(keys)
 
 from typing import Dict, List, Optional
 
 def rule_6_merge_event_cores_rule_for_system_shutdown_identif(log: Dict) -> List[str]:
- """
- Identifies logs related to a system shutdown sequence.
+    """
+    Identifies logs related to a system shutdown sequence.
 
- This function acts as a key extractor for a stateful orchestrator. It identifies three types of logs based on the rule:
- 1. The trigger log for a system shutdown ('shutting down for system reboot').
- 2. Subsequent logs that should be merged into the shutdown event.
+    This function acts as a key extractor for a stateful orchestrator. It identifies three types of logs based on the rule:
+    1. The trigger log for a system shutdown ('shutting down for system reboot').
+    2. Subsequent logs that should be merged into the shutdown event.
 
- The boundary log ('System Boot') is handled by a different rule and is not part of this function's logic.
+    The boundary log ('System Boot') is handled by a different rule and is not part of this function's logic.
 
- - If the log is the trigger, it returns ['SHUTDOWN_SEQUENCE_START'].
- - If the log is a mergeable event core, it returns ['SHUTDOWN_SEQUENCE_MEMBER'].
- - Otherwise, it returns an empty list.
- """
- event_template = log.get('EventTemplate')
- if not event_template:
- return []
+    - If the log is the trigger, it returns ['SHUTDOWN_SEQUENCE_START'].
+    - If the log is a mergeable event core, it returns ['SHUTDOWN_SEQUENCE_MEMBER'].
+    - Otherwise, it returns an empty list.
+    """
+    event_template = log.get('EventTemplate')
+    if not event_template:
+        return []
 
- # Rule Part 1: Identify the trigger log for a 'System Shutdown' event.
- if event_template == 'shutting down for system reboot':
- return ['SHUTDOWN_SEQUENCE_START']
+    # Rule Part 1: Identify the trigger log for a 'System Shutdown' event.
+    if event_template == 'shutting down for system reboot':
+        return ['SHUTDOWN_SEQUENCE_START']
 
- # Rule Part 2: Identify subsequent 'Event Cores' to be merged.
- merge_keywords = [
- 'shutdown succeeded',
- 'terminating',
- 'exiting',
- 'received signal 15',
- 'Kernel log daemon terminating.'
- ]
+    # Rule Part 2: Identify subsequent 'Event Cores' to be merged.
+    merge_keywords = [
+        'shutdown succeeded',
+        'terminating',
+        'exiting',
+        'received signal 15',
+        'Kernel log daemon terminating.'
+    ]
 
- if any(keyword in event_template for keyword in merge_keywords):
- return ['SHUTDOWN_SEQUENCE_MEMBER']
+    if any(keyword in event_template for keyword in merge_keywords):
+        return ['SHUTDOWN_SEQUENCE_MEMBER']
 
- return []
+    return []
 
 from typing import Dict, List
 
+
 def rule_7_state_transition_boundary_rule_for_sessions_an_eve(log: Dict) -> List[str]:
- """
- Extracts a composite key of PID and user for session boundary logs.
+    """
+    Extracts a composite key of PID and user for session boundary logs.
 
- This rule identifies logs that mark the beginning or end of a user session,
- specifically those containing "session opened for user" or "session closed for user".
- The linking key is formed by combining the Process ID (PID) and the user's name,
- which is typically the first parameter in the log's parameter list.
- """
- keys = []
- pid = log.get('PID')
- event_template = log.get('EventTemplate', '')
- params = log.get('Parameters', [])
+    This rule identifies logs that mark the beginning or end of a user session,
+    specifically those containing "session opened for user" or "session closed for user".
+    The linking key is formed by combining the Process ID (PID) and the user's name,
+    which is typically the first parameter in the log's parameter list.
+    """
+    keys = []
+    pid = log.get('PID')
+    event_template = log.get('EventTemplate', '')
+    params = log.get('Parameters', [])
 
- # The rule is based on a PID-linked event core. If no PID, no key can be formed.
- if not pid:
- return []
+    # The rule is based on a PID-linked event core. If no PID, no key can be formed.
+    if not pid:
+        return []
 
- # Check if the log's template indicates a session start or end event.
- is_session_open = "session opened for user" in event_template
- is_session_close = "session closed for user" in event_template
+    # Check if the log's template indicates a session start or end event.
+    is_session_open = "session opened for user" in event_template
+    is_session_close = "session closed for user" in event_template
 
- if is_session_open or is_session_close:
- # The user's name is expected to be the first parameter for these events.
- if params:
- user = params[0]
- # Create a composite key to link the start and end of a specific
- # user's session within a specific process.
- keys.append(f"PID_USER_{pid}_{user}")
+    if is_session_open or is_session_close:
+        # The user's name is expected to be the first parameter for these events.
+        if params:
+            user = params[0]
+            # Create a composite key to link the start and end of a specific
+            # user's session within a specific process.
+            keys.append(f"PID_USER_{pid}_{user}")
 
- return keys
+    return keys
 
 from typing import Dict, List, Optional
 
 def rule_8_merge_event_cores_rule_for_service_restart_identif(log: Dict) -> List[str]:
- """
- Identifies service shutdown or startup events and extracts a linking key
- based on the process name.
- """
- # Keywords indicating a service shutdown or startup event core.
- # These are derived from the examples in the rule.
- shutdown_keywords = ['exiting', 'shutdown succeeded']
- startup_keywords = ['starting', 'startup succeeded']
- relevant_keywords = shutdown_keywords + startup_keywords
+    """
+    Identifies service shutdown or startup events and extracts a linking key
+    based on the process name.
+    """
+    # Keywords indicating a service shutdown or startup event core.
+    # These are derived from the examples in the rule.
+    shutdown_keywords = ['exiting', 'shutdown succeeded']
+    startup_keywords = ['starting', 'startup succeeded']
+    relevant_keywords = shutdown_keywords + startup_keywords
 
- # Safely retrieve the process name and log content.
- # Both are essential for this rule.
- process_name = log.get('ProcessName')
- log_content = log.get('LogContent')
+    # Safely retrieve the process name and log content.
+    # Both are essential for this rule.
+    process_name = log.get('ProcessName')
+    log_content = log.get('LogContent')
 
- # If there's no process name or log content, we cannot create a linking key.
- if not process_name or not log_content:
- return []
+    # If there's no process name or log content, we cannot create a linking key.
+    if not process_name or not log_content:
+        return []
 
- # Check if the log content contains any of the keywords indicating a
- # service state change (shutdown or startup).
- is_relevant_event = any(keyword in log_content for keyword in relevant_keywords)
+    # Check if the log content contains any of the keywords indicating a
+    # service state change (shutdown or startup).
+    is_relevant_event = any(keyword in log_content for keyword in relevant_keywords)
 
- if is_relevant_event:
- # The ProcessName is the linking factor between a shutdown and a startup event.
- # The orchestrator will use this key to find a matching pair.
- return [f"PROCESSNAME_{process_name}"]
+    if is_relevant_event:
+        # The ProcessName is the linking factor between a shutdown and a startup event.
+        # The orchestrator will use this key to find a matching pair.
+        return [f"PROCESSNAME_{process_name}"]
 
- # If the log does not match the criteria, return an empty list.
- return []
+    # If the log does not match the criteria, return an empty list.
+    return []
 
 from typing import Dict, List, Optional
 
 def rule_9_merge_event_cores_rule_for_kernel_errors_identify_(log: Dict) -> List[str]:
- """
- Extracts keys for kernel error merging based on specific event templates.
+    """
+    Extracts keys for kernel error merging based on specific event templates.
 
- This function identifies three types of log entries:
- 1. The trigger for a kernel panic trace ('page allocation failure').
- 2. The stack trace lines that follow the trigger.
- 3. 'Out of Memory' events indicating system memory pressure.
+    This function identifies three types of log entries:
+    1. The trigger for a kernel panic trace ('page allocation failure').
+    2. The stack trace lines that follow the trigger.
+    3. 'Out of Memory' events indicating system memory pressure.
 
- It emits specific keys to allow a stateful orchestrator to group these related events.
- """
- keys: List[str] = []
- event_template: str = log.get('EventTemplate', '')
- process_name: Optional[str] = log.get('ProcessName')
+    It emits specific keys to allow a stateful orchestrator to group these related events.
+    """
+    keys: List[str] = []
+    event_template: str = log.get('EventTemplate', '')
+    process_name: Optional[str] = log.get('ProcessName')
 
- # Part 1: Kernel Panic Trace
- # This part links the trigger ('page allocation failure') and the subsequent
- # stack trace lines under a common key related to the 'kernel' process.
- # The orchestrator will handle the "contiguous" logic.
- if process_name == 'kernel':
- if 'page allocation failure' in event_template:
- keys.append('PROCESSNAME_kernel')
- elif event_template == '[<*>] <*>+<*>':
- keys.append('PROCESSNAME_kernel')
+    # Part 1: Kernel Panic Trace
+    # This part links the trigger ('page allocation failure') and the subsequent
+    # stack trace lines under a common key related to the 'kernel' process.
+    # The orchestrator will handle the "contiguous" logic.
+    if process_name == 'kernel':
+        if 'page allocation failure' in event_template:
+            keys.append('PROCESSNAME_kernel')
+        elif event_template == '[<*>] <*>+<*>':
+            keys.append('PROCESSNAME_kernel')
 
- # Part 2: System Under Memory Pressure
- # This part identifies all 'Out of Memory' events with a single, constant key.
- # This allows the orchestrator to group all such events that occur within
- # a specific time window.
- if event_template == 'Out of Memory: Killed process <*> (<*>).':
- keys.append('EVENT_SYSTEM_UNDER_MEMORY_PRESSURE')
+    # Part 2: System Under Memory Pressure
+    # This part identifies all 'Out of Memory' events with a single, constant key.
+    # This allows the orchestrator to group all such events that occur within
+    # a specific time window.
+    if event_template == 'Out of Memory: Killed process <*> (<*>).':
+        keys.append('EVENT_SYSTEM_UNDER_MEMORY_PRESSURE')
 
- return keys
+    return keys
 
 from typing import Dict, List, Optional
 
 def rule_10_key_dimension_split_rule_when_applying_merging_rul(log: Dict) -> List[str]:
- """
- Extracts keys based on source identifiers to prevent merging events from distinct actors.
+    """
+    Extracts keys based on source identifiers to prevent merging events from distinct actors.
 
- This rule identifies "Key Source Identifiers" like IP addresses, remote hosts,
- Process Names, and PIDs. By creating unique keys for each identifier value, it ensures
- that the main orchestrator will not merge log entries that originate from different
- sources, effectively creating a "split" in the logical event stream when an
- identifier changes.
- """
- keys = []
+    This rule identifies "Key Source Identifiers" like IP addresses, remote hosts,
+    Process Names, and PIDs. By creating unique keys for each identifier value, it ensures
+    that the main orchestrator will not merge log entries that originate from different
+    sources, effectively creating a "split" in the logical event stream when an
+    identifier changes.
+    """
+    keys = []
 
- # Identifier: IP address
- ip = log.get('ip')
- if isinstance(ip, str) and ip:
- keys.append(f"IP_{ip}")
+    # Identifier: IP address
+    ip = log.get('ip')
+    if isinstance(ip, str) and ip:
+        keys.append(f"IP_{ip}")
 
- # Identifier: Remote hosts
- rhosts = log.get('rhost')
- if isinstance(rhosts, list):
- for rhost in rhosts:
- if isinstance(rhost, str) and rhost:
- keys.append(f"RHOST_{rhost}")
+    # Identifier: Remote hosts
+    rhosts = log.get('rhost')
+    if isinstance(rhosts, list):
+        for rhost in rhosts:
+            if isinstance(rhost, str) and rhost:
+                keys.append(f"RHOST_{rhost}")
 
- # Identifier: Process Name
- process_name = log.get('ProcessName')
- if isinstance(process_name, str) and process_name:
- keys.append(f"PROCESSNAME_{process_name}")
+    # Identifier: Process Name
+    process_name = log.get('ProcessName')
+    if isinstance(process_name, str) and process_name:
+        keys.append(f"PROCESSNAME_{process_name}")
 
- # Identifier: Process ID (PID)
- pid = log.get('PID')
- # PID can be 0, which is a valid ID, so we check for None explicitly.
- if pid is not None:
- keys.append(f"PID_{pid}")
+    # Identifier: Process ID (PID)
+    pid = log.get('PID')
+    # PID can be 0, which is a valid ID, so we check for None explicitly.
+    if pid is not None:
+        keys.append(f"PID_{pid}")
 
- return keys
+    return keys
+
 
 #==============================================================================#
 # --- Stage 4: Main Event Processor Framework ---
@@ -372,478 +375,479 @@ from typing import Dict, List, Tuple, Callable, Optional, Any
 # ============================================================
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Extracts the Process ID (PID) as a linking key.
- """
- pid = log.get('PID')
- 
- # A PID of 0 is a valid process ID (often for kernel tasks).
- # The rule is to group by the *exact* same PID, so we check if it exists (is not None).
- if pid is not None:
- return [f"PID_{pid}"]
- 
- return []
+    """
+    Extracts the Process ID (PID) as a linking key.
+    """
+    pid = log.get('PID')
+    
+    # A PID of 0 is a valid process ID (often for kernel tasks).
+    # The rule is to group by the *exact* same PID, so we check if it exists (is not None).
+    if pid is not None:
+        return [f"PID_{pid}"]
+        
+    return []
 
 def rule_2_logs_that_lack_a_pid_such_as_those_from_the_kernel(log: Dict) -> List[str]:
- """
- Identifies logs from specific system processes that lack a PID and treats them
- as individual 'Event Cores'.
- """
- # The rule applies to logs that lack a PID. This includes logs where PID is
- # not present (None) or is 0 (often used for kernel/swapper processes).
- pid = log.get('PID')
+    """
+    Identifies logs from specific system processes that lack a PID and treats them
+    as individual 'Event Cores'.
+    """
+    # The rule applies to logs that lack a PID. This includes logs where PID is
+    # not present (None) or is 0 (often used for kernel/swapper processes).
+    pid = log.get('PID')
 
- # The primary condition is that the log lacks a meaningful, positive PID.
- if pid: # If PID is a positive integer, this rule does not apply.
- return []
+    # The primary condition is that the log lacks a meaningful, positive PID.
+    if pid:  # If PID is a positive integer, this rule does not apply.
+        return []
 
- # The rule provides examples of processes to target. We'll use this list
- # to scope the rule to intended system logs.
- target_processes = {'kernel', 'network', 'syslog', 'rc'}
- process_name = log.get('ProcessName')
+    # The rule provides examples of processes to target. We'll use this list
+    # to scope the rule to intended system logs.
+    target_processes = {'kernel', 'network', 'syslog', 'rc'}
+    process_name = log.get('ProcessName')
 
- # Check if the process name is one of the specified targets.
- if process_name and process_name in target_processes:
- # The rule states these are "individual, single-line 'Event Cores'".
- # To make them individual, we create a unique key based on the LogContent.
- # This ensures each unique log line is treated as its own event.
- log_content = log.get('LogContent')
- if log_content:
- # The key type "EVENTCORE" signifies that this log is a standalone event.
- return [f"EVENTCORE_{log_content}"]
+    # Check if the process name is one of the specified targets.
+    if process_name and process_name in target_processes:
+        # The rule states these are "individual, single-line 'Event Cores'".
+        # To make them individual, we create a unique key based on the LogContent.
+        # This ensures each unique log line is treated as its own event.
+        log_content = log.get('LogContent')
+        if log_content:
+            # The key type "EVENTCORE" signifies that this log is a standalone event.
+            return [f"EVENTCORE_{log_content}"]
 
- # If the conditions are not met, return an empty list.
- return []
+    # If the conditions are not met, return an empty list.
+    return []
 
 def rule_3_merge_event_cores_rule_for_network_attackscan_afte(log: Dict) -> List[str]:
- """
- After initial PID-based grouping, identify all 'Event Cores' containing
- failure templates like 'authentication failure', 'check pass; user unknown',
- 'FAILED LOGIN', 'connection unexpectedly closed', 'peer died',
- 'probable port-scan', or 'Connection from <*> on illegal port'.
- Merge all such cores, regardless of their original PID or process name,
- if they share the exact same Key Source Identifier (IP address or rhost FQDN).
- """
- 
- # Define the set of phrases that indicate a potential network attack/scan
- attack_phrases = {
- 'authentication failure',
- 'check pass; user unknown',
- 'failed login',
- 'connection unexpectedly closed',
- 'peer died',
- 'probable port-scan',
- 'connection from <*> on illegal port'
- }
+    """
+    After initial PID-based grouping, identify all 'Event Cores' containing
+    failure templates like 'authentication failure', 'check pass; user unknown',
+    'FAILED LOGIN', 'connection unexpectedly closed', 'peer died',
+    'probable port-scan', or 'Connection from <*> on illegal port'.
+    Merge all such cores, regardless of their original PID or process name,
+    if they share the exact same Key Source Identifier (IP address or rhost FQDN).
+    """
+    
+    # Define the set of phrases that indicate a potential network attack/scan
+    attack_phrases = {
+        'authentication failure',
+        'check pass; user unknown',
+        'failed login',
+        'connection unexpectedly closed',
+        'peer died',
+        'probable port-scan',
+        'connection from <*> on illegal port'
+    }
 
- event_template = log.get('EventTemplate', '')
- if not event_template:
- return []
+    event_template = log.get('EventTemplate', '')
+    if not event_template:
+        return []
 
- template_lower = event_template.lower()
+    template_lower = event_template.lower()
 
- # Check if the event template matches any of the attack phrases
- is_attack_event = any(phrase in template_lower for phrase in attack_phrases)
+    # Check if the event template matches any of the attack phrases
+    is_attack_event = any(phrase in template_lower for phrase in attack_phrases)
 
- if not is_attack_event:
- return []
+    if not is_attack_event:
+        return []
 
- # If it's an attack event, extract keys from the source identifier (IP or rhost)
- keys = []
- 
- # Extract IP address if it exists
- ip_address = log.get('ip')
- if ip_address:
- keys.append(f"IP_{ip_address}")
+    # If it's an attack event, extract keys from the source identifier (IP or rhost)
+    keys = []
+    
+    # Extract IP address if it exists
+    ip_address = log.get('ip')
+    if ip_address:
+        keys.append(f"IP_{ip_address}")
 
- # Extract remote host(s) if they exist
- remote_hosts = log.get('rhost')
- if remote_hosts:
- for host in remote_hosts:
- if host: # Ensure the host string is not empty
- keys.append(f"RHOST_{host}")
+    # Extract remote host(s) if they exist
+    remote_hosts = log.get('rhost')
+    if remote_hosts:
+        for host in remote_hosts:
+            if host:  # Ensure the host string is not empty
+                keys.append(f"RHOST_{host}")
 
- return keys
+    return keys
 
 def rule_4_boundary_rule_by_state_change_an_event_core_repres(log: Dict) -> List[str]:
- """
- Identifies a successful login event which acts as a boundary for event correlation.
+    """
+    Identifies a successful login event which acts as a boundary for event correlation.
 
- This rule detects an 'Event Core' representing a successful login (e.g.,
- 'session opened for user'). Such an event must not be merged with preceding
- 'Network Attack' events. It signals the start of a new, distinct 'User Session'.
- """
- keys = []
- event_template = log.get('EventTemplate', '')
+    This rule detects an 'Event Core' representing a successful login (e.g.,
+    'session opened for user'). Such an event must not be merged with preceding
+    'Network Attack' events. It signals the start of a new, distinct 'User Session'.
+    """
+    keys = []
+    event_template = log.get('EventTemplate', '')
 
- if not event_template:
- return []
+    if not event_template:
+        return []
 
- # Keywords that indicate a successful login, which initiates a new user session boundary.
- success_login_patterns = [
- "session opened for user",
- "Accepted password for",
- "Accepted publickey for"
- ]
+    # Keywords that indicate a successful login, which initiates a new user session boundary.
+    success_login_patterns = [
+        "session opened for user",
+        "Accepted password for",
+        "Accepted publickey for"
+    ]
 
- # Check if the event template contains any of the success patterns.
- if any(pattern in event_template for pattern in success_login_patterns):
- # This key signals to the orchestrator that this log entry is a "state change"
- # and should start a new group, effectively creating a boundary.
- keys.append("STATECHANGE_BOUNDARY_SUCCESSFUL_LOGIN")
+    # Check if the event template contains any of the success patterns.
+    if any(pattern in event_template for pattern in success_login_patterns):
+        # This key signals to the orchestrator that this log entry is a "state change"
+        # and should start a new group, effectively creating a boundary.
+        keys.append("STATECHANGE_BOUNDARY_SUCCESSFUL_LOGIN")
 
- return keys
+    return keys
 
 def rule_5_merge_event_cores_rule_for_system_boot_identify_a_(log: dict) -> list[str]:
- """
- Identifies logs related to a system boot event based on specific templates and process names.
+    """
+    Identifies logs related to a system boot event based on specific templates and process names.
 
- This function acts as a stateless key extractor for a system boot event correlation rule.
- It identifies three types of logs:
- 1. Trigger logs: These start the system boot event window.
- - EventTemplate is 'syslogd <*>: restart.'
- - EventTemplate is 'Linux version <*>'
- 2. Candidate logs: These are logs that should be merged into the active boot event.
- - ProcessName is 'kernel'
- - EventTemplate contains 'startup succeeded'
- - EventTemplate contains 'Version <*> Starting'
- 3. Terminator logs: These signal the end of the boot event window.
- - EventTemplate contains 'session opened for user'
+    This function acts as a stateless key extractor for a system boot event correlation rule.
+    It identifies three types of logs:
+    1. Trigger logs: These start the system boot event window.
+       - EventTemplate is 'syslogd <*>: restart.'
+       - EventTemplate is 'Linux version <*>'
+    2. Candidate logs: These are logs that should be merged into the active boot event.
+       - ProcessName is 'kernel'
+       - EventTemplate contains 'startup succeeded'
+       - EventTemplate contains 'Version <*> Starting'
+    3. Terminator logs: These signal the end of the boot event window.
+       - EventTemplate contains 'session opened for user'
 
- The orchestrator will use these keys to manage the stateful logic of the merge window.
- """
- keys = set()
- event_template = log.get('EventTemplate', '')
- process_name = log.get('ProcessName', '')
+    The orchestrator will use these keys to manage the stateful logic of the merge window.
+    """
+    keys = set()
+    event_template = log.get('EventTemplate', '')
+    process_name = log.get('ProcessName', '')
 
- # Rule Part 1: Identify the trigger for a 'System Boot' event.
- if event_template in ('syslogd <*>: restart.', 'Linux version <*>'):
- keys.add("EVENT_SystemBootTrigger")
+    # Rule Part 1: Identify the trigger for a 'System Boot' event.
+    if event_template in ('syslogd <*>: restart.', 'Linux version <*>'):
+        keys.add("EVENT_SystemBootTrigger")
 
- # Rule Part 2: Identify logs to be greedily merged.
- if process_name == 'kernel':
- keys.add("EVENT_SystemBootCandidate")
- if 'startup succeeded' in event_template:
- keys.add("EVENT_SystemBootCandidate")
- if 'Version <*> Starting' in event_template:
- keys.add("EVENT_SystemBootCandidate")
+    # Rule Part 2: Identify logs to be greedily merged.
+    if process_name == 'kernel':
+        keys.add("EVENT_SystemBootCandidate")
+    if 'startup succeeded' in event_template:
+        keys.add("EVENT_SystemBootCandidate")
+    if 'Version <*> Starting' in event_template:
+        keys.add("EVENT_SystemBootCandidate")
 
- # Rule Part 3: Identify the merge window termination condition.
- if 'session opened for user' in event_template:
- keys.add("EVENT_SystemBootTerminator")
+    # Rule Part 3: Identify the merge window termination condition.
+    if 'session opened for user' in event_template:
+        keys.add("EVENT_SystemBootTerminator")
 
- return list(keys)
+    return list(keys)
 
 def rule_6_merge_event_cores_rule_for_system_shutdown_identif(log: Dict) -> List[str]:
- """
- Identifies logs related to a system shutdown sequence.
+    """
+    Identifies logs related to a system shutdown sequence.
 
- This function acts as a key extractor for a stateful orchestrator. It identifies three types of logs based on the rule:
- 1. The trigger log for a system shutdown ('shutting down for system reboot').
- 2. Subsequent logs that should be merged into the shutdown event.
+    This function acts as a key extractor for a stateful orchestrator. It identifies three types of logs based on the rule:
+    1. The trigger log for a system shutdown ('shutting down for system reboot').
+    2. Subsequent logs that should be merged into the shutdown event.
 
- The boundary log ('System Boot') is handled by a different rule and is not part of this function's logic.
+    The boundary log ('System Boot') is handled by a different rule and is not part of this function's logic.
 
- - If the log is the trigger, it returns ['SHUTDOWN_SEQUENCE_START'].
- - If the log is a mergeable event core, it returns ['SHUTDOWN_SEQUENCE_MEMBER'].
- - Otherwise, it returns an empty list.
- """
- event_template = log.get('EventTemplate')
- if not event_template:
- return []
+    - If the log is the trigger, it returns ['SHUTDOWN_SEQUENCE_START'].
+    - If the log is a mergeable event core, it returns ['SHUTDOWN_SEQUENCE_MEMBER'].
+    - Otherwise, it returns an empty list.
+    """
+    event_template = log.get('EventTemplate')
+    if not event_template:
+        return []
 
- # Rule Part 1: Identify the trigger log for a 'System Shutdown' event.
- if event_template == 'shutting down for system reboot':
- return ['SHUTDOWN_SEQUENCE_START']
+    # Rule Part 1: Identify the trigger log for a 'System Shutdown' event.
+    if event_template == 'shutting down for system reboot':
+        return ['SHUTDOWN_SEQUENCE_START']
 
- # Rule Part 2: Identify subsequent 'Event Cores' to be merged.
- merge_keywords = [
- 'shutdown succeeded',
- 'terminating',
- 'exiting',
- 'received signal 15',
- 'Kernel log daemon terminating.'
- ]
+    # Rule Part 2: Identify subsequent 'Event Cores' to be merged.
+    merge_keywords = [
+        'shutdown succeeded',
+        'terminating',
+        'exiting',
+        'received signal 15',
+        'Kernel log daemon terminating.'
+    ]
 
- if any(keyword in event_template for keyword in merge_keywords):
- return ['SHUTDOWN_SEQUENCE_MEMBER']
+    if any(keyword in event_template for keyword in merge_keywords):
+        return ['SHUTDOWN_SEQUENCE_MEMBER']
 
- return []
+    return []
 
 def rule_7_state_transition_boundary_rule_for_sessions_an_eve(log: Dict) -> List[str]:
- """
- Extracts a composite key of PID and user for session boundary logs.
+    """
+    Extracts a composite key of PID and user for session boundary logs.
 
- This rule identifies logs that mark the beginning or end of a user session,
- specifically those containing "session opened for user" or "session closed for user".
- The linking key is formed by combining the Process ID (PID) and the user's name,
- which is typically the first parameter in the log's parameter list.
- """
- keys = []
- pid = log.get('PID')
- event_template = log.get('EventTemplate', '')
- params = log.get('Parameters', [])
+    This rule identifies logs that mark the beginning or end of a user session,
+    specifically those containing "session opened for user" or "session closed for user".
+    The linking key is formed by combining the Process ID (PID) and the user's name,
+    which is typically the first parameter in the log's parameter list.
+    """
+    keys = []
+    pid = log.get('PID')
+    event_template = log.get('EventTemplate', '')
+    params = log.get('Parameters', [])
 
- # The rule is based on a PID-linked event core. If no PID, no key can be formed.
- if not pid:
- return []
+    # The rule is based on a PID-linked event core. If no PID, no key can be formed.
+    if not pid:
+        return []
 
- # Check if the log's template indicates a session start or end event.
- is_session_open = "session opened for user" in event_template
- is_session_close = "session closed for user" in event_template
+    # Check if the log's template indicates a session start or end event.
+    is_session_open = "session opened for user" in event_template
+    is_session_close = "session closed for user" in event_template
 
- if is_session_open or is_session_close:
- # The user's name is expected to be the first parameter for these events.
- if params:
- user = params[0]
- # Create a composite key to link the start and end of a specific
- # user's session within a specific process.
- keys.append(f"PID_USER_{pid}_{user}")
+    if is_session_open or is_session_close:
+        # The user's name is expected to be the first parameter for these events.
+        if params:
+            user = params[0]
+            # Create a composite key to link the start and end of a specific
+            # user's session within a specific process.
+            keys.append(f"PID_USER_{pid}_{user}")
 
- return keys
+    return keys
 
 def rule_8_merge_event_cores_rule_for_service_restart_identif(log: Dict) -> List[str]:
- """
- Identifies service shutdown or startup events and extracts a linking key
- based on the process name.
- """
- # Keywords indicating a service shutdown or startup event core.
- # These are derived from the examples in the rule.
- shutdown_keywords = ['exiting', 'shutdown succeeded']
- startup_keywords = ['starting', 'startup succeeded']
- relevant_keywords = shutdown_keywords + startup_keywords
+    """
+    Identifies service shutdown or startup events and extracts a linking key
+    based on the process name.
+    """
+    # Keywords indicating a service shutdown or startup event core.
+    # These are derived from the examples in the rule.
+    shutdown_keywords = ['exiting', 'shutdown succeeded']
+    startup_keywords = ['starting', 'startup succeeded']
+    relevant_keywords = shutdown_keywords + startup_keywords
 
- # Safely retrieve the process name and log content.
- # Both are essential for this rule.
- process_name = log.get('ProcessName')
- log_content = log.get('LogContent')
+    # Safely retrieve the process name and log content.
+    # Both are essential for this rule.
+    process_name = log.get('ProcessName')
+    log_content = log.get('LogContent')
 
- # If there's no process name or log content, we cannot create a linking key.
- if not process_name or not log_content:
- return []
+    # If there's no process name or log content, we cannot create a linking key.
+    if not process_name or not log_content:
+        return []
 
- # Check if the log content contains any of the keywords indicating a
- # service state change (shutdown or startup).
- is_relevant_event = any(keyword in log_content for keyword in relevant_keywords)
+    # Check if the log content contains any of the keywords indicating a
+    # service state change (shutdown or startup).
+    is_relevant_event = any(keyword in log_content for keyword in relevant_keywords)
 
- if is_relevant_event:
- # The ProcessName is the linking factor between a shutdown and a startup event.
- # The orchestrator will use this key to find a matching pair.
- return [f"PROCESSNAME_{process_name}"]
+    if is_relevant_event:
+        # The ProcessName is the linking factor between a shutdown and a startup event.
+        # The orchestrator will use this key to find a matching pair.
+        return [f"PROCESSNAME_{process_name}"]
 
- # If the log does not match the criteria, return an empty list.
- return []
+    # If the log does not match the criteria, return an empty list.
+    return []
 
 def rule_9_merge_event_cores_rule_for_kernel_errors_identify_(log: Dict) -> List[str]:
- """
- Extracts keys for kernel error merging based on specific event templates.
+    """
+    Extracts keys for kernel error merging based on specific event templates.
 
- This function identifies three types of log entries:
- 1. The trigger for a kernel panic trace ('page allocation failure').
- 2. The stack trace lines that follow the trigger.
- 3. 'Out of Memory' events indicating system memory pressure.
+    This function identifies three types of log entries:
+    1. The trigger for a kernel panic trace ('page allocation failure').
+    2. The stack trace lines that follow the trigger.
+    3. 'Out of Memory' events indicating system memory pressure.
 
- It emits specific keys to allow a stateful orchestrator to group these related events.
- """
- keys: List[str] = []
- event_template: str = log.get('EventTemplate', '')
- process_name: Optional[str] = log.get('ProcessName')
+    It emits specific keys to allow a stateful orchestrator to group these related events.
+    """
+    keys: List[str] = []
+    event_template: str = log.get('EventTemplate', '')
+    process_name: Optional[str] = log.get('ProcessName')
 
- # Part 1: Kernel Panic Trace
- # This part links the trigger ('page allocation failure') and the subsequent
- # stack trace lines under a common key related to the 'kernel' process.
- # The orchestrator will handle the "contiguous" logic.
- if process_name == 'kernel':
- if 'page allocation failure' in event_template:
- keys.append('PROCESSNAME_kernel')
- elif event_template == '[<*>] <*>+<*>':
- keys.append('PROCESSNAME_kernel')
+    # Part 1: Kernel Panic Trace
+    # This part links the trigger ('page allocation failure') and the subsequent
+    # stack trace lines under a common key related to the 'kernel' process.
+    # The orchestrator will handle the "contiguous" logic.
+    if process_name == 'kernel':
+        if 'page allocation failure' in event_template:
+            keys.append('PROCESSNAME_kernel')
+        elif event_template == '[<*>] <*>+<*>':
+            keys.append('PROCESSNAME_kernel')
 
- # Part 2: System Under Memory Pressure
- # This part identifies all 'Out of Memory' events with a single, constant key.
- # This allows the orchestrator to group all such events that occur within
- # a specific time window.
- if event_template == 'Out of Memory: Killed process <*> (<*>).':
- keys.append('EVENT_SYSTEM_UNDER_MEMORY_PRESSURE')
+    # Part 2: System Under Memory Pressure
+    # This part identifies all 'Out of Memory' events with a single, constant key.
+    # This allows the orchestrator to group all such events that occur within
+    # a specific time window.
+    if event_template == 'Out of Memory: Killed process <*> (<*>).':
+        keys.append('EVENT_SYSTEM_UNDER_MEMORY_PRESSURE')
 
- return keys
+    return keys
 
 def rule_10_key_dimension_split_rule_when_applying_merging_rul(log: Dict) -> List[str]:
- """
- Extracts keys based on source identifiers to prevent merging events from distinct actors.
+    """
+    Extracts keys based on source identifiers to prevent merging events from distinct actors.
 
- This rule identifies "Key Source Identifiers" like IP addresses, remote hosts,
- Process Names, and PIDs. By creating unique keys for each identifier value, it ensures
- that the main orchestrator will not merge log entries that originate from different
- sources, effectively creating a "split" in the logical event stream when an
- identifier changes.
- """
- keys = []
+    This rule identifies "Key Source Identifiers" like IP addresses, remote hosts,
+    Process Names, and PIDs. By creating unique keys for each identifier value, it ensures
+    that the main orchestrator will not merge log entries that originate from different
+    sources, effectively creating a "split" in the logical event stream when an
+    identifier changes.
+    """
+    keys = []
 
- # Identifier: IP address
- ip = log.get('ip')
- if isinstance(ip, str) and ip:
- keys.append(f"IP_{ip}")
+    # Identifier: IP address
+    ip = log.get('ip')
+    if isinstance(ip, str) and ip:
+        keys.append(f"IP_{ip}")
 
- # Identifier: Remote hosts
- rhosts = log.get('rhost')
- if isinstance(rhosts, list):
- for rhost in rhosts:
- if isinstance(rhost, str) and rhost:
- keys.append(f"RHOST_{rhost}")
+    # Identifier: Remote hosts
+    rhosts = log.get('rhost')
+    if isinstance(rhosts, list):
+        for rhost in rhosts:
+            if isinstance(rhost, str) and rhost:
+                keys.append(f"RHOST_{rhost}")
 
- # Identifier: Process Name
- process_name = log.get('ProcessName')
- if isinstance(process_name, str) and process_name:
- keys.append(f"PROCESSNAME_{process_name}")
+    # Identifier: Process Name
+    process_name = log.get('ProcessName')
+    if isinstance(process_name, str) and process_name:
+        keys.append(f"PROCESSNAME_{process_name}")
 
- # Identifier: Process ID (PID)
- pid = log.get('PID')
- # PID can be 0, which is a valid ID, so we check for None explicitly.
- if pid is not None:
- keys.append(f"PID_{pid}")
+    # Identifier: Process ID (PID)
+    pid = log.get('PID')
+    # PID can be 0, which is a valid ID, so we check for None explicitly.
+    if pid is not None:
+        keys.append(f"PID_{pid}")
 
- return keys
+    return keys
 
 # ============================================================
 # PHASE 3: STATEFUL ORCHESTRATOR IMPLEMENTATION
 # ============================================================
 
 class EventProcessor:
- """
- Clusters logs into security events using a single-pass algorithm
- based on the Union-Find data structure.
- """
+    """
+    Clusters logs into security events using a single-pass algorithm
+    based on the Union-Find data structure.
+    """
 
- def __init__(self, logs: List[Dict[str, Any]]):
- """
- Initializes the EventProcessor with a list of logs.
+    def __init__(self, logs: List[Dict[str, Any]]):
+        """
+        Initializes the EventProcessor with a list of logs.
 
- Args:
- logs: A list of log dictionaries, assumed to be sorted by timestamp.
- """
- self.logs = logs
- self.num_logs = len(logs)
+        Args:
+            logs: A list of log dictionaries, assumed to be sorted by timestamp.
+        """
+        self.logs = logs
+        self.num_logs = len(logs)
 
- # Initialize Union-Find data structure
- self.parent = list(range(self.num_logs))
- self.size = [1] * self.num_logs
+        # Initialize Union-Find data structure
+        self.parent = list(range(self.num_logs))
+        self.size = [1] * self.num_logs
 
- def _find(self, i: int) -> int:
- """
- Finds the representative of the set containing element i with path compression.
- """
- if self.parent[i] == i:
- return i
- self.parent[i] = self._find(self.parent[i])
- return self.parent[i]
+    def _find(self, i: int) -> int:
+        """
+        Finds the representative of the set containing element i with path compression.
+        """
+        if self.parent[i] == i:
+            return i
+        self.parent[i] = self._find(self.parent[i])
+        return self.parent[i]
 
- def _union(self, i: int, j: int) -> None:
- """
- Merges the sets containing elements i and j using union by size.
- """
- root_i = self._find(i)
- root_j = self._find(j)
- if root_i != root_j:
- # Union by size: attach smaller tree to the root of the larger tree
- if self.size[root_i] < self.size[root_j]:
- root_i, root_j = root_j, root_i
- self.parent[root_j] = root_i
- self.size[root_i] += self.size[root_j]
+    def _union(self, i: int, j: int) -> None:
+        """
+        Merges the sets containing elements i and j using union by size.
+        """
+        root_i = self._find(i)
+        root_j = self._find(j)
+        if root_i != root_j:
+            # Union by size: attach smaller tree to the root of the larger tree
+            if self.size[root_i] < self.size[root_j]:
+                root_i, root_j = root_j, root_i
+            self.parent[root_j] = root_i
+            self.size[root_i] += self.size[root_j]
 
- def _get_time_window(self, key: str) -> datetime.timedelta:
- """
- Returns the appropriate time window for a given key prefix.
- """
- if key.startswith('IP_') or key.startswith('RHOST_'):
- return datetime.timedelta(minutes=5)
- if key.startswith('EVENT_SystemBoot'):
- return datetime.timedelta(minutes=10)
- if key.startswith('SHUTDOWN_SEQUENCE'):
- return datetime.timedelta(minutes=2)
- if key.startswith('PROCESSNAME_'):
- return datetime.timedelta(minutes=1)
- if key.startswith('PID_'):
- return datetime.timedelta(seconds=30)
- # Default window for other keys
- return datetime.timedelta(minutes=1)
+    def _get_time_window(self, key: str) -> datetime.timedelta:
+        """
+        Returns the appropriate time window for a given key prefix.
+        """
+        if key.startswith('IP_') or key.startswith('RHOST_'):
+            return datetime.timedelta(minutes=5)
+        if key.startswith('EVENT_SystemBoot'):
+            return datetime.timedelta(minutes=10)
+        if key.startswith('SHUTDOWN_SEQUENCE'):
+            return datetime.timedelta(minutes=2)
+        if key.startswith('PROCESSNAME_'):
+            return datetime.timedelta(minutes=1)
+        if key.startswith('PID_'):
+            return datetime.timedelta(seconds=30)
+        # Default window for other keys
+        return datetime.timedelta(minutes=1)
 
- def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
- """
- Performs single-pass clustering of logs into security events.
+    def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
+        """
+        Performs single-pass clustering of logs into security events.
 
- Args:
- rule_functions: A list of key extractor functions to apply to each log.
+        Args:
+            rule_functions: A list of key extractor functions to apply to each log.
 
- Returns:
- A tuple containing:
- - A list of lists, where each inner list contains the original log
- indices of a clustered event.
- - A dictionary mapping each log index to its corresponding event ID.
- """
- # State dictionary: maps a linking key to its last seen index and timestamp
- key_state: Dict[str, Dict[str, Any]] = {}
+        Returns:
+            A tuple containing:
+            - A list of lists, where each inner list contains the original log
+              indices of a clustered event.
+            - A dictionary mapping each log index to its corresponding event ID.
+        """
+        # State dictionary: maps a linking key to its last seen index and timestamp
+        key_state: Dict[str, Dict[str, Any]] = {}
 
- for i, log in enumerate(self.logs):
- current_timestamp = log.get('Timestamp')
- if not isinstance(current_timestamp, datetime.datetime):
- # Skip logs without a valid timestamp as time-based logic is central
- continue
+        for i, log in enumerate(self.logs):
+            current_timestamp = log.get('Timestamp')
+            if not isinstance(current_timestamp, datetime.datetime):
+                # Skip logs without a valid timestamp as time-based logic is central
+                continue
 
- # 1. Extract all keys for the current log using the provided rules
- all_keys = set()
- for rule_func in rule_functions:
- try:
- keys = rule_func(log)
- if keys:
- all_keys.update(keys)
- except Exception:
- # Gracefully handle potential errors in rule functions
- continue
- 
- # 2. Handle boundary conditions that reset state
- if "STATECHANGE_BOUNDARY_SUCCESSFUL_LOGIN" in all_keys:
- # This boundary resets the state for network identifiers (IP/rhost)
- # from this log, preventing merges with prior failed attempts.
- ip_key = f"IP_{log.get('ip')}" if log.get('ip') else None
- if ip_key and ip_key in key_state:
- del key_state[ip_key]
- 
- rhosts = log.get('rhost', [])
- for rhost in rhosts:
- rhost_key = f"RHOST_{rhost}"
- if rhost_key in key_state:
- del key_state[rhost_key]
+            # 1. Extract all keys for the current log using the provided rules
+            all_keys = set()
+            for rule_func in rule_functions:
+                try:
+                    keys = rule_func(log)
+                    if keys:
+                        all_keys.update(keys)
+                except Exception:
+                    # Gracefully handle potential errors in rule functions
+                    continue
+            
+            # 2. Handle boundary conditions that reset state
+            if "STATECHANGE_BOUNDARY_SUCCESSFUL_LOGIN" in all_keys:
+                # This boundary resets the state for network identifiers (IP/rhost)
+                # from this log, preventing merges with prior failed attempts.
+                ip_key = f"IP_{log.get('ip')}" if log.get('ip') else None
+                if ip_key and ip_key in key_state:
+                    del key_state[ip_key]
+                
+                rhosts = log.get('rhost', [])
+                for rhost in rhosts:
+                    rhost_key = f"RHOST_{rhost}"
+                    if rhost_key in key_state:
+                        del key_state[rhost_key]
 
- # 3. Core clustering logic
- for key in all_keys:
- if key in key_state:
- last_seen_info = key_state[key]
- last_seen_index = last_seen_info['index']
- last_seen_timestamp = last_seen_info['timestamp']
- time_window = self._get_time_window(key)
+            # 3. Core clustering logic
+            for key in all_keys:
+                if key in key_state:
+                    last_seen_info = key_state[key]
+                    last_seen_index = last_seen_info['index']
+                    last_seen_timestamp = last_seen_info['timestamp']
+                    time_window = self._get_time_window(key)
 
- # Check if the key was seen within the allowed time window
- if current_timestamp - last_seen_timestamp <= time_window:
- self._union(i, last_seen_index)
+                    # Check if the key was seen within the allowed time window
+                    if current_timestamp - last_seen_timestamp <= time_window:
+                        self._union(i, last_seen_index)
 
- # 4. Update the state for the current key
- key_state[key] = {'index': i, 'timestamp': current_timestamp}
+                # 4. Update the state for the current key
+                key_state[key] = {'index': i, 'timestamp': current_timestamp}
 
- # 5. Finalize: construct the event clusters from the Union-Find structure
- groups = collections.defaultdict(list)
- for i in range(self.num_logs):
- root = self._find(i)
- groups[root].append(i)
+        # 5. Finalize: construct the event clusters from the Union-Find structure
+        groups = collections.defaultdict(list)
+        for i in range(self.num_logs):
+            root = self._find(i)
+            groups[root].append(i)
 
- security_events: List[List[int]] = list(groups.values())
- 
- log_index_to_event_id: Dict[int, int] = {}
- for event_id, event_logs in enumerate(security_events):
- for log_index in event_logs:
- log_index_to_event_id[log_index] = event_id
+        security_events: List[List[int]] = list(groups.values())
+        
+        log_index_to_event_id: Dict[int, int] = {}
+        for event_id, event_logs in enumerate(security_events):
+            for log_index in event_logs:
+                log_index_to_event_id[log_index] = event_id
 
- return security_events, log_index_to_event_id
+        return security_events, log_index_to_event_id
+
 
 # This list is used by the host system to know which functions to pass to the processor
 ALL_RULE_FUNCTIONS = [rule_1_group_all_logs_sharing_the_exact_same_process_id_p, rule_2_logs_that_lack_a_pid_such_as_those_from_the_kernel, rule_3_merge_event_cores_rule_for_network_attackscan_afte, rule_4_boundary_rule_by_state_change_an_event_core_repres, rule_5_merge_event_cores_rule_for_system_boot_identify_a_, rule_6_merge_event_cores_rule_for_system_shutdown_identif, rule_7_state_transition_boundary_rule_for_sessions_an_eve, rule_8_merge_event_cores_rule_for_service_restart_identif, rule_9_merge_event_cores_rule_for_kernel_errors_identify_, rule_10_key_dimension_split_rule_when_applying_merging_rul]

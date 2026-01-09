@@ -12,161 +12,163 @@ from collections import defaultdict
 from typing import Dict, List, Optional
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Groups all logs sharing the exact same Process ID (PID) and ProcessName ('sshd').
- """
- process_name = log.get('ProcessName')
- pid = log.get('PID')
+    """
+    Groups all logs sharing the exact same Process ID (PID) and ProcessName ('sshd').
+    """
+    process_name = log.get('ProcessName')
+    pid = log.get('PID')
 
- # The rule requires both a specific ProcessName ('sshd') and a PID to be present.
- if process_name == 'sshd' and pid is not None:
- # Create a composite key from ProcessName and PID to link these logs.
- # The format is "TYPE1_TYPE2_value1_value2".
- key = f"PROCESSNAME_PID_{process_name}_{pid}"
- return [key]
+    # The rule requires both a specific ProcessName ('sshd') and a PID to be present.
+    if process_name == 'sshd' and pid is not None:
+        # Create a composite key from ProcessName and PID to link these logs.
+        # The format is "TYPE1_TYPE2_value1_value2".
+        key = f"PROCESSNAME_PID_{process_name}_{pid}"
+        return [key]
 
- # If the conditions are not met, return an empty list as per the contract.
- return []
+    # If the conditions are not met, return an empty list as per the contract.
+    return []
 
 from typing import Dict, List, Optional, Set
 
 def rule_2_merge_event_cores_rule_for_ssh_attack_campaign_aft(log: Dict) -> List[str]:
- """
- Identifies suspicious SSH pre-authentication activity from the 'sshd' process
- and extracts the source IP ('ip' or 'rhost') as a linking key.
- """
- # Define the specific EventTemplate IDs that indicate suspicious pre-auth activity.
- suspicious_template_ids: Set[int] = {0, 1, 2, 4, 5, 6, 7, 8, 11, 13, 14, 16}
+    """
+    Identifies suspicious SSH pre-authentication activity from the 'sshd' process
+    and extracts the source IP ('ip' or 'rhost') as a linking key.
+    """
+    # Define the specific EventTemplate IDs that indicate suspicious pre-auth activity.
+    suspicious_template_ids: Set[int] = {0, 1, 2, 4, 5, 6, 7, 8, 11, 13, 14, 16}
 
- # The rule applies only to logs from the 'sshd' process.
- if log.get('ProcessName') != 'sshd':
- return []
+    # The rule applies only to logs from the 'sshd' process.
+    if log.get('ProcessName') != 'sshd':
+        return []
 
- # The rule applies only to logs with one of the specified TemplateIDs.
- template_id = log.get('TemplateID')
- if template_id not in suspicious_template_ids:
- return []
+    # The rule applies only to logs with one of the specified TemplateIDs.
+    template_id = log.get('TemplateID')
+    if template_id not in suspicious_template_ids:
+        return []
 
- # The linking key is the source IP address.
- # Collect all potential IPs from 'ip' and 'rhost' fields to avoid duplicates.
- source_ips: Set[str] = set()
+    # The linking key is the source IP address.
+    # Collect all potential IPs from 'ip' and 'rhost' fields to avoid duplicates.
+    source_ips: Set[str] = set()
 
- # Extract IP from the 'ip' field.
- ip_val: Optional[str] = log.get('ip')
- if ip_val:
- source_ips.add(ip_val)
+    # Extract IP from the 'ip' field.
+    ip_val: Optional[str] = log.get('ip')
+    if ip_val:
+        source_ips.add(ip_val)
 
- # Extract IPs from the 'rhost' field, which is a list.
- rhost_val: Optional[List[str]] = log.get('rhost')
- if isinstance(rhost_val, list):
- for host in rhost_val:
- if host: # Ensure the host string is not empty
- source_ips.add(host)
+    # Extract IPs from the 'rhost' field, which is a list.
+    rhost_val: Optional[List[str]] = log.get('rhost')
+    if isinstance(rhost_val, list):
+        for host in rhost_val:
+            if host:  # Ensure the host string is not empty
+                source_ips.add(host)
 
- # If no IP was found, no key can be generated.
- if not source_ips:
- return []
+    # If no IP was found, no key can be generated.
+    if not source_ips:
+        return []
 
- # Format the collected IPs into the required "KEYTYPE_keyvalue" format.
- keys: List[str] = [f"IP_{ip}" for ip in source_ips]
+    # Format the collected IPs into the required "KEYTYPE_keyvalue" format.
+    keys: List[str] = [f"IP_{ip}" for ip in source_ips]
 
- return keys
+    return keys
 
 from typing import Dict, List, Optional
 
 def rule_3_boundary_rule_by_successful_login_an_event_core_in(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by Successful Login] An 'Event Core' initiated by a log with
- EventTemplate ID 18 ('pam_unix(sshd:session): session opened for user...')
- represents a successful login. This core MUST start a new, distinct
- 'Successful SSH Session' event. It must NOT be merged with any preceding
- 'SSH Attack Campaign' event, even if the Key Source Identifier is identical.
- All subsequent logs sharing the same PID as the 'session opened' log are
- part of this new session event.
- """
- # This rule triggers on a specific event: a successful session opening.
- # The key that links all subsequent events in this new session is the PID.
- if log.get('TemplateID') == 18:
- pid = log.get('PID')
- if pid is not None:
- # This PID marks the start of a new, distinct successful session.
- # The orchestrator will use this key to group subsequent logs.
- return [f"PID_{pid}"]
- 
- return []
+    """
+    [BOUNDARY Rule by Successful Login] An 'Event Core' initiated by a log with
+    EventTemplate ID 18 ('pam_unix(sshd:session): session opened for user...')
+    represents a successful login. This core MUST start a new, distinct
+    'Successful SSH Session' event. It must NOT be merged with any preceding
+    'SSH Attack Campaign' event, even if the Key Source Identifier is identical.
+    All subsequent logs sharing the same PID as the 'session opened' log are
+    part of this new session event.
+    """
+    # This rule triggers on a specific event: a successful session opening.
+    # The key that links all subsequent events in this new session is the PID.
+    if log.get('TemplateID') == 18:
+        pid = log.get('PID')
+        if pid is not None:
+            # This PID marks the start of a new, distinct successful session.
+            # The orchestrator will use this key to group subsequent logs.
+            return [f"PID_{pid}"]
+            
+    return []
 
 def rule_4_key_dimension_split_rule_event_cores_must_be_kept_(log: Dict) -> List[str]:
- """
- [KEY DIMENSION SPLIT Rule] 'Event Cores' MUST be kept in separate logical events
- if their associated Key Source Identifier (the value in the 'ip' or 'rhost' field)
- is different. This is a hard boundary ensuring that simultaneous activities
- from different actors are not incorrectly merged.
- """
- keys = []
- 
- # Extract the 'ip' field if it's a non-empty string
- ip_address = log.get('ip')
- if ip_address and isinstance(ip_address, str):
- keys.append(f"IP_{ip_address}")
- 
- # Extract from the 'rhost' field, which is expected to be a list of strings
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- keys.append(f"RHOST_{host}")
- 
- return keys
+    """
+    [KEY DIMENSION SPLIT Rule] 'Event Cores' MUST be kept in separate logical events
+    if their associated Key Source Identifier (the value in the 'ip' or 'rhost' field)
+    is different. This is a hard boundary ensuring that simultaneous activities
+    from different actors are not incorrectly merged.
+    """
+    keys = []
+    
+    # Extract the 'ip' field if it's a non-empty string
+    ip_address = log.get('ip')
+    if ip_address and isinstance(ip_address, str):
+        keys.append(f"IP_{ip_address}")
+        
+    # Extract from the 'rhost' field, which is expected to be a list of strings
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                keys.append(f"RHOST_{host}")
+                
+    return keys
 
 def rule_5_state_transition_boundary_rule_for_session_end_an_(log: dict) -> list[str]:
- """
- [STATE TRANSITION BOUNDARY Rule for Session End] An 'Event Core' containing a log that indicates a session has closed (e.g., a hypothetical 'pam_unix(sshd:session): session closed for user' log) definitively terminates the 'Successful SSH Session' event associated with that PID. This prevents unrelated, later activity from being merged into the completed session.
- """
- keys = []
- event_template = log.get('EventTemplate', '')
+    """
+    [STATE TRANSITION BOUNDARY Rule for Session End] An 'Event Core' containing a log that indicates a session has closed (e.g., a hypothetical 'pam_unix(sshd:session): session closed for user' log) definitively terminates the 'Successful SSH Session' event associated with that PID. This prevents unrelated, later activity from being merged into the completed session.
+    """
+    keys = []
+    event_template = log.get('EventTemplate', '')
 
- # The rule identifies logs indicating a session closure, specifically mentioning
- # 'pam_unix(sshd:session): session closed for user'. We'll look for these keywords.
- if 'pam_unix' in event_template and 'session closed for user' in event_template:
- # The rule states this event is linked by PID to terminate a session.
- pid = log.get('PID')
- if pid is not None:
- keys.append(f"PID_{pid}")
+    # The rule identifies logs indicating a session closure, specifically mentioning
+    # 'pam_unix(sshd:session): session closed for user'. We'll look for these keywords.
+    if 'pam_unix' in event_template and 'session closed for user' in event_template:
+        # The rule states this event is linked by PID to terminate a session.
+        pid = log.get('PID')
+        if pid is not None:
+            keys.append(f"PID_{pid}")
 
- return keys
+    return keys
 
 from typing import Dict, List
 
+
 def rule_6_timebased_boundary_rule_if_the_time_gap_between_tw(log: Dict) -> List[str]:
- """
- Extracts the Key Source Identifier for a potential SSH Attack Campaign.
+    """
+    Extracts the Key Source Identifier for a potential SSH Attack Campaign.
 
- The natural language rule describes a time-based boundary condition for grouping.
- This condition is applied by the orchestrator on groups formed by a "Key Source Identifier".
- For an SSH attack, the most common and effective source identifier is the source IP address.
- This stateless function extracts the source IP(s) from the log, which the orchestrator
- will then use for grouping and applying the time-gap logic.
- """
- found_ips = []
+    The natural language rule describes a time-based boundary condition for grouping.
+    This condition is applied by the orchestrator on groups formed by a "Key Source Identifier".
+    For an SSH attack, the most common and effective source identifier is the source IP address.
+    This stateless function extracts the source IP(s) from the log, which the orchestrator
+    will then use for grouping and applying the time-gap logic.
+    """
+    found_ips = []
 
- # Extract IP from the 'ip' field (Optional[str])
- ip_val = log.get('ip')
- if isinstance(ip_val, str) and ip_val.strip():
- found_ips.append(ip_val.strip())
+    # Extract IP from the 'ip' field (Optional[str])
+    ip_val = log.get('ip')
+    if isinstance(ip_val, str) and ip_val.strip():
+        found_ips.append(ip_val.strip())
 
- # Extract IPs from the 'rhost' field (List[str])
- rhost_val = log.get('rhost')
- if isinstance(rhost_val, list):
- for host in rhost_val:
- if isinstance(host, str) and host.strip():
- found_ips.append(host.strip())
+    # Extract IPs from the 'rhost' field (List[str])
+    rhost_val = log.get('rhost')
+    if isinstance(rhost_val, list):
+        for host in rhost_val:
+            if isinstance(host, str) and host.strip():
+                found_ips.append(host.strip())
 
- if not found_ips:
- return []
+    if not found_ips:
+        return []
 
- # Create unique keys in the required format, preserving order of first appearance.
- unique_ips = list(dict.fromkeys(found_ips))
- return [f"IP_{ip}" for ip in unique_ips]
+    # Create unique keys in the required format, preserving order of first appearance.
+    unique_ips = list(dict.fromkeys(found_ips))
+    return [f"IP_{ip}" for ip in unique_ips]
+
 
 #==============================================================================#
 # --- Stage 4: Main Event Processor Framework ---
@@ -181,294 +183,296 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 ############################################################
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Groups all logs sharing the exact same Process ID (PID) and ProcessName ('sshd').
- """
- process_name = log.get('ProcessName')
- pid = log.get('PID')
+    """
+    Groups all logs sharing the exact same Process ID (PID) and ProcessName ('sshd').
+    """
+    process_name = log.get('ProcessName')
+    pid = log.get('PID')
 
- # The rule requires both a specific ProcessName ('sshd') and a PID to be present.
- if process_name == 'sshd' and pid is not None:
- # Create a composite key from ProcessName and PID to link these logs.
- # The format is "TYPE1_TYPE2_value1_value2".
- key = f"PROCESSNAME_PID_{process_name}_{pid}"
- return [key]
+    # The rule requires both a specific ProcessName ('sshd') and a PID to be present.
+    if process_name == 'sshd' and pid is not None:
+        # Create a composite key from ProcessName and PID to link these logs.
+        # The format is "TYPE1_TYPE2_value1_value2".
+        key = f"PROCESSNAME_PID_{process_name}_{pid}"
+        return [key]
 
- # If the conditions are not met, return an empty list as per the contract.
- return []
+    # If the conditions are not met, return an empty list as per the contract.
+    return []
 
 def rule_2_merge_event_cores_rule_for_ssh_attack_campaign_aft(log: Dict) -> List[str]:
- """
- Identifies suspicious SSH pre-authentication activity from the 'sshd' process
- and extracts the source IP ('ip' or 'rhost') as a linking key.
- """
- # Define the specific EventTemplate IDs that indicate suspicious pre-auth activity.
- suspicious_template_ids: Set[int] = {0, 1, 2, 4, 5, 6, 7, 8, 11, 13, 14, 16}
+    """
+    Identifies suspicious SSH pre-authentication activity from the 'sshd' process
+    and extracts the source IP ('ip' or 'rhost') as a linking key.
+    """
+    # Define the specific EventTemplate IDs that indicate suspicious pre-auth activity.
+    suspicious_template_ids: Set[int] = {0, 1, 2, 4, 5, 6, 7, 8, 11, 13, 14, 16}
 
- # The rule applies only to logs from the 'sshd' process.
- if log.get('ProcessName') != 'sshd':
- return []
+    # The rule applies only to logs from the 'sshd' process.
+    if log.get('ProcessName') != 'sshd':
+        return []
 
- # The rule applies only to logs with one of the specified TemplateIDs.
- template_id = log.get('TemplateID')
- if template_id not in suspicious_template_ids:
- return []
+    # The rule applies only to logs with one of the specified TemplateIDs.
+    template_id = log.get('TemplateID')
+    if template_id not in suspicious_template_ids:
+        return []
 
- # The linking key is the source IP address.
- # Collect all potential IPs from 'ip' and 'rhost' fields to avoid duplicates.
- source_ips: Set[str] = set()
+    # The linking key is the source IP address.
+    # Collect all potential IPs from 'ip' and 'rhost' fields to avoid duplicates.
+    source_ips: Set[str] = set()
 
- # Extract IP from the 'ip' field.
- ip_val: Optional[str] = log.get('ip')
- if ip_val:
- source_ips.add(ip_val)
+    # Extract IP from the 'ip' field.
+    ip_val: Optional[str] = log.get('ip')
+    if ip_val:
+        source_ips.add(ip_val)
 
- # Extract IPs from the 'rhost' field, which is a list.
- rhost_val: Optional[List[str]] = log.get('rhost')
- if isinstance(rhost_val, list):
- for host in rhost_val:
- if host: # Ensure the host string is not empty
- source_ips.add(host)
+    # Extract IPs from the 'rhost' field, which is a list.
+    rhost_val: Optional[List[str]] = log.get('rhost')
+    if isinstance(rhost_val, list):
+        for host in rhost_val:
+            if host:  # Ensure the host string is not empty
+                source_ips.add(host)
 
- # If no IP was found, no key can be generated.
- if not source_ips:
- return []
+    # If no IP was found, no key can be generated.
+    if not source_ips:
+        return []
 
- # Format the collected IPs into the required "KEYTYPE_keyvalue" format.
- keys: List[str] = [f"IP_{ip}" for ip in source_ips]
+    # Format the collected IPs into the required "KEYTYPE_keyvalue" format.
+    keys: List[str] = [f"IP_{ip}" for ip in source_ips]
 
- return keys
+    return keys
 
 def rule_3_boundary_rule_by_successful_login_an_event_core_in(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by Successful Login] An 'Event Core' initiated by a log with
- EventTemplate ID 18 ('pam_unix(sshd:session): session opened for user...')
- represents a successful login. This core MUST start a new, distinct
- 'Successful SSH Session' event. It must NOT be merged with any preceding
- 'SSH Attack Campaign' event, even if the Key Source Identifier is identical.
- All subsequent logs sharing the same PID as the 'session opened' log are
- part of this new session event.
- """
- # This rule triggers on a specific event: a successful session opening.
- # The key that links all subsequent events in this new session is the PID.
- if log.get('TemplateID') == 18:
- pid = log.get('PID')
- if pid is not None:
- # This PID marks the start of a new, distinct successful session.
- # The orchestrator will use this key to group subsequent logs.
- return [f"PID_{pid}"]
- 
- return []
+    """
+    [BOUNDARY Rule by Successful Login] An 'Event Core' initiated by a log with
+    EventTemplate ID 18 ('pam_unix(sshd:session): session opened for user...')
+    represents a successful login. This core MUST start a new, distinct
+    'Successful SSH Session' event. It must NOT be merged with any preceding
+    'SSH Attack Campaign' event, even if the Key Source Identifier is identical.
+    All subsequent logs sharing the same PID as the 'session opened' log are
+    part of this new session event.
+    """
+    # This rule triggers on a specific event: a successful session opening.
+    # The key that links all subsequent events in this new session is the PID.
+    if log.get('TemplateID') == 18:
+        pid = log.get('PID')
+        if pid is not None:
+            # This PID marks the start of a new, distinct successful session.
+            # The orchestrator will use this key to group subsequent logs.
+            return [f"PID_{pid}"]
+            
+    return []
 
 def rule_4_key_dimension_split_rule_event_cores_must_be_kept_(log: Dict) -> List[str]:
- """
- [KEY DIMENSION SPLIT Rule] 'Event Cores' MUST be kept in separate logical events
- if their associated Key Source Identifier (the value in the 'ip' or 'rhost' field)
- is different. This is a hard boundary ensuring that simultaneous activities
- from different actors are not incorrectly merged.
- """
- keys = []
- 
- # Extract the 'ip' field if it's a non-empty string
- ip_address = log.get('ip')
- if ip_address and isinstance(ip_address, str):
- keys.append(f"IP_{ip_address}")
- 
- # Extract from the 'rhost' field, which is expected to be a list of strings
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- keys.append(f"RHOST_{host}")
- 
- return keys
+    """
+    [KEY DIMENSION SPLIT Rule] 'Event Cores' MUST be kept in separate logical events
+    if their associated Key Source Identifier (the value in the 'ip' or 'rhost' field)
+    is different. This is a hard boundary ensuring that simultaneous activities
+    from different actors are not incorrectly merged.
+    """
+    keys = []
+    
+    # Extract the 'ip' field if it's a non-empty string
+    ip_address = log.get('ip')
+    if ip_address and isinstance(ip_address, str):
+        keys.append(f"IP_{ip_address}")
+        
+    # Extract from the 'rhost' field, which is expected to be a list of strings
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                keys.append(f"RHOST_{host}")
+                
+    return keys
 
 def rule_5_state_transition_boundary_rule_for_session_end_an_(log: dict) -> list[str]:
- """
- [STATE TRANSITION BOUNDARY Rule for Session End] An 'Event Core' containing a log that indicates a session has closed (e.g., a hypothetical 'pam_unix(sshd:session): session closed for user' log) definitively terminates the 'Successful SSH Session' event associated with that PID. This prevents unrelated, later activity from being merged into the completed session.
- """
- keys = []
- event_template = log.get('EventTemplate', '')
+    """
+    [STATE TRANSITION BOUNDARY Rule for Session End] An 'Event Core' containing a log that indicates a session has closed (e.g., a hypothetical 'pam_unix(sshd:session): session closed for user' log) definitively terminates the 'Successful SSH Session' event associated with that PID. This prevents unrelated, later activity from being merged into the completed session.
+    """
+    keys = []
+    event_template = log.get('EventTemplate', '')
 
- # The rule identifies logs indicating a session closure, specifically mentioning
- # 'pam_unix(sshd:session): session closed for user'. We'll look for these keywords.
- if 'pam_unix' in event_template and 'session closed for user' in event_template:
- # The rule states this event is linked by PID to terminate a session.
- pid = log.get('PID')
- if pid is not None:
- keys.append(f"PID_{pid}")
+    # The rule identifies logs indicating a session closure, specifically mentioning
+    # 'pam_unix(sshd:session): session closed for user'. We'll look for these keywords.
+    if 'pam_unix' in event_template and 'session closed for user' in event_template:
+        # The rule states this event is linked by PID to terminate a session.
+        pid = log.get('PID')
+        if pid is not None:
+            keys.append(f"PID_{pid}")
 
- return keys
+    return keys
 
 def rule_6_timebased_boundary_rule_if_the_time_gap_between_tw(log: Dict) -> List[str]:
- """
- Extracts the Key Source Identifier for a potential SSH Attack Campaign.
+    """
+    Extracts the Key Source Identifier for a potential SSH Attack Campaign.
 
- The natural language rule describes a time-based boundary condition for grouping.
- This condition is applied by the orchestrator on groups formed by a "Key Source Identifier".
- For an SSH attack, the most common and effective source identifier is the source IP address.
- This stateless function extracts the source IP(s) from the log, which the orchestrator
- will then use for grouping and applying the time-gap logic.
- """
- found_ips = []
+    The natural language rule describes a time-based boundary condition for grouping.
+    This condition is applied by the orchestrator on groups formed by a "Key Source Identifier".
+    For an SSH attack, the most common and effective source identifier is the source IP address.
+    This stateless function extracts the source IP(s) from the log, which the orchestrator
+    will then use for grouping and applying the time-gap logic.
+    """
+    found_ips = []
 
- # Extract IP from the 'ip' field (Optional[str])
- ip_val = log.get('ip')
- if isinstance(ip_val, str) and ip_val.strip():
- found_ips.append(ip_val.strip())
+    # Extract IP from the 'ip' field (Optional[str])
+    ip_val = log.get('ip')
+    if isinstance(ip_val, str) and ip_val.strip():
+        found_ips.append(ip_val.strip())
 
- # Extract IPs from the 'rhost' field (List[str])
- rhost_val = log.get('rhost')
- if isinstance(rhost_val, list):
- for host in rhost_val:
- if isinstance(host, str) and host.strip():
- found_ips.append(host.strip())
+    # Extract IPs from the 'rhost' field (List[str])
+    rhost_val = log.get('rhost')
+    if isinstance(rhost_val, list):
+        for host in rhost_val:
+            if isinstance(host, str) and host.strip():
+                found_ips.append(host.strip())
 
- if not found_ips:
- return []
+    if not found_ips:
+        return []
 
- # Create unique keys in the required format, preserving order of first appearance.
- unique_ips = list(dict.fromkeys(found_ips))
- return [f"IP_{ip}" for ip in unique_ips]
+    # Create unique keys in the required format, preserving order of first appearance.
+    unique_ips = list(dict.fromkeys(found_ips))
+    return [f"IP_{ip}" for ip in unique_ips]
+
 
 ############################################################
 ### YOUR IMPLEMENTATION: THE `EventProcessor` CLASS ###
 ############################################################
 
 class EventProcessor:
- """
- Orchestrates the clustering of logs into security events using a single-pass
- approach based on the Union-Find algorithm.
- """
+    """
+    Orchestrates the clustering of logs into security events using a single-pass
+    approach based on the Union-Find algorithm.
+    """
 
- def __init__(self, logs: List[Dict]):
- """
- Initializes the EventProcessor with a list of logs.
+    def __init__(self, logs: List[Dict]):
+        """
+        Initializes the EventProcessor with a list of logs.
 
- Args:
- logs (List[Dict]): A list of log dictionaries, assumed to be
- sorted chronologically by the 'Timestamp' key.
- """
- self.logs: List[Dict] = logs
- self.n: int = len(logs)
+        Args:
+            logs (List[Dict]): A list of log dictionaries, assumed to be
+                               sorted chronologically by the 'Timestamp' key.
+        """
+        self.logs: List[Dict] = logs
+        self.n: int = len(logs)
 
- # --- Union-Find Data Structures ---
- # parent[i] holds the parent of item i
- self.parent: List[int] = list(range(self.n))
- # size[i] holds the size of the set rooted at i
- self.size: List[int] = [1] * self.n
+        # --- Union-Find Data Structures ---
+        # parent[i] holds the parent of item i
+        self.parent: List[int] = list(range(self.n))
+        # size[i] holds the size of the set rooted at i
+        self.size: List[int] = [1] * self.n
 
- # --- State-Tracking Dictionary ---
- # Maps a linking key to the last log where it was seen.
- # Format: {'key_value': {'index': int, 'timestamp': datetime}}
- self.key_state: Dict[str, Dict] = {}
+        # --- State-Tracking Dictionary ---
+        # Maps a linking key to the last log where it was seen.
+        # Format: {'key_value': {'index': int, 'timestamp': datetime}}
+        self.key_state: Dict[str, Dict] = {}
 
- # --- Time Window Configuration ---
- # Defines the maximum time gap for merging logs with the same key.
- self.time_windows: Dict[str, datetime.timedelta] = {
- 'IP': datetime.timedelta(minutes=15),
- 'RHOST': datetime.timedelta(minutes=15),
- 'PID': datetime.timedelta(hours=2),
- 'PROCESSNAME': datetime.timedelta(hours=2),
- }
- self.default_time_window: datetime.timedelta = datetime.timedelta(minutes=5)
+        # --- Time Window Configuration ---
+        # Defines the maximum time gap for merging logs with the same key.
+        self.time_windows: Dict[str, datetime.timedelta] = {
+            'IP': datetime.timedelta(minutes=15),
+            'RHOST': datetime.timedelta(minutes=15),
+            'PID': datetime.timedelta(hours=2),
+            'PROCESSNAME': datetime.timedelta(hours=2),
+        }
+        self.default_time_window: datetime.timedelta = datetime.timedelta(minutes=5)
 
- def find(self, i: int) -> int:
- """
- Finds the root of the set containing element i with path compression.
- """
- if self.parent[i] == i:
- return i
- # Path compression
- self.parent[i] = self.find(self.parent[i])
- return self.parent[i]
+    def find(self, i: int) -> int:
+        """
+        Finds the root of the set containing element i with path compression.
+        """
+        if self.parent[i] == i:
+            return i
+        # Path compression
+        self.parent[i] = self.find(self.parent[i])
+        return self.parent[i]
 
- def union(self, i: int, j: int) -> None:
- """
- Merges the sets containing elements i and j using union-by-size.
- """
- root_i = self.find(i)
- root_j = self.find(j)
- if root_i != root_j:
- # Union by size: attach smaller tree under root of larger tree
- if self.size[root_i] < self.size[root_j]:
- root_i, root_j = root_j, root_i
- self.parent[root_j] = root_i
- self.size[root_i] += self.size[root_j]
+    def union(self, i: int, j: int) -> None:
+        """
+        Merges the sets containing elements i and j using union-by-size.
+        """
+        root_i = self.find(i)
+        root_j = self.find(j)
+        if root_i != root_j:
+            # Union by size: attach smaller tree under root of larger tree
+            if self.size[root_i] < self.size[root_j]:
+                root_i, root_j = root_j, root_i
+            self.parent[root_j] = root_i
+            self.size[root_i] += self.size[root_j]
 
- def _get_time_window(self, key: str) -> datetime.timedelta:
- """
- Determines the appropriate time window for a given key based on its prefix.
- """
- # Key format is "PREFIX_value" or "PREFIX1_PREFIX2_value..."
- prefix = key.split('_')[0]
- return self.time_windows.get(prefix, self.default_time_window)
+    def _get_time_window(self, key: str) -> datetime.timedelta:
+        """
+        Determines the appropriate time window for a given key based on its prefix.
+        """
+        # Key format is "PREFIX_value" or "PREFIX1_PREFIX2_value..."
+        prefix = key.split('_')[0]
+        return self.time_windows.get(prefix, self.default_time_window)
 
- def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
- """
- Processes the logs in a single pass to cluster them into events.
+    def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
+        """
+        Processes the logs in a single pass to cluster them into events.
 
- Args:
- rule_functions (List[Callable]): A list of key extractor functions
- to be applied to each log.
+        Args:
+            rule_functions (List[Callable]): A list of key extractor functions
+                                             to be applied to each log.
 
- Returns:
- A tuple containing:
- - security_events (List[List[int]]): A list of events, where each
- event is a list of original log indices.
- - log_index_to_event_id (Dict[int, int]): A mapping from a log's
- original index to its final event ID.
- """
- # --- Single-Pass Processing ---
- for i, log in enumerate(self.logs):
- current_ts = log['Timestamp']
+        Returns:
+            A tuple containing:
+            - security_events (List[List[int]]): A list of events, where each
+              event is a list of original log indices.
+            - log_index_to_event_id (Dict[int, int]): A mapping from a log's
+              original index to its final event ID.
+        """
+        # --- Single-Pass Processing ---
+        for i, log in enumerate(self.logs):
+            current_ts = log['Timestamp']
 
- # 1. Extract all unique keys for the current log using the provided rules.
- all_keys: Set[str] = set()
- for rule_func in rule_functions:
- keys_from_rule = rule_func(log)
- if keys_from_rule:
- all_keys.update(keys_from_rule)
+            # 1. Extract all unique keys for the current log using the provided rules.
+            all_keys: Set[str] = set()
+            for rule_func in rule_functions:
+                keys_from_rule = rule_func(log)
+                if keys_from_rule:
+                    all_keys.update(keys_from_rule)
 
- # 2. Core Clustering Logic: For each key, check for a recent predecessor.
- for key in all_keys:
- if key in self.key_state:
- prev_log_info = self.key_state[key]
- prev_log_index = prev_log_info['index']
- prev_log_ts = prev_log_info['timestamp']
- 
- time_window = self._get_time_window(key)
+            # 2. Core Clustering Logic: For each key, check for a recent predecessor.
+            for key in all_keys:
+                if key in self.key_state:
+                    prev_log_info = self.key_state[key]
+                    prev_log_index = prev_log_info['index']
+                    prev_log_ts = prev_log_info['timestamp']
+                    
+                    time_window = self._get_time_window(key)
 
- # If the previous occurrence is within the time window, merge the logs.
- if current_ts - prev_log_ts <= time_window:
- self.union(i, prev_log_index)
- 
- # Always update the state to point to the current (most recent) log for this key.
- self.key_state[key] = {'index': i, 'timestamp': current_ts}
+                    # If the previous occurrence is within the time window, merge the logs.
+                    if current_ts - prev_log_ts <= time_window:
+                        self.union(i, prev_log_index)
+                
+                # Always update the state to point to the current (most recent) log for this key.
+                self.key_state[key] = {'index': i, 'timestamp': current_ts}
 
- # 3. Handle State Transition Rules (e.g., session end).
- # This invalidates a key for FUTURE use after it has been used to link the current log.
- session_end_keys = rule_5_state_transition_boundary_rule_for_session_end_an_(log)
- for end_key in session_end_keys:
- if end_key in self.key_state:
- del self.key_state[end_key]
+            # 3. Handle State Transition Rules (e.g., session end).
+            # This invalidates a key for FUTURE use after it has been used to link the current log.
+            session_end_keys = rule_5_state_transition_boundary_rule_for_session_end_an_(log)
+            for end_key in session_end_keys:
+                if end_key in self.key_state:
+                    del self.key_state[end_key]
 
- # --- Finalization ---
- # 4. Group log indices by their set's root to form final clusters.
- clusters = collections.defaultdict(list)
- for i in range(self.n):
- root = self.find(i)
- clusters[root].append(i)
+        # --- Finalization ---
+        # 4. Group log indices by their set's root to form final clusters.
+        clusters = collections.defaultdict(list)
+        for i in range(self.n):
+            root = self.find(i)
+            clusters[root].append(i)
 
- security_events: List[List[int]] = list(clusters.values())
- 
- # 5. Create the log_index -> event_id map for quick lookup.
- log_index_to_event_id: Dict[int, int] = {}
- for event_id, event_logs in enumerate(security_events):
- for log_index in event_logs:
- log_index_to_event_id[log_index] = event_id
- 
- return security_events, log_index_to_event_id
+        security_events: List[List[int]] = list(clusters.values())
+        
+        # 5. Create the log_index -> event_id map for quick lookup.
+        log_index_to_event_id: Dict[int, int] = {}
+        for event_id, event_logs in enumerate(security_events):
+            for log_index in event_logs:
+                log_index_to_event_id[log_index] = event_id
+            
+        return security_events, log_index_to_event_id
+
 
 # This list is used by the host system to know which functions to pass to the processor
 ALL_RULE_FUNCTIONS = [rule_1_group_all_logs_sharing_the_exact_same_process_id_p, rule_2_merge_event_cores_rule_for_ssh_attack_campaign_aft, rule_3_boundary_rule_by_successful_login_an_event_core_in, rule_4_key_dimension_split_rule_event_cores_must_be_kept_, rule_5_state_transition_boundary_rule_for_session_end_an_, rule_6_timebased_boundary_rule_if_the_time_gap_between_tw]

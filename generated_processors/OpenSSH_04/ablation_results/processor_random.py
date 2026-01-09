@@ -10,302 +10,304 @@ from collections import defaultdict
 #==============================================================================#
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Extracts the Process ID (PID) as a linking key.
- """
- pid = log.get('PID')
- 
- # The rule is to group by the exact same Process ID.
- # If a PID exists (is not None), it should be used as the key.
- # A PID of 0 is a valid PID for some system processes (e.g., swapper/scheduler).
- if pid is not None:
- return [f"PID_{pid}"]
- 
- # If no PID is found in the log entry, no key can be extracted based on this rule.
- return []
+    """
+    Extracts the Process ID (PID) as a linking key.
+    """
+    pid = log.get('PID')
+    
+    # The rule is to group by the exact same Process ID.
+    # If a PID exists (is not None), it should be used as the key.
+    # A PID of 0 is a valid PID for some system processes (e.g., swapper/scheduler).
+    if pid is not None:
+        return [f"PID_{pid}"]
+        
+    # If no PID is found in the log entry, no key can be extracted based on this rule.
+    return []
 
 def rule_2_if_a_unique_crossprocess_session_or_transaction_id(log: Dict) -> List[str]:
- import re
+    import re
 
- keys = []
- parameters = log.get('Parameters')
+    keys = []
+    parameters = log.get('Parameters')
 
- if not parameters or not isinstance(parameters, list):
- return []
+    if not parameters or not isinstance(parameters, list):
+        return []
 
- # Regex for full UUID match
- uuid_pattern = re.compile(
- r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
- )
+    # Regex for full UUID match
+    uuid_pattern = re.compile(
+        r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+    )
 
- # Regex to find and extract values from common session/transaction key-value pairs
- session_kv_pattern = re.compile(
- r'(?:session|sid|jsessionid|transaction(?:id)?|txid|traceid|requestid)\s*[:=]\s*([a-zA-Z0-9-]{8,})',
- re.IGNORECASE
- )
+    # Regex to find and extract values from common session/transaction key-value pairs
+    session_kv_pattern = re.compile(
+        r'(?:session|sid|jsessionid|transaction(?:id)?|txid|traceid|requestid)\s*[:=]\s*([a-zA-Z0-9-]{8,})',
+        re.IGNORECASE
+    )
 
- for param in parameters:
- if not isinstance(param, str):
- continue
+    for param in parameters:
+        if not isinstance(param, str):
+            continue
 
- # Heuristic 1: Check for explicit key-value patterns like "session=..." or "txid:..."
- # This is the most reliable indicator.
- kv_match = session_kv_pattern.search(param)
- if kv_match:
- identifier = kv_match.group(1)
- keys.append(f"SESSIONID_{identifier}")
- continue # Found a strong match, move to the next parameter
+        # Heuristic 1: Check for explicit key-value patterns like "session=..." or "txid:..."
+        # This is the most reliable indicator.
+        kv_match = session_kv_pattern.search(param)
+        if kv_match:
+            identifier = kv_match.group(1)
+            keys.append(f"SESSIONID_{identifier}")
+            continue  # Found a strong match, move to the next parameter
 
- # Heuristic 2: Check if the parameter itself is a UUID.
- if uuid_pattern.fullmatch(param):
- keys.append(f"SESSIONID_{param}")
- continue
+        # Heuristic 2: Check if the parameter itself is a UUID.
+        if uuid_pattern.fullmatch(param):
+            keys.append(f"SESSIONID_{param}")
+            continue
 
- # Heuristic 3: General check for long, mixed alphanumeric strings that are
- # likely to be identifiers. This is a fallback for unknown ID formats.
- # - Length between 10 and 64 to avoid short, ambiguous strings and overly long ones.
- # - Must contain at least one letter and one digit.
- # - Excludes common path/file characters and hex prefixes to reduce false positives.
- if 10 <= len(param) <= 64 and \
- not param.startswith('0x') and \
- '.' not in param and \
- '/' not in param and \
- '\\' not in param and \
- any(c.isalpha() for c in param) and \
- any(c.isdigit() for c in param):
- keys.append(f"SESSIONID_{param}")
+        # Heuristic 3: General check for long, mixed alphanumeric strings that are
+        # likely to be identifiers. This is a fallback for unknown ID formats.
+        # - Length between 10 and 64 to avoid short, ambiguous strings and overly long ones.
+        # - Must contain at least one letter and one digit.
+        # - Excludes common path/file characters and hex prefixes to reduce false positives.
+        if 10 <= len(param) <= 64 and \
+           not param.startswith('0x') and \
+           '.' not in param and \
+           '/' not in param and \
+           '\\' not in param and \
+           any(c.isalpha() for c in param) and \
+           any(c.isdigit() for c in param):
+            keys.append(f"SESSIONID_{param}")
 
- return list(set(keys))
+    return list(set(keys))
 
 from typing import Dict, List
 
+
 def rule_3_merge_event_cores_rule_for_ssh_bruteforcespraying_(log: Dict) -> List[str]:
- """
- Extracts the source IP ('ip' or 'rhost') as a linking key for logs
- matching SSH failed password templates (TemplateID 4 or 8).
- """
- keys = []
- 
- # This rule is specific to SSH brute-force/spraying attempt logs.
- # TemplateID 8: 'Failed password for <*> from <*>'
- # TemplateID 4: 'Failed password for invalid user <*> from <*>'
- template_id = log.get('TemplateID')
- if template_id not in [4, 8]:
- return []
+    """
+    Extracts the source IP ('ip' or 'rhost') as a linking key for logs
+    matching SSH failed password templates (TemplateID 4 or 8).
+    """
+    keys = []
+    
+    # This rule is specific to SSH brute-force/spraying attempt logs.
+    # TemplateID 8: 'Failed password for <*> from <*>'
+    # TemplateID 4: 'Failed password for invalid user <*> from <*>'
+    template_id = log.get('TemplateID')
+    if template_id not in [4, 8]:
+        return []
 
- # The rule states that the merging key is the "Key Source Identifier",
- # which is defined as the 'ip' or 'rhost' field.
- # We extract these values to allow the orchestrator to link events
- # from the same source IP, even if they have different PIDs.
+    # The rule states that the merging key is the "Key Source Identifier",
+    # which is defined as the 'ip' or 'rhost' field.
+    # We extract these values to allow the orchestrator to link events
+    # from the same source IP, even if they have different PIDs.
 
- # Extract from the 'ip' field.
- source_ip = log.get('ip')
- if source_ip and isinstance(source_ip, str):
- keys.append(f"IP_{source_ip}")
+    # Extract from the 'ip' field.
+    source_ip = log.get('ip')
+    if source_ip and isinstance(source_ip, str):
+        keys.append(f"IP_{source_ip}")
 
- # Extract from the 'rhost' field, which is a list of hosts/IPs.
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- # The key type 'IP' is used for consistency, as 'rhost' in this
- # context typically contains the source IP address.
- keys.append(f"IP_{host}")
+    # Extract from the 'rhost' field, which is a list of hosts/IPs.
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                # The key type 'IP' is used for consistency, as 'rhost' in this
+                # context typically contains the source IP address.
+                keys.append(f"IP_{host}")
 
- # Return a unique list of keys, as 'ip' and 'rhost' could potentially
- # contain the same value for a single log entry.
- return list(set(keys))
+    # Return a unique list of keys, as 'ip' and 'rhost' could potentially
+    # contain the same value for a single log entry.
+    return list(set(keys))
 
 from typing import Dict, List, Optional
 
 def rule_4_merge_event_cores_rule_for_user_enumeration_identi(log: Dict) -> List[str]:
- """
- Identifies logs related to SSH user enumeration attempts and extracts the source IP
- address as a linking key.
+    """
+    Identifies logs related to SSH user enumeration attempts and extracts the source IP
+    address as a linking key.
 
- This rule targets logs with specific TemplateIDs (1, 2, 3) which correspond to
- 'Invalid user', 'input_userauth_request: invalid user', and 'pam_unix: user unknown'.
- The linking key is the source IP address, found in either the 'ip' or 'rhost' fields.
- """
- # The rule applies only to logs with specific TemplateIDs.
- relevant_template_ids = {1, 2, 3}
- if log.get('TemplateID') not in relevant_template_ids:
- return []
+    This rule targets logs with specific TemplateIDs (1, 2, 3) which correspond to
+    'Invalid user', 'input_userauth_request: invalid user', and 'pam_unix: user unknown'.
+    The linking key is the source IP address, found in either the 'ip' or 'rhost' fields.
+    """
+    # The rule applies only to logs with specific TemplateIDs.
+    relevant_template_ids = {1, 2, 3}
+    if log.get('TemplateID') not in relevant_template_ids:
+        return []
 
- keys = set()
- 
- # The linking key is the source IP, which can be in 'ip' or 'rhost'.
- 
- # Extract from 'ip' field
- ip_address = log.get('ip')
- if ip_address and isinstance(ip_address, str):
- keys.add(f"IP_{ip_address}")
- 
- # Extract from 'rhost' field, which is a list
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- keys.add(f"IP_{host}")
+    keys = set()
+    
+    # The linking key is the source IP, which can be in 'ip' or 'rhost'.
+    
+    # Extract from 'ip' field
+    ip_address = log.get('ip')
+    if ip_address and isinstance(ip_address, str):
+        keys.add(f"IP_{ip_address}")
+        
+    # Extract from 'rhost' field, which is a list
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                keys.add(f"IP_{host}")
 
- return list(keys)
+    return list(keys)
 
 from typing import Dict, List, Optional
 
 def rule_5_merge_event_cores_rule_for_connection_scanning_ide(log: Dict) -> List[str]:
- """
- Identifies logs related to SSH connection scanning based on specific TemplateIDs
- and extracts the source IP ('ip' or 'rhost') as the linking key.
- """
- # Target TemplateIDs for connection scanning events
- target_template_ids = {5, 6, 13}
+    """
+    Identifies logs related to SSH connection scanning based on specific TemplateIDs
+    and extracts the source IP ('ip' or 'rhost') as the linking key.
+    """
+    # Target TemplateIDs for connection scanning events
+    target_template_ids = {5, 6, 13}
 
- log_template_id = log.get('TemplateID')
+    log_template_id = log.get('TemplateID')
 
- # If the log's template is not one of the targets, do nothing.
- if log_template_id not in target_template_ids:
- return []
+    # If the log's template is not one of the targets, do nothing.
+    if log_template_id not in target_template_ids:
+        return []
 
- keys = set()
+    keys = set()
 
- # The rule specifies 'ip' or 'rhost' as the Key Source Identifier.
- # Extract the IP from the 'ip' field if it exists.
- ip_addr = log.get('ip')
- if ip_addr and isinstance(ip_addr, str):
- keys.add(f"IP_{ip_addr}")
+    # The rule specifies 'ip' or 'rhost' as the Key Source Identifier.
+    # Extract the IP from the 'ip' field if it exists.
+    ip_addr = log.get('ip')
+    if ip_addr and isinstance(ip_addr, str):
+        keys.add(f"IP_{ip_addr}")
 
- # Extract IPs from the 'rhost' field, which is a list.
- rhosts = log.get('rhost')
- if rhosts and isinstance(rhosts, list):
- for host in rhosts:
- if isinstance(host, str):
- keys.add(f"IP_{host}")
+    # Extract IPs from the 'rhost' field, which is a list.
+    rhosts = log.get('rhost')
+    if rhosts and isinstance(rhosts, list):
+        for host in rhosts:
+            if isinstance(host, str):
+                keys.add(f"IP_{host}")
 
- return list(keys)
+    return list(keys)
 
 from typing import Dict, List, Optional
 
 def rule_6_boundary_rule_by_state_change_successful_login_an_(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by State Change: Successful Login] An 'Event Core' containing a
- 'pam_unix(sshd:session): session opened for user' log (TemplateID 18) establishes
- a definitive boundary. This core represents a 'Successful SSH Session' and must not
- be merged with any preceding 'SSH Authentication Attack' or 'User Enumeration' events,
- even if they share the same Key Source Identifier and user. It marks the end of the
- attack phase and the beginning of a new, distinct session event.
- """
- # This rule identifies a specific log event (TemplateID 18) as a boundary marker.
- if log.get('TemplateID') == 18:
- # The user for whom the session is opened is a crucial piece of information
- # for the orchestrator to correctly apply the boundary.
- parameters = log.get('Parameters')
- if parameters and isinstance(parameters, list) and len(parameters) > 0:
- user = parameters[0]
- # The key explicitly marks this as a boundary event for a specific user.
- # The orchestrator will use this special key to segment event clusters.
- return [f"BOUNDARY_SUCCESSFUL_LOGIN_USER_{user}"]
- 
- # If the log does not match the specific boundary condition, return no keys.
- return []
+    """
+    [BOUNDARY Rule by State Change: Successful Login] An 'Event Core' containing a
+    'pam_unix(sshd:session): session opened for user' log (TemplateID 18) establishes
+    a definitive boundary. This core represents a 'Successful SSH Session' and must not
+    be merged with any preceding 'SSH Authentication Attack' or 'User Enumeration' events,
+    even if they share the same Key Source Identifier and user. It marks the end of the
+    attack phase and the beginning of a new, distinct session event.
+    """
+    # This rule identifies a specific log event (TemplateID 18) as a boundary marker.
+    if log.get('TemplateID') == 18:
+        # The user for whom the session is opened is a crucial piece of information
+        # for the orchestrator to correctly apply the boundary.
+        parameters = log.get('Parameters')
+        if parameters and isinstance(parameters, list) and len(parameters) > 0:
+            user = parameters[0]
+            # The key explicitly marks this as a boundary event for a specific user.
+            # The orchestrator will use this special key to segment event clusters.
+            return [f"BOUNDARY_SUCCESSFUL_LOGIN_USER_{user}"]
+            
+    # If the log does not match the specific boundary condition, return no keys.
+    return []
 
 def rule_7_key_dimension_split_rule_event_cores_must_not_be_m(log: dict) -> list:
- keys = set()
+    keys = set()
 
- # Extract the source IP from the 'ip' field (Optional[str])
- ip_address = log.get('ip')
- if ip_address and isinstance(ip_address, str):
- keys.add(f"IP_{ip_address}")
+    # Extract the source IP from the 'ip' field (Optional[str])
+    ip_address = log.get('ip')
+    if ip_address and isinstance(ip_address, str):
+        keys.add(f"IP_{ip_address}")
 
- # Extract source IP(s) from the 'rhost' field (List[str])
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- keys.add(f"IP_{host}")
+    # Extract source IP(s) from the 'rhost' field (List[str])
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                keys.add(f"IP_{host}")
 
- return list(keys)
+    return list(keys)
 
 from typing import Dict, List, Optional
 
 def rule_8_state_transition_boundary_rule_max_failures_an_eve(log: Dict) -> List[str]:
- """
- [STATE TRANSITION BOUNDARY Rule: Max Failures] An 'Event Core' containing a
- 'Disconnecting: Too many authentication failures for <*> [preauth]' log
- (TemplateID 10) marks the explicit termination of a single connection attempt.
- This core should be merged with its preceding failures based on PID, and it
- serves as the concluding sequence for that specific connection within a larger
- 'SSH Authentication Attack' event.
- """
- # Check if the log entry matches the specific template for "Too many authentication failures"
- if log.get('TemplateID') == 10:
- # The rule specifies linking based on PID.
- pid = log.get('PID')
- if pid is not None:
- # If a PID is found, create the linking key.
- return [f"PID_{pid}"]
- 
- # If the log does not match the rule, return an empty list.
- return []
+    """
+    [STATE TRANSITION BOUNDARY Rule: Max Failures] An 'Event Core' containing a
+    'Disconnecting: Too many authentication failures for <*> [preauth]' log
+    (TemplateID 10) marks the explicit termination of a single connection attempt.
+    This core should be merged with its preceding failures based on PID, and it
+    serves as the concluding sequence for that specific connection within a larger
+    'SSH Authentication Attack' event.
+    """
+    # Check if the log entry matches the specific template for "Too many authentication failures"
+    if log.get('TemplateID') == 10:
+        # The rule specifies linking based on PID.
+        pid = log.get('PID')
+        if pid is not None:
+            # If a PID is found, create the linking key.
+            return [f"PID_{pid}"]
+            
+    # If the log does not match the rule, return an empty list.
+    return []
 
 from typing import Dict, List, Optional
 
 def rule_9_special_handling_rule_repeated_messages_a_log_with(log: Dict) -> List[str]:
- """
- [SPECIAL HANDLING Rule: Repeated Messages] A log with the template 'message repeated <*> times: [ Failed password for <*> from <*> ...]' (TemplateID 9) should be associated with the ongoing 'SSH Authentication Attack' event for the specified user and Key Source Identifier. The repetition count must be extracted and used to represent the true volume of the attack within the single merged event.
- """
- # This rule applies only to logs with TemplateID 9.
- if log.get('TemplateID') != 9:
- return []
+    """
+    [SPECIAL HANDLING Rule: Repeated Messages] A log with the template 'message repeated <*> times: [ Failed password for <*> from <*> ...]' (TemplateID 9) should be associated with the ongoing 'SSH Authentication Attack' event for the specified user and Key Source Identifier. The repetition count must be extracted and used to represent the true volume of the attack within the single merged event.
+    """
+    # This rule applies only to logs with TemplateID 9.
+    if log.get('TemplateID') != 9:
+        return []
 
- keys = []
- params = log.get('Parameters')
+    keys = []
+    params = log.get('Parameters')
 
- # The expected template is 'message repeated <*> times: [ Failed password for <*> from <*> ...]'
- # The corresponding parameters are expected to be: [repetition_count, user, source_identifier]
- if isinstance(params, list) and len(params) >= 3:
- # The user is the second parameter (index 1).
- user = params[1]
- # The Key Source Identifier (IP/hostname) is the third parameter (index 2).
- source_identifier = params[2]
+    # The expected template is 'message repeated <*> times: [ Failed password for <*> from <*> ...]'
+    # The corresponding parameters are expected to be: [repetition_count, user, source_identifier]
+    if isinstance(params, list) and len(params) >= 3:
+        # The user is the second parameter (index 1).
+        user = params[1]
+        # The Key Source Identifier (IP/hostname) is the third parameter (index 2).
+        source_identifier = params[2]
 
- # Create keys that will link this "repeated message" log to the original
- # "Failed password" event stream. The orchestrator will use these keys
- # to associate this log with the correct ongoing attack event.
- if user:
- keys.append(f"USER_{user}")
- if source_identifier:
- # Assuming the source identifier is an IP address, as is common.
- keys.append(f"IP_{source_identifier}")
+        # Create keys that will link this "repeated message" log to the original
+        # "Failed password" event stream. The orchestrator will use these keys
+        # to associate this log with the correct ongoing attack event.
+        if user:
+            keys.append(f"USER_{user}")
+        if source_identifier:
+            # Assuming the source identifier is an IP address, as is common.
+            keys.append(f"IP_{source_identifier}")
 
- return keys
+    return keys
 
 from typing import Dict, List, Optional
 
 def rule_10_contextual_enrichment_rule_dns_mismatch_logs_with_(log: Dict) -> List[str]:
- """
- Extracts the PID as a linking key for specific DNS mismatch logs.
+    """
+    Extracts the PID as a linking key for specific DNS mismatch logs.
 
- This rule identifies logs related to DNS reverse mapping failures (TemplateID 0 or 25).
- These logs are considered contextual enrichment for other events. The function extracts
- the Process ID (PID) to link this enrichment data to the core connection event
- that shares the same PID.
+    This rule identifies logs related to DNS reverse mapping failures (TemplateID 0 or 25).
+    These logs are considered contextual enrichment for other events. The function extracts
+    the Process ID (PID) to link this enrichment data to the core connection event
+    that shares the same PID.
 
- Args:
- log: A dictionary representing a single log entry.
+    Args:
+        log: A dictionary representing a single log entry.
 
- Returns:
- A list containing the formatted PID key (e.g., ["PID_12345"]) if the log
- matches the specified TemplateIDs and has a PID, otherwise an empty list.
- """
- keys = []
- template_id = log.get('TemplateID')
+    Returns:
+        A list containing the formatted PID key (e.g., ["PID_12345"]) if the log
+        matches the specified TemplateIDs and has a PID, otherwise an empty list.
+    """
+    keys = []
+    template_id = log.get('TemplateID')
 
- if template_id in [0, 25]:
- pid: Optional[int] = log.get('PID')
- if pid is not None:
- keys.append(f"PID_{pid}")
+    if template_id in [0, 25]:
+        pid: Optional[int] = log.get('PID')
+        if pid is not None:
+            keys.append(f"PID_{pid}")
 
- return keys
+    return keys
+
 
 #==============================================================================#
 # --- Stage 4: Main Event Processor Framework ---
@@ -321,431 +323,432 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 ############################################################
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Extracts the Process ID (PID) as a linking key.
- """
- pid = log.get('PID')
- 
- # The rule is to group by the exact same Process ID.
- # If a PID exists (is not None), it should be used as the key.
- # A PID of 0 is a valid PID for some system processes (e.g., swapper/scheduler).
- if pid is not None:
- return [f"PID_{pid}"]
- 
- # If no PID is found in the log entry, no key can be extracted based on this rule.
- return []
+    """
+    Extracts the Process ID (PID) as a linking key.
+    """
+    pid = log.get('PID')
+    
+    # The rule is to group by the exact same Process ID.
+    # If a PID exists (is not None), it should be used as the key.
+    # A PID of 0 is a valid PID for some system processes (e.g., swapper/scheduler).
+    if pid is not None:
+        return [f"PID_{pid}"]
+        
+    # If no PID is found in the log entry, no key can be extracted based on this rule.
+    return []
 
 def rule_2_if_a_unique_crossprocess_session_or_transaction_id(log: Dict) -> List[str]:
- import re
+    import re
 
- keys = []
- parameters = log.get('Parameters')
+    keys = []
+    parameters = log.get('Parameters')
 
- if not parameters or not isinstance(parameters, list):
- return []
+    if not parameters or not isinstance(parameters, list):
+        return []
 
- # Regex for full UUID match
- uuid_pattern = re.compile(
- r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
- )
+    # Regex for full UUID match
+    uuid_pattern = re.compile(
+        r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+    )
 
- # Regex to find and extract values from common session/transaction key-value pairs
- session_kv_pattern = re.compile(
- r'(?:session|sid|jsessionid|transaction(?:id)?|txid|traceid|requestid)\s*[:=]\s*([a-zA-Z0-9-]{8,})',
- re.IGNORECASE
- )
+    # Regex to find and extract values from common session/transaction key-value pairs
+    session_kv_pattern = re.compile(
+        r'(?:session|sid|jsessionid|transaction(?:id)?|txid|traceid|requestid)\s*[:=]\s*([a-zA-Z0-9-]{8,})',
+        re.IGNORECASE
+    )
 
- for param in parameters:
- if not isinstance(param, str):
- continue
+    for param in parameters:
+        if not isinstance(param, str):
+            continue
 
- # Heuristic 1: Check for explicit key-value patterns like "session=..." or "txid:..."
- # This is the most reliable indicator.
- kv_match = session_kv_pattern.search(param)
- if kv_match:
- identifier = kv_match.group(1)
- keys.append(f"SESSIONID_{identifier}")
- continue # Found a strong match, move to the next parameter
+        # Heuristic 1: Check for explicit key-value patterns like "session=..." or "txid:..."
+        # This is the most reliable indicator.
+        kv_match = session_kv_pattern.search(param)
+        if kv_match:
+            identifier = kv_match.group(1)
+            keys.append(f"SESSIONID_{identifier}")
+            continue  # Found a strong match, move to the next parameter
 
- # Heuristic 2: Check if the parameter itself is a UUID.
- if uuid_pattern.fullmatch(param):
- keys.append(f"SESSIONID_{param}")
- continue
+        # Heuristic 2: Check if the parameter itself is a UUID.
+        if uuid_pattern.fullmatch(param):
+            keys.append(f"SESSIONID_{param}")
+            continue
 
- # Heuristic 3: General check for long, mixed alphanumeric strings that are
- # likely to be identifiers. This is a fallback for unknown ID formats.
- # - Length between 10 and 64 to avoid short, ambiguous strings and overly long ones.
- # - Must contain at least one letter and one digit.
- # - Excludes common path/file characters and hex prefixes to reduce false positives.
- if 10 <= len(param) <= 64 and \
- not param.startswith('0x') and \
- '.' not in param and \
- '/' not in param and \
- '\\' not in param and \
- any(c.isalpha() for c in param) and \
- any(c.isdigit() for c in param):
- keys.append(f"SESSIONID_{param}")
+        # Heuristic 3: General check for long, mixed alphanumeric strings that are
+        # likely to be identifiers. This is a fallback for unknown ID formats.
+        # - Length between 10 and 64 to avoid short, ambiguous strings and overly long ones.
+        # - Must contain at least one letter and one digit.
+        # - Excludes common path/file characters and hex prefixes to reduce false positives.
+        if 10 <= len(param) <= 64 and \
+           not param.startswith('0x') and \
+           '.' not in param and \
+           '/' not in param and \
+           '\\' not in param and \
+           any(c.isalpha() for c in param) and \
+           any(c.isdigit() for c in param):
+            keys.append(f"SESSIONID_{param}")
 
- return list(set(keys))
+    return list(set(keys))
 
 def rule_3_merge_event_cores_rule_for_ssh_bruteforcespraying_(log: Dict) -> List[str]:
- """
- Extracts the source IP ('ip' or 'rhost') as a linking key for logs
- matching SSH failed password templates (TemplateID 4 or 8).
- """
- keys = []
- 
- # This rule is specific to SSH brute-force/spraying attempt logs.
- # TemplateID 8: 'Failed password for <*> from <*>'
- # TemplateID 4: 'Failed password for invalid user <*> from <*>'
- template_id = log.get('TemplateID')
- if template_id not in [4, 8]:
- return []
+    """
+    Extracts the source IP ('ip' or 'rhost') as a linking key for logs
+    matching SSH failed password templates (TemplateID 4 or 8).
+    """
+    keys = []
+    
+    # This rule is specific to SSH brute-force/spraying attempt logs.
+    # TemplateID 8: 'Failed password for <*> from <*>'
+    # TemplateID 4: 'Failed password for invalid user <*> from <*>'
+    template_id = log.get('TemplateID')
+    if template_id not in [4, 8]:
+        return []
 
- # The rule states that the merging key is the "Key Source Identifier",
- # which is defined as the 'ip' or 'rhost' field.
- # We extract these values to allow the orchestrator to link events
- # from the same source IP, even if they have different PIDs.
+    # The rule states that the merging key is the "Key Source Identifier",
+    # which is defined as the 'ip' or 'rhost' field.
+    # We extract these values to allow the orchestrator to link events
+    # from the same source IP, even if they have different PIDs.
 
- # Extract from the 'ip' field.
- source_ip = log.get('ip')
- if source_ip and isinstance(source_ip, str):
- keys.append(f"IP_{source_ip}")
+    # Extract from the 'ip' field.
+    source_ip = log.get('ip')
+    if source_ip and isinstance(source_ip, str):
+        keys.append(f"IP_{source_ip}")
 
- # Extract from the 'rhost' field, which is a list of hosts/IPs.
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- # The key type 'IP' is used for consistency, as 'rhost' in this
- # context typically contains the source IP address.
- keys.append(f"IP_{host}")
+    # Extract from the 'rhost' field, which is a list of hosts/IPs.
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                # The key type 'IP' is used for consistency, as 'rhost' in this
+                # context typically contains the source IP address.
+                keys.append(f"IP_{host}")
 
- # Return a unique list of keys, as 'ip' and 'rhost' could potentially
- # contain the same value for a single log entry.
- return list(set(keys))
+    # Return a unique list of keys, as 'ip' and 'rhost' could potentially
+    # contain the same value for a single log entry.
+    return list(set(keys))
 
 def rule_4_merge_event_cores_rule_for_user_enumeration_identi(log: Dict) -> List[str]:
- """
- Identifies logs related to SSH user enumeration attempts and extracts the source IP
- address as a linking key.
+    """
+    Identifies logs related to SSH user enumeration attempts and extracts the source IP
+    address as a linking key.
 
- This rule targets logs with specific TemplateIDs (1, 2, 3) which correspond to
- 'Invalid user', 'input_userauth_request: invalid user', and 'pam_unix: user unknown'.
- The linking key is the source IP address, found in either the 'ip' or 'rhost' fields.
- """
- # The rule applies only to logs with specific TemplateIDs.
- relevant_template_ids = {1, 2, 3}
- if log.get('TemplateID') not in relevant_template_ids:
- return []
+    This rule targets logs with specific TemplateIDs (1, 2, 3) which correspond to
+    'Invalid user', 'input_userauth_request: invalid user', and 'pam_unix: user unknown'.
+    The linking key is the source IP address, found in either the 'ip' or 'rhost' fields.
+    """
+    # The rule applies only to logs with specific TemplateIDs.
+    relevant_template_ids = {1, 2, 3}
+    if log.get('TemplateID') not in relevant_template_ids:
+        return []
 
- keys = set()
- 
- # The linking key is the source IP, which can be in 'ip' or 'rhost'.
- 
- # Extract from 'ip' field
- ip_address = log.get('ip')
- if ip_address and isinstance(ip_address, str):
- keys.add(f"IP_{ip_address}")
- 
- # Extract from 'rhost' field, which is a list
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- keys.add(f"IP_{host}")
+    keys = set()
+    
+    # The linking key is the source IP, which can be in 'ip' or 'rhost'.
+    
+    # Extract from 'ip' field
+    ip_address = log.get('ip')
+    if ip_address and isinstance(ip_address, str):
+        keys.add(f"IP_{ip_address}")
+        
+    # Extract from 'rhost' field, which is a list
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                keys.add(f"IP_{host}")
 
- return list(keys)
+    return list(keys)
 
 def rule_5_merge_event_cores_rule_for_connection_scanning_ide(log: Dict) -> List[str]:
- """
- Identifies logs related to SSH connection scanning based on specific TemplateIDs
- and extracts the source IP ('ip' or 'rhost') as the linking key.
- """
- # Target TemplateIDs for connection scanning events
- target_template_ids = {5, 6, 13}
+    """
+    Identifies logs related to SSH connection scanning based on specific TemplateIDs
+    and extracts the source IP ('ip' or 'rhost') as the linking key.
+    """
+    # Target TemplateIDs for connection scanning events
+    target_template_ids = {5, 6, 13}
 
- log_template_id = log.get('TemplateID')
+    log_template_id = log.get('TemplateID')
 
- # If the log's template is not one of the targets, do nothing.
- if log_template_id not in target_template_ids:
- return []
+    # If the log's template is not one of the targets, do nothing.
+    if log_template_id not in target_template_ids:
+        return []
 
- keys = set()
+    keys = set()
 
- # The rule specifies 'ip' or 'rhost' as the Key Source Identifier.
- # Extract the IP from the 'ip' field if it exists.
- ip_addr = log.get('ip')
- if ip_addr and isinstance(ip_addr, str):
- keys.add(f"IP_{ip_addr}")
+    # The rule specifies 'ip' or 'rhost' as the Key Source Identifier.
+    # Extract the IP from the 'ip' field if it exists.
+    ip_addr = log.get('ip')
+    if ip_addr and isinstance(ip_addr, str):
+        keys.add(f"IP_{ip_addr}")
 
- # Extract IPs from the 'rhost' field, which is a list.
- rhosts = log.get('rhost')
- if rhosts and isinstance(rhosts, list):
- for host in rhosts:
- if isinstance(host, str):
- keys.add(f"IP_{host}")
+    # Extract IPs from the 'rhost' field, which is a list.
+    rhosts = log.get('rhost')
+    if rhosts and isinstance(rhosts, list):
+        for host in rhosts:
+            if isinstance(host, str):
+                keys.add(f"IP_{host}")
 
- return list(keys)
+    return list(keys)
 
 def rule_6_boundary_rule_by_state_change_successful_login_an_(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by State Change: Successful Login] An 'Event Core' containing a
- 'pam_unix(sshd:session): session opened for user' log (TemplateID 18) establishes
- a definitive boundary. This core represents a 'Successful SSH Session' and must not
- be merged with any preceding 'SSH Authentication Attack' or 'User Enumeration' events,
- even if they share the same Key Source Identifier and user. It marks the end of the
- attack phase and the beginning of a new, distinct session event.
- """
- # This rule identifies a specific log event (TemplateID 18) as a boundary marker.
- if log.get('TemplateID') == 18:
- # The user for whom the session is opened is a crucial piece of information
- # for the orchestrator to correctly apply the boundary.
- parameters = log.get('Parameters')
- if parameters and isinstance(parameters, list) and len(parameters) > 0:
- user = parameters[0]
- # The key explicitly marks this as a boundary event for a specific user.
- # The orchestrator will use this special key to segment event clusters.
- return [f"BOUNDARY_SUCCESSFUL_LOGIN_USER_{user}"]
- 
- # If the log does not match the specific boundary condition, return no keys.
- return []
+    """
+    [BOUNDARY Rule by State Change: Successful Login] An 'Event Core' containing a
+    'pam_unix(sshd:session): session opened for user' log (TemplateID 18) establishes
+    a definitive boundary. This core represents a 'Successful SSH Session' and must not
+    be merged with any preceding 'SSH Authentication Attack' or 'User Enumeration' events,
+    even if they share the same Key Source Identifier and user. It marks the end of the
+    attack phase and the beginning of a new, distinct session event.
+    """
+    # This rule identifies a specific log event (TemplateID 18) as a boundary marker.
+    if log.get('TemplateID') == 18:
+        # The user for whom the session is opened is a crucial piece of information
+        # for the orchestrator to correctly apply the boundary.
+        parameters = log.get('Parameters')
+        if parameters and isinstance(parameters, list) and len(parameters) > 0:
+            user = parameters[0]
+            # The key explicitly marks this as a boundary event for a specific user.
+            # The orchestrator will use this special key to segment event clusters.
+            return [f"BOUNDARY_SUCCESSFUL_LOGIN_USER_{user}"]
+            
+    # If the log does not match the specific boundary condition, return no keys.
+    return []
 
 def rule_7_key_dimension_split_rule_event_cores_must_not_be_m(log: dict) -> list:
- keys = set()
+    keys = set()
 
- # Extract the source IP from the 'ip' field (Optional[str])
- ip_address = log.get('ip')
- if ip_address and isinstance(ip_address, str):
- keys.add(f"IP_{ip_address}")
+    # Extract the source IP from the 'ip' field (Optional[str])
+    ip_address = log.get('ip')
+    if ip_address and isinstance(ip_address, str):
+        keys.add(f"IP_{ip_address}")
 
- # Extract source IP(s) from the 'rhost' field (List[str])
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for host in remote_hosts:
- if host and isinstance(host, str):
- keys.add(f"IP_{host}")
+    # Extract source IP(s) from the 'rhost' field (List[str])
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for host in remote_hosts:
+            if host and isinstance(host, str):
+                keys.add(f"IP_{host}")
 
- return list(keys)
+    return list(keys)
 
 def rule_8_state_transition_boundary_rule_max_failures_an_eve(log: Dict) -> List[str]:
- """
- [STATE TRANSITION BOUNDARY Rule: Max Failures] An 'Event Core' containing a
- 'Disconnecting: Too many authentication failures for <*> [preauth]' log
- (TemplateID 10) marks the explicit termination of a single connection attempt.
- This core should be merged with its preceding failures based on PID, and it
- serves as the concluding sequence for that specific connection within a larger
- 'SSH Authentication Attack' event.
- """
- # Check if the log entry matches the specific template for "Too many authentication failures"
- if log.get('TemplateID') == 10:
- # The rule specifies linking based on PID.
- pid = log.get('PID')
- if pid is not None:
- # If a PID is found, create the linking key.
- return [f"PID_{pid}"]
- 
- # If the log does not match the rule, return an empty list.
- return []
+    """
+    [STATE TRANSITION BOUNDARY Rule: Max Failures] An 'Event Core' containing a
+    'Disconnecting: Too many authentication failures for <*> [preauth]' log
+    (TemplateID 10) marks the explicit termination of a single connection attempt.
+    This core should be merged with its preceding failures based on PID, and it
+    serves as the concluding sequence for that specific connection within a larger
+    'SSH Authentication Attack' event.
+    """
+    # Check if the log entry matches the specific template for "Too many authentication failures"
+    if log.get('TemplateID') == 10:
+        # The rule specifies linking based on PID.
+        pid = log.get('PID')
+        if pid is not None:
+            # If a PID is found, create the linking key.
+            return [f"PID_{pid}"]
+            
+    # If the log does not match the rule, return an empty list.
+    return []
 
 def rule_9_special_handling_rule_repeated_messages_a_log_with(log: Dict) -> List[str]:
- """
- [SPECIAL HANDLING Rule: Repeated Messages] A log with the template 'message repeated <*> times: [ Failed password for <*> from <*> ...]' (TemplateID 9) should be associated with the ongoing 'SSH Authentication Attack' event for the specified user and Key Source Identifier. The repetition count must be extracted and used to represent the true volume of the attack within the single merged event.
- """
- # This rule applies only to logs with TemplateID 9.
- if log.get('TemplateID') != 9:
- return []
+    """
+    [SPECIAL HANDLING Rule: Repeated Messages] A log with the template 'message repeated <*> times: [ Failed password for <*> from <*> ...]' (TemplateID 9) should be associated with the ongoing 'SSH Authentication Attack' event for the specified user and Key Source Identifier. The repetition count must be extracted and used to represent the true volume of the attack within the single merged event.
+    """
+    # This rule applies only to logs with TemplateID 9.
+    if log.get('TemplateID') != 9:
+        return []
 
- keys = []
- params = log.get('Parameters')
+    keys = []
+    params = log.get('Parameters')
 
- # The expected template is 'message repeated <*> times: [ Failed password for <*> from <*> ...]'
- # The corresponding parameters are expected to be: [repetition_count, user, source_identifier]
- if isinstance(params, list) and len(params) >= 3:
- # The user is the second parameter (index 1).
- user = params[1]
- # The Key Source Identifier (IP/hostname) is the third parameter (index 2).
- source_identifier = params[2]
+    # The expected template is 'message repeated <*> times: [ Failed password for <*> from <*> ...]'
+    # The corresponding parameters are expected to be: [repetition_count, user, source_identifier]
+    if isinstance(params, list) and len(params) >= 3:
+        # The user is the second parameter (index 1).
+        user = params[1]
+        # The Key Source Identifier (IP/hostname) is the third parameter (index 2).
+        source_identifier = params[2]
 
- # Create keys that will link this "repeated message" log to the original
- # "Failed password" event stream. The orchestrator will use these keys
- # to associate this log with the correct ongoing attack event.
- if user:
- keys.append(f"USER_{user}")
- if source_identifier:
- # Assuming the source identifier is an IP address, as is common.
- keys.append(f"IP_{source_identifier}")
+        # Create keys that will link this "repeated message" log to the original
+        # "Failed password" event stream. The orchestrator will use these keys
+        # to associate this log with the correct ongoing attack event.
+        if user:
+            keys.append(f"USER_{user}")
+        if source_identifier:
+            # Assuming the source identifier is an IP address, as is common.
+            keys.append(f"IP_{source_identifier}")
 
- return keys
+    return keys
 
 def rule_10_contextual_enrichment_rule_dns_mismatch_logs_with_(log: Dict) -> List[str]:
- """
- Extracts the PID as a linking key for specific DNS mismatch logs.
+    """
+    Extracts the PID as a linking key for specific DNS mismatch logs.
 
- This rule identifies logs related to DNS reverse mapping failures (TemplateID 0 or 25).
- These logs are considered contextual enrichment for other events. The function extracts
- the Process ID (PID) to link this enrichment data to the core connection event
- that shares the same PID.
+    This rule identifies logs related to DNS reverse mapping failures (TemplateID 0 or 25).
+    These logs are considered contextual enrichment for other events. The function extracts
+    the Process ID (PID) to link this enrichment data to the core connection event
+    that shares the same PID.
 
- Args:
- log: A dictionary representing a single log entry.
+    Args:
+        log: A dictionary representing a single log entry.
 
- Returns:
- A list containing the formatted PID key (e.g., ["PID_12345"]) if the log
- matches the specified TemplateIDs and has a PID, otherwise an empty list.
- """
- keys = []
- template_id = log.get('TemplateID')
+    Returns:
+        A list containing the formatted PID key (e.g., ["PID_12345"]) if the log
+        matches the specified TemplateIDs and has a PID, otherwise an empty list.
+    """
+    keys = []
+    template_id = log.get('TemplateID')
 
- if template_id in [0, 25]:
- pid: Optional[int] = log.get('PID')
- if pid is not None:
- keys.append(f"PID_{pid}")
+    if template_id in [0, 25]:
+        pid: Optional[int] = log.get('PID')
+        if pid is not None:
+            keys.append(f"PID_{pid}")
 
- return keys
+    return keys
 
 ############################################################
 ### YOUR IMPLEMENTATION OF THE `EventProcessor` CLASS ###
 ############################################################
 
 class EventProcessor:
- """
- Orchestrates the clustering of logs into security events using a single-pass
- approach with a Union-Find data structure.
- """
+    """
+    Orchestrates the clustering of logs into security events using a single-pass
+    approach with a Union-Find data structure.
+    """
 
- def __init__(self, logs: List[Dict]):
- """
- Initializes the EventProcessor with a list of logs.
+    def __init__(self, logs: List[Dict]):
+        """
+        Initializes the EventProcessor with a list of logs.
 
- Args:
- logs: A list of log dictionaries to be processed.
- """
- self.logs = logs
- self.num_logs = len(logs)
- 
- # Prepare logs for processing: sort chronologically and track original indices
- indexed_logs = sorted(
- (log, i) for i, log in enumerate(self.logs)
- if isinstance(log.get('Timestamp'), datetime.datetime)
- )
- 
- self.sorted_logs: List[Dict] = [log for log, i in indexed_logs]
- self.original_indices: List[int] = [i for log, i in indexed_logs]
- self.sorted_num_logs = len(self.sorted_logs)
+        Args:
+            logs: A list of log dictionaries to be processed.
+        """
+        self.logs = logs
+        self.num_logs = len(logs)
+        
+        # Prepare logs for processing: sort chronologically and track original indices
+        indexed_logs = sorted(
+            (log, i) for i, log in enumerate(self.logs)
+            if isinstance(log.get('Timestamp'), datetime.datetime)
+        )
+        
+        self.sorted_logs: List[Dict] = [log for log, i in indexed_logs]
+        self.original_indices: List[int] = [i for log, i in indexed_logs]
+        self.sorted_num_logs = len(self.sorted_logs)
 
- # Initialize Union-Find data structure
- self.parent: List[int] = list(range(self.sorted_num_logs))
- self.size: List[int] = [1] * self.sorted_num_logs
+        # Initialize Union-Find data structure
+        self.parent: List[int] = list(range(self.sorted_num_logs))
+        self.size: List[int] = [1] * self.sorted_num_logs
 
- # Define time windows for different key types
- self.time_windows: Dict[str, datetime.timedelta] = {
- 'PID_': datetime.timedelta(minutes=5),
- 'SESSIONID_': datetime.timedelta(hours=2),
- 'IP_': datetime.timedelta(minutes=30),
- 'USER_': datetime.timedelta(minutes=30),
- 'DEFAULT': datetime.timedelta(minutes=10)
- }
+        # Define time windows for different key types
+        self.time_windows: Dict[str, datetime.timedelta] = {
+            'PID_': datetime.timedelta(minutes=5),
+            'SESSIONID_': datetime.timedelta(hours=2),
+            'IP_': datetime.timedelta(minutes=30),
+            'USER_': datetime.timedelta(minutes=30),
+            'DEFAULT': datetime.timedelta(minutes=10)
+        }
 
- def _get_time_window(self, key: str) -> datetime.timedelta:
- """Gets the appropriate time window for a given linking key."""
- for prefix, window in self.time_windows.items():
- if prefix != 'DEFAULT' and key.startswith(prefix):
- return window
- return self.time_windows['DEFAULT']
+    def _get_time_window(self, key: str) -> datetime.timedelta:
+        """Gets the appropriate time window for a given linking key."""
+        for prefix, window in self.time_windows.items():
+            if prefix != 'DEFAULT' and key.startswith(prefix):
+                return window
+        return self.time_windows['DEFAULT']
 
- def find(self, i: int) -> int:
- """Finds the root of the set containing element i with path compression."""
- if self.parent[i] == i:
- return i
- self.parent[i] = self.find(self.parent[i])
- return self.parent[i]
+    def find(self, i: int) -> int:
+        """Finds the root of the set containing element i with path compression."""
+        if self.parent[i] == i:
+            return i
+        self.parent[i] = self.find(self.parent[i])
+        return self.parent[i]
 
- def union(self, i: int, j: int):
- """Merges the sets containing elements i and j using union-by-size."""
- root_i = self.find(i)
- root_j = self.find(j)
- if root_i != root_j:
- if self.size[root_i] < self.size[root_j]:
- root_i, root_j = root_j, root_i
- self.parent[root_j] = root_i
- self.size[root_i] += self.size[root_j]
+    def union(self, i: int, j: int):
+        """Merges the sets containing elements i and j using union-by-size."""
+        root_i = self.find(i)
+        root_j = self.find(j)
+        if root_i != root_j:
+            if self.size[root_i] < self.size[root_j]:
+                root_i, root_j = root_j, root_i
+            self.parent[root_j] = root_i
+            self.size[root_i] += self.size[root_j]
 
- def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
- """
- Clusters logs into events based on rules and time windows.
+    def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
+        """
+        Clusters logs into events based on rules and time windows.
 
- Args:
- rule_functions: A list of key extractor functions.
+        Args:
+            rule_functions: A list of key extractor functions.
 
- Returns:
- A tuple containing:
- - A list of events, where each event is a list of original log indices.
- - A dictionary mapping each original log index to its event ID.
- """
- # State tracking: maps a linking key to the last log index and timestamp
- key_state: Dict[str, Dict[str, Any]] = {}
+        Returns:
+            A tuple containing:
+            - A list of events, where each event is a list of original log indices.
+            - A dictionary mapping each original log index to its event ID.
+        """
+        # State tracking: maps a linking key to the last log index and timestamp
+        key_state: Dict[str, Dict[str, Any]] = {}
 
- # Single-pass processing over chronologically sorted logs
- for i in range(self.sorted_num_logs):
- current_log = self.sorted_logs[i]
- current_ts = current_log['Timestamp']
+        # Single-pass processing over chronologically sorted logs
+        for i in range(self.sorted_num_logs):
+            current_log = self.sorted_logs[i]
+            current_ts = current_log['Timestamp']
 
- # Extract all unique keys for the current log
- all_keys = set()
- for func in rule_functions:
- try:
- all_keys.update(func(current_log))
- except Exception:
- # Gracefully handle potential errors in rule functions
- continue
+            # Extract all unique keys for the current log
+            all_keys = set()
+            for func in rule_functions:
+                try:
+                    all_keys.update(func(current_log))
+                except Exception:
+                    # Gracefully handle potential errors in rule functions
+                    continue
 
- # Separate boundary keys from linking keys
- boundary_keys = {k for k in all_keys if k.startswith('BOUNDARY_')}
- linking_keys = all_keys - boundary_keys
+            # Separate boundary keys from linking keys
+            boundary_keys = {k for k in all_keys if k.startswith('BOUNDARY_')}
+            linking_keys = all_keys - boundary_keys
 
- # If a boundary key is present, it resets the state for all other
- # linking keys in this log, preventing merges with past events.
- if boundary_keys:
- for key in linking_keys:
- if key in key_state:
- del key_state[key]
+            # If a boundary key is present, it resets the state for all other
+            # linking keys in this log, preventing merges with past events.
+            if boundary_keys:
+                for key in linking_keys:
+                    if key in key_state:
+                        del key_state[key]
 
- # Core clustering logic: union based on linking keys within time windows
- for key in linking_keys:
- if key in key_state:
- last_seen_info = key_state[key]
- last_seen_index = last_seen_info['index']
- last_seen_ts = last_seen_info['timestamp']
- time_window = self._get_time_window(key)
+            # Core clustering logic: union based on linking keys within time windows
+            for key in linking_keys:
+                if key in key_state:
+                    last_seen_info = key_state[key]
+                    last_seen_index = last_seen_info['index']
+                    last_seen_ts = last_seen_info['timestamp']
+                    time_window = self._get_time_window(key)
 
- if current_ts - last_seen_ts <= time_window:
- self.union(i, last_seen_index)
+                    if current_ts - last_seen_ts <= time_window:
+                        self.union(i, last_seen_index)
 
- # Always update the state to the current log's info
- key_state[key] = {'index': i, 'timestamp': current_ts}
+                # Always update the state to the current log's info
+                key_state[key] = {'index': i, 'timestamp': current_ts}
 
- # Finalization: construct the output from the Union-Find structure
- clusters = collections.defaultdict(list)
- for i in range(self.sorted_num_logs):
- root = self.find(i)
- original_log_index = self.original_indices[i]
- clusters[root].append(original_log_index)
+        # Finalization: construct the output from the Union-Find structure
+        clusters = collections.defaultdict(list)
+        for i in range(self.sorted_num_logs):
+            root = self.find(i)
+            original_log_index = self.original_indices[i]
+            clusters[root].append(original_log_index)
 
- # Create the final list of events, sorting logs within each event
- # by their original index for deterministic and readable output.
- security_events = []
- for root in clusters:
- event_logs = sorted(clusters[root])
- security_events.append(event_logs)
+        # Create the final list of events, sorting logs within each event
+        # by their original index for deterministic and readable output.
+        security_events = []
+        for root in clusters:
+            event_logs = sorted(clusters[root])
+            security_events.append(event_logs)
 
- # Create the mapping from original log index to the final event ID
- log_index_to_event_id = {}
- for event_id, event_logs in enumerate(security_events):
- for log_idx in event_logs:
- log_index_to_event_id[log_idx] = event_id
+        # Create the mapping from original log index to the final event ID
+        log_index_to_event_id = {}
+        for event_id, event_logs in enumerate(security_events):
+            for log_idx in event_logs:
+                log_index_to_event_id[log_idx] = event_id
 
- return security_events, log_index_to_event_id
+        return security_events, log_index_to_event_id
+
 
 # This list is used by the host system to know which functions to pass to the processor
 ALL_RULE_FUNCTIONS = [rule_1_group_all_logs_sharing_the_exact_same_process_id_p, rule_2_if_a_unique_crossprocess_session_or_transaction_id, rule_3_merge_event_cores_rule_for_ssh_bruteforcespraying_, rule_4_merge_event_cores_rule_for_user_enumeration_identi, rule_5_merge_event_cores_rule_for_connection_scanning_ide, rule_6_boundary_rule_by_state_change_successful_login_an_, rule_7_key_dimension_split_rule_event_cores_must_not_be_m, rule_8_state_transition_boundary_rule_max_failures_an_eve, rule_9_special_handling_rule_repeated_messages_a_log_with, rule_10_contextual_enrichment_rule_dns_mismatch_logs_with_]

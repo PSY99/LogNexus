@@ -12,230 +12,231 @@ from collections import defaultdict
 from typing import Dict, List, Optional
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Extracts a composite key from the Process ID (PID) and ProcessName.
+    """
+    Extracts a composite key from the Process ID (PID) and ProcessName.
 
- This rule groups all logs sharing the exact same PID and ProcessName
- into a foundational 'Event Core'. This grouping is absolute for a given
- process lifecycle.
+    This rule groups all logs sharing the exact same PID and ProcessName
+    into a foundational 'Event Core'. This grouping is absolute for a given
+    process lifecycle.
 
- Args:
- log: A dictionary representing a single log entry.
+    Args:
+        log: A dictionary representing a single log entry.
 
- Returns:
- A list containing a single composite key "PID_PROCESSNAME_{pid}_{process_name}"
- if both PID and ProcessName are present, otherwise an empty list.
- """
- pid: Optional[int] = log.get('PID')
- process_name: Optional[str] = log.get('ProcessName')
+    Returns:
+        A list containing a single composite key "PID_PROCESSNAME_{pid}_{process_name}"
+        if both PID and ProcessName are present, otherwise an empty list.
+    """
+    pid: Optional[int] = log.get('PID')
+    process_name: Optional[str] = log.get('ProcessName')
 
- # Both PID and a non-empty ProcessName must exist to form the key.
- # The check `if pid is not None and process_name:` handles cases where
- # PID is 0 (a valid PID) and ProcessName is an empty string.
- if pid is not None and process_name:
- # Create a composite key as per the rule's requirement.
- return [f"PID_PROCESSNAME_{pid}_{process_name}"]
+    # Both PID and a non-empty ProcessName must exist to form the key.
+    # The check `if pid is not None and process_name:` handles cases where
+    # PID is 0 (a valid PID) and ProcessName is an empty string.
+    if pid is not None and process_name:
+        # Create a composite key as per the rule's requirement.
+        return [f"PID_PROCESSNAME_{pid}_{process_name}"]
 
- return []
+    return []
 
 from typing import Dict, List, Optional, Set
 
 def rule_2_merge_event_cores_rule_for_ssh_bruteforcescanning_(log: Dict) -> List[str]:
- """
- Identifies SSH authentication failure logs and extracts the source IP
- address ('ip' or 'rhost') as a linking key. This allows merging
- brute-force/scanning attempts from the same source, even if they
- span different processes (PIDs).
- """
- # TemplateIDs identified as SSH authentication failures in the rule.
- ssh_failure_template_ids: Set[int] = {1, 4, 7, 8}
- 
- keys: List[str] = []
- 
- template_id: Optional[int] = log.get('TemplateID')
- 
- # Check if the log entry matches the specified SSH failure templates.
- if template_id in ssh_failure_template_ids:
- source_ips: Set[str] = set()
- 
- # Extract the source IP from the 'ip' field.
- ip_address: Optional[str] = log.get('ip')
- if ip_address:
- source_ips.add(ip_address)
- 
- # Extract source IPs from the 'rhost' field, which is a list.
- remote_hosts: Optional[List[str]] = log.get('rhost')
- if remote_hosts:
- for rhost_ip in remote_hosts:
- if rhost_ip: # Ensure the string is not empty
- source_ips.add(rhost_ip)
- 
- # Create a linking key for each unique source IP found.
- for ip in source_ips:
- keys.append(f"IP_{ip}")
- 
- return keys
+    """
+    Identifies SSH authentication failure logs and extracts the source IP
+    address ('ip' or 'rhost') as a linking key. This allows merging
+    brute-force/scanning attempts from the same source, even if they
+    span different processes (PIDs).
+    """
+    # TemplateIDs identified as SSH authentication failures in the rule.
+    ssh_failure_template_ids: Set[int] = {1, 4, 7, 8}
+    
+    keys: List[str] = []
+    
+    template_id: Optional[int] = log.get('TemplateID')
+    
+    # Check if the log entry matches the specified SSH failure templates.
+    if template_id in ssh_failure_template_ids:
+        source_ips: Set[str] = set()
+        
+        # Extract the source IP from the 'ip' field.
+        ip_address: Optional[str] = log.get('ip')
+        if ip_address:
+            source_ips.add(ip_address)
+            
+        # Extract source IPs from the 'rhost' field, which is a list.
+        remote_hosts: Optional[List[str]] = log.get('rhost')
+        if remote_hosts:
+            for rhost_ip in remote_hosts:
+                if rhost_ip:  # Ensure the string is not empty
+                    source_ips.add(rhost_ip)
+        
+        # Create a linking key for each unique source IP found.
+        for ip in source_ips:
+            keys.append(f"IP_{ip}")
+            
+    return keys
 
 from typing import Dict, List, Optional
 
 def rule_3_merge_event_cores_rule_for_connection_context_merg(log: Dict) -> List[str]:
- """
- Extracts the IP address as a linking key for generic connection lifecycle logs.
- """
- # These TemplateIDs represent generic connection lifecycle events (e.g., connection open/close).
- connection_lifecycle_template_ids = {0, 5, 6, 14, 15, 16, 22}
+    """
+    Extracts the IP address as a linking key for generic connection lifecycle logs.
+    """
+    # These TemplateIDs represent generic connection lifecycle events (e.g., connection open/close).
+    connection_lifecycle_template_ids = {0, 5, 6, 14, 15, 16, 22}
 
- template_id = log.get('TemplateID')
- 
- # The rule applies only to logs matching the specified TemplateIDs.
- if template_id in connection_lifecycle_template_ids:
- # The linking key is the 'ip' field.
- ip_address = log.get('ip')
- if ip_address:
- # Return the key in the format "KEYTYPE_keyvalue".
- return [f"IP_{ip_address}"]
- 
- # If the log does not match the criteria, return an empty list.
- return []
+    template_id = log.get('TemplateID')
+    
+    # The rule applies only to logs matching the specified TemplateIDs.
+    if template_id in connection_lifecycle_template_ids:
+        # The linking key is the 'ip' field.
+        ip_address = log.get('ip')
+        if ip_address:
+            # Return the key in the format "KEYTYPE_keyvalue".
+            return [f"IP_{ip_address}"]
+            
+    # If the log does not match the criteria, return an empty list.
+    return []
 
 from typing import Dict, List, Optional
 
 def rule_4_merge_event_cores_rule_for_orphaned_internal_logs_(log: Dict) -> List[str]:
- """
- Extracts the Process ID (PID) as a linking key for all logs originating
- from the 'sshd' process. This key allows a stateful orchestrator to
- group all related sshd events and identify internal, "orphaned" logs
- that are temporally sandwiched between logs with external identifiers.
- """
- keys = []
- process_name = log.get('ProcessName')
- pid = log.get('PID')
+    """
+    Extracts the Process ID (PID) as a linking key for all logs originating
+    from the 'sshd' process. This key allows a stateful orchestrator to
+    group all related sshd events and identify internal, "orphaned" logs
+    that are temporally sandwiched between logs with external identifiers.
+    """
+    keys = []
+    process_name = log.get('ProcessName')
+    pid = log.get('PID')
 
- # The rule's logic requires grouping all events from a single sshd
- # process instance to check for temporal relationships. The PID is the
- # most reliable identifier for a single process instance. By extracting
- # the PID from *all* sshd logs, we provide the necessary key for the
- # orchestrator to group them and apply the stateful "sandwich" logic.
- if process_name == 'sshd' and pid is not None:
- keys.append(f"PID_{pid}")
+    # The rule's logic requires grouping all events from a single sshd
+    # process instance to check for temporal relationships. The PID is the
+    # most reliable identifier for a single process instance. By extracting
+    # the PID from *all* sshd logs, we provide the necessary key for the
+    # orchestrator to group them and apply the stateful "sandwich" logic.
+    if process_name == 'sshd' and pid is not None:
+        keys.append(f"PID_{pid}")
 
- return keys
+    return keys
 
 def rule_5_boundary_rule_by_state_change__success_an_event_co(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by State Change - Success] An 'Event Core' representing a successful login
- (e.g., containing logs with templates like 'Accepted password for <user> from <ip>' or
- 'session opened for user <user>') acts as a hard boundary. Do NOT merge this success
- core with any preceding 'SSH Brute-Force/Scanning' event, even from the same source IP.
- The successful login starts a new, distinct 'Successful SSH Session' event.
- """
- keys = []
- event_template = log.get('EventTemplate')
+    """
+    [BOUNDARY Rule by State Change - Success] An 'Event Core' representing a successful login
+    (e.g., containing logs with templates like 'Accepted password for <user> from <ip>' or
+    'session opened for user <user>') acts as a hard boundary. Do NOT merge this success
+    core with any preceding 'SSH Brute-Force/Scanning' event, even from the same source IP.
+    The successful login starts a new, distinct 'Successful SSH Session' event.
+    """
+    keys = []
+    event_template = log.get('EventTemplate')
 
- if not event_template:
- return []
+    if not event_template:
+        return []
 
- # Define substrings that indicate a successful SSH login based on the rule's examples.
- success_indicators = [
- 'Accepted password for',
- 'session opened for user'
- ]
+    # Define substrings that indicate a successful SSH login based on the rule's examples.
+    success_indicators = [
+        'Accepted password for',
+        'session opened for user'
+    ]
 
- is_success_event = any(indicator in event_template for indicator in success_indicators)
+    is_success_event = any(indicator in event_template for indicator in success_indicators)
 
- if is_success_event:
- # A successful login creates a boundary. This key signals to the orchestrator
- # to start a new event group and not merge with previous ones from the same IP.
+    if is_success_event:
+        # A successful login creates a boundary. This key signals to the orchestrator
+        # to start a new event group and not merge with previous ones from the same IP.
 
- # Prioritize the 'ip' field for the source address.
- ip_address = log.get('ip')
+        # Prioritize the 'ip' field for the source address.
+        ip_address = log.get('ip')
 
- # Fallback to 'rhost' if 'ip' is not available.
- if not ip_address:
- rhosts = log.get('rhost')
- if isinstance(rhosts, list) and rhosts:
- ip_address = rhosts[0]
+        # Fallback to 'rhost' if 'ip' is not available.
+        if not ip_address:
+            rhosts = log.get('rhost')
+            if isinstance(rhosts, list) and rhosts:
+                ip_address = rhosts[0]
 
- if ip_address:
- # Create a specific boundary key tied to the source IP.
- # Format: BOUNDARY_SUCCESS_IP_<ip_address>
- keys.append(f"BOUNDARY_SUCCESS_IP_{ip_address}")
+        if ip_address:
+            # Create a specific boundary key tied to the source IP.
+            # Format: BOUNDARY_SUCCESS_IP_<ip_address>
+            keys.append(f"BOUNDARY_SUCCESS_IP_{ip_address}")
 
- return keys
+    return keys
 
 from typing import Dict, List, Optional
 
 def rule_6_boundary_rule_by_timeout_cease_merging_event_cores(log: Dict) -> List[str]:
- """
- Extracts the "Key Source Identifier" for the timeout boundary rule.
+    """
+    Extracts the "Key Source Identifier" for the timeout boundary rule.
 
- This rule is about creating a new event if a log from the same source
- arrives after a long pause. The "Key Source Identifier" is what defines
- the "same source". For network-based events like SSH brute-force, the
- source IP address is the most reliable identifier. This function extracts
- any source IP addresses found in the log. The orchestrator will use this
- key to manage the timeout state.
- """
- keys = set()
+    This rule is about creating a new event if a log from the same source
+    arrives after a long pause. The "Key Source Identifier" is what defines
+    the "same source". For network-based events like SSH brute-force, the
+    source IP address is the most reliable identifier. This function extracts
+    any source IP addresses found in the log. The orchestrator will use this
+    key to manage the timeout state.
+    """
+    keys = set()
 
- # The 'ip' field is a common source identifier.
- source_ip = log.get('ip')
- if source_ip and isinstance(source_ip, str):
- keys.add(f"IP_{source_ip}")
+    # The 'ip' field is a common source identifier.
+    source_ip = log.get('ip')
+    if source_ip and isinstance(source_ip, str):
+        keys.add(f"IP_{source_ip}")
 
- # The 'rhost' (remote host) field is also a list of source IPs, common in SSH logs.
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for rhost_ip in remote_hosts:
- if rhost_ip and isinstance(rhost_ip, str):
- keys.add(f"IP_{rhost_ip}")
+    # The 'rhost' (remote host) field is also a list of source IPs, common in SSH logs.
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for rhost_ip in remote_hosts:
+            if rhost_ip and isinstance(rhost_ip, str):
+                keys.add(f"IP_{rhost_ip}")
 
- return list(keys)
+    return list(keys)
 
 from typing import Dict, List
 
 def rule_7_key_dimension_split_rule_event_cores_with_differen(log: Dict) -> List[str]:
- """
- [KEY DIMENSION SPLIT Rule] Event Cores with different Key Source Identifiers (the 'ip' field)
- must always belong to separate logical events. Each unique source IP represents a distinct
- actor and a separate event stream.
- """
- source_ip = log.get('ip')
+    """
+    [KEY DIMENSION SPLIT Rule] Event Cores with different Key Source Identifiers (the 'ip' field)
+    must always belong to separate logical events. Each unique source IP represents a distinct
+    actor and a separate event stream.
+    """
+    source_ip = log.get('ip')
 
- # Check if source_ip is a non-empty string.
- if source_ip and isinstance(source_ip, str):
- # Create the key in the format "KEYTYPE_keyvalue".
- return [f"IP_{source_ip}"]
+    # Check if source_ip is a non-empty string.
+    if source_ip and isinstance(source_ip, str):
+        # Create the key in the format "KEYTYPE_keyvalue".
+        return [f"IP_{source_ip}"]
 
- # If no valid 'ip' field is found, return an empty list.
- return []
+    # If no valid 'ip' field is found, return an empty list.
+    return []
 
 from typing import Dict, List, Optional
 
 def rule_8_boundary_rule_by_session_termination_an_event_core(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by Session Termination] An 'Event Core' containing a log that indicates a clear
- post-authentication session finalization (e.g., an inferred 'session closed for user' template)
- marks the definitive end for the logical 'Successful SSH Session' event associated with that
- session's PID. It should not be merged with subsequent, new connection attempts from the same user/IP.
- """
- # Templates that signify a session has definitively ended.
- # The '<*>' is a common placeholder for parameters in log templates.
- session_termination_templates = {
- "session closed for user <*>",
- "pam_unix(sshd:session): session closed for user <*>"
- }
+    """
+    [BOUNDARY Rule by Session Termination] An 'Event Core' containing a log that indicates a clear
+    post-authentication session finalization (e.g., an inferred 'session closed for user' template)
+    marks the definitive end for the logical 'Successful SSH Session' event associated with that
+    session's PID. It should not be merged with subsequent, new connection attempts from the same user/IP.
+    """
+    # Templates that signify a session has definitively ended.
+    # The '<*>' is a common placeholder for parameters in log templates.
+    session_termination_templates = {
+        "session closed for user <*>",
+        "pam_unix(sshd:session): session closed for user <*>"
+    }
 
- event_template = log.get('EventTemplate')
- pid = log.get('PID')
+    event_template = log.get('EventTemplate')
+    pid = log.get('PID')
 
- # Check if the log's template indicates session termination and a PID is present.
- if event_template in session_termination_templates and pid is not None:
- # The PID is the key that links the session start and end.
- # This key will be used by the orchestrator to mark the boundary.
- return [f"PID_{pid}"]
+    # Check if the log's template indicates session termination and a PID is present.
+    if event_template in session_termination_templates and pid is not None:
+        # The PID is the key that links the session start and end.
+        # This key will be used by the orchestrator to mark the boundary.
+        return [f"PID_{pid}"]
 
- return []
+    return []
+
 
 #==============================================================================#
 # --- Stage 4: Main Event Processor Framework ---
@@ -250,370 +251,372 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 ############################################################
 
 def rule_1_group_all_logs_sharing_the_exact_same_process_id_p(log: Dict) -> List[str]:
- """
- Extracts a composite key from the Process ID (PID) and ProcessName.
+    """
+    Extracts a composite key from the Process ID (PID) and ProcessName.
 
- This rule groups all logs sharing the exact same PID and ProcessName
- into a foundational 'Event Core'. This grouping is absolute for a given
- process lifecycle.
+    This rule groups all logs sharing the exact same PID and ProcessName
+    into a foundational 'Event Core'. This grouping is absolute for a given
+    process lifecycle.
 
- Args:
- log: A dictionary representing a single log entry.
+    Args:
+        log: A dictionary representing a single log entry.
 
- Returns:
- A list containing a single composite key "PID_PROCESSNAME_{pid}_{process_name}"
- if both PID and ProcessName are present, otherwise an empty list.
- """
- pid: Optional[int] = log.get('PID')
- process_name: Optional[str] = log.get('ProcessName')
+    Returns:
+        A list containing a single composite key "PID_PROCESSNAME_{pid}_{process_name}"
+        if both PID and ProcessName are present, otherwise an empty list.
+    """
+    pid: Optional[int] = log.get('PID')
+    process_name: Optional[str] = log.get('ProcessName')
 
- # Both PID and a non-empty ProcessName must exist to form the key.
- # The check `if pid is not None and process_name:` handles cases where
- # PID is 0 (a valid PID) and ProcessName is an empty string.
- if pid is not None and process_name:
- # Create a composite key as per the rule's requirement.
- return [f"PID_PROCESSNAME_{pid}_{process_name}"]
+    # Both PID and a non-empty ProcessName must exist to form the key.
+    # The check `if pid is not None and process_name:` handles cases where
+    # PID is 0 (a valid PID) and ProcessName is an empty string.
+    if pid is not None and process_name:
+        # Create a composite key as per the rule's requirement.
+        return [f"PID_PROCESSNAME_{pid}_{process_name}"]
 
- return []
+    return []
 
 def rule_2_merge_event_cores_rule_for_ssh_bruteforcescanning_(log: Dict) -> List[str]:
- """
- Identifies SSH authentication failure logs and extracts the source IP
- address ('ip' or 'rhost') as a linking key. This allows merging
- brute-force/scanning attempts from the same source, even if they
- span different processes (PIDs).
- """
- # TemplateIDs identified as SSH authentication failures in the rule.
- ssh_failure_template_ids: Set[int] = {1, 4, 7, 8}
- 
- keys: List[str] = []
- 
- template_id: Optional[int] = log.get('TemplateID')
- 
- # Check if the log entry matches the specified SSH failure templates.
- if template_id in ssh_failure_template_ids:
- source_ips: Set[str] = set()
- 
- # Extract the source IP from the 'ip' field.
- ip_address: Optional[str] = log.get('ip')
- if ip_address:
- source_ips.add(ip_address)
- 
- # Extract source IPs from the 'rhost' field, which is a list.
- remote_hosts: Optional[List[str]] = log.get('rhost')
- if remote_hosts:
- for rhost_ip in remote_hosts:
- if rhost_ip: # Ensure the string is not empty
- source_ips.add(rhost_ip)
- 
- # Create a linking key for each unique source IP found.
- for ip in source_ips:
- keys.append(f"IP_{ip}")
- 
- return keys
+    """
+    Identifies SSH authentication failure logs and extracts the source IP
+    address ('ip' or 'rhost') as a linking key. This allows merging
+    brute-force/scanning attempts from the same source, even if they
+    span different processes (PIDs).
+    """
+    # TemplateIDs identified as SSH authentication failures in the rule.
+    ssh_failure_template_ids: Set[int] = {1, 4, 7, 8}
+    
+    keys: List[str] = []
+    
+    template_id: Optional[int] = log.get('TemplateID')
+    
+    # Check if the log entry matches the specified SSH failure templates.
+    if template_id in ssh_failure_template_ids:
+        source_ips: Set[str] = set()
+        
+        # Extract the source IP from the 'ip' field.
+        ip_address: Optional[str] = log.get('ip')
+        if ip_address:
+            source_ips.add(ip_address)
+            
+        # Extract source IPs from the 'rhost' field, which is a list.
+        remote_hosts: Optional[List[str]] = log.get('rhost')
+        if remote_hosts:
+            for rhost_ip in remote_hosts:
+                if rhost_ip:  # Ensure the string is not empty
+                    source_ips.add(rhost_ip)
+        
+        # Create a linking key for each unique source IP found.
+        for ip in source_ips:
+            keys.append(f"IP_{ip}")
+            
+    return keys
 
 def rule_3_merge_event_cores_rule_for_connection_context_merg(log: Dict) -> List[str]:
- """
- Extracts the IP address as a linking key for generic connection lifecycle logs.
- """
- # These TemplateIDs represent generic connection lifecycle events (e.g., connection open/close).
- connection_lifecycle_template_ids = {0, 5, 6, 14, 15, 16, 22}
+    """
+    Extracts the IP address as a linking key for generic connection lifecycle logs.
+    """
+    # These TemplateIDs represent generic connection lifecycle events (e.g., connection open/close).
+    connection_lifecycle_template_ids = {0, 5, 6, 14, 15, 16, 22}
 
- template_id = log.get('TemplateID')
- 
- # The rule applies only to logs matching the specified TemplateIDs.
- if template_id in connection_lifecycle_template_ids:
- # The linking key is the 'ip' field.
- ip_address = log.get('ip')
- if ip_address:
- # Return the key in the format "KEYTYPE_keyvalue".
- return [f"IP_{ip_address}"]
- 
- # If the log does not match the criteria, return an empty list.
- return []
+    template_id = log.get('TemplateID')
+    
+    # The rule applies only to logs matching the specified TemplateIDs.
+    if template_id in connection_lifecycle_template_ids:
+        # The linking key is the 'ip' field.
+        ip_address = log.get('ip')
+        if ip_address:
+            # Return the key in the format "KEYTYPE_keyvalue".
+            return [f"IP_{ip_address}"]
+            
+    # If the log does not match the criteria, return an empty list.
+    return []
 
 def rule_4_merge_event_cores_rule_for_orphaned_internal_logs_(log: Dict) -> List[str]:
- """
- Extracts the Process ID (PID) as a linking key for all logs originating
- from the 'sshd' process. This key allows a stateful orchestrator to
- group all related sshd events and identify internal, "orphaned" logs
- that are temporally sandwiched between logs with external identifiers.
- """
- keys = []
- process_name = log.get('ProcessName')
- pid = log.get('PID')
+    """
+    Extracts the Process ID (PID) as a linking key for all logs originating
+    from the 'sshd' process. This key allows a stateful orchestrator to
+    group all related sshd events and identify internal, "orphaned" logs
+    that are temporally sandwiched between logs with external identifiers.
+    """
+    keys = []
+    process_name = log.get('ProcessName')
+    pid = log.get('PID')
 
- # The rule's logic requires grouping all events from a single sshd
- # process instance to check for temporal relationships. The PID is the
- # most reliable identifier for a single process instance. By extracting
- # the PID from *all* sshd logs, we provide the necessary key for the
- # orchestrator to group them and apply the stateful "sandwich" logic.
- if process_name == 'sshd' and pid is not None:
- keys.append(f"PID_{pid}")
+    # The rule's logic requires grouping all events from a single sshd
+    # process instance to check for temporal relationships. The PID is the
+    # most reliable identifier for a single process instance. By extracting
+    # the PID from *all* sshd logs, we provide the necessary key for the
+    # orchestrator to group them and apply the stateful "sandwich" logic.
+    if process_name == 'sshd' and pid is not None:
+        keys.append(f"PID_{pid}")
 
- return keys
+    return keys
 
 def rule_5_boundary_rule_by_state_change__success_an_event_co(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by State Change - Success] An 'Event Core' representing a successful login
- (e.g., containing logs with templates like 'Accepted password for <user> from <ip>' or
- 'session opened for user <user>') acts as a hard boundary. Do NOT merge this success
- core with any preceding 'SSH Brute-Force/Scanning' event, even from the same source IP.
- The successful login starts a new, distinct 'Successful SSH Session' event.
- """
- keys = []
- event_template = log.get('EventTemplate')
+    """
+    [BOUNDARY Rule by State Change - Success] An 'Event Core' representing a successful login
+    (e.g., containing logs with templates like 'Accepted password for <user> from <ip>' or
+    'session opened for user <user>') acts as a hard boundary. Do NOT merge this success
+    core with any preceding 'SSH Brute-Force/Scanning' event, even from the same source IP.
+    The successful login starts a new, distinct 'Successful SSH Session' event.
+    """
+    keys = []
+    event_template = log.get('EventTemplate')
 
- if not event_template:
- return []
+    if not event_template:
+        return []
 
- # Define substrings that indicate a successful SSH login based on the rule's examples.
- success_indicators = [
- 'Accepted password for',
- 'session opened for user'
- ]
+    # Define substrings that indicate a successful SSH login based on the rule's examples.
+    success_indicators = [
+        'Accepted password for',
+        'session opened for user'
+    ]
 
- is_success_event = any(indicator in event_template for indicator in success_indicators)
+    is_success_event = any(indicator in event_template for indicator in success_indicators)
 
- if is_success_event:
- # A successful login creates a boundary. This key signals to the orchestrator
- # to start a new event group and not merge with previous ones from the same IP.
+    if is_success_event:
+        # A successful login creates a boundary. This key signals to the orchestrator
+        # to start a new event group and not merge with previous ones from the same IP.
 
- # Prioritize the 'ip' field for the source address.
- ip_address = log.get('ip')
+        # Prioritize the 'ip' field for the source address.
+        ip_address = log.get('ip')
 
- # Fallback to 'rhost' if 'ip' is not available.
- if not ip_address:
- rhosts = log.get('rhost')
- if isinstance(rhosts, list) and rhosts:
- ip_address = rhosts[0]
+        # Fallback to 'rhost' if 'ip' is not available.
+        if not ip_address:
+            rhosts = log.get('rhost')
+            if isinstance(rhosts, list) and rhosts:
+                ip_address = rhosts[0]
 
- if ip_address:
- # Create a specific boundary key tied to the source IP.
- # Format: BOUNDARY_SUCCESS_IP_<ip_address>
- keys.append(f"BOUNDARY_SUCCESS_IP_{ip_address}")
+        if ip_address:
+            # Create a specific boundary key tied to the source IP.
+            # Format: BOUNDARY_SUCCESS_IP_<ip_address>
+            keys.append(f"BOUNDARY_SUCCESS_IP_{ip_address}")
 
- return keys
+    return keys
 
 def rule_6_boundary_rule_by_timeout_cease_merging_event_cores(log: Dict) -> List[str]:
- """
- Extracts the "Key Source Identifier" for the timeout boundary rule.
+    """
+    Extracts the "Key Source Identifier" for the timeout boundary rule.
 
- This rule is about creating a new event if a log from the same source
- arrives after a long pause. The "Key Source Identifier" is what defines
- the "same source". For network-based events like SSH brute-force, the
- source IP address is the most reliable identifier. This function extracts
- any source IP addresses found in the log. The orchestrator will use this
- key to manage the timeout state.
- """
- keys = set()
+    This rule is about creating a new event if a log from the same source
+    arrives after a long pause. The "Key Source Identifier" is what defines
+    the "same source". For network-based events like SSH brute-force, the
+    source IP address is the most reliable identifier. This function extracts
+    any source IP addresses found in the log. The orchestrator will use this
+    key to manage the timeout state.
+    """
+    keys = set()
 
- # The 'ip' field is a common source identifier.
- source_ip = log.get('ip')
- if source_ip and isinstance(source_ip, str):
- keys.add(f"IP_{source_ip}")
+    # The 'ip' field is a common source identifier.
+    source_ip = log.get('ip')
+    if source_ip and isinstance(source_ip, str):
+        keys.add(f"IP_{source_ip}")
 
- # The 'rhost' (remote host) field is also a list of source IPs, common in SSH logs.
- remote_hosts = log.get('rhost')
- if remote_hosts and isinstance(remote_hosts, list):
- for rhost_ip in remote_hosts:
- if rhost_ip and isinstance(rhost_ip, str):
- keys.add(f"IP_{rhost_ip}")
+    # The 'rhost' (remote host) field is also a list of source IPs, common in SSH logs.
+    remote_hosts = log.get('rhost')
+    if remote_hosts and isinstance(remote_hosts, list):
+        for rhost_ip in remote_hosts:
+            if rhost_ip and isinstance(rhost_ip, str):
+                keys.add(f"IP_{rhost_ip}")
 
- return list(keys)
+    return list(keys)
 
 def rule_7_key_dimension_split_rule_event_cores_with_differen(log: Dict) -> List[str]:
- """
- [KEY DIMENSION SPLIT Rule] Event Cores with different Key Source Identifiers (the 'ip' field)
- must always belong to separate logical events. Each unique source IP represents a distinct
- actor and a separate event stream.
- """
- source_ip = log.get('ip')
+    """
+    [KEY DIMENSION SPLIT Rule] Event Cores with different Key Source Identifiers (the 'ip' field)
+    must always belong to separate logical events. Each unique source IP represents a distinct
+    actor and a separate event stream.
+    """
+    source_ip = log.get('ip')
 
- # Check if source_ip is a non-empty string.
- if source_ip and isinstance(source_ip, str):
- # Create the key in the format "KEYTYPE_keyvalue".
- return [f"IP_{source_ip}"]
+    # Check if source_ip is a non-empty string.
+    if source_ip and isinstance(source_ip, str):
+        # Create the key in the format "KEYTYPE_keyvalue".
+        return [f"IP_{source_ip}"]
 
- # If no valid 'ip' field is found, return an empty list.
- return []
+    # If no valid 'ip' field is found, return an empty list.
+    return []
 
 def rule_8_boundary_rule_by_session_termination_an_event_core(log: Dict) -> List[str]:
- """
- [BOUNDARY Rule by Session Termination] An 'Event Core' containing a log that indicates a clear
- post-authentication session finalization (e.g., an inferred 'session closed for user' template)
- marks the definitive end for the logical 'Successful SSH Session' event associated with that
- session's PID. It should not be merged with subsequent, new connection attempts from the same user/IP.
- """
- # Templates that signify a session has definitively ended.
- # The '<*>' is a common placeholder for parameters in log templates.
- session_termination_templates = {
- "session closed for user <*>",
- "pam_unix(sshd:session): session closed for user <*>"
- }
+    """
+    [BOUNDARY Rule by Session Termination] An 'Event Core' containing a log that indicates a clear
+    post-authentication session finalization (e.g., an inferred 'session closed for user' template)
+    marks the definitive end for the logical 'Successful SSH Session' event associated with that
+    session's PID. It should not be merged with subsequent, new connection attempts from the same user/IP.
+    """
+    # Templates that signify a session has definitively ended.
+    # The '<*>' is a common placeholder for parameters in log templates.
+    session_termination_templates = {
+        "session closed for user <*>",
+        "pam_unix(sshd:session): session closed for user <*>"
+    }
 
- event_template = log.get('EventTemplate')
- pid = log.get('PID')
+    event_template = log.get('EventTemplate')
+    pid = log.get('PID')
 
- # Check if the log's template indicates session termination and a PID is present.
- if event_template in session_termination_templates and pid is not None:
- # The PID is the key that links the session start and end.
- # This key will be used by the orchestrator to mark the boundary.
- return [f"PID_{pid}"]
+    # Check if the log's template indicates session termination and a PID is present.
+    if event_template in session_termination_templates and pid is not None:
+        # The PID is the key that links the session start and end.
+        # This key will be used by the orchestrator to mark the boundary.
+        return [f"PID_{pid}"]
 
- return []
+    return []
+
 
 ############################################################
 ### YOUR IMPLEMENTATION: EventProcessor CLASS ###
 ############################################################
 
 class EventProcessor:
- """
- Orchestrates the clustering of logs into security events using a single-pass
- approach with a Union-Find data structure.
- """
+    """
+    Orchestrates the clustering of logs into security events using a single-pass
+    approach with a Union-Find data structure.
+    """
 
- def __init__(self, logs: List[Dict]):
- """
- Initializes the EventProcessor with a list of logs.
+    def __init__(self, logs: List[Dict]):
+        """
+        Initializes the EventProcessor with a list of logs.
 
- Args:
- logs: A list of log dictionaries, assumed to be sorted chronologically.
- """
- self.logs: List[Dict] = logs
- self.num_logs: int = len(logs)
- 
- # Initialize Union-Find data structure
- # Each log starts in its own set.
- self.parent: List[int] = list(range(self.num_logs))
- # Use size optimization for union operations.
- self.size: List[int] = [1] * self.num_logs
+        Args:
+            logs: A list of log dictionaries, assumed to be sorted chronologically.
+        """
+        self.logs: List[Dict] = logs
+        self.num_logs: int = len(logs)
+        
+        # Initialize Union-Find data structure
+        # Each log starts in its own set.
+        self.parent: List[int] = list(range(self.num_logs))
+        # Use size optimization for union operations.
+        self.size: List[int] = [1] * self.num_logs
 
- def _find(self, i: int) -> int:
- """
- Finds the representative (root) of the set containing element i,
- with path compression.
- """
- if self.parent[i] == i:
- return i
- # Recursively find the root and flatten the path.
- self.parent[i] = self._find(self.parent[i])
- return self.parent[i]
+    def _find(self, i: int) -> int:
+        """
+        Finds the representative (root) of the set containing element i,
+        with path compression.
+        """
+        if self.parent[i] == i:
+            return i
+        # Recursively find the root and flatten the path.
+        self.parent[i] = self._find(self.parent[i])
+        return self.parent[i]
 
- def _union(self, i: int, j: int):
- """
- Merges the sets containing elements i and j, using union-by-size.
- """
- root_i = self._find(i)
- root_j = self._find(j)
+    def _union(self, i: int, j: int):
+        """
+        Merges the sets containing elements i and j, using union-by-size.
+        """
+        root_i = self._find(i)
+        root_j = self._find(j)
 
- if root_i != root_j:
- # Attach the smaller tree to the root of the larger tree.
- if self.size[root_i] < self.size[root_j]:
- root_i, root_j = root_j, root_i
- 
- self.parent[root_j] = root_i
- self.size[root_i] += self.size[root_j]
+        if root_i != root_j:
+            # Attach the smaller tree to the root of the larger tree.
+            if self.size[root_i] < self.size[root_j]:
+                root_i, root_j = root_j, root_i
+            
+            self.parent[root_j] = root_i
+            self.size[root_i] += self.size[root_j]
 
- @staticmethod
- def _get_timeout_for_key(key: str) -> timedelta:
- """Determines the appropriate time window for a given linking key."""
- if key.startswith("PID_PROCESSNAME_"):
- # Strongest link, very long timeout for process lifecycle.
- return timedelta(hours=24)
- if key.startswith("IP_"):
- # Network events like scans can be slow.
- return timedelta(minutes=30)
- if key.startswith("PID_"):
- # Events within a single process are usually fast.
- return timedelta(minutes=5)
- # A reasonable default for any other key types.
- return timedelta(minutes=10)
+    @staticmethod
+    def _get_timeout_for_key(key: str) -> timedelta:
+        """Determines the appropriate time window for a given linking key."""
+        if key.startswith("PID_PROCESSNAME_"):
+            # Strongest link, very long timeout for process lifecycle.
+            return timedelta(hours=24)
+        if key.startswith("IP_"):
+            # Network events like scans can be slow.
+            return timedelta(minutes=30)
+        if key.startswith("PID_"):
+            # Events within a single process are usually fast.
+            return timedelta(minutes=5)
+        # A reasonable default for any other key types.
+        return timedelta(minutes=10)
 
- def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
- """
- Clusters logs into events based on a set of rule functions.
+    def cluster_events(self, rule_functions: List[Callable]) -> Tuple[List[List[int]], Dict[int, int]]:
+        """
+        Clusters logs into events based on a set of rule functions.
 
- This method performs a single pass over the logs, using the provided
- rule functions to extract linking keys. It applies Union-Find to
- merge logs into clusters based on shared keys and time windows.
+        This method performs a single pass over the logs, using the provided
+        rule functions to extract linking keys. It applies Union-Find to
+        merge logs into clusters based on shared keys and time windows.
 
- Args:
- rule_functions: A list of key extractor functions to be applied to each log.
+        Args:
+            rule_functions: A list of key extractor functions to be applied to each log.
 
- Returns:
- A tuple containing:
- - security_events (List[List[int]]): A list of events, where each
- event is a list of original log indices.
- - log_index_to_event_id (Dict[int, int]): A mapping from a log's
- original index to its final event ID.
- """
- # State dictionary to track the last seen index and timestamp for each key.
- key_state: Dict[str, Dict] = {}
- 
- # Templates that signify a session has definitively ended (for Rule 8).
- session_termination_templates = {
- "session closed for user <*>",
- "pam_unix(sshd:session): session closed for user <*>"
- }
+        Returns:
+            A tuple containing:
+            - security_events (List[List[int]]): A list of events, where each
+              event is a list of original log indices.
+            - log_index_to_event_id (Dict[int, int]): A mapping from a log's
+              original index to its final event ID.
+        """
+        # State dictionary to track the last seen index and timestamp for each key.
+        key_state: Dict[str, Dict] = {}
+        
+        # Templates that signify a session has definitively ended (for Rule 8).
+        session_termination_templates = {
+            "session closed for user <*>",
+            "pam_unix(sshd:session): session closed for user <*>"
+        }
 
- for i, log in enumerate(self.logs):
- current_ts = log['Timestamp']
- 
- # 1. Extract all unique keys for the current log from all rule functions.
- all_keys = {key for func in rule_functions for key in func(log)}
+        for i, log in enumerate(self.logs):
+            current_ts = log['Timestamp']
+            
+            # 1. Extract all unique keys for the current log from all rule functions.
+            all_keys = {key for func in rule_functions for key in func(log)}
 
- # 2. Identify boundary conditions based on the extracted keys.
- # Rule 5: A success log starts a new event. Identify keys that should not be
- # used to merge with past events.
- dont_merge_keys = {
- f"IP_{k.split('_')[-1]}" for k in all_keys if k.startswith("BOUNDARY_SUCCESS_IP_")
- }
- 
- # Rule 8: A session termination log ends an event.
- is_termination_log = log.get('EventTemplate') in session_termination_templates
+            # 2. Identify boundary conditions based on the extracted keys.
+            # Rule 5: A success log starts a new event. Identify keys that should not be
+            # used to merge with past events.
+            dont_merge_keys = {
+                f"IP_{k.split('_')[-1]}" for k in all_keys if k.startswith("BOUNDARY_SUCCESS_IP_")
+            }
+            
+            # Rule 8: A session termination log ends an event.
+            is_termination_log = log.get('EventTemplate') in session_termination_templates
 
- # 3. Core clustering logic: merge with previous logs if applicable.
- for key in all_keys:
- if key.startswith("BOUNDARY_") or key in dont_merge_keys:
- continue
+            # 3. Core clustering logic: merge with previous logs if applicable.
+            for key in all_keys:
+                if key.startswith("BOUNDARY_") or key in dont_merge_keys:
+                    continue
 
- if key in key_state:
- last_seen_info = key_state[key]
- time_since_last_seen = current_ts - last_seen_info['timestamp']
- timeout = self._get_timeout_for_key(key)
+                if key in key_state:
+                    last_seen_info = key_state[key]
+                    time_since_last_seen = current_ts - last_seen_info['timestamp']
+                    timeout = self._get_timeout_for_key(key)
 
- if time_since_last_seen <= timeout:
- self._union(i, last_seen_info['index'])
+                    if time_since_last_seen <= timeout:
+                        self._union(i, last_seen_info['index'])
 
- # 4. Update state for the next iteration.
- for key in all_keys:
- if key.startswith("BOUNDARY_"):
- continue
+            # 4. Update state for the next iteration.
+            for key in all_keys:
+                if key.startswith("BOUNDARY_"):
+                    continue
 
- # Rule 8: If this is a termination log, the PID key marks the end of the
- # event. Remove it from the state to prevent future merges.
- pid = log.get('PID')
- if is_termination_log and key.startswith("PID_") and pid is not None and key == f"PID_{pid}":
- key_state.pop(key, None)
- else:
- # For all other keys, update the state to point to the current log.
- key_state[key] = {'index': i, 'timestamp': current_ts}
+                # Rule 8: If this is a termination log, the PID key marks the end of the
+                # event. Remove it from the state to prevent future merges.
+                pid = log.get('PID')
+                if is_termination_log and key.startswith("PID_") and pid is not None and key == f"PID_{pid}":
+                    key_state.pop(key, None)
+                else:
+                    # For all other keys, update the state to point to the current log.
+                    key_state[key] = {'index': i, 'timestamp': current_ts}
 
- # 5. Finalization: construct the event list from the Union-Find structure.
- event_groups = collections.defaultdict(list)
- for i in range(self.num_logs):
- root = self._find(i)
- event_groups[root].append(i)
+        # 5. Finalization: construct the event list from the Union-Find structure.
+        event_groups = collections.defaultdict(list)
+        for i in range(self.num_logs):
+            root = self._find(i)
+            event_groups[root].append(i)
 
- security_events = list(event_groups.values())
- 
- log_index_to_event_id = {}
- for event_id, event_logs in enumerate(security_events):
- for log_index in event_logs:
- log_index_to_event_id[log_index] = event_id
- 
- return security_events, log_index_to_event_id
+        security_events = list(event_groups.values())
+        
+        log_index_to_event_id = {}
+        for event_id, event_logs in enumerate(security_events):
+            for log_index in event_logs:
+                log_index_to_event_id[log_index] = event_id
+                
+        return security_events, log_index_to_event_id
+
 
 # This list is used by the host system to know which functions to pass to the processor
 ALL_RULE_FUNCTIONS = [rule_1_group_all_logs_sharing_the_exact_same_process_id_p, rule_2_merge_event_cores_rule_for_ssh_bruteforcescanning_, rule_3_merge_event_cores_rule_for_connection_context_merg, rule_4_merge_event_cores_rule_for_orphaned_internal_logs_, rule_5_boundary_rule_by_state_change__success_an_event_co, rule_6_boundary_rule_by_timeout_cease_merging_event_cores, rule_7_key_dimension_split_rule_event_cores_with_differen, rule_8_boundary_rule_by_session_termination_an_event_core]

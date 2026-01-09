@@ -1,28 +1,28 @@
 from typing import Dict, List
 
 def rule_2_merge_event_cores_rule_for_web_scanning_activity_a(log: Dict) -> List[str]:
- """
- After initial grouping, identify 'Event Cores' or individual logs containing templates indicative of client-side probing, such as `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, `[client <*>] Directory index forbidden by rule: <*>`, or `[client <*>] Invalid URI in request <*> <*>`. If multiple such logs or cores share the exact same Key Source Identifier (the `ip` field) and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), merge them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.
- """
- 
- # Define the set of templates that indicate web scanning/probing activity.
- probing_templates = {
- '[client <*>] File does not exist: <*>',
- '[client <*>] script not found or unable to stat: <*>',
- '[client <*>] Directory index forbidden by rule: <*>',
- '[client <*>] Invalid URI in request <*> <*>',
- }
+    """
+    After initial grouping, identify 'Event Cores' or individual logs containing templates indicative of client-side probing, such as `[client <*>] File does not exist: <*>`, `[client <*>] script not found or unable to stat: <*>`, `[client <*>] Directory index forbidden by rule: <*>`, or `[client <*>] Invalid URI in request <*> <*>`. If multiple such logs or cores share the exact same Key Source Identifier (the `ip` field) and occur within a continuous session (e.g., with no more than 60 seconds between consecutive logs), merge them into a single logical 'Web Scanning/Probing' event. This rule reconstructs the activity of a single external actor across potentially many server processes.
+    """
+    
+    # Define the set of templates that indicate web scanning/probing activity.
+    probing_templates = {
+        '[client <*>] File does not exist: <*>',
+        '[client <*>] script not found or unable to stat: <*>',
+        '[client <*>] Directory index forbidden by rule: <*>',
+        '[client <*>] Invalid URI in request <*> <*>',
+    }
 
- event_template = log.get('EventTemplate')
+    event_template = log.get('EventTemplate')
 
- # Check if the log's template is one of the specified probing templates.
- if event_template in probing_templates:
- # The rule states that the linking key is the source IP address.
- ip_address = log.get('ip')
- 
- # If an IP address is found, create the key.
- if ip_address:
- return [f"IP_{ip_address}"]
+    # Check if the log's template is one of the specified probing templates.
+    if event_template in probing_templates:
+        # The rule states that the linking key is the source IP address.
+        ip_address = log.get('ip')
+        
+        # If an IP address is found, create the key.
+        if ip_address:
+            return [f"IP_{ip_address}"]
 
- # If the log does not match the criteria, return an empty list.
- return []
+    # If the log does not match the criteria, return an empty list.
+    return []
