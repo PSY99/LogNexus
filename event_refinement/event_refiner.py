@@ -73,24 +73,24 @@ class EventRefiner:
             
         logging.info("EventRefiner initialized.")
 
-    def _translate_and_sort_sessions(self, initial_sessions: List[List[int]]) -> List[List[int]]:
+    def _translate_and_sort_partitions(self, initial_partitions: List[List[int]]) -> List[List[int]]:
         translated_partitions = []
-        for session in initial_sessions:
-            if not session: continue
-            new_partition = [self.original_to_new_index_map.get(old_idx) for old_idx in session]
+        for partition in initial_partitions:
+            if not partition: continue
+            new_partition = [self.original_to_new_index_map.get(old_idx) for old_idx in partition]
             if any(idx is None for idx in new_partition): continue
             translated_partitions.append(sorted(new_partition))
-        translated_partitions.sort(key=lambda p: self.raw_logs[p[0]]['_datetime'] if p else datetime.max)
+        translated_partitions.sort(key=lambda partition: self.raw_logs[partition[0]]['_datetime'] if partition else datetime.max)
         return translated_partitions
 
-    def _translate_back_to_original_indices(self, refined_sessions: List[List[int]]) -> List[List[int]]:
-        return [[self.new_to_original_index_map[new_idx] for new_idx in session] for session in refined_sessions if session]
+    def _translate_back_to_original_indices(self, refined_partitions: List[List[int]]) -> List[List[int]]:
+        return [[self.new_to_original_index_map[new_idx] for new_idx in partition] for partition in refined_partitions if partition]
 
-    def _group_sessions_by_day(self, sessions: List[List[int]]) -> Dict[date, List[List[int]]]:
+    def _group_partitions_by_day(self, partitions: List[List[int]]) -> Dict[date, List[List[int]]]:
         partitions_by_day: DefaultDict[date, List[List[int]]] = defaultdict(list)
-        for session in sessions:
-            if not session: continue
-            partitions_by_day[self.raw_logs[session[0]]['_datetime'].date()].append(session)
+        for partition in partitions:
+            if not partition: continue
+            partitions_by_day[self.raw_logs[partition[0]]['_datetime'].date()].append(partition)
         return {day: partitions_by_day[day] for day in sorted(partitions_by_day.keys())}
     
     def _get_param_values(self, log_idx: int, keys: List[str]) -> Tuple[Any, ...]:
@@ -385,8 +385,8 @@ class EventRefiner:
         """
         logging.info(f"Starting Phase II refinement for {len(initial_sessions)} coarse candidate partitions...")
         
-        internal_partitions = self._translate_and_sort_sessions(initial_sessions)
-        partitions_grouped_by_day = self._group_sessions_by_day(internal_partitions)
+        internal_partitions = self._translate_and_sort_partitions(initial_sessions)
+        partitions_grouped_by_day = self._group_partitions_by_day(internal_partitions)
         
         all_refined_sessions_internal = []
         progress_bar = tqdm(partitions_grouped_by_day.items(), desc="Refining Events Day by Day")

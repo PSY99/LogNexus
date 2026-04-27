@@ -114,7 +114,7 @@ class KnowledgeBaseBuilder:
 
     def _get_representative_embedding(self, session_indices: List[int], raw_logs: List[Dict], include_params: bool = False) -> np.ndarray:
         """
-        Calculates the mean embedding of logs for a refined event partition. Can include or exclude parameters.
+        Calculates the mean embedding of logs for the provided indices. Can include or exclude parameters.
         For KB building, we set `include_params=False` to get a general semantic embedding.
         It also samples logs if the session is too large.
         """
@@ -254,13 +254,12 @@ class KnowledgeBaseBuilder:
         except Exception as e:
             logging.error(f"Failed to write to verification file {verification_path}: {e}")
 
-    def build(self, refined_sessions: List[List[int]], raw_logs: List[Dict]):
+    def build(self, refined_events: List[List[int]], raw_logs: List[Dict]):
         """
         Main method to build/update the SKB. Iterates through each refined event, finds or creates
         a corresponding event type based on semantic similarity. Event types evolve over time.
         """
-        logging.info(f"Starting Phase III SKB construction from {len(refined_sessions)} refined events.")
-        refined_events = refined_sessions
+        logging.info(f"Starting Phase III SKB construction from {len(refined_events)} refined events.")
         
         new_events_created = 0
         events_merged = 0
@@ -268,8 +267,8 @@ class KnowledgeBaseBuilder:
         for refined_event in tqdm(refined_events, desc="Processing Refined Events for SKB"):
             if not refined_event: continue
             
-            new_event_fingerprint = self._get_representative_embedding(refined_event, raw_logs, include_params=False)
-            similar_event_id = self._find_semantically_similar_event(new_event_fingerprint)
+            new_event_embedding = self._get_representative_embedding(refined_event, raw_logs, include_params=False)
+            similar_event_id = self._find_semantically_similar_event(new_event_embedding)
 
             if similar_event_id is not None:
                 try:
@@ -284,7 +283,7 @@ class KnowledgeBaseBuilder:
                         old_embedding = self.event_embeddings[similar_event_id]
                         instance_count_before_update = kb_entry['instance_count']
                         
-                        updated_embedding = (old_embedding * instance_count_before_update + new_event_fingerprint) / (instance_count_before_update + 1)
+                        updated_embedding = (old_embedding * instance_count_before_update + new_event_embedding) / (instance_count_before_update + 1)
                         faiss.normalize_L2(updated_embedding.reshape(1, -1))
                         
                         self.faiss_index.remove_ids(np.array([similar_event_id], dtype=np.int64))
@@ -332,16 +331,16 @@ class KnowledgeBaseBuilder:
                 }
                 self.knowledge_base.append(kb_entry)
 
-                embedding_to_add = new_event_fingerprint.reshape(1, -1)
+                embedding_to_add = new_event_embedding.reshape(1, -1)
                 if self.faiss_index is None:
-                    d = new_event_fingerprint.shape[0]
+                    d = new_event_embedding.shape[0]
                     base_index = faiss.IndexFlatIP(d)
                     self.faiss_index = faiss.IndexIDMap(base_index)
                 
                 self.faiss_index.add_with_ids(embedding_to_add, np.array([event_id], dtype=np.int64))
 
                 # --- NEW 4: 将新向量添加到内存缓存 ---
-                self.event_embeddings[event_id] = new_event_fingerprint
+                self.event_embeddings[event_id] = new_event_embedding
 
                 self._append_to_verification_file(event_id, refined_event, raw_logs)
 

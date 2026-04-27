@@ -186,17 +186,17 @@ def run_experiment(mode: str, config: AblationConfig, client, encoder, train_dat
     
     logging.info(">>> Phase I: Agent-Driven Logic Synthesis")
     # Phase I time is NOT included in the final comparison time
-    initial_candidate_partitions, _ = detector.run(test_dataset.raw_logs, force_regenerate=False)
+    candidate_partitions, _ = detector.run(test_dataset.raw_logs, force_regenerate=False)
     
-    if not initial_candidate_partitions:
+    if not candidate_partitions:
         logging.error(f"!!! Phase I failed for mode: {mode}. Returning -1 metrics.")
         results["metrics"] = {"Adjusted Rand Index (ARI)": -1}
         return results
 
-    logging.info(f"Phase I finished. Found {len(initial_candidate_partitions)} coarse candidate partitions.")
+    logging.info(f"Phase I finished. Found {len(candidate_partitions)} coarse candidate partitions.")
 
     # --- Phase II: Log Representation Learning & Refinement ---
-    refined_events = initial_candidate_partitions
+    refined_events = candidate_partitions
     inference_time = 0.0
     
     if mode == "no_refinement":
@@ -240,7 +240,7 @@ def run_experiment(mode: str, config: AblationConfig, client, encoder, train_dat
             torch.cuda.synchronize()
             
         t0 = time.time()
-        refined_events = refiner.refine(initial_candidate_partitions)
+        refined_events = refiner.refine(candidate_partitions)
         
         if torch.cuda.is_available():
             torch.cuda.synchronize()
