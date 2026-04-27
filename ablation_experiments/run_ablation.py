@@ -181,31 +181,31 @@ def run_experiment(mode: str, config: AblationConfig, client, encoder, train_dat
         "pretrain_acc": {}         # Store MLM/RPD/ECO acc
     }
     
-    # --- Stage 1: Detection ---
+    # --- Phase I: Agent-Driven Logic Synthesis + Coarse Candidate Partitioning ---
     detector = AblationDetector(config, client, mode, train_dataset.raw_logs)
     
-    logging.info(">>> Stage 1: Meta-Programmed Detection")
-    # Stage 1 time is NOT included in the final comparison time
-    initial_sessions, _ = detector.run(test_dataset.raw_logs, force_regenerate=False)
+    logging.info(">>> Phase I: Agent-Driven Logic Synthesis")
+    # Phase I time is NOT included in the final comparison time
+    initial_candidate_partitions, _ = detector.run(test_dataset.raw_logs, force_regenerate=False)
     
-    if not initial_sessions:
-        logging.error(f"!!! Stage 1 Failed for mode: {mode}. Returning -1 metrics.")
+    if not initial_candidate_partitions:
+        logging.error(f"!!! Phase I failed for mode: {mode}. Returning -1 metrics.")
         results["metrics"] = {"Adjusted Rand Index (ARI)": -1}
         return results
 
-    logging.info(f"Stage 1 finished. Found {len(initial_sessions)} sessions.")
+    logging.info(f"Phase I finished. Found {len(initial_candidate_partitions)} coarse candidate partitions.")
 
-    # --- Stage 2: Refinement ---
-    final_sessions = initial_sessions
+    # --- Phase II: Log Representation Learning & Refinement ---
+    refined_events = initial_candidate_partitions
     inference_time = 0.0
     
     if mode == "no_refinement":
-        logging.info(">>> Stage 2: Skipped (Ablation)")
+        logging.info(">>> Phase II: Skipped (Ablation)")
         # No model involved, metrics are N/A
         results["pretrain_acc"] = {"MLM": "N/A", "RPD": "N/A", "ECO": "N/A"}
         
     else:
-        logging.info(f">>> Stage 2: Refinement ({mode})")
+        logging.info(f">>> Phase II: Refinement ({mode})")
 
         config.MODEL_TYPE = "mamba"
         
@@ -240,7 +240,7 @@ def run_experiment(mode: str, config: AblationConfig, client, encoder, train_dat
             torch.cuda.synchronize()
             
         t0 = time.time()
-        final_sessions = refiner.refine(initial_sessions)
+        refined_events = refiner.refine(initial_candidate_partitions)
         
         if torch.cuda.is_available():
             torch.cuda.synchronize()
@@ -254,7 +254,7 @@ def run_experiment(mode: str, config: AblationConfig, client, encoder, train_dat
     
     # --- Evaluation ---
     if test_dataset.manual_labels:
-        metrics = calculate_partition_metrics(test_dataset.manual_labels, final_sessions, len(test_dataset.raw_logs))
+        metrics = calculate_partition_metrics(test_dataset.manual_labels, refined_events, len(test_dataset.raw_logs))
         results["metrics"] = metrics
         logging.info(f"Results for {mode}: ARI={metrics.get('Adjusted Rand Index (ARI)', 0):.4f}")
     else:

@@ -50,10 +50,10 @@ Provide ONLY the JSON object.
 
 class KnowledgeBaseBuilder:
     """
-    Builds and maintains an Event Knowledge Base from refined event sessions.
-    The KB is built incrementally and uses semantic search to group similar events,
+    Builds and maintains a Security Knowledge Base (SKB) from refined events.
+    The SKB is built incrementally and uses semantic search to group similar events,
     reducing redundancy and LLM calls. This version includes verification and annotation features.
-    The event categories are dynamic and evolve as new sessions are merged.
+    The event types are dynamic and evolve as new refined events are assigned.
     """
 
     def __init__(self, config: Config, model: BiDirectionalLogMamba, encoder: UnifiedLogEncoder, llm_client: Any):
@@ -114,7 +114,7 @@ class KnowledgeBaseBuilder:
 
     def _get_representative_embedding(self, session_indices: List[int], raw_logs: List[Dict], include_params: bool = False) -> np.ndarray:
         """
-        Calculates the mean embedding of logs for a session. Can include or exclude parameters.
+        Calculates the mean embedding of logs for a refined event partition. Can include or exclude parameters.
         For KB building, we set `include_params=False` to get a general semantic embedding.
         It also samples logs if the session is too large.
         """
@@ -256,19 +256,20 @@ class KnowledgeBaseBuilder:
 
     def build(self, refined_sessions: List[List[int]], raw_logs: List[Dict]):
         """
-        Main method to build/update the KB. Iterates through each session, finds or creates
-        a corresponding event type based on semantic similarity. Event categories evolve over time.
+        Main method to build/update the SKB. Iterates through each refined event, finds or creates
+        a corresponding event type based on semantic similarity. Event types evolve over time.
         """
-        logging.info(f"Starting to build/update knowledge base from {len(refined_sessions)} refined sessions.")
+        logging.info(f"Starting Phase III SKB construction from {len(refined_sessions)} refined events.")
+        refined_events = refined_sessions
         
         new_events_created = 0
         events_merged = 0
 
-        for session in tqdm(refined_sessions, desc="Processing Sessions for KB"):
-            if not session: continue
+        for refined_event in tqdm(refined_events, desc="Processing Refined Events for SKB"):
+            if not refined_event: continue
             
-            new_session_embedding = self._get_representative_embedding(session, raw_logs, include_params=False)
-            similar_event_id = self._find_semantically_similar_event(new_session_embedding)
+            new_event_fingerprint = self._get_representative_embedding(refined_event, raw_logs, include_params=False)
+            similar_event_id = self._find_semantically_similar_event(new_event_fingerprint)
 
             if similar_event_id is not None:
                 try:
@@ -283,7 +284,7 @@ class KnowledgeBaseBuilder:
                         old_embedding = self.event_embeddings[similar_event_id]
                         instance_count_before_update = kb_entry['instance_count']
                         
-                        updated_embedding = (old_embedding * instance_count_before_update + new_session_embedding) / (instance_count_before_update + 1)
+                        updated_embedding = (old_embedding * instance_count_before_update + new_event_fingerprint) / (instance_count_before_update + 1)
                         faiss.normalize_L2(updated_embedding.reshape(1, -1))
                         
                         self.faiss_index.remove_ids(np.array([similar_event_id], dtype=np.int64))
@@ -294,18 +295,18 @@ class KnowledgeBaseBuilder:
 
                         kb_entry['instance_count'] += 1
                         
-                        current_session_templates = {raw_logs[i]['EventTemplate'] for i in session}
+                        current_session_templates = {raw_logs[i]['EventTemplate'] for i in refined_event}
                         existing_templates = set(kb_entry['structural_signature'])
                         if not current_session_templates.issubset(existing_templates):
                             kb_entry['structural_signature'] = sorted(list(existing_templates.union(current_session_templates)))
                         
                         if self.llm_update_threshold > 0 and kb_entry['instance_count'] % self.llm_update_threshold == 0:
                             logging.info(f"Event {similar_event_id} reached {kb_entry['instance_count']} instances. Re-running LLM generalization.")
-                            generalization_data = self._get_event_generalization(session, raw_logs, event_id=similar_event_id)
+                            generalization_data = self._get_event_generalization(refined_event, raw_logs, event_id=similar_event_id)
                             kb_entry.update(generalization_data)
 
                         events_merged += 1
-                        self._append_to_verification_file(similar_event_id, session, raw_logs)
+                        self._append_to_verification_file(similar_event_id, refined_event, raw_logs)
 
                 except (StopIteration, RuntimeError) as e:
                     logging.warning(f"Error updating event {similar_event_id}: {e}. Treating as a new event.")
@@ -314,8 +315,8 @@ class KnowledgeBaseBuilder:
             if similar_event_id is None:
                 new_events_created += 1
                 
-                generalization_data = self._get_event_generalization(session, raw_logs)
-                structural_signature = sorted(list({raw_logs[i]['EventTemplate'] for i in session}))
+                generalization_data = self._get_event_generalization(refined_event, raw_logs)
+                structural_signature = sorted(list({raw_logs[i]['EventTemplate'] for i in refined_event}))
                 
                 event_id = len(self.knowledge_base) if not self.knowledge_base else max(e['event_id'] for e in self.knowledge_base) + 1
 
@@ -331,20 +332,20 @@ class KnowledgeBaseBuilder:
                 }
                 self.knowledge_base.append(kb_entry)
 
-                embedding_to_add = new_session_embedding.reshape(1, -1)
+                embedding_to_add = new_event_fingerprint.reshape(1, -1)
                 if self.faiss_index is None:
-                    d = new_session_embedding.shape[0]
+                    d = new_event_fingerprint.shape[0]
                     base_index = faiss.IndexFlatIP(d)
                     self.faiss_index = faiss.IndexIDMap(base_index)
                 
                 self.faiss_index.add_with_ids(embedding_to_add, np.array([event_id], dtype=np.int64))
 
                 # --- NEW 4: 将新向量添加到内存缓存 ---
-                self.event_embeddings[event_id] = new_session_embedding
+                self.event_embeddings[event_id] = new_event_fingerprint
 
-                self._append_to_verification_file(event_id, session, raw_logs)
+                self._append_to_verification_file(event_id, refined_event, raw_logs)
 
-        logging.info(f"Build process summary: {new_events_created} new events created, {events_merged} sessions merged into existing events.")
+        logging.info(f"Phase III summary: {new_events_created} new event types created, {events_merged} refined events assigned to existing event types.")
         self.save_kb()
 
     def save_kb(self):

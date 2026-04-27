@@ -74,24 +74,24 @@ class EventRefiner:
         logging.info("EventRefiner initialized.")
 
     def _translate_and_sort_sessions(self, initial_sessions: List[List[int]]) -> List[List[int]]:
-        translated_sessions = []
+        translated_partitions = []
         for session in initial_sessions:
             if not session: continue
-            new_session = [self.original_to_new_index_map.get(old_idx) for old_idx in session]
-            if any(idx is None for idx in new_session): continue
-            translated_sessions.append(sorted(new_session))
-        translated_sessions.sort(key=lambda s: self.raw_logs[s[0]]['_datetime'] if s else datetime.max)
-        return translated_sessions
+            new_partition = [self.original_to_new_index_map.get(old_idx) for old_idx in session]
+            if any(idx is None for idx in new_partition): continue
+            translated_partitions.append(sorted(new_partition))
+        translated_partitions.sort(key=lambda p: self.raw_logs[p[0]]['_datetime'] if p else datetime.max)
+        return translated_partitions
 
     def _translate_back_to_original_indices(self, refined_sessions: List[List[int]]) -> List[List[int]]:
         return [[self.new_to_original_index_map[new_idx] for new_idx in session] for session in refined_sessions if session]
 
     def _group_sessions_by_day(self, sessions: List[List[int]]) -> Dict[date, List[List[int]]]:
-        sessions_by_day: DefaultDict[date, List[List[int]]] = defaultdict(list)
+        partitions_by_day: DefaultDict[date, List[List[int]]] = defaultdict(list)
         for session in sessions:
             if not session: continue
-            sessions_by_day[self.raw_logs[session[0]]['_datetime'].date()].append(session)
-        return {day: sessions_by_day[day] for day in sorted(sessions_by_day.keys())}
+            partitions_by_day[self.raw_logs[session[0]]['_datetime'].date()].append(session)
+        return {day: partitions_by_day[day] for day in sorted(partitions_by_day.keys())}
     
     def _get_param_values(self, log_idx: int, keys: List[str]) -> Tuple[Any, ...]:
         log = self.raw_logs[log_idx]
@@ -383,13 +383,13 @@ class EventRefiner:
         【V7.1 最终版优化流程】
         执行事件优化，包含参数规则分裂、语义切分和多场景合并。
         """
-        logging.info(f"Starting refinement for {len(initial_sessions)} initial sessions...")
+        logging.info(f"Starting Phase II refinement for {len(initial_sessions)} coarse candidate partitions...")
         
-        internal_sessions = self._translate_and_sort_sessions(initial_sessions)
-        sessions_grouped_by_day = self._group_sessions_by_day(internal_sessions)
+        internal_partitions = self._translate_and_sort_sessions(initial_sessions)
+        partitions_grouped_by_day = self._group_sessions_by_day(internal_partitions)
         
         all_refined_sessions_internal = []
-        progress_bar = tqdm(sessions_grouped_by_day.items(), desc="Refining Events Day by Day")
+        progress_bar = tqdm(partitions_grouped_by_day.items(), desc="Refining Events Day by Day")
         
         for day, daily_sessions in progress_bar:
             progress_bar.set_postfix_str(f"Day {day}, {len(daily_sessions)} sessions")
@@ -411,7 +411,6 @@ class EventRefiner:
         all_refined_sessions_internal.sort(key=lambda s: s[0] if s else float('inf'))
         final_sessions_original_idx = self._translate_back_to_original_indices(all_refined_sessions_internal)
 
-        logging.info(f"Refinement complete. Final session count: {len(final_sessions_original_idx)}")
+        logging.info(f"Phase II refinement complete. Final refined event count: {len(final_sessions_original_idx)}")
         return final_sessions_original_idx
     
-

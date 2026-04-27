@@ -66,6 +66,10 @@ class Config:
         self.detector_sample_size = 500
         self.detector_session_gap_seconds = 600
         self.detector_hotspot_novelty_threshold = 0.0
+        # Paper-term aliases for Phase I (kept in sync for readability and backward compatibility).
+        self.phase1_sampling_budget = self.detector_sample_size
+        self.phase1_gap_threshold_seconds = self.detector_session_gap_seconds
+        self.phase1_novelty_threshold = self.detector_hotspot_novelty_threshold
 
 
 
@@ -158,6 +162,8 @@ class Config:
 
         # 【新增】相干性阈值：如果一个事件的初始相干性得分高于此值，则跳过对其的切分
         self.COHERENCE_THRESHOLD_TO_SKIP_SPLIT = 0.90
+        # Paper-term alias for Stage-2 semantic coherence threshold.
+        self.phase2_semantic_coherence_threshold = self.COHERENCE_THRESHOLD_TO_SKIP_SPLIT
 
         # 【新增】豁免规则：PID一致性
         # 如果为 True，则 PID 完全一致的事件将被豁免，不进行切分
@@ -170,14 +176,17 @@ class Config:
         # 【新增】合并规则：相同内容日志的时间窗口
         # 如果多个单日志事件的 'Content' 字段完全相同，且它们之间的时间差
         # 小于此值（秒），它们将被合并。设为0或负数可禁用此规则。
-        self.MERGE_IDENTICAL_CONTENT_WINDOW_S = 5.0 
+        self.MERGE_IDENTICAL_CONTENT_WINDOW_S = 5.0
+        # Paper-term alias for Stage-3 content-aware fusion time window.
+        self.phase2_fragment_fusion_time_window_s = self.MERGE_IDENTICAL_CONTENT_WINDOW_S
 
 
 
         self.kb_cosine_similarity_threshold = 0.7
+        # Paper-term alias for SKB assignment threshold.
+        self.phase3_skb_similarity_threshold = self.kb_cosine_similarity_threshold
         self.kb_embedding_sample_size = 100
         self.kb_llm_update_threshold = 20
         self.kb_dir = os.path.join(self.result_dir, "knowledge_base")
-
 
 
