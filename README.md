@@ -203,10 +203,10 @@ If you use LogNexus in your research, please cite our paper:
 
 ```bibtex
 @article{lognexus2024,
-  title={LogNexus: From Raw Streams to Operational Insights via Neural-Symbolic Event Reconstruction},
+  title={LOGNEXUS: A Neural-Symbolic Framework for Security Event Reconstruction from Log Streams},
   author={Your Name et al.},
   journal={arXiv preprint},
-  year={2024}
+  year={2026}
 }
 ```
 
