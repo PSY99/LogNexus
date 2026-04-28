@@ -170,7 +170,7 @@ class Config:
         # 【新增】合并规则：相同内容日志的时间窗口
         # 如果多个单日志事件的 'Content' 字段完全相同，且它们之间的时间差
         # 小于此值（秒），它们将被合并。设为0或负数可禁用此规则。
-        self.MERGE_IDENTICAL_CONTENT_WINDOW_S = 5.0
+        self.MERGE_IDENTICAL_CONTENT_WINDOW_S = 5.0 
 
 
 
@@ -179,26 +179,5 @@ class Config:
         self.kb_llm_update_threshold = 20
         self.kb_dir = os.path.join(self.result_dir, "knowledge_base")
 
-    @property
-    def phase1_sampling_budget(self) -> int:
-        return self.detector_sample_size
 
-    @property
-    def phase1_gap_threshold_seconds(self) -> int:
-        return self.detector_session_gap_seconds
 
-    @property
-    def phase1_novelty_threshold(self) -> float:
-        return self.detector_hotspot_novelty_threshold
-
-    @property
-    def phase2_semantic_coherence_threshold(self) -> float:
-        return self.COHERENCE_THRESHOLD_TO_SKIP_SPLIT
-
-    @property
-    def phase2_fragment_fusion_time_window_s(self) -> float:
-        return self.MERGE_IDENTICAL_CONTENT_WINDOW_S
-
-    @property
-    def phase3_skb_similarity_threshold(self) -> float:
-        return self.kb_cosine_similarity_threshold
