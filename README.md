@@ -6,11 +6,11 @@
 
 ## 📖 Introduction
 
-**LogNexus** is a hybrid **neural-symbolic framework** designed to resolve the conflict between semantic accuracy and operational efficiency in log event reconstruction. It transforms raw, interleaved log streams into actionable operational insights through a coarse-to-fine pipeline:
+**LogNexus** is a three-stage **neural-symbolic framework** for security event reconstruction from raw log streams. It transforms raw, interleaved log streams into actionable security knowledge through a coarse-to-fine pipeline:
 
-1.  **Neural-to-Symbolic Synthesis (Phase I):** An LLM acts as a code synthesis agent, generating deterministic, executable partitioning rules from diversity-sampled contexts. This decouples expensive reasoning from high-volume processing.
-2.  **Log Representation Learning & Refinement (Phase II):** We introduce a specialized **Bi-Directional Mamba (Bi-Mamba)** encoder. This model captures long-range dependencies with linear computational complexity ($O(L)$), refining coarse partitions into precise event instances.
-3.  **Dynamic Knowledge Base Construction (Phase III):** Refined events are incrementally clustered into an operational knowledge base, enabling real-time analysis and summarization.
+1.  **Agent-Driven Logic Synthesis (Phase I):** An LLM analyzes diversity-sampled contexts and synthesizes deterministic, executable partitioning logic for coarse candidate partitions.
+2.  **Log Representation Learning & Refinement (Phase II):** A specialized **Bi-Directional Mamba (Bi-Mamba)** encoder captures long-range dependencies and refines candidate partitions into semantically coherent events.
+3.  **Security Knowledge Base Construction (Phase III):** Refined events are converted to event fingerprints and incrementally organized into event types in a Security Knowledge Base (SKB).
 
 Extensive evaluations on **OpenSSH**, **Linux**, and **Apache** datasets demonstrate that LogNexus achieves state-of-the-art performance (e.g., **ARI 1.0000** on OpenSSH), significantly outperforming statistical baselines and direct LLM approaches while reducing token costs by orders of magnitude.
 
@@ -21,9 +21,9 @@ LogNexus/
 ├── data/                   # Dataset storage (Raw logs & Ground truth)
 ├── utils/                  # Utility functions (Config, LLM wrappers)
 ├── data_preprocessing/     # Preprocessing scripts (Parsing, Encoding)
-├── event_detector/         # Phase I: Rule synthesis & Coarse partitioning
-├── event_refinement/       # Phase II: Bi-Mamba training & Event refinement
-├── knowledge_base/         # Phase III: Dynamic clustering & KB construction
+├── event_detector/         # Phase I: Agent-driven logic synthesis & coarse candidate partitioning
+├── event_refinement/       # Phase II: Bi-Mamba representation learning & cascaded event refinement
+├── knowledge_base/         # Phase III: Security Knowledge Base (SKB) construction
 ├── generated_processors/   # Synthesized Python scripts from Phase I
 ├── benchmark/              # Baseline methods implementation
 ├── ablation_experiments/   # Scripts for ablation studies
@@ -130,7 +130,7 @@ To reproduce the ablation study results presented in the paper (Table 4 & 6), us
 
 ### 3. Knowledge Base Evaluation
 
-To evaluate the quality of the constructed Operational Knowledge Base (Phase III):
+To evaluate the quality of the constructed Security Knowledge Base (SKB, Phase III):
 
 ```bash
 python ./knowledge_base/kb_evaluator.py
